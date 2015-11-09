@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Viscid by KristoforMaynard</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Viscid</h1>
+        <p>Python framework to help visualize scientific data on structured meshes</p>
+
+        <p class="view"><a href="https://github.com/KristoforMaynard/Viscid">View the Project on GitHub <small>KristoforMaynard/Viscid</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/KristoforMaynard/Viscid/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/KristoforMaynard/Viscid/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/KristoforMaynard/Viscid">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>At the moment, only rectilinear meshes are supported, and support for other mesh types will be added
+as needed.</p>
+
+<p>File types:</p>
+
+<ul>
+<li>XDMF + HDF5</li>
+<li>OpenGGCM jrrle (3df, p[xyz], iof)</li>
+<li>OpenGGCM binary (3df, p[xyz], iof)</li>
+<li>Athena (bin, hst, tab)</li>
+<li>ASCII</li>
+</ul>
+
+<p>There is also preliminary support for reading and plotting AMR datasets from XDMF files.</p>
+
+<h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h2>
+
+<p>Both the master and dev branches makes every attempt to be usable  (thanks to continuous integration), but the obvious caveats exist, ie, the dev branch has more cool new features but it isn't <em>as</em> tested.</p>
+
+<table>
+<thead>
+<tr>
+<th>Branch</th>
+<th>Docs</th>
+<th>Test Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>master</td>
+<td><a href="docs/master">html</a></td>
+<td><a href="https://travis-ci.org/KristoforMaynard/Viscid"><img src="https://travis-ci.org/KristoforMaynard/Viscid.svg?branch=master" alt="Build Status"></a></td>
+</tr>
+<tr>
+<td>dev</td>
+<td><a href="docs/dev">html</a></td>
+<td><a href="https://travis-ci.org/KristoforMaynard/Viscid"><img src="https://travis-ci.org/KristoforMaynard/Viscid.svg?branch=dev" alt="Build Status"></a></td>
+</tr>
+<tr>
+<td>travis</td>
+<td>None</td>
+<td><a href="https://travis-ci.org/KristoforMaynard/Viscid"><img src="https://travis-ci.org/KristoforMaynard/Viscid.svg?branch=travis3" alt="Build Status"></a></td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<p>Dependencies:</p>
+
+<ul>
+<li>Required
+
+<ul>
+<li>Python 2.7+ or 3.3+</li>
+<li>Python 2.6 + argparse</li>
+<li>Numpy</li>
+</ul>
+</li>
+<li>Highly Recommended
+
+<ul>
+<li>H5py (if reading hdf5 files)</li>
+<li>Matplotlib (if you want to make 2d plots using viscid.plot.mpl)</li>
+<li>Numexpr (for the calculator.necalc module)</li>
+</ul>
+</li>
+<li>Truly Optional
+
+<ul>
+<li>Seaborn</li>
+<li>Mayavi2 (if you want to make 3d plots using viscid.plot.mvi)</li>
+<li>PyYaml (rc file and plot options can parse using yaml)</li>
+</ul>
+</li>
+<li>Optional for developers
+
+<ul>
+<li>Cython &gt; 0.17 (if you change pyx / pxd files)</li>
+<li>Sphinx</li>
+<li>sphinx_rtd_theme</li>
+<li>sphinxcontrib-napoleon (if Sphinx is &lt;= version 1.2)</li>
+</ul>
+</li>
+</ul>
+
+<p>The optional calculator modules (necalc and cycalc) are all dispatched through
+calculator.calc, and it is intelligent enough not to use a library that is not
+installed.</p>
+
+<p>The jrrle and fortbin readers depend on compiled Fortran code, and the interpolation and streamline functions depend on compiled Cython (C) code. To build Viscid, I recommend running::</p>
+
+<pre><code>./setup.py build_ext -i
+viscid_dir=$(pwd)
+export PYTHONPATH=$PYTHONPATH:${viscid_dir}
+export PATH=$PATH:${viscid_dir}/scripts
+</code></pre>
+
+<p>and adding the <code>Viscid</code> directory to your <code>PYTHONPATH</code> and <code>Viscid/scripts</code> to your <code>PATH</code>. This makes editing Viscid far easier.</p>
+
+<p>However, the standard distutils commands also work if you're so inclined::</p>
+
+<pre><code>./setup.py build
+./setup.py install
+</code></pre>
+
+<h2>
+<a id="development" class="anchor" href="#development" aria-hidden="true"><span class="octicon octicon-link"></span></a>Development</h2>
+
+<p>Please, if you edit the code, use <a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a> style. Poor style is more than just aesthetic; it tends to lead to bugs that are difficult to spot. This is sorely true when it comes to whitespace (4 spaces per indent please).</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/KristoforMaynard">KristoforMaynard</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
