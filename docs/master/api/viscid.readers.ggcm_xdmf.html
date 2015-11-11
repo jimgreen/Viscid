@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.readers.ggcm_xdmf module &mdash; Viscid 0.95.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.95.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 documentation" href="../index.html" />
+    <link rel="up" title="viscid.readers package" href="viscid.readers.html" />
+    <link rel="next" title="viscid.readers.hdf5 module" href="viscid.readers.hdf5.html" />
+    <link rel="prev" title="viscid.readers.ggcm_logfile module" href="viscid.readers.ggcm_logfile.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../changes.html">ChangeLog</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">viscid.readers.ggcm_xdmf module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-viscid.readers.ggcm_xdmf">
+<span id="viscid-readers-ggcm-xdmf-module"></span><h1>viscid.readers.ggcm_xdmf module<a class="headerlink" href="#module-viscid.readers.ggcm_xdmf" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="viscid.readers.ggcm_xdmf.GGCMAncFileXDMF">
+<em class="property">class </em><code class="descclassname">viscid.readers.ggcm_xdmf.</code><code class="descname">GGCMAncFileXDMF</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/readers/ggcm_xdmf.html#GGCMAncFileXDMF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.readers.ggcm_xdmf.GGCMAncFileXDMF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.readers.ggcm_xdmf.GGCMFileXDMF" title="viscid.readers.ggcm_xdmf.GGCMFileXDMF"><code class="xref py py-class docutils literal"><span class="pre">viscid.readers.ggcm_xdmf.GGCMFileXDMF</span></code></a></p>
+<p>Ancillary files; usually, these files have already been
+converted to GSE</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.readers.ggcm_xdmf.GGCMFileXDMF">
+<em class="property">class </em><code class="descclassname">viscid.readers.ggcm_xdmf.</code><code class="descname">GGCMFileXDMF</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/readers/ggcm_xdmf.html#GGCMFileXDMF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.readers.ggcm_xdmf.GGCMFileXDMF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="viscid.readers.openggcm.html#viscid.readers.openggcm.GGCMFile" title="viscid.readers.openggcm.GGCMFile"><code class="xref py py-class docutils literal"><span class="pre">viscid.readers.openggcm.GGCMFile</span></code></a>, <a class="reference internal" href="viscid.readers.xdmf.html#viscid.readers.xdmf.FileXDMF" title="viscid.readers.xdmf.FileXDMF"><code class="xref py py-class docutils literal"><span class="pre">viscid.readers.xdmf.FileXDMF</span></code></a></p>
+<p>File type for GGCM style convenience stuff</p>
+<dl class="attribute">
+<dt id="viscid.readers.ggcm_xdmf.GGCMFileXDMF.read_log_file">
+<code class="descname">read_log_file</code><a class="headerlink" href="#viscid.readers.ggcm_xdmf.GGCMFileXDMF.read_log_file" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>bool</em></p>
+<p>search for a log file to load some of the
+libmrc runtime parameters. This does not read parameters
+from all libmrc classes, but can be customized with
+:py:const`viscid.readers.ggcm_logfile.GGCMLogFile.
+watched_classes`. Defaults to False for performance.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="viscid.readers.ggcm_xdmf.GGCMFileXDMF.collective_name_from_group">
+<em class="property">classmethod </em><code class="descname">collective_name_from_group</code><span class="sig-paren">(</span><em>fnames</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/readers/ggcm_xdmf.html#GGCMFileXDMF.collective_name_from_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.readers.ggcm_xdmf.GGCMFileXDMF.collective_name_from_group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="viscid.readers.ggcm_xdmf.GGCMFileXDMF.group_fnames">
+<em class="property">classmethod </em><code class="descname">group_fnames</code><span class="sig-paren">(</span><em>fnames</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/readers/ggcm_xdmf.html#GGCMFileXDMF.group_fnames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.readers.ggcm_xdmf.GGCMFileXDMF.group_fnames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Group File names</p>
+<p>The default implementation just returns fnames, but some file
+types might do something fancy here</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fnames</strong> (<em>list</em>) &#8211; names that can be logically grouped, as in
+a bunch of file names that are different time steps
+of a given run</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of things that can be given to the constructor of
+this class</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.readers.ggcm_xdmf.GGCMFileXDMF.load">
+<code class="descname">load</code><span class="sig-paren">(</span><em>fname</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/readers/ggcm_xdmf.html#GGCMFileXDMF.load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.readers.ggcm_xdmf.GGCMFileXDMF.load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.readers.ggcm_xdmf.GGCMIonoFileXDMF">
+<em class="property">class </em><code class="descclassname">viscid.readers.ggcm_xdmf.</code><code class="descname">GGCMIonoFileXDMF</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/readers/ggcm_xdmf.html#GGCMIonoFileXDMF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.readers.ggcm_xdmf.GGCMIonoFileXDMF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.readers.ggcm_xdmf.GGCMFileXDMF" title="viscid.readers.ggcm_xdmf.GGCMFileXDMF"><code class="xref py py-class docutils literal"><span class="pre">viscid.readers.ggcm_xdmf.GGCMFileXDMF</span></code></a></p>
+<p>Ionosphere Files</p>
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/api/viscid.readers.ggcm_xdmf.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.readers.vfile_bucket module &mdash; Viscid 0.95.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.95.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 documentation" href="../index.html" />
+    <link rel="up" title="viscid.readers package" href="viscid.readers.html" />
+    <link rel="next" title="viscid.readers.xdmf module" href="viscid.readers.xdmf.html" />
+    <link rel="prev" title="viscid.readers.vfile module" href="viscid.readers.vfile.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../changes.html">ChangeLog</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">viscid.readers.vfile_bucket module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-viscid.readers.vfile_bucket">
+<span id="viscid-readers-vfile-bucket-module"></span><h1>viscid.readers.vfile_bucket module<a class="headerlink" href="#module-viscid.readers.vfile_bucket" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="viscid.readers.vfile_bucket.ContainerFile">
+<em class="property">class </em><code class="descclassname">viscid.readers.vfile_bucket.</code><code class="descname">ContainerFile</code><span class="sig-paren">(</span><em>fname</em>, <em>parent_bucket=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/readers/vfile_bucket.html#ContainerFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.readers.vfile_bucket.ContainerFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="viscid.readers.vfile.html#viscid.readers.vfile.VFile" title="viscid.readers.vfile.VFile"><code class="xref py py-class docutils literal"><span class="pre">viscid.readers.vfile.VFile</span></code></a></p>
+<p>A container file is a VFile that can load other files</p>
+<p>The use case is always something like the relationship between XDMF
+files and HDF5 files. It&#8217;s nice for an XDMF file to keep track of
+all the HDF5 Files that it refers to.</p>
+<dl class="attribute">
+<dt id="viscid.readers.vfile_bucket.ContainerFile.child_bucket">
+<code class="descname">child_bucket</code><em class="property"> = None</em><a class="headerlink" href="#viscid.readers.vfile_bucket.ContainerFile.child_bucket" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.readers.vfile_bucket.ContainerFile.clear_cache">
+<code class="descname">clear_cache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/readers/vfile_bucket.html#ContainerFile.clear_cache"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.readers.vfile_bucket.ContainerFile.clear_cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.readers.vfile_bucket.ContainerFile.reload">
+<code class="descname">reload</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/readers/vfile_bucket.html#ContainerFile.reload"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.readers.vfile_bucket.ContainerFile.reload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.readers.vfile_bucket.ContainerFile.unload">
+<code class="descname">unload</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/readers/vfile_bucket.html#ContainerFile.unload"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.readers.vfile_bucket.ContainerFile.unload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.readers.vfile_bucket.VFileBucket">
+<em class="property">class </em><code class="descclassname">viscid.readers.vfile_bucket.</code><code class="descname">VFileBucket</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/readers/vfile_bucket.html#VFileBucket"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.readers.vfile_bucket.VFileBucket" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="viscid.bucket.html#viscid.bucket.Bucket" title="viscid.bucket.Bucket"><code class="xref py py-class docutils literal"><span class="pre">viscid.bucket.Bucket</span></code></a></p>
+<p>manages open files, create / get with get_file_bucket() as you
+generally only need one instance, but you can construct directly
+if you need more than one manager</p>
+<dl class="method">
+<dt id="viscid.readers.vfile_bucket.VFileBucket.load_file">
+<code class="descname">load_file</code><span class="sig-paren">(</span><em>fname</em>, <em>index_handle=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/readers/vfile_bucket.html#VFileBucket.load_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.readers.vfile_bucket.VFileBucket.load_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>load a single file and return a vFile instance, not a list
+of vFiles like load does</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.readers.vfile_bucket.VFileBucket.load_files">
+<code class="descname">load_files</code><span class="sig-paren">(</span><em>fnames</em>, <em>index_handle=True</em>, <em>file_type=None</em>, <em>_add_ref=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/readers/vfile_bucket.html#VFileBucket.load_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.readers.vfile_bucket.VFileBucket.load_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load files, and add them to the bucket</p>
+<p>Initialize obj before it&#8217;s put into the list, whatever is returned
+is what gets stored, returning None means object init failed, do
+not add to the _objs list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fnames</strong> &#8211; a list of file names (can cantain glob patterns)</li>
+<li><strong>index_handle</strong> &#8211; <p>??</p>
+</li>
+<li><strong>file_type</strong> &#8211; a class that is a subclass of VFile, if given,
+use this file type, don&#8217;t use the autodetect mechanism</li>
+<li><strong>kwargs</strong> &#8211; passed to file constructor</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A list of VFile instances. The length may not be the same
+as the length of fnames, and the order may not be the same
+in order to accomidate globs and file grouping.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.readers.vfile_bucket.VFileBucket.remove_all_items">
+<code class="descname">remove_all_items</code><span class="sig-paren">(</span><em>do_unload=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/readers/vfile_bucket.html#VFileBucket.remove_all_items"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.readers.vfile_bucket.VFileBucket.remove_all_items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.readers.vfile_bucket.VFileBucket.remove_item">
+<code class="descname">remove_item</code><span class="sig-paren">(</span><em>item</em>, <em>do_unload=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/readers/vfile_bucket.html#VFileBucket.remove_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.readers.vfile_bucket.VFileBucket.remove_item" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.readers.vfile_bucket.VFileBucket.remove_item_by_handle">
+<code class="descname">remove_item_by_handle</code><span class="sig-paren">(</span><em>handle</em>, <em>do_unload=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/readers/vfile_bucket.html#VFileBucket.remove_item_by_handle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.readers.vfile_bucket.VFileBucket.remove_item_by_handle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/api/viscid.readers.vfile_bucket.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

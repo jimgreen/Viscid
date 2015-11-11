@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Custom Behavior (rc file) &mdash; Viscid 0.95.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.95.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 documentation" href="index.html" />
+    <link rel="next" title="Useful Functions" href="functions.html" />
+    <link rel="prev" title="Philosophy" href="philosophy.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="#">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">ChangeLog</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="philosophy.html">Philosophy</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Custom Behavior (rc file)</a><ul>
+<li><a class="reference internal" href="#common-customizations">Common Customizations</a></li>
+<li><a class="reference internal" href="#viscid-plot-mpl-extra">viscid.plot.mpl_extra</a></li>
+<li><a class="reference internal" href="#viscid-grid-grid">viscid.grid.Grid</a></li>
+<li><a class="reference internal" href="#viscid-readers-openggcm-ggcmgrid">viscid.readers.openggcm.GGCMGrid</a></li>
+<li><a class="reference internal" href="#viscid-readers-openggcm-ggcmfile">viscid.readers.openggcm.GGCMFile</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="custom-behavior-rc-file">
+<h1>Custom Behavior (rc file)<a class="headerlink" href="#custom-behavior-rc-file" title="Permalink to this headline">¶</a></h1>
+<p>Some classes have attributes that customize how specific files, datasets and grids behave. These attributes can be set globally, or on a per-instance basis. An instance picks up the value from the class when it&#8217;s created, so changing things globally is recommended before any files are loaded. These attributes can also be set from <cite>~/.viscidrc</cite>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, Viscid tries to parse the rc file with PyYaml. If PyYaml is not installed, it parses using a modified JSON format. Unlike standard JSON, you can include comments using &#8216;#&#8217; or &#8216;//&#8217; as well as trailing commas.</p>
+</div>
+<p>Here is an example rc file,</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="c1"># ~/.viscidrc</span>
+<span class="p-Indicator">{</span>
+  <span class="c1">### For Everything</span>
+  <span class="c1">## use shell copies so we don&#39;t have to call unload()</span>
+  <span class="s">&quot;grid.Grid.longterm_field_caches&quot;</span><span class="p-Indicator">:</span> <span class="nv">false</span><span class="p-Indicator">,</span>
+
+  <span class="c1">### for OpenGGCM</span>
+  <span class="c1">## try to get extra run information</span>
+  <span class="s">&quot;readers.openggcm.GGCMFile.read_log_file&quot;</span><span class="p-Indicator">:</span> <span class="nv">true</span><span class="p-Indicator">,</span>
+  <span class="c1">## everyone likes GSE coords :)</span>
+  <span class="s">&quot;readers.openggcm.GGCMGrid.mhd_to_gse_on_read&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;auto&quot;</span><span class="p-Indicator">,</span>
+
+  <span class="c1">### For Athena</span>
+  <span class="c1">## this doesn&#39;t work for some reason</span>
+  <span class="c1"># &quot;readers.athena_bin.AthenaBinFileWrapper.var_type&quot;: &quot;prim&quot;,</span>
+
+  <span class="c1"># evaluator control for security</span>
+  <span class="s">&quot;calculator.evaluator.enabled&quot;</span><span class="p-Indicator">:</span> <span class="nv">false</span><span class="p-Indicator">,</span>
+
+  <span class="c1"># note, the redhelix colormap is defined in viscid.plot.mpl_extra</span>
+  <span class="s">&quot;plot.mpl_extra.default_cmap&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;redhelix&quot;</span><span class="p-Indicator">,</span>
+  <span class="s">&quot;plot.mpl_extra.symmetric_cmap&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;seismic&quot;</span><span class="p-Indicator">,</span>
+  <span class="s">&quot;plot.mpl_extra.default_cbarfmt&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;steve&quot;</span><span class="p-Indicator">,</span>
+  <span class="s">&quot;plot.mpl_extra.default_majorfmt&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;steve&quot;</span><span class="p-Indicator">,</span>
+
+  <span class="c1"># pretty plotting</span>
+  <span class="s">&quot;plot.vseaborn.enabled&quot;</span><span class="p-Indicator">:</span> <span class="nv">true</span><span class="p-Indicator">,</span>
+  <span class="s">&quot;plot.vseaborn.context&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;poster&quot;</span><span class="p-Indicator">,</span>
+  <span class="s">&quot;plot.vseaborn.style&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;ticks&quot;</span><span class="p-Indicator">,</span>
+  <span class="s">&quot;plot.vseaborn.palette&quot;</span><span class="p-Indicator">:</span> <span class="p-Indicator">[</span><span class="s">&quot;husl&quot;</span><span class="p-Indicator">,</span> <span class="nv">8</span><span class="p-Indicator">],</span>
+  <span class="c1"># &quot;plot.vseaborn.palette&quot;: [[&quot;#9b59b6&quot;, &quot;#3498db&quot;, &quot;#95a5a6&quot;, &quot;#e74c3c&quot;, &quot;#34495e&quot;, &quot;#2ecc71&quot;]],</span>
+  <span class="c1"># &quot;plot.vseaborn.rc&quot;: {&quot;lines.markeredgewidth&quot;: 0.01},</span>
+<span class="p-Indicator">}</span>
+</pre></div>
+</div>
+<div class="section" id="common-customizations">
+<h2>Common Customizations<a class="headerlink" href="#common-customizations" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="viscid-plot-mpl-extra">
+<h2>viscid.plot.mpl_extra<a class="headerlink" href="#viscid-plot-mpl-extra" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>default_cmap</strong>: Changes the default color maps for plots made using
+<a class="reference internal" href="api/viscid.plot.mpl.html#module-viscid.plot.mpl" title="viscid.plot.mpl"><code class="xref py py-mod docutils literal"><span class="pre">viscid.plot.mpl</span></code></a></li>
+<li><strong>symmetric_cmap</strong>: Changes the default color maps for plots that are
+symmetric about 0</li>
+<li><strong>default_cbarfmt</strong>: Change the default tick formatter for colbars</li>
+<li><strong>default_majorfmt</strong>: Change the default major tick formatter for axes</li>
+<li><strong>default_minorfmt</strong>: Change the default major tick formatter for axes</li>
+<li><strong>default_majorloc</strong>: Change the default major tick locator for axes</li>
+<li><strong>default_minorloc</strong>: Change the default major tick locator for axes</li>
+</ul>
+</div>
+<div class="section" id="viscid-grid-grid">
+<h2>viscid.grid.Grid<a class="headerlink" href="#viscid-grid-grid" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>force_vecter_layout</strong> (<code class="docutils literal"><span class="pre">field.LAYOUT_*</span></code>): force all vectors to
+be of a certain layout when they&#8217;re created (Default: LAYOUT_DEFAULT)</li>
+<li><strong>longterm_field_caches</strong> (bool): If True, then when a field is
+cached, it must be explicitly removed from memory with
+&#8220;unload&#8221; or using the &#8216;with&#8217; statemnt. If False,
+&#8220;shell copies&#8221; of fields are made so that memory is freed
+when the returned instance is garbage collected.
+(Default: False)</li>
+</ul>
+</div>
+<div class="section" id="viscid-readers-openggcm-ggcmgrid">
+<h2>viscid.readers.openggcm.GGCMGrid<a class="headerlink" href="#viscid-readers-openggcm-ggcmgrid" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>mhd_to_gse_on_read</strong> (bool): flips arrays on load to be in
+GSE crds (Default: False)</li>
+<li><strong>copy_on_transform</strong> (bool): True means array will be contiguous
+after transform (if one is done), but makes data load
+50%-60% slower (Default: True)</li>
+</ul>
+</div>
+<div class="section" id="viscid-readers-openggcm-ggcmfile">
+<h2>viscid.readers.openggcm.GGCMFile<a class="headerlink" href="#viscid-readers-openggcm-ggcmfile" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>read_log_file</strong> (bool): search for a log file to load some of the
+libmrc runtime parameters. This does not read parameters
+from all libmrc classes, but can be customized with
+<code class="docutils literal"><span class="pre">viscid.readers.ggcm_logfile.GGCMLogFile.watched_classes</span></code>.
+(Default: False due to performance)</li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="_sources/custom_behavior.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,1153 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.vutil &mdash; Viscid 0.95.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.95.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changes.html">ChangeLog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for viscid.vutil</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+
+<span class="c"># FIXME: this module is way too long and disorganized</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">division</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">fnmatch</span>
+<span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">count</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
+<span class="kn">import</span> <span class="nn">os.path</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">subprocess</span> <span class="kn">as</span> <span class="nn">sub</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">default_timer</span> <span class="k">as</span> <span class="n">time</span>
+
+<span class="kn">import</span> <span class="nn">viscid</span>
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">viscid.compat</span> <span class="kn">import</span> <span class="n">izip</span><span class="p">,</span> <span class="n">string_types</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+
+<span class="n">tree_prefix</span> <span class="o">=</span> <span class="s">&quot;.   &quot;</span>
+
+<div class="viewcode-block" id="find_field"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.find_field">[docs]</a><span class="k">def</span> <span class="nf">find_field</span><span class="p">(</span><span class="n">vfile</span><span class="p">,</span> <span class="n">fld_name_lst</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; convenience function to get a field that could be called many things</span>
+<span class="sd">    returns the first fld_name in the list that is in the file &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">fld_name</span> <span class="ow">in</span> <span class="n">fld_name_lst</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">fld_name</span> <span class="ow">in</span> <span class="n">vfile</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">vfile</span><span class="p">[</span><span class="n">fld_name</span><span class="p">]</span>
+    <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s">&quot;file {0} contains none of {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vfile</span><span class="p">,</span> <span class="n">fld_name_lst</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="split_floats"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.split_floats">[docs]</a><span class="k">def</span> <span class="nf">split_floats</span><span class="p">(</span><span class="n">arg_str</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">arg_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;,&#39;</span><span class="p">)]</span>
+</div>
+<div class="viewcode-block" id="add_animate_arguments"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.add_animate_arguments">[docs]</a><span class="k">def</span> <span class="nf">add_animate_arguments</span><span class="p">(</span><span class="n">parser</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; add common options for animating, you may want to make sure parser was</span>
+<span class="sd">    constructed with conflict_handler=&#39;resolve&#39; &quot;&quot;&quot;</span>
+    <span class="n">anim</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="s">&quot;Options for creating animations&quot;</span><span class="p">)</span>
+    <span class="n">anim</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;-a&quot;</span><span class="p">,</span> <span class="s">&quot;--animate&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                      <span class="n">help</span><span class="o">=</span><span class="s">&quot;animate results&quot;</span><span class="p">)</span>
+    <span class="n">anim</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;--prefix&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                      <span class="n">help</span><span class="o">=</span><span class="s">&quot;Prefix of the output image filenames&quot;</span><span class="p">)</span>
+    <span class="n">anim</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;-r&#39;</span><span class="p">,</span> <span class="s">&#39;--rate&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">&#39;framerate&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                      <span class="n">help</span><span class="o">=</span><span class="s">&quot;animation frame rate (default 5).&quot;</span><span class="p">)</span>
+    <span class="n">anim</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;--qscale&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">&#39;qscale&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&#39;2&#39;</span><span class="p">,</span>
+                      <span class="n">help</span><span class="o">=</span><span class="s">&quot;animation quality flag (default 2).&quot;</span><span class="p">)</span>
+    <span class="n">anim</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;-k&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">&#39;keep&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;store_true&#39;</span><span class="p">,</span>
+                      <span class="n">help</span><span class="o">=</span><span class="s">&quot;keep temporary files.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">parser</span>
+</div>
+<div class="viewcode-block" id="add_mpl_output_arguments"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.add_mpl_output_arguments">[docs]</a><span class="k">def</span> <span class="nf">add_mpl_output_arguments</span><span class="p">(</span><span class="n">parser</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; add common options for tuning matplotlib output, you may want to make</span>
+<span class="sd">    sure parser was constructed with conflict_handler=&#39;resolve&#39; &quot;&quot;&quot;</span>
+    <span class="n">mplargs</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="s">&quot;Options for tuning matplotlib&quot;</span><span class="p">)</span>
+    <span class="n">mplargs</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;-s&quot;</span><span class="p">,</span> <span class="s">&quot;--size&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">&quot;plot_size&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">split_floats</span><span class="p">,</span>
+                         <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;size of mpl plot (inches)&quot;</span><span class="p">)</span>
+    <span class="n">mplargs</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;--dpi&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">&quot;dpi&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                         <span class="n">help</span><span class="o">=</span><span class="s">&quot;dpi of plot&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;--prefix&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s">&quot;Prefix of the output image filenames&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;--format&quot;</span><span class="p">,</span> <span class="s">&quot;-f&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;png&quot;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s">&quot;output format, as in &#39;png&#39;|&#39;pdf&#39;|...&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;-w&#39;</span><span class="p">,</span> <span class="s">&#39;--show&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">&#39;show&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&quot;store_true&quot;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s">&quot;show plots with plt.show()&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">parser</span>
+</div>
+<div class="viewcode-block" id="common_argparse"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.common_argparse">[docs]</a><span class="k">def</span> <span class="nf">common_argparse</span><span class="p">(</span><span class="n">parser</span><span class="p">,</span> <span class="n">default_verb</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; add some common verbosity stuff to argparse, parse the</span>
+<span class="sd">    command line args, and setup the logging levels</span>
+<span class="sd">    parser should be an ArgumentParser instance, and kwargs</span>
+<span class="sd">    should be options that get passed to logger.basicConfig</span>
+<span class="sd">    returns the args namespace  &quot;&quot;&quot;</span>
+    <span class="n">general</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="s">&quot;Viscid general options&quot;</span><span class="p">)</span>
+    <span class="n">general</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;--log&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&quot;store&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                         <span class="n">help</span><span class="o">=</span><span class="s">&quot;Logging level (overrides verbosity)&quot;</span><span class="p">)</span>
+    <span class="n">general</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;-v&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&quot;count&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">default_verb</span><span class="p">,</span>
+                         <span class="n">help</span><span class="o">=</span><span class="s">&quot;increase verbosity&quot;</span><span class="p">)</span>
+    <span class="n">general</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;-q&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&quot;count&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                         <span class="n">help</span><span class="o">=</span><span class="s">&quot;decrease verbosity&quot;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="c"># setup the logging level</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">log</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">logging</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">upper</span><span class="p">()))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c"># default = 30 WARNING</span>
+        <span class="n">verb</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">v</span> <span class="o">-</span> <span class="n">args</span><span class="o">.</span><span class="n">q</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">30</span> <span class="o">-</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">verb</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">args</span>
+</div>
+<div class="viewcode-block" id="make_animation"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.make_animation">[docs]</a><span class="k">def</span> <span class="nf">make_animation</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">program</span><span class="o">=</span><span class="s">&quot;ffmpeg&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; make animation by calling program (only ffmpeg works for now) using</span>
+<span class="sd">    args, which is a namespace filled by the argparse options from</span>
+<span class="sd">    add_animate_arguments. Plots are expected to be named</span>
+<span class="sd">    ${args.prefix}_000001.png where the number is in order from 1 up &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">animate</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">program</span> <span class="o">==</span> <span class="s">&quot;ffmpeg&quot;</span><span class="p">:</span>
+            <span class="n">sub</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="s">&quot;ffmpeg -r {0} -i {2}_</span><span class="si">%06d</span><span class="s">.png -pix_fmt yuv420p &quot;</span>
+                      <span class="s">&quot;-qscale {1} {3}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">framerate</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">qscale</span><span class="p">,</span>
+                                               <span class="n">args</span><span class="o">.</span><span class="n">prefix</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">animate</span><span class="p">),</span>
+                      <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">animate</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">args</span><span class="o">.</span><span class="n">prefix</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">keep</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">keep</span><span class="p">:</span>
+        <span class="n">sub</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="s">&quot;rm -f {0}_*.png&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">prefix</span><span class="p">),</span>
+                  <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
+    <span class="k">return</span> <span class="bp">None</span>
+</div>
+<div class="viewcode-block" id="subclass_spider"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.subclass_spider">[docs]</a><span class="k">def</span> <span class="nf">subclass_spider</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; return recursive list of subclasses of cls (depth first) &quot;&quot;&quot;</span>
+    <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">cls</span><span class="p">]</span>
+    <span class="c"># reversed gives precedence to the more recently declared classes</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()):</span>
+        <span class="n">lst</span> <span class="o">+=</span> <span class="n">subclass_spider</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">lst</span>
+</div>
+<div class="viewcode-block" id="timereps"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.timereps">[docs]</a><span class="k">def</span> <span class="nf">timereps</span><span class="p">(</span><span class="n">reps</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="bp">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">reps</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">reps</span><span class="p">):</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+        <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>
+    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">arr</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">arr</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">/</span> <span class="n">reps</span>
+</div>
+<div class="viewcode-block" id="timeit"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.timeit">[docs]</a><span class="k">def</span> <span class="nf">timeit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;{0:.03g}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span>
+    <span class="n">secs</span> <span class="o">=</span> <span class="s">&quot;second&quot;</span> <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="s">&quot;1&quot;</span> <span class="k">else</span> <span class="s">&quot;seconds&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;&lt;function {0}.{1}&gt;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">__module__</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">__name__</span><span class="p">),</span>
+          <span class="s">&quot;took&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">secs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ret</span>
+</div>
+<div class="viewcode-block" id="str_to_value"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.str_to_value">[docs]</a><span class="k">def</span> <span class="nf">str_to_value</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">s</span>
+    <span class="n">s_clean</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s_clean</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">s_clean</span> <span class="o">==</span> <span class="s">&quot;none&quot;</span><span class="p">:</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="k">elif</span> <span class="n">s_clean</span> <span class="o">==</span> <span class="s">&quot;true&quot;</span><span class="p">:</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">elif</span> <span class="n">s_clean</span> <span class="o">==</span> <span class="s">&quot;false&quot;</span><span class="p">:</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">elif</span> <span class="n">s_clean</span> <span class="o">==</span> <span class="s">&quot;True&quot;</span><span class="p">:</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s_clean</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">s_clean</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">ret</span>
+</div>
+<div class="viewcode-block" id="format_datetime"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.format_datetime">[docs]</a><span class="k">def</span> <span class="nf">format_datetime</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">fmt</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;Wrapper around datetime.datetime.strftime</span>
+
+<span class="sd">    This function allows one to specify the precision of fractional</span>
+<span class="sd">    seconds (mircoseconds) using something like &#39;%2f&#39; to round to</span>
+<span class="sd">    the nearest hundredth of a second.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        dt (datetime.datetime): time to format</span>
+<span class="sd">        fmt (str): format string that strftime understands with the</span>
+<span class="sd">            addition of &#39;%\.?[0-9]f&#39; to the syntax.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">fmt</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">msec_fmt</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;1&#39;</span><span class="p">]</span>
+        <span class="n">fmt</span> <span class="o">=</span> <span class="s">&quot;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:%M:%S.</span><span class="si">%f</span><span class="s">&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">msec_fmt</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">r&quot;%\.?([0-9]*)f&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="p">)</span>
+        <span class="n">fmt</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">r&quot;%\.?([0-9]*)f&quot;</span><span class="p">,</span> <span class="s">&quot;</span><span class="si">%f</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="p">)</span>
+
+    <span class="n">tstr</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">fmt</span><span class="p">)</span>
+
+    <span class="c"># now go back and for any %f -&gt; [0-9]{6}, reformat the precision</span>
+    <span class="n">it</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">izip</span><span class="p">(</span><span class="n">msec_fmt</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="s">&quot;[0-9]{6}&quot;</span><span class="p">,</span> <span class="n">tstr</span><span class="p">)))</span>
+    <span class="k">for</span> <span class="n">ffmt</span><span class="p">,</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">it</span><span class="p">):</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s">&quot;0.&quot;</span> <span class="o">+</span> <span class="n">tstr</span><span class="p">[</span><span class="n">a</span><span class="p">:</span><span class="n">b</span><span class="p">])</span>
+        <span class="n">ifmt</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ffmt</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ffmt</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">6</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="s">&quot;{0:0.{1}f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">ifmt</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span>
+        <span class="n">tstr</span> <span class="o">=</span> <span class="n">tstr</span><span class="p">[:</span><span class="n">a</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span> <span class="o">+</span> <span class="n">tstr</span><span class="p">[</span><span class="n">b</span><span class="p">:]</span>
+    <span class="k">return</span> <span class="n">tstr</span>
+</div>
+<div class="viewcode-block" id="format_time"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.format_time">[docs]</a><span class="k">def</span> <span class="nf">format_time</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">&#39;.02f&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Format time as a string</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        If t is a datetime.datetime instance, then this function</span>
+<span class="sd">        returns the result of format_datetime(t, style), which is</span>
+<span class="sd">        basically datetime.datetime.strftime</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        t (float): time</span>
+<span class="sd">        style (str): for this method, can be::</span>
+<span class="sd">                style          |   time   | string</span>
+<span class="sd">                --------------------------------------------------</span>
+<span class="sd">                &#39;hms&#39;          | 90015.0  | &quot;25:00:15.000&quot;</span>
+<span class="sd">                &#39;hms&#39;          | 90000.0  | &quot;1 day 01:00:15.000&quot;</span>
+<span class="sd">                &#39;hmss&#39;         | 90015.0  | &quot;25:00:15.000 (90015)&quot;</span>
+<span class="sd">                &#39;dhms&#39;         |   900.0  | &quot;0 days 00:15:00.000&quot;</span>
+<span class="sd">                &#39;.02f&#39;         |   900.0  | &#39;900.00&#39;</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">lstyle</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">&quot;&quot;</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">format_datetime</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">style</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="s">&quot;hms&quot;</span> <span class="ow">in</span> <span class="n">lstyle</span><span class="p">:</span>
+        <span class="n">days</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span> <span class="o">//</span> <span class="p">(</span><span class="mi">24</span> <span class="o">*</span> <span class="mi">3600</span><span class="p">))</span>
+        <span class="n">hrs</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">t</span> <span class="o">//</span> <span class="mi">3600</span><span class="p">)</span> <span class="o">%</span> <span class="mi">24</span><span class="p">)</span>
+        <span class="n">mins</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">t</span> <span class="o">//</span> <span class="mi">60</span><span class="p">)</span> <span class="o">%</span> <span class="mi">60</span><span class="p">)</span>
+        <span class="n">secs</span> <span class="o">=</span> <span class="n">t</span> <span class="o">%</span> <span class="mi">60</span>
+
+        <span class="k">if</span> <span class="n">lstyle</span> <span class="o">==</span> <span class="s">&quot;dhms&quot;</span><span class="p">:</span>
+            <span class="n">daystr</span> <span class="o">=</span> <span class="s">&quot;day&quot;</span> <span class="k">if</span> <span class="n">days</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="s">&quot;days&quot;</span>
+            <span class="k">return</span> <span class="s">&quot;{0} {1}, {2}:{3:02d}:{4:04.01f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">days</span><span class="p">,</span> <span class="n">daystr</span><span class="p">,</span>
+                                                            <span class="n">hrs</span><span class="p">,</span> <span class="n">mins</span><span class="p">,</span> <span class="n">secs</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">lstyle</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;hms&quot;</span><span class="p">):</span>
+            <span class="n">hrs</span> <span class="o">+=</span> <span class="mi">24</span> <span class="o">*</span> <span class="n">days</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;{0:02d}:{1:02d}:{2:05.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hrs</span><span class="p">,</span> <span class="n">mins</span><span class="p">,</span> <span class="n">secs</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">lstyle</span> <span class="o">==</span> <span class="s">&quot;hmss&quot;</span><span class="p">:</span>
+                <span class="n">s</span> <span class="o">+=</span> <span class="s">&quot; ({0:d})&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">s</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Unknown time style: {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">style</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">lstyle</span> <span class="o">==</span> <span class="s">&quot;none&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">&quot;&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">&quot;{0:{1}}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">style</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s">&quot;should never be here&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="make_fwd_slice"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.make_fwd_slice">[docs]</a><span class="k">def</span> <span class="nf">make_fwd_slice</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">slices</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">cull_second</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Make sure slices go forward</span>
+
+<span class="sd">    This function returns two slices equivalent to `slices` such</span>
+<span class="sd">    that the first slice always goes forward. This is necessary because</span>
+<span class="sd">    h5py can&#39;t deal with reverse slices such as [::-1].</span>
+
+<span class="sd">    The optional `reverse` can be used to interpret a dimension as</span>
+<span class="sd">    flipped. This is used if the indices in a slice are based on a</span>
+<span class="sd">    coordinate array that has already been flipped. For instance, the</span>
+<span class="sd">    result is equivalent to `arr[::-1][slices]`, but in a way that can</span>
+<span class="sd">    be  handled by h5py. This lets us efficiently load small subsets</span>
+<span class="sd">    of large arrays on disk, which is most useful when the large array</span>
+<span class="sd">    is coming through sshfs.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        The only restriction on slices is that neither start nor stop</span>
+<span class="sd">        can be outide the range [-L, L].</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        shape: shape of the array that is to be sliced</span>
+<span class="sd">        slices: a tuple of slices to work with</span>
+<span class="sd">        reverse (optional): list of bools that indicate if the</span>
+<span class="sd">            corresponding value in slices should be ineterpreted as</span>
+<span class="sd">            flipped</span>
+<span class="sd">        cull_second (bool, optional): iff True, remove elements of</span>
+<span class="sd">            the second slice for dimensions that don&#39;t exist after</span>
+<span class="sd">            the first slice has completed. This is only here for</span>
+<span class="sd">            a super-hacky case when slicing fields.</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        (first_slice, second_slice)</span>
+
+<span class="sd">        * first_slice: a forward-only slice that retrieves the</span>
+<span class="sd">          desired elements of an array</span>
+<span class="sd">        * second_slice: a slice that does [::1] or [::-1] as needed</span>
+<span class="sd">          to make the result equivalent to slices. If keep_all,</span>
+<span class="sd">          then this may contain None indicating that this</span>
+<span class="sd">          dimension no longer exists after the first slice.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt; a = np.arange(8)</span>
+<span class="sd">        &gt;&gt; first, second = make_fwd_slice(len(a),slice(None, None, -1))</span>
+<span class="sd">        &gt;&gt; (a[::-1] == a[first][second]).all()</span>
+<span class="sd">        True</span>
+
+<span class="sd">        &gt;&gt; a = np.arange(4*5*6).reshape((4, 5, 6))</span>
+<span class="sd">        &gt;&gt; first, second = make_fwd_slice(a.shape,</span>
+<span class="sd">        &gt;&gt;                                [slice(None, -1, 1),</span>
+<span class="sd">        &gt;&gt;                                 slice(-1, None, 1),</span>
+<span class="sd">        &gt;&gt;                                 slice(-4, -1, 2)],</span>
+<span class="sd">        &gt;&gt;                                [True, True, True])</span>
+<span class="sd">        &gt;&gt; a1 = a[::-1, ::-1, ::-1][:-1, -1:, -4:-1:2]</span>
+<span class="sd">        &gt;&gt; a2 = a[first][second]</span>
+<span class="sd">        &gt;&gt; a1 == a2</span>
+<span class="sd">        True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">reverse</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">reverse</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+        <span class="n">shape</span> <span class="o">=</span> <span class="p">[</span><span class="n">shape</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">slices</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+        <span class="n">slices</span> <span class="o">=</span> <span class="p">[</span><span class="n">slices</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reverse</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+        <span class="n">reverse</span> <span class="o">=</span> <span class="p">[</span><span class="n">reverse</span><span class="p">]</span>
+
+    <span class="n">newax_inds</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">slices</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">newax_inds</span><span class="p">:</span>
+        <span class="n">shape</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c"># ya know, lets just go through all the dimensions in shape</span>
+    <span class="c"># just to be safe and default to an empty slice / no reverse</span>
+    <span class="n">slices</span> <span class="o">=</span> <span class="n">slices</span> <span class="o">+</span> <span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="bp">None</span><span class="p">)]</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">slices</span><span class="p">))</span>
+    <span class="n">reverse</span> <span class="o">=</span> <span class="n">reverse</span> <span class="o">+</span> <span class="p">[</span><span class="bp">False</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">slices</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">reverse</span><span class="p">))</span>
+
+    <span class="n">first_slc</span> <span class="o">=</span> <span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="bp">None</span><span class="p">)]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">slices</span><span class="p">)</span>
+    <span class="n">second_slc</span> <span class="o">=</span> <span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">first_slc</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">slc</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">rev</span> <span class="ow">in</span> <span class="n">izip</span><span class="p">(</span><span class="n">count</span><span class="p">(),</span> <span class="n">slices</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">reverse</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">slc</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
+            <span class="n">step</span> <span class="o">=</span> <span class="n">slc</span><span class="o">.</span><span class="n">step</span> <span class="k">if</span> <span class="n">slc</span><span class="o">.</span><span class="n">step</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="k">else</span> <span class="mi">1</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="n">slc</span><span class="o">.</span><span class="n">start</span> <span class="k">if</span> <span class="n">slc</span><span class="o">.</span><span class="n">start</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="k">else</span> <span class="mi">0</span>
+            <span class="n">stop</span> <span class="o">=</span> <span class="n">slc</span><span class="o">.</span><span class="n">stop</span> <span class="k">if</span> <span class="n">slc</span><span class="o">.</span><span class="n">stop</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="k">else</span> <span class="n">L</span>
+            <span class="k">if</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">start</span> <span class="o">+=</span> <span class="n">L</span>
+            <span class="k">if</span> <span class="n">stop</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">stop</span> <span class="o">+=</span> <span class="n">L</span>
+
+            <span class="c"># sanity check the start/stop since we&#39;re gunna be playing</span>
+            <span class="c"># fast and loose with them</span>
+            <span class="k">if</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">stop</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s">&quot;((start = {0}) or (stop = {1})) &lt; 0&quot;</span>
+                                 <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">start</span> <span class="o">&gt;</span> <span class="n">L</span> <span class="ow">or</span> <span class="n">stop</span> <span class="o">&gt;</span> <span class="n">L</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s">&quot;((start={0}) or (stop={1})) &gt; (L={2})&quot;</span>
+                                 <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">L</span><span class="p">))</span>
+
+            <span class="c"># now do the math of flipping the slice if needed, these branches</span>
+            <span class="c"># change start, stop, and step so they can be used to create a new</span>
+            <span class="c"># slice below</span>
+            <span class="k">if</span> <span class="n">rev</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">step</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">step</span> <span class="o">=</span> <span class="o">-</span><span class="n">step</span>
+                    <span class="k">if</span> <span class="n">slc</span><span class="o">.</span><span class="n">start</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                        <span class="n">start</span> <span class="o">=</span> <span class="n">L</span> <span class="o">-</span> <span class="mi">1</span>
+                    <span class="k">if</span> <span class="n">slc</span><span class="o">.</span><span class="n">stop</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                        <span class="n">start</span> <span class="o">=</span> <span class="n">L</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">start</span>
+                        <span class="n">stop</span> <span class="o">=</span> <span class="bp">None</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">L</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span> <span class="n">L</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">stop</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">L</span> <span class="o">-</span> <span class="n">stop</span><span class="p">,</span> <span class="n">L</span> <span class="o">-</span> <span class="n">start</span>
+                    <span class="n">start</span> <span class="o">+=</span> <span class="p">((</span><span class="n">stop</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="o">%</span> <span class="n">step</span><span class="p">)</span>
+                    <span class="n">second_slc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">step</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">step</span> <span class="o">=</span> <span class="o">-</span><span class="n">step</span>
+                <span class="k">if</span> <span class="n">slc</span><span class="o">.</span><span class="n">start</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">start</span> <span class="o">=</span> <span class="n">L</span> <span class="o">-</span> <span class="mi">1</span>
+
+                <span class="k">if</span> <span class="n">slc</span><span class="o">.</span><span class="n">stop</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span>
+                    <span class="n">start</span> <span class="o">=</span> <span class="p">((</span><span class="n">stop</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="o">%</span> <span class="n">step</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">stop</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span>
+                    <span class="n">start</span> <span class="o">+=</span> <span class="p">((</span><span class="n">stop</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="o">%</span> <span class="n">step</span><span class="p">)</span>
+
+                <span class="n">second_slc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="c"># check that our slice is valid</span>
+            <span class="k">assert</span> <span class="n">start</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">start</span> <span class="ow">and</span> <span class="n">start</span> <span class="o">&lt;=</span> <span class="n">L</span><span class="p">),</span> \
+                <span class="s">&quot;start (={0}) is outside range&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+            <span class="k">assert</span> <span class="n">start</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">start</span> <span class="ow">and</span> <span class="n">start</span> <span class="o">&lt;=</span> <span class="n">L</span><span class="p">),</span> \
+                <span class="s">&quot;start (={0}) is outside range&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+            <span class="k">assert</span> <span class="n">start</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">stop</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="n">stop</span><span class="p">,</span> \
+                <span class="s">&quot;bad slice ordering: {0} !&lt; {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">)</span>
+            <span class="k">assert</span> <span class="n">step</span> <span class="o">&gt;</span> <span class="mi">0</span>
+            <span class="n">slc</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">slc</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)):</span>
+            <span class="n">second_slc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+            <span class="k">if</span> <span class="n">rev</span><span class="p">:</span>
+                <span class="n">slc</span> <span class="o">=</span> <span class="p">(</span><span class="n">L</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">slc</span>
+
+        <span class="k">elif</span> <span class="n">slc</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">:</span>
+            <span class="n">second_slc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;NEWAXIS&quot;</span>
+
+        <span class="n">first_slc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">slc</span>
+
+    <span class="n">first_slc</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">first_slc</span> <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">cull_second</span><span class="p">:</span>
+        <span class="n">second_slc</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">second_slc</span> <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">]</span>
+    <span class="n">second_slc</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span> <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="s">&quot;NEWAXIS&quot;</span> <span class="k">else</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">second_slc</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">first_slc</span><span class="p">,</span> <span class="n">second_slc</span>
+</div>
+<span class="k">def</span> <span class="nf">_closest_index</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="n">float_err_msg</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;Slicing by floats is no longer supported. If you &quot;</span>
+                     <span class="s">&quot;want to slice by location, suffix the value with &quot;</span>
+                     <span class="s">&quot;&#39;f&#39;, as in &#39;x = 0f&#39;.&quot;</span><span class="p">)</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">convert_deprecated_floats</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s">&quot;value&quot;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Can&#39;t slice with nothing&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">value</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;f&#39;</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">-</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">__index__</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">index</span>
+
+<div class="viewcode-block" id="extract_index"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.extract_index">[docs]</a><span class="k">def</span> <span class="nf">extract_index</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                  <span class="n">tol</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get integer indices for slice parts</span>
+
+<span class="sd">    If start, stop, or step are strings, they are either cast to</span>
+<span class="sd">    integers or used for a float lookup if they have a trailing &#39;f&#39;.</span>
+
+<span class="sd">    An example float lookup is::</span>
+<span class="sd">        &gt;&gt;&gt; [0.1, 0.2, 0.3, 0.4, 0.5, 0.6][&#39;0.2f:0.6f:2&#39;]</span>
+<span class="sd">        [0.2, 0.4, 0.6]</span>
+
+<span class="sd">    The rules for float lookup endpoints are:</span>
+<span class="sd">        - The slice will never include an element whose value in arr</span>
+<span class="sd">          is &lt; start (or &gt; if the slice is backward)</span>
+<span class="sd">        - The slice will never include an element whose value in arr</span>
+<span class="sd">          is &gt; stop (or &lt; if the slice is backward)</span>
+<span class="sd">        - !! The slice WILL INCLUDE stop if you don&#39;t change endpoint.</span>
+<span class="sd">          This is different from normal slicing, but</span>
+<span class="sd">          it&#39;s more natural when specifying a slice as a float.</span>
+<span class="sd">          To this end, an epsilon tolerance can be given to</span>
+<span class="sd">          determine what&#39;s close enough.</span>
+<span class="sd">        - TODO: implement floating point steps, this is tricky</span>
+<span class="sd">          since arr need not be uniformly spaced, so step is</span>
+<span class="sd">          ambiguous in this case</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        arr (ndarray): filled with floats to do the lookup</span>
+<span class="sd">        start (None, int, str): like slice().start</span>
+<span class="sd">        stop (None, int, str): like slice().stop</span>
+<span class="sd">        step (None, int): like slice().step</span>
+<span class="sd">        endpoint (bool): iff True then include stop in the slice.</span>
+<span class="sd">            Set to False to get python slicing symantics when it</span>
+<span class="sd">            comes to excluding stop, but fair warning, python</span>
+<span class="sd">            symantics feel awkward here. Consider the case</span>
+<span class="sd">            [0.1, 0.2, 0.3][:0.25]. If you think this should include</span>
+<span class="sd">            0.2, then leave keep endpoint=True.</span>
+<span class="sd">        tol (int): number of machine epsilons to consider</span>
+<span class="sd">            &quot;close enough&quot;</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        start, stop, step after floating point vals have been</span>
+<span class="sd">        converted to integers</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">float_err_msg</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;Slicing by floats is no longer supported. If you &quot;</span>
+                     <span class="s">&quot;want to slice by location, suffix the value with &quot;</span>
+                     <span class="s">&quot;&#39;f&#39;, as in &#39;x = 0f&#39;.&quot;</span><span class="p">)</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">epsilon</span> <span class="o">=</span> <span class="n">tol</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">eps</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="c"># array is probably of type numpy.int*</span>
+        <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+    <span class="n">_step</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">step</span> <span class="ow">is</span> <span class="bp">None</span> <span class="k">else</span> <span class="n">step</span>
+    <span class="n">epsilon_step</span> <span class="o">=</span> <span class="n">epsilon</span> <span class="k">if</span> <span class="n">_step</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="n">epsilon</span>
+
+    <span class="n">start</span> <span class="o">=</span> <span class="n">convert_deprecated_floats</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="s">&quot;start&quot;</span><span class="p">)</span>
+    <span class="n">stop</span> <span class="o">=</span> <span class="n">convert_deprecated_floats</span><span class="p">(</span><span class="n">stop</span><span class="p">,</span> <span class="s">&quot;stop&quot;</span><span class="p">)</span>
+
+    <span class="c"># print(&quot;?!? |{0}|  |{1}|&quot;.format(start, stop))</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">start</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">start</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">elif</span> <span class="n">start</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;f&#39;</span><span class="p">:</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">start</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">diff</span> <span class="o">=</span> <span class="n">arr</span> <span class="o">-</span> <span class="n">start</span> <span class="o">+</span> <span class="n">epsilon_step</span>
+            <span class="k">if</span> <span class="n">_step</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_less_equal</span><span class="p">(</span><span class="n">diff</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_greater_equal</span><span class="p">(</span><span class="n">diff</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c"># start value is past the wrong end of the array</span>
+                <span class="k">if</span> <span class="n">_step</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">start</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c"># start = -len(arr) - 1</span>
+                    <span class="c"># having a value &lt; -len(arr) won&#39;t play</span>
+                    <span class="c"># nice with make_fwd_slice, but in this</span>
+                    <span class="c"># case, the slice will have no data, so...</span>
+                    <span class="k">return</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">step</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">start</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">diff</span><span class="p">)))</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">stop</span> <span class="o">=</span> <span class="n">stop</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">stop</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">stop</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">elif</span> <span class="n">stop</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;f&#39;</span><span class="p">:</span>
+            <span class="n">stop</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">stop</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">diff</span> <span class="o">=</span> <span class="n">arr</span> <span class="o">-</span> <span class="n">stop</span> <span class="o">-</span> <span class="n">epsilon_step</span>
+            <span class="k">if</span> <span class="n">_step</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_greater_equal</span><span class="p">(</span><span class="n">diff</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="c"># stop value is past the wong end of the array</span>
+                    <span class="n">stop</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">stop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">diff</span><span class="p">)))</span>
+                    <span class="k">if</span> <span class="n">endpoint</span><span class="p">:</span>
+                        <span class="n">stop</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_less_equal</span><span class="p">(</span><span class="n">diff</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="c"># stop value is past the wrong end of the array</span>
+                    <span class="n">stop</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">stop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">diff</span><span class="p">)))</span>
+                    <span class="k">if</span> <span class="n">endpoint</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">stop</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="n">stop</span> <span class="o">-=</span> <span class="mi">1</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="c"># 0 - 1 == -1 which would wrap to the end of</span>
+                            <span class="c"># of the array... instead, just make it None</span>
+                            <span class="n">stop</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="c"># turn start, stop, step into indices</span>
+    <span class="n">sss</span> <span class="o">=</span> <span class="p">[</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sss</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">string_types</span><span class="p">):</span>
+            <span class="n">sss</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sss</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">__index__</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">sss</span>
+</div>
+<span class="k">def</span> <span class="nf">_expand_newaxis</span><span class="p">(</span><span class="n">arrs</span><span class="p">,</span> <span class="n">slices</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">sl</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">slices</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">sl</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="s">&quot;None&quot;</span><span class="p">,</span> <span class="s">&quot;newaxis&quot;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arrs</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">slices</span><span class="p">):</span>
+                <span class="n">arrs</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+            <span class="n">slices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span>
+    <span class="k">return</span> <span class="n">arrs</span><span class="p">,</span> <span class="n">slices</span>
+
+<div class="viewcode-block" id="to_slices"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.to_slices">[docs]</a><span class="k">def</span> <span class="nf">to_slices</span><span class="p">(</span><span class="n">arrs</span><span class="p">,</span> <span class="n">slices</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Wraps :py:func:`to_slice` for multiple arrays / slices</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        arrs (list, None): list of arrays for float lookups, must be</span>
+<span class="sd">            the same length as s.split(&#39;,&#39;). If all slices are by</span>
+<span class="sd">            index, then `arrs` can be `None`.</span>
+<span class="sd">        slices (list, str): list of things that</span>
+<span class="sd">            :py:func:`viscid.vutil.str2slice` understands, or a comma</span>
+<span class="sd">            separated string of slices</span>
+<span class="sd">        endpoint (bool): passed to :py:func:`extract_index` if needed</span>
+<span class="sd">        tol (int): passed to :py:func:`extract_index` if needed</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple of slice objects</span>
+
+<span class="sd">    See Also:</span>
+<span class="sd">        * :py:func:`to_slice`</span>
+<span class="sd">        * :py:func:`extract_index`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">slices</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">slices</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+        <span class="n">slices</span> <span class="o">=</span> <span class="n">slices</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">slices</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;To wrap a single slice use vutil.to_slice(...)&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">arrs</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">arrs</span> <span class="o">=</span> <span class="p">[</span><span class="bp">None</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">slices</span><span class="p">)</span>
+
+    <span class="n">arrs</span><span class="p">,</span> <span class="n">slices</span> <span class="o">=</span> <span class="n">_expand_newaxis</span><span class="p">(</span><span class="n">arrs</span><span class="p">,</span> <span class="n">slices</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arrs</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">slices</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;len(arrs) must == len(slices):: {0} {1}&quot;</span>
+                         <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arrs</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">slices</span><span class="p">)))</span>
+
+    <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">arr</span><span class="p">,</span> <span class="n">slcstr</span> <span class="ow">in</span> <span class="n">izip</span><span class="p">(</span><span class="n">arrs</span><span class="p">,</span> <span class="n">slices</span><span class="p">):</span>
+        <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">to_slice</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">slcstr</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="n">tol</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="to_slice"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.to_slice">[docs]</a><span class="k">def</span> <span class="nf">to_slice</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convert anything describing a slice to a slice object</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        arr (array): Array that you&#39;re going to slice if you specify any</span>
+<span class="sd">            parts of the slice by value. If all slices are by index,</span>
+<span class="sd">            `arr` can be `None`.</span>
+<span class="sd">        s (int, str, slice): Something that can be turned into a slice.</span>
+<span class="sd">            Ints are returned as-is. Slices and strings are parsed to</span>
+<span class="sd">            see if they contain indices, or values. Values are strings</span>
+<span class="sd">            that contain a number followed by an &#39;f&#39;. Refer to</span>
+<span class="sd">            :py:func:`extract_index` for the slice-by-value</span>
+<span class="sd">            semantics.</span>
+<span class="sd">        endpoint (bool): passed to :py:func:`extract_index` if</span>
+<span class="sd">            needed</span>
+<span class="sd">        tol (int): passed to :py:func:`extract_index` if</span>
+<span class="sd">            needed</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        slice object or int</span>
+
+<span class="sd">    See Also:</span>
+<span class="sd">        * :py:func:`extract_index`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c"># kill whitespace</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s">&quot;__index__&quot;</span><span class="p">):</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">s</span>
+    <span class="k">elif</span> <span class="n">s</span> <span class="ow">in</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="s">&quot;newaxis&quot;</span><span class="p">,</span> <span class="s">&quot;None&quot;</span><span class="p">]:</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
+            <span class="n">slclst</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">stop</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">step</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">string_types</span><span class="p">):</span>
+            <span class="c"># kill whitespace</span>
+            <span class="n">slclst</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;:&quot;</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">s</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                    <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span>
+            <span class="n">slclst</span> <span class="o">=</span> <span class="n">s</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">slclst</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;slices can have at most start, stop, step:&quot;</span>
+                             <span class="s">&quot;{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+        <span class="c"># sss -&gt; start step step</span>
+
+        <span class="k">if</span> <span class="n">arr</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">slclst</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">slclst</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="bp">None</span> <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="bp">None</span> <span class="k">else</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">slclst</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">slclst</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="n">_closest_index</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">slclst</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sss</span> <span class="o">=</span> <span class="n">extract_index</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="o">*</span><span class="n">slclst</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="n">endpoint</span><span class="p">,</span>
+                                <span class="n">tol</span><span class="o">=</span><span class="n">tol</span><span class="p">)</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="o">*</span><span class="n">sss</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ret</span>
+</div>
+<div class="viewcode-block" id="make_slice_inclusive"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.make_slice_inclusive">[docs]</a><span class="k">def</span> <span class="nf">make_slice_inclusive</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Extend the end of a slice by 1 element</span>
+
+<span class="sd">    Chances are you don&#39;t want to use this function.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        start (int, None): same as a slice.start</span>
+<span class="sd">        stop (int, None): same as a slice.stop</span>
+<span class="sd">        step (int, None): same as a slice.step</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (start, stop, step) To be given to slice()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">stop</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span>
+
+    <span class="k">if</span> <span class="n">step</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">step</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">stop</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">stop</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">stop</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">stop</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">stop</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">stop</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span>
+</div>
+<div class="viewcode-block" id="slice_globbed_filenames"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.slice_globbed_filenames">[docs]</a><span class="k">def</span> <span class="nf">slice_globbed_filenames</span><span class="p">(</span><span class="n">glob_pattern</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Apply a slice to a glob pattern</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        Slice by value works by adding an &#39;f&#39; to a value, as like the</span>
+<span class="sd">        rest of Viscid.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        glob_pattern (str): A string</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list of filenames</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        If a directory contains files,</span>
+
+<span class="sd">            file.010.txt  file.020.txt  file.030.txt  file.040.txt</span>
+
+<span class="sd">        then sliced globs can look like</span>
+
+<span class="sd">        &gt;&gt;&gt; expand_glob_slice(&quot;f*.[:2].txt&quot;)</span>
+<span class="sd">        [&quot;file.010.txt&quot;, &quot;file.020.txt&quot;]</span>
+
+<span class="sd">        &gt;&gt;&gt; expand_glob_slice(&quot;f*.[10.0f::2].txt&quot;)</span>
+<span class="sd">        [&quot;file.010.txt&quot;, &quot;file.030.txt&quot;]</span>
+
+<span class="sd">        &gt;&gt;&gt; expand_glob_slice(&quot;f*.[20f:2].txt&quot;)</span>
+<span class="sd">        [&quot;file.020.txt&quot;, &quot;file.040.txt&quot;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">glob_pattern</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expandvars</span><span class="p">(</span><span class="n">glob_pattern</span><span class="p">))</span>
+    <span class="n">glob_pattern</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">glob_pattern</span><span class="p">)</span>
+
+    <span class="c"># construct a regex to match the results</span>
+    <span class="c"># verify glob pattern has only one</span>
+    <span class="n">number_re</span> <span class="o">=</span> <span class="s">r&quot;(?:[-+]?[0-9]*\.?[0-9]+f?|[-+]?[0-9+])&quot;</span>
+    <span class="n">slc_re</span> <span class="o">=</span> <span class="s">r&quot;\[({0})?(:({0})?){{0,2}}\]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">number_re</span><span class="p">)</span>
+    <span class="n">n_slices</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">slc_re</span><span class="p">,</span> <span class="n">glob_pattern</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">n_slices</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">viscid</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Multiple filename slices found, only using the &quot;</span>
+                           <span class="s">&quot;first.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">n_slices</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">slc_re</span><span class="p">,</span> <span class="n">glob_pattern</span><span class="p">)</span>
+        <span class="n">slcstr</span> <span class="o">=</span> <span class="n">glob_pattern</span><span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">edited_glob</span> <span class="o">=</span> <span class="n">glob_pattern</span><span class="p">[:</span><span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">()]</span> <span class="o">+</span> <span class="s">&quot;*&quot;</span> <span class="o">+</span> <span class="n">glob_pattern</span><span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">():]</span>
+        <span class="n">res_re</span> <span class="o">=</span> <span class="n">glob_pattern</span><span class="p">[:</span><span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">()]</span> <span class="o">+</span> <span class="s">&quot;TSLICE&quot;</span> <span class="o">+</span> <span class="n">glob_pattern</span><span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">():]</span>
+        <span class="n">res_re</span> <span class="o">=</span> <span class="n">fnmatch</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">res_re</span><span class="p">)</span>
+        <span class="n">res_re</span> <span class="o">=</span> <span class="n">res_re</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;TSLICE&quot;</span><span class="p">,</span> <span class="s">r&quot;(?P&lt;TSLICE&gt;.*?)&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">edited_glob</span> <span class="o">=</span> <span class="n">glob_pattern</span>
+        <span class="n">slcstr</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+
+    <span class="n">fnames</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="n">edited_glob</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">n_slices</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">fnames</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s">&quot;the glob {0} matched no files&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">edited_glob</span><span class="p">))</span>
+        <span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">res_re</span><span class="p">,</span> <span class="n">fn</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">&#39;TSLICE&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">fnames</span><span class="p">]</span>
+        <span class="n">fnames</span> <span class="o">=</span> <span class="p">[</span><span class="n">fn</span> <span class="k">for</span> <span class="n">fn</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">fnames</span><span class="p">,</span> <span class="n">times</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">))]</span>
+        <span class="n">times</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="n">slc</span> <span class="o">=</span> <span class="n">to_slice</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">slcstr</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="bp">None</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">fnames</span><span class="p">)</span>
+        <span class="n">slc</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fnames</span><span class="p">[</span><span class="n">slc</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="value_is_float_not_int"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.value_is_float_not_int">[docs]</a><span class="k">def</span> <span class="nf">value_is_float_not_int</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return if value is a float and not an int&quot;&quot;&quot;</span>
+    <span class="c"># this is klugy and only needed to display deprecation warnings</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="convert_deprecated_floats"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.convert_deprecated_floats">[docs]</a><span class="k">def</span> <span class="nf">convert_deprecated_floats</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">varname</span><span class="o">=</span><span class="s">&quot;value&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">value_is_float_not_int</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+        <span class="c"># TODO: eventually, a ValueError should be raised here</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;DEPRECATION...</span><span class="se">\n</span><span class="s">&quot;</span>
+             <span class="s">&quot;Slicing by float is deprecated. The slice by value syntax is </span><span class="se">\n</span><span class="s">&quot;</span>
+             <span class="s">&quot;now a string that has a trailing &#39;f&#39;, as in &#39;x=0f&#39; [{0} = {1}]&quot;</span>
+             <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">varname</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="n">viscid</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="s">&quot;{0}f&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">value</span>
+</div>
+<div class="viewcode-block" id="prepare_lines"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.prepare_lines">[docs]</a><span class="k">def</span> <span class="nf">prepare_lines</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">do_connections</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Concatenate and standardize a list of lines</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        lines (list): Must be a list of 3xN or 4xN ndarrays of xyz(s)</span>
+<span class="sd">            data for N points along the line. N need not be the same</span>
+<span class="sd">            for all lines. Can alse be 6xN such that lines[:][3:, :]</span>
+<span class="sd">            are interpreted as rgb colors</span>
+<span class="sd">        scalars (ndarray, list): Can have shape 1xN for a single scalar</span>
+<span class="sd">            or 3xN for an rgb color for each point. If the shape is</span>
+<span class="sd">            1xNlines, the scalar is broadcast so the whole line gets</span>
+<span class="sd">            the same value, and likewise for 3xNlines and rgb colors.</span>
+<span class="sd">            Can also be a list of hex color (#ffffff) strings.</span>
+<span class="sd">            Otherwise, scalars is reshaped to -1xN.</span>
+<span class="sd">        do_connections (bool): Whether or not to make connections array</span>
+<span class="sd">        other (dict): a dictionary of other arrays that should be</span>
+<span class="sd">            reshaped and the like the same way scalars is</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (vertices, scalars, connections, other)</span>
+
+<span class="sd">        * vertices (ndarray): 3xN array of N xyz points. N is the sum</span>
+<span class="sd">            of the lengths of all the lines</span>
+<span class="sd">        * scalars (ndarray): N array of scalars, 3xN array of uint8</span>
+<span class="sd">            rgb values, or None</span>
+<span class="sd">        * connections (ndarray): Nx2 array of ints (indices along</span>
+<span class="sd">            axis 1 of vertices) describing the forward and backward</span>
+<span class="sd">            connectedness of the lines, or None</span>
+<span class="sd">        * other (dict): a dict of N length arrays</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If rgb data is not in a valid range or the shape</span>
+<span class="sd">            of scalars is not understood</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nlines</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+    <span class="n">npts</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">]</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">npts</span><span class="p">)</span>
+    <span class="n">first_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">npts</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">vertices</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">]</span>
+    <span class="n">vertices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">vertices</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">scalars</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">viscid</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Overriding line scalars with scalars kwarg&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">scalars</span> <span class="o">=</span> <span class="n">vertices</span><span class="p">[</span><span class="mi">3</span><span class="p">:,</span> <span class="p">:]</span>
+        <span class="n">vertices</span> <span class="o">=</span> <span class="n">vertices</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span>
+
+    <span class="k">if</span> <span class="n">scalars</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scalars</span><span class="p">,</span> <span class="n">viscid</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">Field</span><span class="p">):</span>
+            <span class="n">scalars</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">interp_trilin</span><span class="p">(</span><span class="n">scalars</span><span class="p">,</span> <span class="n">vertices</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">scalars</span><span class="o">.</span><span class="n">size</span> <span class="o">!=</span> <span class="n">N</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Scalars was not a scalar field&quot;</span><span class="p">)</span>
+
+        <span class="n">scalars</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">scalars</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">scalars</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">scalars</span> <span class="o">=</span> <span class="n">scalars</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">scalars</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nlines</span><span class="p">)</span> <span class="ow">or</span> <span class="n">scalars</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">nlines</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="c"># one scalar for each line, so broadcast it</span>
+            <span class="n">scalars</span> <span class="o">=</span> <span class="n">scalars</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nlines</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">scalars</span> <span class="o">=</span> <span class="p">[</span><span class="n">scalars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">ni</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ni</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">npts</span><span class="p">)]</span>
+            <span class="n">scalars</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">scalars</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">scalars</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="n">scalars</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+            <span class="c"># catch these so they&#39;re not interpreted as colors if</span>
+            <span class="c"># nlines == 1 and N == 3; ie. 1 line with 3 points</span>
+            <span class="n">scalars</span> <span class="o">=</span> <span class="n">scalars</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">scalars</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">nlines</span><span class="p">)</span> <span class="ow">or</span> <span class="n">scalars</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">nlines</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+            <span class="c"># one rgb color for each line, so broadcast it</span>
+            <span class="k">if</span> <span class="n">scalars</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">nlines</span><span class="p">):</span>
+                <span class="n">scalars</span> <span class="o">=</span> <span class="n">scalars</span><span class="o">.</span><span class="n">T</span>
+            <span class="n">colors</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ni</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">npts</span><span class="p">):</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="n">scalars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">ni</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+            <span class="n">scalars</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">scalars</span> <span class="o">=</span> <span class="n">scalars</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">scalars</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s">&#39;S&#39;</span><span class="p">:</span>
+            <span class="c"># translate hex colors (#ff00ff) into rgb values</span>
+            <span class="n">scalars</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">char</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="n">scalars</span><span class="p">,</span> <span class="s">&#39;#&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">&#39;S6&#39;</span><span class="p">)</span>
+            <span class="n">scalars</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">char</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="n">scalars</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+            <span class="n">scalars</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">char</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">scalars</span><span class="p">,</span> <span class="s">&#39;hex&#39;</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s">&#39;u1&#39;</span><span class="p">)</span>
+            <span class="n">scalars</span> <span class="o">=</span> <span class="n">scalars</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+        <span class="k">elif</span> <span class="n">scalars</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c"># normal scalars</span>
+            <span class="n">scalars</span> <span class="o">=</span> <span class="n">scalars</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">scalars</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="c"># The scalars encode rgb data, standardize the result to a</span>
+            <span class="c"># 3xN ndarray of 1 byte unsigned ints (chars)</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">scalars</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">scalars</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">scalars</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span> <span class="o">*</span> <span class="n">scalars</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">&#39;u1&#39;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">scalars</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">scalars</span> <span class="o">&lt;</span> <span class="mi">256</span><span class="p">):</span>
+                <span class="n">scalars</span> <span class="o">=</span> <span class="n">scalars</span><span class="o">.</span><span class="n">round</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">&#39;u1&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Rgb data should be in range [0, 1] or &quot;</span>
+                                 <span class="s">&quot;[0, 255], range given is [{0}, {1}]&quot;</span>
+                                 <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">scalars</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">scalars</span><span class="p">)))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Scalars should either be a number, or set of &quot;</span>
+                             <span class="s">&quot;rgb values, shape is {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">scalars</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+
+    <span class="c"># broadcast / reshape additional arrays given in other</span>
+    <span class="k">if</span> <span class="n">other</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">other</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">arr</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">pass</span>
+            <span class="k">elif</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nlines</span><span class="p">)</span> <span class="ow">or</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">nlines</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nlines</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">ni</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ni</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">npts</span><span class="p">)]</span>
+                <span class="n">other</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">other</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">viscid</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Unknown dimension, dropping array {0}&quot;</span>
+                                       <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">do_connections</span><span class="p">:</span>
+        <span class="n">connections</span> <span class="o">=</span> <span class="p">[</span><span class="bp">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">nlines</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ni</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">npts</span><span class="p">):</span>
+            <span class="c"># i0 is the index of the first point of the i&#39;th line in lines</span>
+            <span class="n">i0</span> <span class="o">=</span> <span class="n">first_idx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">connections</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">i0</span><span class="p">,</span> <span class="n">i0</span> <span class="o">+</span> <span class="n">ni</span> <span class="o">-</span> <span class="mf">1.5</span><span class="p">),</span>
+                                        <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">i0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i0</span> <span class="o">+</span> <span class="n">ni</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)])</span><span class="o">.</span><span class="n">T</span>
+        <span class="n">connections</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">connections</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">&#39;i&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">connections</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">return</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">scalars</span><span class="p">,</span> <span class="n">connections</span><span class="p">,</span> <span class="n">other</span>
+</div>
+<div class="viewcode-block" id="meshlab_convert"><a class="viewcode-back" href="../../api/viscid.vutil.html#viscid.vutil.meshlab_convert">[docs]</a><span class="k">def</span> <span class="nf">meshlab_convert</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s">&quot;dae&quot;</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Run meshlabserver to convert 3D mesh files</span>
+
+<span class="sd">    Uses `MeshLab &lt;http://meshlab.sourceforge.net/&gt;`_, which is a great</span>
+<span class="sd">    little program for playing with 3D meshes. The best part is that</span>
+<span class="sd">    OS X&#39;s Preview can open the COLLADA (`*.dae`) format. How cool is</span>
+<span class="sd">    that?</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        fname (str): file to convert</span>
+<span class="sd">        fmt (str): extension of result, defaults to COLLADA format</span>
+<span class="sd">        quiet (bool): redirect output to :py:attr:`os.devnull`</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">iname</span> <span class="o">=</span> <span class="n">fname</span>
+    <span class="n">oname</span> <span class="o">=</span> <span class="s">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">iname</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s">&quot;.&quot;</span> <span class="o">+</span> <span class="n">fmt</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">redirect</span> <span class="o">=</span> <span class="s">&quot;&amp;&gt; {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">devnull</span><span class="p">)</span> <span class="k">if</span> <span class="n">quiet</span> <span class="k">else</span> <span class="s">&quot;&quot;</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;meshlabserver -i {0} -o {1} -om vc vn fc fn {2}&quot;</span>
+           <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">iname</span><span class="p">,</span> <span class="n">oname</span><span class="p">,</span> <span class="n">redirect</span><span class="p">))</span>
+    <span class="n">sub</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+
+<span class="c">##</span>
+<span class="c">## EOF</span>
+<span class="c">##</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

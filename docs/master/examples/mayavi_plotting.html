@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3D Plots (Mayavi) &mdash; Viscid 0.95.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.95.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 documentation" href="../index.html" />
+    <link rel="up" title="Examples" href="index.html" />
+    <link rel="next" title="viscid package" href="../api/viscid.html" />
+    <link rel="prev" title="OpenGGCM Examples" href="openggcm.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="#">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../changes.html">ChangeLog</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">3D Plots (Mayavi)</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="d-plots-mayavi">
+<h1>3D Plots (Mayavi)<a class="headerlink" href="#d-plots-mayavi" title="Permalink to this headline">¶</a></h1>
+<p>This best way to explain how to use Mayavi is by example, so here is the plot
+made by <cite>test_mvi.py</cite> along with some code</p>
+<img alt="../_images/mayavi_msphere_sample.png" class="align-center" src="../_images/mayavi_msphere_sample.png" />
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+<span class="sd">&quot;&quot;&quot; Try to convert a Field to a mayavi type and plot</span>
+<span class="sd">streamlines or something &quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">from</span> <span class="nn">viscid_test_common</span> <span class="kn">import</span> <span class="n">sample_dir</span><span class="p">,</span> <span class="n">next_plot_fname</span><span class="p">,</span> <span class="n">CODE_XFAIL</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">mayavi</span> <span class="kn">import</span> <span class="n">mlab</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;XFAIL: Mayavi not installed&quot;</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">CODE_XFAIL</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">viscid</span>
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">vutil</span>
+<span class="kn">from</span> <span class="nn">viscid.plot</span> <span class="kn">import</span> <span class="n">mvi</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s">&quot;Test calc&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;--show&quot;</span><span class="p">,</span> <span class="s">&quot;--plot&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&quot;store_true&quot;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">vutil</span><span class="o">.</span><span class="n">common_argparse</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+
+    <span class="n">f3d</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="n">sample_dir</span> <span class="o">+</span> <span class="s">&#39;/sample_xdmf.3d.[0].xdmf&#39;</span><span class="p">)</span>
+    <span class="n">f_iono</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="n">sample_dir</span> <span class="o">+</span> <span class="s">&quot;/sample_xdmf.iof.[0].xdmf&quot;</span><span class="p">)</span>
+
+    <span class="n">b</span> <span class="o">=</span> <span class="n">f3d</span><span class="p">[</span><span class="s">&quot;b&quot;</span><span class="p">]</span>
+    <span class="n">pp</span> <span class="o">=</span> <span class="n">f3d</span><span class="p">[</span><span class="s">&quot;pp&quot;</span><span class="p">]</span>
+
+    <span class="c"># plot a scalar cut plane of pressure</span>
+    <span class="n">pp_src</span> <span class="o">=</span> <span class="n">mvi</span><span class="o">.</span><span class="n">field2source</span><span class="p">(</span><span class="n">pp</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="s">&#39;node&#39;</span><span class="p">)</span>
+    <span class="n">scp</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">scalar_cut_plane</span><span class="p">(</span><span class="n">pp_src</span><span class="p">,</span> <span class="n">plane_orientation</span><span class="o">=</span><span class="s">&#39;z_axes&#39;</span><span class="p">,</span>
+                                         <span class="n">transparent</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                                         <span class="n">view_controls</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">scp</span><span class="o">.</span><span class="n">implicit_plane</span><span class="o">.</span><span class="n">normal</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">scp</span><span class="o">.</span><span class="n">implicit_plane</span><span class="o">.</span><span class="n">origin</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="c"># i don&#39;t know why this log10 doesn&#39;t seem to work</span>
+    <span class="n">scp</span><span class="o">.</span><span class="n">module_manager</span><span class="o">.</span><span class="n">scalar_lut_manager</span><span class="o">.</span><span class="n">lut</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="s">&#39;log10&#39;</span>
+    <span class="n">scp</span><span class="o">.</span><span class="n">module_manager</span><span class="o">.</span><span class="n">scalar_lut_manager</span><span class="o">.</span><span class="n">lut_mode</span> <span class="o">=</span> <span class="s">&#39;Reds&#39;</span>
+    <span class="n">scp</span><span class="o">.</span><span class="n">module_manager</span><span class="o">.</span><span class="n">scalar_lut_manager</span><span class="o">.</span><span class="n">reverse_lut</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">scp</span><span class="o">.</span><span class="n">module_manager</span><span class="o">.</span><span class="n">scalar_lut_manager</span><span class="o">.</span><span class="n">show_scalar_bar</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="c"># calculate B field lines &amp;&amp; topology in viscid and plot them</span>
+    <span class="n">seeds</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">SphericalPatch</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span>
+                                  <span class="n">nalpha</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">nbeta</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">b_lines</span><span class="p">,</span> <span class="n">topo</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">calc_streamlines</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">seeds</span><span class="p">,</span> <span class="n">ibound</span><span class="o">=</span><span class="mf">3.5</span><span class="p">,</span>
+                                            <span class="n">obound0</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">],</span>
+                                            <span class="n">obound1</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+    <span class="n">mvi</span><span class="o">.</span><span class="n">plot_lines</span><span class="p">(</span><span class="n">b_lines</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="n">viscid</span><span class="o">.</span><span class="n">topology2color</span><span class="p">(</span><span class="n">topo</span><span class="p">))</span>
+
+    <span class="c"># Use Mayavi (VTK) to calculate field lines using an interactive seed</span>
+    <span class="n">b_src</span> <span class="o">=</span> <span class="n">mvi</span><span class="o">.</span><span class="n">field2source</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="s">&#39;node&#39;</span><span class="p">)</span>
+    <span class="n">bsl2</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">streamline</span><span class="p">(</span><span class="n">b_src</span><span class="p">,</span> <span class="n">seedtype</span><span class="o">=</span><span class="s">&#39;sphere&#39;</span><span class="p">,</span>
+                                    <span class="n">integration_direction</span><span class="o">=</span><span class="s">&#39;both&#39;</span><span class="p">,</span>
+                                    <span class="n">seed_resolution</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">bsl2</span><span class="o">.</span><span class="n">stream_tracer</span><span class="o">.</span><span class="n">maximum_propagation</span> <span class="o">=</span> <span class="mf">20.</span>
+    <span class="n">bsl2</span><span class="o">.</span><span class="n">seed</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">bsl2</span><span class="o">.</span><span class="n">seed</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="n">bsl2</span><span class="o">.</span><span class="n">streamline_type</span> <span class="o">=</span> <span class="s">&#39;tube&#39;</span>
+    <span class="n">bsl2</span><span class="o">.</span><span class="n">tube_filter</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">0.03</span>
+    <span class="n">bsl2</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>  <span class="c"># this stop/start was a hack to get something to work?</span>
+    <span class="n">bsl2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">bsl2</span><span class="o">.</span><span class="n">seed</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="c"># Plot the ionosphere too</span>
+    <span class="n">fac_tot</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">*</span> <span class="n">f_iono</span><span class="p">[</span><span class="s">&#39;fac_tot&#39;</span><span class="p">]</span>
+
+    <span class="n">crd_system</span> <span class="o">=</span> <span class="s">&#39;gse&#39;</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">mvi</span><span class="o">.</span><span class="n">plot_ionosphere</span><span class="p">(</span><span class="n">fac_tot</span><span class="p">,</span> <span class="n">crd_system</span><span class="o">=</span><span class="n">crd_system</span><span class="p">,</span> <span class="n">bounding_lat</span><span class="o">=</span><span class="mf">30.0</span><span class="p">,</span>
+                            <span class="n">vmin</span><span class="o">=-</span><span class="mi">300</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">module_manager</span><span class="o">.</span><span class="n">scalar_lut_manager</span><span class="o">.</span><span class="n">lut_mode</span> <span class="o">=</span> <span class="s">&#39;RdBu&#39;</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">module_manager</span><span class="o">.</span><span class="n">scalar_lut_manager</span><span class="o">.</span><span class="n">reverse_lut</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="n">mvi</span><span class="o">.</span><span class="n">plot_blue_marble</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">21.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">45.0</span><span class="p">))</span>
+    <span class="c"># now shade the night side with a transparent black hemisphere</span>
+    <span class="n">mvi</span><span class="o">.</span><span class="n">plot_earth_3d</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">1.01</span><span class="p">,</span> <span class="n">crd_system</span><span class="o">=</span><span class="s">&quot;gse&quot;</span><span class="p">,</span> <span class="n">night_only</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                      <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+    <span class="n">mlab</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">pp_src</span><span class="p">,</span> <span class="n">nb_labels</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">mlab</span><span class="o">.</span><span class="n">orientation_axes</span><span class="p">()</span>
+
+    <span class="n">mvi</span><span class="o">.</span><span class="n">resize</span><span class="p">([</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">800</span><span class="p">])</span>
+    <span class="n">mlab</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">azimuth</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">elevation</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mf">35.0</span><span class="p">,</span> <span class="n">focalpoint</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+    <span class="c"># # Save Figure</span>
+    <span class="c"># print(&quot;saving png&quot;)</span>
+    <span class="c"># mvi.mlab.savefig(&#39;mayavi_msphere_sample.png&#39;)</span>
+    <span class="c"># print(&quot;saving x3d&quot;)</span>
+    <span class="c"># # x3d files can be turned into COLLADA files with meshlab, and</span>
+    <span class="c"># # COLLADA (.dae) files can be opened in OS X&#39;s preview</span>
+    <span class="c"># #</span>
+    <span class="c"># # IMPORTANT: for some reason, using bounding_lat in mvi.plot_ionosphere</span>
+    <span class="c"># #            causes a segfault when saving x3d files</span>
+    <span class="c"># #</span>
+    <span class="c"># mvi.mlab.savefig(&#39;mayavi_msphere_sample.x3d&#39;)</span>
+    <span class="c"># print(&quot;done&quot;)</span>
+
+    <span class="n">mvi</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">next_plot_fname</span><span class="p">(</span><span class="n">__file__</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">show</span><span class="p">:</span>
+        <span class="n">mlab</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+
+<span class="c">##</span>
+<span class="c">## EOF</span>
+<span class="c">##</span>
+</pre></div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/examples/mayavi_plotting.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

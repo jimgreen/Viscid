@@ -1,0 +1,552 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Plot Options &mdash; Viscid 0.95.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.95.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 documentation" href="index.html" />
+    <link rel="next" title="Command Line Utilities" href="command_line.html" />
+    <link rel="prev" title="Useful Functions" href="functions.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="#">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">ChangeLog</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Useful Functions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Plot Options</a><ul>
+<li><a class="reference internal" href="#d-plots">2-D Plots</a></li>
+<li><a class="reference internal" href="#d-map-plots">2-D Map Plots</a></li>
+<li><a class="reference internal" href="#d-color-plots">1-D Color Plots</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="plot-options">
+<h1>Plot Options<a class="headerlink" href="#plot-options" title="Permalink to this headline">¶</a></h1>
+<p>Plot options are given to <a class="reference internal" href="api/viscid.plot.mpl.html#viscid.plot.mpl.plot" title="viscid.plot.mpl.plot"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mpl.plot()</span></code></a> as either keyword arguments, or as a string called <cite>plot_opts</cite>. For the various plot types, what follows should be a comprehensive list of the available options.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For all options, supplying no arguments implies one argument with the value True.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Any options that Viscid does not understand are passed to the matplotlib function that actually plots the data (<cite>pyplot.plot</cite>, <cite>pyplot.pcolormesh</cite>, <cite>pyplot.contourf</cite>, etc).</p>
+</div>
+<p>Multiple arguments are given to keywords as a tuple:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;lin&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="s">&#39;gridec&#39;</span><span class="p">:</span> <span class="s">&#39;k&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>All options can be passed as strings with one of two formats. First, the string can be a list of comma separated options with underscore separatod arguments:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">plot_opts</span> <span class="o">=</span> <span class="s">&quot;lin_-1.0_1.0, gridec_k&quot;</span>
+<span class="c"># also, any &#39;=&#39; will be substituted with a &#39;_&#39; to aid readability</span>
+<span class="n">plot_opts</span> <span class="o">=</span> <span class="s">&quot;lin=-1.0_1.0, gridec=k&quot;</span>
+</pre></div>
+</div>
+<p><strong>If</strong> PyYaml is available, plot options can be given between curly brackets using Yaml syntax. Note that the colon must be followed by a space in Yaml syntax.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">plot_opts</span> <span class="o">=</span> <span class="s">&quot;{lin: [-1.0, 1.0], gridec: k}&quot;</span>
+</pre></div>
+</div>
+<p>Here are some options that should work for all functions:</p>
+<table border="1" class="table-striped docutils">
+<colgroup>
+<col width="13%" />
+<col width="21%" />
+<col width="66%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Arguments</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>clim</td>
+<td>vmin, [vmax]</td>
+<td>Set min and max values for the data scale</td>
+</tr>
+<tr class="row-odd"><td>vmin</td>
+<td>int</td>
+<td>Minimum value for the data range</td>
+</tr>
+<tr class="row-even"><td>vmax</td>
+<td>int</td>
+<td>Maximum value for the data range</td>
+</tr>
+<tr class="row-odd"><td>lin</td>
+<td>[vmin, [vmax]]</td>
+<td>Shorthand for clim and logscale=0. Min/Max values
+that aren&#8217;t given are found from the data.</td>
+</tr>
+<tr class="row-even"><td>log</td>
+<td>[vmin, [vmax]]</td>
+<td>Shorthand for clim and logscale=1. Min/Max values
+that aren&#8217;t given are found from the data.</td>
+</tr>
+<tr class="row-odd"><td>loglog</td>
+<td>[vmin, [vmax]]</td>
+<td>Same as log, but also use a logscale for the
+coordinates</td>
+</tr>
+<tr class="row-even"><td>logscale</td>
+<td>[bool]</td>
+<td>Use a logarithmic scale for the data</td>
+</tr>
+<tr class="row-odd"><td>symmetric</td>
+<td>[bool]</td>
+<td>Make the data scale symmetric around 0</td>
+</tr>
+<tr class="row-even"><td>norescale</td>
+<td>[bool]</td>
+<td>Do not set limit of the data axis explicitly</td>
+</tr>
+<tr class="row-odd"><td>x</td>
+<td>min, max</td>
+<td>Set axis limits using <code class="xref py py-func docutils literal"><span class="pre">pyplot.set_xlim()</span></code></td>
+</tr>
+<tr class="row-even"><td>y</td>
+<td>min, max</td>
+<td>Set axis limits using <code class="xref py py-func docutils literal"><span class="pre">pyplot.set_ylim()</span></code></td>
+</tr>
+<tr class="row-odd"><td>equalaxis</td>
+<td>[bool]</td>
+<td>Force 1:1 aspect ratio</td>
+</tr>
+<tr class="row-even"><td>scale</td>
+<td>float</td>
+<td>Scale data by some scalar value</td>
+</tr>
+<tr class="row-odd"><td>masknan</td>
+<td>[bool or color]</td>
+<td>Mask out NaN values in data with a given color
+(default: &#8216;y&#8217; for yellow)</td>
+</tr>
+<tr class="row-even"><td>flipplot</td>
+<td>[bool]</td>
+<td>Alias for flip_plot</td>
+</tr>
+<tr class="row-odd"><td>flip_plot</td>
+<td>[bool]</td>
+<td>Flip the horizontal and vertical axes</td>
+</tr>
+<tr class="row-even"><td>nolabels</td>
+<td>[bool]</td>
+<td>Skip applying labels to x/y/cbar axes</td>
+</tr>
+<tr class="row-odd"><td>xlabel</td>
+<td>str</td>
+<td>Specific label for the x axis</td>
+</tr>
+<tr class="row-even"><td>ylabel</td>
+<td>str</td>
+<td>Specific label for the y axis</td>
+</tr>
+<tr class="row-odd"><td>majorfmt</td>
+<td>ticker.Formatter</td>
+<td>Formatter for major axes (x and y)</td>
+</tr>
+<tr class="row-even"><td>minorfmt</td>
+<td>ticker.Formatter</td>
+<td>Formatter for minor axes (x and y)</td>
+</tr>
+<tr class="row-odd"><td>majorloc</td>
+<td>ticker.Locator</td>
+<td>Locator for major axes (x and y)</td>
+</tr>
+<tr class="row-even"><td>minorloc</td>
+<td>ticker.Locator</td>
+<td>Locator for minor axes (x and y)</td>
+</tr>
+<tr class="row-odd"><td>show</td>
+<td>[bool]</td>
+<td>Call <code class="xref py py-func docutils literal"><span class="pre">pyplot.show()</span></code> before returning</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When using lin, if vmin == 0 and vmax is not given, the scale will be symmetric
+about 0. This is a shorthand for the symmetric keyword argument.</p>
+</div>
+<div class="section" id="d-plots">
+<h2>2-D Plots<a class="headerlink" href="#d-plots" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="table-striped docutils">
+<colgroup>
+<col width="13%" />
+<col width="20%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Arguments</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>style</td>
+<td>str</td>
+<td>One of (pcolormesh, pcolor, contour, contourf)</td>
+</tr>
+<tr class="row-odd"><td>levels</td>
+<td>[int or list]</td>
+<td>Number of contours, or list of specific contour
+values (contours only)</td>
+</tr>
+<tr class="row-even"><td>g</td>
+<td>[bool or color]</td>
+<td>Alias for gridec=k or gridec=color</td>
+</tr>
+<tr class="row-odd"><td>gridec</td>
+<td>color</td>
+<td>Color for grid lines (pcolormesh only)</td>
+</tr>
+<tr class="row-even"><td>gridlw</td>
+<td>number</td>
+<td>Line width for grid lines (pcolormesh only)</td>
+</tr>
+<tr class="row-odd"><td>gridaa</td>
+<td>[bool]</td>
+<td>Antialias grid lines (default: True)</td>
+</tr>
+<tr class="row-even"><td>p</td>
+<td>[bool or color]</td>
+<td>Alias for patchec=k or patchec=color</td>
+</tr>
+<tr class="row-odd"><td>patchec</td>
+<td>color</td>
+<td>Color for patch boundaries</td>
+</tr>
+<tr class="row-even"><td>patchlw</td>
+<td>number</td>
+<td>Line width for patch boundaries</td>
+</tr>
+<tr class="row-odd"><td>patchaa</td>
+<td>[bool]</td>
+<td>Antialias patch boundaries (default: True)</td>
+</tr>
+<tr class="row-even"><td>mod</td>
+<td>modx, mody</td>
+<td>Scale coordinates by some scalar value</td>
+</tr>
+<tr class="row-odd"><td>colorbar</td>
+<td>[bool or dict]</td>
+<td>dict of keyword arguments for
+<code class="xref py py-func docutils literal"><span class="pre">pyplot.colorbar()</span></code></td>
+</tr>
+<tr class="row-even"><td>title</td>
+<td>bool or str</td>
+<td>Put a specific title on the plot, or if true, use
+field&#8217;s pretty_name (suppresses cbarlabel if both
+would default to pretty_name)</td>
+</tr>
+<tr class="row-odd"><td>cbarlabel</td>
+<td>str</td>
+<td>Specific label for the color bar</td>
+</tr>
+<tr class="row-even"><td>earth</td>
+<td>[bool]</td>
+<td>Plot a black and white circle for Earth</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="d-map-plots">
+<h2>2-D Map Plots<a class="headerlink" href="#d-map-plots" title="Permalink to this headline">¶</a></h2>
+<p>All options for normal 2-D plots work for map plots too.</p>
+<table border="1" class="table-striped docutils">
+<colgroup>
+<col width="17%" />
+<col width="18%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Arguments</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>projection</td>
+<td>str</td>
+<td>&#8216;polar&#8217; or Basemap projection to use</td>
+</tr>
+<tr class="row-odd"><td>hemisphere</td>
+<td>str</td>
+<td>&#8216;north&#8217; or &#8216;south&#8217;</td>
+</tr>
+<tr class="row-even"><td>drawcoastlines</td>
+<td>[bool]</td>
+<td>If projection is a basemap projection, then draw
+coastlines. Pretty cool, but not actually useful.
+Coastlines do NOT reflect UT time; London is
+always at midnight.</td>
+</tr>
+<tr class="row-odd"><td>lon0</td>
+<td>float</td>
+<td>Center longitude (basemap projections only)</td>
+</tr>
+<tr class="row-even"><td>lat0</td>
+<td>float</td>
+<td>Center latitude (basemap projections only)</td>
+</tr>
+<tr class="row-odd"><td>boundinglat</td>
+<td>float</td>
+<td>Bounding latitude in degrees from the nearest pole
+(not for all projections)</td>
+</tr>
+<tr class="row-even"><td>title</td>
+<td>bool or str</td>
+<td>Put a specific title on the plot, or if true, use
+field&#8217;s pretty_name</td>
+</tr>
+<tr class="row-odd"><td>axgridec</td>
+<td>color</td>
+<td>Color for patch boundaries (use empty string or
+False to turn off axes)</td>
+</tr>
+<tr class="row-even"><td>axgridlw</td>
+<td>number</td>
+<td>Line width for patch boundaries</td>
+</tr>
+<tr class="row-odd"><td>axgridls</td>
+<td>str</td>
+<td>Line style for patch boundaries</td>
+</tr>
+<tr class="row-even"><td>labellat</td>
+<td>[bool or str]</td>
+<td>Alias for label_lat</td>
+</tr>
+<tr class="row-odd"><td>label_lat</td>
+<td>[bool or str]</td>
+<td>Label latitudes at 80, 70, 60 degrees
+with sign indicating northern / southern hemisphere.
+If label_lat is &#8216;from_pole&#8217;, then the labels are 10,
+20, 30 for both hemispheres. Note that basemap
+projections won&#8217;t label latitudes unless they hit the
+edge of the plot.</td>
+</tr>
+<tr class="row-even"><td>label_mlt</td>
+<td>[bool]</td>
+<td>label magnetic local time</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="d-color-plots">
+<h2>1-D Color Plots<a class="headerlink" href="#d-color-plots" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="table-striped docutils">
+<colgroup>
+<col width="13%" />
+<col width="20%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Arguments</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>legend</td>
+<td>[loc]</td>
+<td>call <code class="xref py py-func docutils literal"><span class="pre">pyplot.legend()</span></code></td>
+</tr>
+<tr class="row-odd"><td>label</td>
+<td>str</td>
+<td>Label for the data series</td>
+</tr>
+<tr class="row-even"><td>mod</td>
+<td>modx</td>
+<td>Scale coordinates by some scalar value</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="_sources/plot_options.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

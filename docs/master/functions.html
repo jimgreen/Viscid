@@ -1,0 +1,527 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Useful Functions &mdash; Viscid 0.95.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.95.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 documentation" href="index.html" />
+    <link rel="next" title="Plot Options" href="plot_options.html" />
+    <link rel="prev" title="Custom Behavior (rc file)" href="custom_behavior.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="#">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">ChangeLog</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Useful Functions</a><ul>
+<li><a class="reference internal" href="#fields">Fields</a></li>
+<li><a class="reference internal" href="#calculations">Calculations</a><ul>
+<li><a class="reference internal" href="#streamlines-and-interpolation">Streamlines and Interpolation</a></li>
+<li><a class="reference internal" href="#math">Math</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#plotting">Plotting</a><ul>
+<li><a class="reference internal" href="#general-matplotlib-functions">General Matplotlib Functions</a></li>
+<li><a class="reference internal" href="#d-matplotlib-plots">2D Matplotlib Plots</a></li>
+<li><a class="reference internal" href="#id1">3D Matplotlib Plots</a></li>
+<li><a class="reference internal" href="#d-mayavi-plots">3D Mayavi Plots</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="useful-functions">
+<h1>Useful Functions<a class="headerlink" href="#useful-functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<p>For easy field creation.</p>
+<table border="1" class="table-striped docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.html#viscid.arrays2field" title="viscid.arrays2field"><code class="xref py py-func docutils literal"><span class="pre">viscid.arrays2field()</span></code></a></td>
+<td>Field from arrays for data and coordinates</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.html#viscid.dat2field" title="viscid.dat2field"><code class="xref py py-func docutils literal"><span class="pre">viscid.dat2field()</span></code></a></td>
+<td>Field from data array</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.html#viscid.empty" title="viscid.empty"><code class="xref py py-func docutils literal"><span class="pre">viscid.empty()</span></code></a></td>
+<td>Make an empty field from coordinate arrays</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.html#viscid.zeros" title="viscid.zeros"><code class="xref py py-func docutils literal"><span class="pre">viscid.zeros()</span></code></a></td>
+<td>Make an field of 0s from coordinate arrays</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.html#viscid.ones" title="viscid.ones"><code class="xref py py-func docutils literal"><span class="pre">viscid.ones()</span></code></a></td>
+<td>Make an field of 1s from coordinate arrays</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.html#viscid.empty_like" title="viscid.empty_like"><code class="xref py py-func docutils literal"><span class="pre">viscid.empty_like()</span></code></a></td>
+<td>Make an empty field like another</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.html#viscid.zeros_like" title="viscid.zeros_like"><code class="xref py py-func docutils literal"><span class="pre">viscid.zeros_like()</span></code></a></td>
+<td>Make a field of 1s like another</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.html#viscid.ones_like" title="viscid.ones_like"><code class="xref py py-func docutils literal"><span class="pre">viscid.ones_like()</span></code></a></td>
+<td>Make a field of 0s like another</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="calculations">
+<h2>Calculations<a class="headerlink" href="#calculations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="streamlines-and-interpolation">
+<h3>Streamlines and Interpolation<a class="headerlink" href="#streamlines-and-interpolation" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="table-striped docutils">
+<colgroup>
+<col width="42%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Class</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.html#viscid.calc_streamlines" title="viscid.calc_streamlines"><code class="xref py py-func docutils literal"><span class="pre">viscid.calc_streamlines()</span></code></a></td>
+<td>Calculate streamlines</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.html#viscid.interp_trilin" title="viscid.interp_trilin"><code class="xref py py-func docutils literal"><span class="pre">viscid.interp_trilin()</span></code></a></td>
+<td>Trilinear interpolation</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.html#viscid.interp_nearest" title="viscid.interp_nearest"><code class="xref py py-func docutils literal"><span class="pre">viscid.interp_nearest()</span></code></a></td>
+<td>Nearest neighbor interpolation</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.html#viscid.Point" title="viscid.Point"><code class="xref py py-class docutils literal"><span class="pre">viscid.Point</span></code></a></td>
+<td>Collection of hand picked points</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.html#viscid.Line" title="viscid.Line"><code class="xref py py-class docutils literal"><span class="pre">viscid.Line</span></code></a></td>
+<td>A line between 2 points</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.html#viscid.Plane" title="viscid.Plane"><code class="xref py py-class docutils literal"><span class="pre">viscid.Plane</span></code></a></td>
+<td>A plane difined be an origin and a normal</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.html#viscid.Volume" title="viscid.Volume"><code class="xref py py-class docutils literal"><span class="pre">viscid.Volume</span></code></a></td>
+<td>A Volume of points on a uniform cartesian grid</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.html#viscid.Sphere" title="viscid.Sphere"><code class="xref py py-class docutils literal"><span class="pre">viscid.Sphere</span></code></a></td>
+<td>Points on the surface of a sphere</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.html#viscid.SphericalCap" title="viscid.SphericalCap"><code class="xref py py-class docutils literal"><span class="pre">viscid.SphericalCap</span></code></a></td>
+<td>A cap of points around the pole of a sphere</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.html#viscid.Circle" title="viscid.Circle"><code class="xref py py-class docutils literal"><span class="pre">viscid.Circle</span></code></a></td>
+<td>Just a circle</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.html#viscid.SphericalPatch" title="viscid.SphericalPatch"><code class="xref py py-class docutils literal"><span class="pre">viscid.SphericalPatch</span></code></a></td>
+<td>A rectangular patch on the surface of a sphere</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="math">
+<h3>Math<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h3>
+<p>These functions will by accelerated by Numexpr if it is installed.</p>
+<table border="1" class="table-striped docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="xref py py-func docutils literal"><span class="pre">viscid.add()</span></code></td>
+<td>Add two fields</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-func docutils literal"><span class="pre">viscid.diff()</span></code></td>
+<td>Subtract a field from another</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-func docutils literal"><span class="pre">viscid.mul()</span></code></td>
+<td>Multiply two fields</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-func docutils literal"><span class="pre">viscid.relative_diff()</span></code></td>
+<td>Divide the difference by the magnitude</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-func docutils literal"><span class="pre">viscid.abs_diff()</span></code></td>
+<td>Absolute value of the difference</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-func docutils literal"><span class="pre">viscid.abs_val()</span></code></td>
+<td>Absolute value</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-func docutils literal"><span class="pre">viscid.abs_max()</span></code></td>
+<td>Max of the absolute value</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-func docutils literal"><span class="pre">viscid.abs_min()</span></code></td>
+<td>Min of the absolute value</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-func docutils literal"><span class="pre">viscid.magnitude()</span></code></td>
+<td>Magnitude of a <a class="reference internal" href="api/viscid.field.html#viscid.field.VectorField" title="viscid.field.VectorField"><code class="xref py py-class docutils literal"><span class="pre">viscid.field.VectorField</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-func docutils literal"><span class="pre">viscid.dot()</span></code></td>
+<td>Dot product of two <a class="reference internal" href="api/viscid.field.html#viscid.field.VectorField" title="viscid.field.VectorField"><code class="xref py py-class docutils literal"><span class="pre">viscid.field.VectorField</span></code></a></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-func docutils literal"><span class="pre">viscid.cross()</span></code></td>
+<td>Cross product of two <a class="reference internal" href="api/viscid.field.html#viscid.field.VectorField" title="viscid.field.VectorField"><code class="xref py py-class docutils literal"><span class="pre">viscid.field.VectorField</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-func docutils literal"><span class="pre">viscid.div()</span></code></td>
+<td>Divergence of a <a class="reference internal" href="api/viscid.field.html#viscid.field.VectorField" title="viscid.field.VectorField"><code class="xref py py-class docutils literal"><span class="pre">viscid.field.VectorField</span></code></a></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-func docutils literal"><span class="pre">viscid.curl()</span></code></td>
+<td>Curl of a <a class="reference internal" href="api/viscid.field.html#viscid.field.VectorField" title="viscid.field.VectorField"><code class="xref py py-class docutils literal"><span class="pre">viscid.field.VectorField</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-func docutils literal"><span class="pre">viscid.project()</span></code></td>
+<td>Project one <a class="reference internal" href="api/viscid.field.html#viscid.field.VectorField" title="viscid.field.VectorField"><code class="xref py py-class docutils literal"><span class="pre">viscid.field.VectorField</span></code></a> onto
+another</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.html#viscid.integrate_along_lines" title="viscid.integrate_along_lines"><code class="xref py py-func docutils literal"><span class="pre">viscid.integrate_along_lines()</span></code></a></td>
+<td>Integrate a field along streamlines</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.html#viscid.calc_psi" title="viscid.calc_psi"><code class="xref py py-func docutils literal"><span class="pre">viscid.calc_psi()</span></code></a></td>
+<td>Calculate a 2D flux function</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.html#viscid.calc_beta" title="viscid.calc_beta"><code class="xref py py-func docutils literal"><span class="pre">viscid.calc_beta()</span></code></a></td>
+<td>Calculate plasma beta</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="plotting">
+<h2>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="general-matplotlib-functions">
+<h3>General Matplotlib Functions<a class="headerlink" href="#general-matplotlib-functions" title="Permalink to this headline">¶</a></h3>
+<p>These functions wrap Matplotlib with useful boilerplate type hacks.</p>
+<table border="1" class="table-striped docutils">
+<colgroup>
+<col width="45%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.plot.mpl.html#viscid.plot.mpl.auto_adjust_subplots" title="viscid.plot.mpl.auto_adjust_subplots"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mpl.auto_adjust_subplots()</span></code></a></td>
+<td>Use Matplotlib&#8217;s tight layout with some necessary hacks</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="d-matplotlib-plots">
+<h3>2D Matplotlib Plots<a class="headerlink" href="#d-matplotlib-plots" title="Permalink to this headline">¶</a></h3>
+<p>These functions wrap Matplotlib with useful boilerplate type hacks.</p>
+<table border="1" class="table-striped docutils">
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.plot.mpl.html#viscid.plot.mpl.plot" title="viscid.plot.mpl.plot"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mpl.plot()</span></code></a></td>
+<td>Meta function for plotting <a class="reference internal" href="api/viscid.field.html#viscid.field.Field" title="viscid.field.Field"><code class="xref py py-class docutils literal"><span class="pre">viscid.field.Field</span></code></a>
+objects. This one will automatically delegate to
+<a class="reference internal" href="api/viscid.plot.mpl.html#viscid.plot.mpl.plot1d_field" title="viscid.plot.mpl.plot1d_field"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mpl.plot1d_field()</span></code></a>,
+<a class="reference internal" href="api/viscid.plot.mpl.html#viscid.plot.mpl.plot2d_field" title="viscid.plot.mpl.plot2d_field"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mpl.plot2d_field()</span></code></a>, or
+<a class="reference internal" href="api/viscid.plot.mpl.html#viscid.plot.mpl.plot2d_mapfield" title="viscid.plot.mpl.plot2d_mapfield"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mpl.plot2d_mapfield()</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.plot.mpl.html#viscid.plot.mpl.plot1d_field" title="viscid.plot.mpl.plot1d_field"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mpl.plot1d_field()</span></code></a></td>
+<td>Line plots of a 1D field.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.plot.mpl.html#viscid.plot.mpl.plot2d_field" title="viscid.plot.mpl.plot2d_field"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mpl.plot2d_field()</span></code></a></td>
+<td>Colored plots (pcolormesh, contour, contourf) of 2D fields</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.plot.mpl.html#viscid.plot.mpl.plot2d_mapfield" title="viscid.plot.mpl.plot2d_mapfield"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mpl.plot2d_mapfield()</span></code></a></td>
+<td>Plots on the surface of a sphere (like ionosphere plots)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.plot.mpl.html#viscid.plot.mpl.plot2d_lines" title="viscid.plot.mpl.plot2d_lines"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mpl.plot2d_lines()</span></code></a></td>
+<td>Plot a list of colored lines parallel-projected into 2D</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.plot.mpl.html#viscid.plot.mpl.plot2d_quiver" title="viscid.plot.mpl.plot2d_quiver"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mpl.plot2d_quiver()</span></code></a></td>
+<td>Plot a <a class="reference internal" href="api/viscid.field.html#viscid.field.VectorField" title="viscid.field.VectorField"><code class="xref py py-class docutils literal"><span class="pre">viscid.field.VectorField</span></code></a> using
+Matplotlib&#8217;s quivers.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.plot.mpl.html#viscid.plot.mpl.streamplot" title="viscid.plot.mpl.streamplot"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mpl.streamplot()</span></code></a></td>
+<td>Plot a <a class="reference internal" href="api/viscid.field.html#viscid.field.VectorField" title="viscid.field.VectorField"><code class="xref py py-class docutils literal"><span class="pre">viscid.field.VectorField</span></code></a> using
+Matplotlib&#8217;s streamplot.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.plot.mpl.html#viscid.plot.mpl.plot_earth" title="viscid.plot.mpl.plot_earth"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mpl.plot_earth()</span></code></a></td>
+<td>Plot an Earth with black for nightside and white for dayside</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id1">
+<h3>3D Matplotlib Plots<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>These functions wrap Matplotlib in 3D with useful boilerplate type hacks.</p>
+<table border="1" class="table-striped docutils">
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.plot.mpl.html#viscid.plot.mpl.plot3d_lines" title="viscid.plot.mpl.plot3d_lines"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mpl.plot3d_lines()</span></code></a></td>
+<td>Plot a list of colored lines on 3D axes</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.plot.mpl.html#viscid.plot.mpl.scatter_3d" title="viscid.plot.mpl.scatter_3d"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mpl.scatter_3d()</span></code></a></td>
+<td>Plot a glyphs on 3D axes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="d-mayavi-plots">
+<h3>3D Mayavi Plots<a class="headerlink" href="#d-mayavi-plots" title="Permalink to this headline">¶</a></h3>
+<p>These functions wrap Mayavi with useful boilerplate type hacks.</p>
+<table border="1" class="table-striped docutils">
+<colgroup>
+<col width="42%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.plot.mvi.html#viscid.plot.mvi.add_source" title="viscid.plot.mvi.add_source"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mvi.add_source()</span></code></a></td>
+<td>Given a VTKDataSource, add it to a figure</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.plot.mvi.html#viscid.plot.mvi.add_lines" title="viscid.plot.mvi.add_lines"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mvi.add_lines()</span></code></a></td>
+<td>Given a list of lines, add them to a figure as a data source</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.plot.mvi.html#viscid.plot.mvi.add_lines" title="viscid.plot.mvi.add_lines"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mvi.add_lines()</span></code></a></td>
+<td>Given a <a class="reference internal" href="api/viscid.field.html#viscid.field.Field" title="viscid.field.Field"><code class="xref py py-class docutils literal"><span class="pre">viscid.field.Field</span></code></a>, add it to a figure as
+a data source</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.plot.mvi.html#viscid.plot.mvi.plot_lines" title="viscid.plot.mvi.plot_lines"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mvi.plot_lines()</span></code></a></td>
+<td>Plot colored lines in 3D</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.plot.mvi.html#viscid.plot.mvi.plot_ionosphere" title="viscid.plot.mvi.plot_ionosphere"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mvi.plot_ionosphere()</span></code></a></td>
+<td>Plot an ionospheric Field in 3D</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.plot.mvi.html#viscid.plot.mvi.insert_filter" title="viscid.plot.mvi.insert_filter"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mvi.insert_filter()</span></code></a></td>
+<td>Insert a filter above a module_manager.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.plot.mvi.html#viscid.plot.mvi.plot_blue_marble" title="viscid.plot.mvi.plot_blue_marble"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mvi.plot_blue_marble()</span></code></a></td>
+<td>Plot an Earth using the blue marble NASA image</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.plot.mvi.html#viscid.plot.mvi.plot_earth_3d" title="viscid.plot.mvi.plot_earth_3d"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mvi.plot_earth_3d()</span></code></a></td>
+<td>Plot an Earth with black for nightside and white for dayside</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="api/viscid.plot.mvi.html#viscid.plot.mvi.clf" title="viscid.plot.mvi.clf"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mvi.clf()</span></code></a></td>
+<td>Uses some hacks to clear a figure and make sure memory is freed</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="api/viscid.plot.mvi.html#viscid.plot.mvi.resize" title="viscid.plot.mvi.resize"><code class="xref py py-func docutils literal"><span class="pre">viscid.plot.mvi.resize()</span></code></a></td>
+<td>Uses some hacks to resize a figure</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="_sources/functions.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

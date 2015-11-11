@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.readers.athena &mdash; Viscid 0.95.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.95.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 documentation" href="../../../index.html" />
+    <link rel="up" title="viscid.readers" href="../readers.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../changes.html">ChangeLog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for viscid.readers.athena</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot; athena reader common stuff &quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">numexpr</span>
+    <span class="n">_has_numexpr</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">_has_numexpr</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">field</span>
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">grid</span>
+<span class="kn">from</span> <span class="nn">viscid.calculator</span> <span class="kn">import</span> <span class="n">plasma</span>
+
+<div class="viewcode-block" id="group_athena_files_common"><a class="viewcode-back" href="../../../api/viscid.readers.athena.html#viscid.readers.athena.group_athena_files_common">[docs]</a><span class="k">def</span> <span class="nf">group_athena_files_common</span><span class="p">(</span><span class="n">detector</span><span class="p">,</span> <span class="n">fnames</span><span class="p">):</span>
+    <span class="n">infolst</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">fnames</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">detector</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">grps</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">runname</span><span class="o">=</span><span class="n">grps</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">time</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">grps</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">fname</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">string</span><span class="p">)</span>
+        <span class="n">infolst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+    <span class="c"># careful with sorting, only consecutive files will be grouped</span>
+    <span class="n">infolst</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="s">&quot;time&quot;</span><span class="p">))</span>
+    <span class="n">infolst</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="s">&quot;runname&quot;</span><span class="p">))</span>
+
+    <span class="n">info_groups</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">info_group</span> <span class="o">=</span> <span class="p">[</span><span class="n">infolst</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">infolst</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">last</span> <span class="o">=</span> <span class="n">info_group</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">info</span><span class="p">[</span><span class="s">&#39;runname&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">last</span><span class="p">[</span><span class="s">&#39;runname&#39;</span><span class="p">]:</span>
+            <span class="n">info_group</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">info_groups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info_group</span><span class="p">)</span>
+            <span class="n">info_group</span> <span class="o">=</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span>
+    <span class="n">info_groups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info_group</span><span class="p">)</span>
+
+    <span class="c"># turn info_groups into groups of just file names</span>
+    <span class="n">groups</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">info_group</span> <span class="ow">in</span> <span class="n">info_groups</span><span class="p">:</span>
+        <span class="n">groups</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">info</span><span class="p">[</span><span class="s">&#39;fname&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">info_group</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">groups</span>
+</div>
+<div class="viewcode-block" id="athena_collective_name_from_group"><a class="viewcode-back" href="../../../api/viscid.readers.athena.html#viscid.readers.athena.athena_collective_name_from_group">[docs]</a><span class="k">def</span> <span class="nf">athena_collective_name_from_group</span><span class="p">(</span><span class="n">detector</span><span class="p">,</span> <span class="n">fnames</span><span class="p">):</span>
+    <span class="n">fname0</span> <span class="o">=</span> <span class="n">fnames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">fname0</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">detector</span><span class="p">,</span> <span class="n">basename</span><span class="p">)</span>
+    <span class="n">run</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ext</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">new_basename</span> <span class="o">=</span> <span class="s">&quot;{0}.STAR.{1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">run</span><span class="p">,</span> <span class="n">ext</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">fname0</span><span class="p">),</span> <span class="n">new_basename</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="AthenaGrid"><a class="viewcode-back" href="../../../api/viscid.readers.athena.html#viscid.readers.athena.AthenaGrid">[docs]</a><span class="k">class</span> <span class="nc">AthenaGrid</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">Grid</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_get_rr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;d&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_get_p</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># TODO: calc pressure from conserved fields</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;P&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_get_pp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;p&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_get_bx</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;B1c&#39;</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;B1&#39;</span><span class="p">]</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;bx&quot;</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">&quot;$B_x$&quot;</span>
+        <span class="k">return</span> <span class="n">f</span>
+
+    <span class="k">def</span> <span class="nf">_get_by</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;B2c&#39;</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;B2&#39;</span><span class="p">]</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;by&quot;</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">&quot;$B_y$&quot;</span>
+        <span class="k">return</span> <span class="n">f</span>
+
+    <span class="k">def</span> <span class="nf">_get_bz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;B3c&#39;</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;B3&#39;</span><span class="p">]</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;bz&quot;</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">&quot;$B_z$&quot;</span>
+        <span class="k">return</span> <span class="n">f</span>
+
+    <span class="k">def</span> <span class="nf">_get_vx</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;V1&#39;</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;M1&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;d&#39;</span><span class="p">]</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;vx&quot;</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">&quot;$V_x$&quot;</span>
+        <span class="k">return</span> <span class="n">f</span>
+
+    <span class="k">def</span> <span class="nf">_get_vy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;V2&#39;</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;M2&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;d&#39;</span><span class="p">]</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;vy&quot;</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">&quot;$V_y$&quot;</span>
+        <span class="k">return</span> <span class="n">f</span>
+
+    <span class="k">def</span> <span class="nf">_get_vz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;V3&#39;</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;M3&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;d&#39;</span><span class="p">]</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;bz&quot;</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">&quot;$V_z$&quot;</span>
+        <span class="k">return</span> <span class="n">f</span>
+
+    <span class="k">def</span> <span class="nf">_get_mx</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;M1&#39;</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;V1&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;d&#39;</span><span class="p">]</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;mx&quot;</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">&quot;$M_x$&quot;</span>
+        <span class="k">return</span> <span class="n">f</span>
+
+    <span class="k">def</span> <span class="nf">_get_my</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;M2&#39;</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;V2&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;d&#39;</span><span class="p">]</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;my&quot;</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">&quot;$M_y$&quot;</span>
+        <span class="k">return</span> <span class="n">f</span>
+
+    <span class="k">def</span> <span class="nf">_get_mz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;M3&#39;</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;V3&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;d&#39;</span><span class="p">]</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;mz&quot;</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">&quot;$M_z$&quot;</span>
+        <span class="k">return</span> <span class="n">f</span>
+
+    <span class="k">def</span> <span class="nf">_get_jx</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;j&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">component_fields</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">&quot;$J_x$&quot;</span>
+        <span class="k">return</span> <span class="n">f</span>
+
+    <span class="k">def</span> <span class="nf">_get_jy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;j&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">component_fields</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">&quot;$J_y$&quot;</span>
+        <span class="k">return</span> <span class="n">f</span>
+
+    <span class="k">def</span> <span class="nf">_get_jz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;j&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">component_fields</span><span class="p">()[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">&quot;$J_z$&quot;</span>
+        <span class="k">return</span> <span class="n">f</span>
+
+    <span class="k">def</span> <span class="nf">_get_b</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">bz</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;bx&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;by&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;bz&#39;</span><span class="p">]</span>
+        <span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">_force_layout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">force_vector_layout</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">field</span><span class="o">.</span><span class="n">scalar_fields_to_vector</span><span class="p">([</span><span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">bz</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_v</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">vz</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;vx&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;vy&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;vz&#39;</span><span class="p">]</span>
+        <span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">_force_layout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">force_vector_layout</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">field</span><span class="o">.</span><span class="n">scalar_fields_to_vector</span><span class="p">([</span><span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">vz</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;V&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_j</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># b = self[&#39;b&#39;]</span>
+        <span class="c"># j = calc.curl(b)</span>
+        <span class="c"># j.name = &#39;j&#39;</span>
+        <span class="c"># j.pretty_name = &quot;J&quot;</span>
+        <span class="c"># return j</span>
+        <span class="c"># TODO: make sure curl works with 2.5-D fields and 1-D fields</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s">&quot;Haven&#39;t hooked up the curl yet to get J&quot;</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_calc_mag</span><span class="p">(</span><span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">vz</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">_has_numexpr</span><span class="p">:</span>
+            <span class="n">vmag</span> <span class="o">=</span> <span class="n">numexpr</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="s">&quot;sqrt(vx**2 + vy**2 + vz**2)&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">vx</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">vmag</span><span class="p">,</span> <span class="n">fldtype</span><span class="o">=</span><span class="s">&quot;Scalar&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">vmag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">vx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">vy</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">vz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">vmag</span>
+
+    <span class="k">def</span> <span class="nf">_get_bmag</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">bz</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;bx&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;by&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;bz&#39;</span><span class="p">]</span>
+        <span class="n">bmag</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc_mag</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">bz</span><span class="p">)</span>
+        <span class="n">bmag</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;|B|&quot;</span>
+        <span class="k">return</span> <span class="n">bmag</span>
+
+    <span class="k">def</span> <span class="nf">_get_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">vz</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;vx&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;vy&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;vz&#39;</span><span class="p">]</span>
+        <span class="n">vmag</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc_mag</span><span class="p">(</span><span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">vz</span><span class="p">)</span>
+        <span class="n">vmag</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;|V|&quot;</span>
+        <span class="k">return</span> <span class="n">vmag</span>
+
+    <span class="k">def</span> <span class="nf">_get_jmag</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">jx</span><span class="p">,</span> <span class="n">jy</span><span class="p">,</span> <span class="n">jz</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;j&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">component_fields</span><span class="p">()</span>
+        <span class="n">jmag</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc_mag</span><span class="p">(</span><span class="n">jx</span><span class="p">,</span> <span class="n">jy</span><span class="p">,</span> <span class="n">jz</span><span class="p">)</span>
+        <span class="n">jmag</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;|J|&quot;</span>
+        <span class="k">return</span> <span class="n">jmag</span>
+
+    <span class="k">def</span> <span class="nf">_get_beta</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">plasma</span><span class="o">.</span><span class="n">calc_beta</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="s">&#39;pp&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;b&#39;</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">_get_psi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">plasma</span><span class="o">.</span><span class="n">calc_psi</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="s">&#39;b&#39;</span><span class="p">])</span>
+
+</div>
+<div class="viewcode-block" id="AthenaFile"><a class="viewcode-back" href="../../../api/viscid.readers.athena.html#viscid.readers.athena.AthenaFile">[docs]</a><span class="k">class</span> <span class="nc">AthenaFile</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Mixin some Athena convenience stuff&quot;&quot;&quot;</span>
+    <span class="n">_grid_type</span> <span class="o">=</span> <span class="n">AthenaGrid</span>
+
+
+<span class="c">##</span>
+<span class="c">## EOF</span>
+<span class="c">##</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

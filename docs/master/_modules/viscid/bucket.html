@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.bucket &mdash; Viscid 0.95.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.95.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changes.html">ChangeLog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for viscid.bucket</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+
+<span class="c"># from viscid.vutil import tree_prefix</span>
+<span class="kn">from</span> <span class="nn">viscid.compat</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">logger</span>
+
+<div class="viewcode-block" id="Bucket"><a class="viewcode-back" href="../../api/viscid.bucket.html#viscid.bucket.Bucket">[docs]</a><span class="k">class</span> <span class="nc">Bucket</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; This is basically a glorified dict</span>
+
+<span class="sd">    It&#39;s a convenient dict-like object if you want lots of</span>
+<span class="sd">    keys for a given value.</span>
+
+<span class="sd">    NOTE:</span>
+<span class="sd">        You can add non-hashable items, but this is poorly tested.</span>
+<span class="sd">        When adding / removing non-hashable items (items, not handles)</span>
+<span class="sd">        the comparison is done using the object&#39;s id. This is</span>
+<span class="sd">        fundamentally different than using an object&#39;s __hash__, but</span>
+<span class="sd">        it should be fairly transparent.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_ordered</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="n">_ref_count</span> <span class="o">=</span> <span class="bp">None</span>  <span class="c"># keys are hashable items, values are # of times item was added</span>
+    <span class="n">_hash_lookup</span> <span class="o">=</span> <span class="bp">None</span>  <span class="c"># keys are hashable items, values are actual items</span>
+    <span class="n">_handles</span> <span class="o">=</span> <span class="bp">None</span>  <span class="c"># keys are hashable items, values are list of handles</span>
+    <span class="n">_items</span> <span class="o">=</span> <span class="bp">None</span>  <span class="c"># keys are handles, values are actual items</span>
+
+    <span class="c"># if index handle, set_item adds this number as a handle and increments it</span>
+    <span class="c"># this is useful for hiding loads that are not user initiated, such as</span>
+    <span class="c"># an xdmf file loading an h5 file under the covers</span>
+    <span class="n">_int_counter</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ordered</span> <span class="o">=</span> <span class="n">ordered</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_empty_dicts</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_int_counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">_set_empty_dicts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ordered</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ref_count</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_hash_lookup</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_handles</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_items</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ref_count</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_hash_lookup</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_handles</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_items</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_make_hashable</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">hash</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">item</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">&quot;&lt;{0} @ {1}&gt;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="p">),</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">item</span><span class="p">)))</span>
+
+<div class="viewcode-block" id="Bucket.items"><a class="viewcode-back" href="../../api/viscid.bucket.html#viscid.bucket.Bucket.items">[docs]</a>    <span class="k">def</span> <span class="nf">items</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">hashable_item</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hash_lookup</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">_handles</span><span class="p">[</span><span class="n">hashable_item</span><span class="p">],</span> <span class="n">item</span>
+</div>
+<div class="viewcode-block" id="Bucket.keys"><a class="viewcode-back" href="../../api/viscid.bucket.html#viscid.bucket.Bucket.keys">[docs]</a>    <span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_handles</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="Bucket.values"><a class="viewcode-back" href="../../api/viscid.bucket.html#viscid.bucket.Bucket.values">[docs]</a>    <span class="k">def</span> <span class="nf">values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hash_lookup</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="Bucket.set_item"><a class="viewcode-back" href="../../api/viscid.bucket.html#viscid.bucket.Bucket.set_item">[docs]</a>    <span class="k">def</span> <span class="nf">set_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handles</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">index_handle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">_add_ref</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; if index_handle is true then the index of item will be included as</span>
+<span class="sd">            a handle making the bucket indexable like a list &quot;&quot;&quot;</span>
+        <span class="c"># found = False</span>
+        <span class="k">if</span> <span class="n">handles</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">handles</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;handle must by of list type&quot;</span><span class="p">)</span>
+
+        <span class="c"># make sure we have a hashable &quot;item&quot; for doing reverse</span>
+        <span class="c"># lookups of handles using an item</span>
+        <span class="n">hashable_item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_hashable</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">hashable_item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hash_lookup</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">index_handle</span><span class="p">:</span>
+                <span class="n">handles</span> <span class="o">+=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_int_counter</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_int_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">handles_added</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">handles</span><span class="p">:</span>
+            <span class="c"># check if we&#39;re stealing a handle from another item</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="nb">hash</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;A bucket says handle &#39;{0}&#39; is not hashable, &quot;</span>
+                             <span class="s">&quot;ignoring it&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">h</span><span class="p">))</span>
+                <span class="k">continue</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_items</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">item</span> <span class="ow">is</span> <span class="bp">self</span><span class="o">.</span><span class="n">_items</span><span class="p">[</span><span class="n">h</span><span class="p">]):</span>
+                <span class="k">continue</span>
+            <span class="k">elif</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_items</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;The handle &#39;{0}&#39; is being hijacked! Memory leak &quot;</span>
+                             <span class="s">&quot;could ensue.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">h</span><span class="p">))</span>
+                <span class="c"># romove handle from old item, since this check is here,</span>
+                <span class="c"># there sholdn&#39;t be 2 items with the same handle in the</span>
+                <span class="c"># items dict</span>
+                <span class="n">old_item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_items</span><span class="p">[</span><span class="n">h</span><span class="p">]</span>
+                <span class="n">old_hashable_item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_hashable</span><span class="p">(</span><span class="n">old_item</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_handles</span><span class="p">[</span><span class="n">old_hashable_item</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_handles</span><span class="p">[</span><span class="n">old_hashable_item</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">remove_item</span><span class="p">(</span><span class="n">old_item</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_items</span><span class="p">[</span><span class="n">h</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span>
+            <span class="n">handles_added</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_handles</span><span class="p">[</span><span class="n">hashable_item</span><span class="p">]</span> <span class="o">+=</span> <span class="n">handles_added</span>
+            <span class="k">if</span> <span class="n">_add_ref</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_ref_count</span><span class="p">[</span><span class="n">hashable_item</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">handles_added</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;No valid handles given, item &#39;{0}&#39; not added to &quot;</span>
+                             <span class="s">&quot;bucket&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hashable_item</span><span class="p">))</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_handles</span><span class="p">[</span><span class="n">hashable_item</span><span class="p">]</span> <span class="o">=</span> <span class="n">handles_added</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_hash_lookup</span><span class="p">[</span><span class="n">hashable_item</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_ref_count</span><span class="p">[</span><span class="n">hashable_item</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="bp">None</span>
+</div>
+    <span class="k">def</span> <span class="nf">_remove_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;remove item no matter what</span>
+
+<span class="sd">        You may want to use remove_</span>
+<span class="sd">        , raises ValueError if item is not found &quot;&quot;&quot;</span>
+        <span class="n">hashable_item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_hashable</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="n">handles</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_handles</span><span class="p">[</span><span class="n">hashable_item</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">handles</span><span class="p">:</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_items</span><span class="p">[</span><span class="n">h</span><span class="p">]</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hash_lookup</span><span class="p">[</span><span class="n">hashable_item</span><span class="p">]</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_handles</span><span class="p">[</span><span class="n">hashable_item</span><span class="p">]</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ref_count</span><span class="p">[</span><span class="n">hashable_item</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_remove_item_by_handle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_remove_item</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_items</span><span class="p">[</span><span class="n">handle</span><span class="p">])</span>
+
+<div class="viewcode-block" id="Bucket.remove_item"><a class="viewcode-back" href="../../api/viscid.bucket.html#viscid.bucket.Bucket.remove_item">[docs]</a>    <span class="k">def</span> <span class="nf">remove_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_remove_item</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Bucket.remove_item_by_handle"><a class="viewcode-back" href="../../api/viscid.bucket.html#viscid.bucket.Bucket.remove_item_by_handle">[docs]</a>    <span class="k">def</span> <span class="nf">remove_item_by_handle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; remove item by handle, raises KeyError if handle is not found &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">remove_item</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_items</span><span class="p">[</span><span class="n">handle</span><span class="p">])</span>
+</div>
+<div class="viewcode-block" id="Bucket.remove_reference"><a class="viewcode-back" href="../../api/viscid.bucket.html#viscid.bucket.Bucket.remove_reference">[docs]</a>    <span class="k">def</span> <span class="nf">remove_reference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">_ref_count</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">hashable_item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_hashable</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ref_count</span><span class="p">[</span><span class="n">hashable_item</span><span class="p">]</span> <span class="o">-=</span> <span class="n">_ref_count</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+            <span class="n">hashable_item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_hashable</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">_ref_count</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_ref_count</span><span class="p">[</span><span class="n">hashable_item</span><span class="p">]</span> <span class="o">-=</span> <span class="n">_ref_count</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_ref_count</span><span class="p">[</span><span class="n">hashable_item</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c"># FIXME: unload_all_files breaks this assert check... probably a bug</span>
+        <span class="c"># assert self._ref_count[hashable_item] &gt;= 0, \</span>
+        <span class="c">#     &quot;problem with bucket ref counting {0}&quot;.format(hashable_item)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ref_count</span><span class="p">[</span><span class="n">hashable_item</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_remove_item</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Bucket.remove_all_items"><a class="viewcode-back" href="../../api/viscid.bucket.html#viscid.bucket.Bucket.remove_all_items">[docs]</a>    <span class="k">def</span> <span class="nf">remove_all_items</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; unload all items &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_empty_dicts</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="Bucket.items_as_list"><a class="viewcode-back" href="../../api/viscid.bucket.html#viscid.bucket.Bucket.items_as_list">[docs]</a>    <span class="k">def</span> <span class="nf">items_as_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_hash_lookup</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</div>
+<div class="viewcode-block" id="Bucket.get_primary_handles"><a class="viewcode-back" href="../../api/viscid.bucket.html#viscid.bucket.Bucket.get_primary_handles">[docs]</a>    <span class="k">def</span> <span class="nf">get_primary_handles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a list of the first handles for all items&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">handles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">handles</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_handles</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+</div>
+<div class="viewcode-block" id="Bucket.handle_string"><a class="viewcode-back" href="../../api/viscid.bucket.html#viscid.bucket.Bucket.handle_string">[docs]</a>    <span class="k">def</span> <span class="nf">handle_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; return string representation of handles and items &quot;&quot;&quot;</span>
+        <span class="c"># this is inefficient, but probably doesn&#39;t matter</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">item</span><span class="p">,</span> <span class="n">handles</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_handles</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">hands</span> <span class="o">=</span> <span class="p">[</span><span class="nb">repr</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">handles</span><span class="p">]</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="s">&quot;{0}handles: {1}</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="s">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">hands</span><span class="p">))</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="s">&quot;{0}  item: {1}</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">s</span>
+</div>
+<div class="viewcode-block" id="Bucket.print_tree"><a class="viewcode-back" href="../../api/viscid.bucket.html#viscid.bucket.Bucket.print_tree">[docs]</a>    <span class="k">def</span> <span class="nf">print_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_string</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="n">prefix</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+</div>
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_items</span><span class="p">[</span><span class="n">handle</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="n">key</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_item</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__delitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">remove_item_by_handle</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+            <span class="c"># maybe we are asking to remove an item explicitly</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">remove_item</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">()</span><span class="o">.</span><span class="n">__iter__</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Bucket.contains_item"><a class="viewcode-back" href="../../api/viscid.bucket.html#viscid.bucket.Bucket.contains_item">[docs]</a>    <span class="k">def</span> <span class="nf">contains_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="n">hashable_item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_hashable</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">hashable_item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_handles</span>
+</div>
+<div class="viewcode-block" id="Bucket.contains_handle"><a class="viewcode-back" href="../../api/viscid.bucket.html#viscid.bucket.Bucket.contains_handle">[docs]</a>    <span class="k">def</span> <span class="nf">contains_handle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">handle</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_items</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+</div>
+    <span class="k">def</span> <span class="nf">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">contains_handle</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">contains_item</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_hash_lookup</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle_string</span><span class="p">()</span>
+</div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="kn">import</span> <span class="nn">code</span>
+    <span class="kn">import</span> <span class="nn">viscid</span>
+
+    <span class="n">_viscid_root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">viscid</span><span class="o">.</span><span class="n">__file__</span><span class="p">)</span>
+    <span class="n">sample_dir</span> <span class="o">=</span> <span class="n">_viscid_root</span> <span class="o">+</span> <span class="s">&quot;/../../sample/&quot;</span>
+    <span class="n">sample_prefix</span> <span class="o">=</span> <span class="n">sample_dir</span> <span class="o">+</span> <span class="s">&quot;local_0001&quot;</span>
+    <span class="n">fnpy0</span> <span class="o">=</span> <span class="n">sample_prefix</span> <span class="o">+</span> <span class="s">&quot;.py_0.xdmf&quot;</span>
+    <span class="n">fn3dfa</span> <span class="o">=</span> <span class="n">sample_prefix</span> <span class="o">+</span> <span class="s">&quot;.3df.xdmf&quot;</span>
+    <span class="n">fn3df</span> <span class="o">=</span> <span class="n">sample_prefix</span> <span class="o">+</span> <span class="s">&quot;.3df.004200.xdmf&quot;</span>
+    <span class="n">fniof</span> <span class="o">=</span> <span class="n">sample_prefix</span> <span class="o">+</span> <span class="s">&quot;.iof.004200.xdmf&quot;</span>
+    <span class="n">fnasc</span> <span class="o">=</span> <span class="n">sample_dir</span> <span class="o">+</span> <span class="s">&quot;test.asc&quot;</span>
+    <span class="n">fnascts</span> <span class="o">=</span> <span class="n">sample_dir</span> <span class="o">+</span> <span class="s">&quot;test_time.asc&quot;</span>
+
+    <span class="c"># fm = get_file_bucket()</span>
+
+    <span class="c"># print(&quot;load {0}&quot;.format(fnasc))</span>
+    <span class="c"># fasc = fm.add(fnasc)</span>
+    <span class="c"># print(&quot;load {0}&quot;.format(fnascts))</span>
+    <span class="c"># fasc_time = fm.add(fnascts)</span>
+
+    <span class="c"># print(&quot;load 3df.xdmf&quot;)</span>
+    <span class="c"># d3da = fm.load(fn3dfa)</span>
+    <span class="c"># print(&quot;load 3df.004200.xdmf&quot;)</span>
+    <span class="c"># f3d = load_file(fn3df)</span>
+    <span class="c"># print(&quot;load py_0.xdmf&quot;)</span>
+    <span class="c"># fpy0 = load_file(fnpy0)</span>
+    <span class="c"># print(&quot;load test.xdmf&quot;)</span>
+    <span class="c"># ftest = fm.load(&#39;../sample/test.xdmf&#39;)</span>
+
+    <span class="n">code</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">local</span><span class="o">=</span><span class="nb">locals</span><span class="p">())</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;done&quot;</span><span class="p">)</span>
+
+<span class="c"># a=re.findall(&#39;(\S+)\s*=\s*(?:[\&#39;&quot;](.*?)[\&#39;&quot;]|(.*?))(?:\s|$)&#39;,</span>
+<span class="c">#    &#39;key=&quot;value&quot; delim=&quot; &quot; socrates k=v&#39;, flags=0); print(a)</span>
+
+<span class="c">##</span>
+<span class="c">## EOF</span>
+<span class="c">##</span>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

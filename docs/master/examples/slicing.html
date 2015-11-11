@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Slicing Examples &mdash; Viscid 0.95.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.95.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 documentation" href="../index.html" />
+    <link rel="up" title="Examples" href="index.html" />
+    <link rel="next" title="Calculator Examples" href="calc.html" />
+    <link rel="prev" title="Reading/Plotting Examples" href="plotting.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="#">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../changes.html">ChangeLog</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Slicing Examples</a><ul>
+<li><a class="reference internal" href="#spatial-slices">Spatial Slices</a></li>
+<li><a class="reference internal" href="#temporal-slices">Temporal Slices</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="slicing-examples">
+<h1>Slicing Examples<a class="headerlink" href="#slicing-examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="spatial-slices">
+<h2>Spatial Slices<a class="headerlink" href="#spatial-slices" title="Permalink to this headline">¶</a></h2>
+<p>Fields can be sliced just like Numpy ndarrays, but you can also use an extended syntax to ask for a physical location instead of an index in the array. This example snips off the fist 50 cells and last 30 cells in x and plots the y = 0.0 plane for z = [-10.0..10.0].</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">viscid</span>
+<span class="kn">from</span> <span class="nn">viscid.plot</span> <span class="kn">import</span> <span class="n">mpl</span>
+
+<span class="n">f3d</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="n">_viscid_root</span> <span class="o">+</span> <span class="s">&#39;/../../sample/sample_xdmf.3d.xdmf&#39;</span><span class="p">)</span>
+
+<span class="c"># Notice that slices by location are done by appending an &#39;f&#39; to the</span>
+<span class="c"># slice. This means &quot;y=0&quot; is not the same as &quot;y=0f&quot;.</span>
+<span class="n">pp</span> <span class="o">=</span> <span class="n">f3d</span><span class="p">[</span><span class="s">&quot;pp&quot;</span><span class="p">][</span><span class="s">&quot;x = 50:-12, y = 0.0f, z = -10.0f:10.0f&quot;</span><span class="p">]</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pp</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">&quot;contourf&quot;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">plot_opts</span><span class="o">=</span><span class="s">&quot;log,earth&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../examples/slicing-1.py">Source code</a>, <a class="reference external" href="../examples/slicing-1.png">png</a>)</p>
+<div class="figure">
+<img alt="../_images/slicing-1.png" src="../_images/slicing-1.png" />
+</div>
+</div>
+<div class="section" id="temporal-slices">
+<h2>Temporal Slices<a class="headerlink" href="#temporal-slices" title="Permalink to this headline">¶</a></h2>
+<p>Temporal Datasets can be sliced a number of ways too, here are some examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; import viscid</span>
+<span class="go">&gt;&gt;&gt;&gt; f3d = viscid.load_file(_viscid_root + &#39;/../../sample/sample_xdmf.3d.xdmf&#39;)</span>
+<span class="go">&gt;&gt;&gt;&gt;</span>
+<span class="go">&gt;&gt;&gt;&gt; grids = f3d.get_times(slice(&quot;UT1967:01:01:00:10:00.0&quot;,</span>
+<span class="go">&gt;&gt;&gt;&gt;                             &quot;UT1967:01:01:00:20:00.0&quot;))</span>
+<span class="go">&gt;&gt;&gt;&gt; print([grid.time for grid in grids])</span>
+<span class="go">[600.0, 1200.0]</span>
+<span class="go">&gt;&gt;&gt;&gt;</span>
+<span class="go">&gt;&gt;&gt;&gt; grids = f3d.get_times(1)</span>
+<span class="go">&gt;&gt;&gt;&gt; print([grid.time for grid in grids])</span>
+<span class="go">[600.0]</span>
+<span class="go">&gt;&gt;&gt;&gt;</span>
+<span class="go">&gt;&gt;&gt;&gt; grids = f3d.get_times(slice(None, 600.0))</span>
+<span class="go">&gt;&gt;&gt;&gt; print([grid.time for grid in grids])</span>
+<span class="go">[600.0]</span>
+<span class="go">&gt;&gt;&gt;&gt; grids = f3d.get_times(&quot;T0:10:00.0:T0:20:00.0&quot;)</span>
+<span class="go">&gt;&gt;&gt;&gt; print([grid.time for grid in grids])</span>
+<span class="go">[600.0, 1200.0]</span>
+<span class="go">&gt;&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/examples/slicing.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

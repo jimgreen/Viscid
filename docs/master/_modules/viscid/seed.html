@@ -1,0 +1,1235 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.seed &mdash; Viscid 0.95.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.95.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changes.html">ChangeLog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for viscid.seed</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="sd">&quot;&quot;&quot;Helpers to generate seed points for streamlines&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">viscid</span>
+<span class="kn">from</span> <span class="nn">viscid.compat</span> <span class="kn">import</span> <span class="n">izip</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;make_rotation_matrix&#39;</span><span class="p">,</span> <span class="s">&#39;to_seeds&#39;</span><span class="p">,</span> <span class="s">&#39;SeedGen&#39;</span><span class="p">,</span> <span class="s">&#39;Point&#39;</span><span class="p">,</span>
+           <span class="s">&#39;MeshPoints&#39;</span><span class="p">,</span> <span class="s">&#39;Line&#39;</span><span class="p">,</span> <span class="s">&#39;Plane&#39;</span><span class="p">,</span> <span class="s">&#39;Volume&#39;</span><span class="p">,</span> <span class="s">&#39;Sphere&#39;</span><span class="p">,</span> <span class="s">&#39;SphericalCap&#39;</span><span class="p">,</span>
+           <span class="s">&#39;Circle&#39;</span><span class="p">,</span> <span class="s">&#39;SphericalPatch&#39;</span><span class="p">,</span> <span class="s">&#39;PolarIonosphere&#39;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="to_seeds"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.to_seeds">[docs]</a><span class="k">def</span> <span class="nf">to_seeds</span><span class="p">(</span><span class="n">pts</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Try to turn anything into a set of seeds</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        points (ndarray or list): should look like something that</span>
+<span class="sd">            np.array(points) can turn to an Nx3 array of xyz points.</span>
+<span class="sd">            This can be 3xN so long as N != 3.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">pts</span><span class="p">,</span> <span class="s">&quot;nr_points&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">pts</span><span class="p">,</span> <span class="s">&quot;iter_points&quot;</span><span class="p">)</span> <span class="ow">and</span>
+        <span class="nb">hasattr</span><span class="p">(</span><span class="n">pts</span><span class="p">,</span> <span class="s">&quot;points&quot;</span><span class="p">)):</span>  <span class="c"># pylint: disable=bad-continuation</span>
+        <span class="k">return</span> <span class="n">pts</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">pts</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="make_rotation_matrix"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.make_rotation_matrix">[docs]</a><span class="k">def</span> <span class="nf">make_rotation_matrix</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">roll</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Make a matrix that rotates origin-p1 to origin-p2</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        If you want `p1` and `p2` to be vectors, just set `origin` to</span>
+<span class="sd">        `[0, 0, 0]`.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        origin (ndarray): Origin of the rotation in 3D</span>
+<span class="sd">        p1 (ndarray): Some point in 3D</span>
+<span class="sd">        p2 (ndarray): A point in 3D such that p1 will be rotated</span>
+<span class="sd">            around the origin so that it lies along the origin-p2</span>
+<span class="sd">            line</span>
+<span class="sd">        roll (float): Angle (in degrees) of roll around the</span>
+<span class="sd">            origin-p2 vector</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        ndarray: 3x3 orthonormal rotation matrix</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">origin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">origin</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c"># normalize the origin-p1 and origin-p2 vectors as `a` and `b`</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">p1</span> <span class="o">-</span> <span class="n">origin</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">p1</span> <span class="o">-</span> <span class="n">origin</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">p2</span> <span class="o">-</span> <span class="n">origin</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">p2</span> <span class="o">-</span> <span class="n">origin</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c"># Use Rodrigues&#39; Rotation Formula to rotate theta degrees around the</span>
+    <span class="c"># cross prodect of a and b. Here, K is the skew-symmetric cross-product</span>
+    <span class="c"># matrix</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">))</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]):</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]):</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span>    <span class="p">,</span> <span class="o">-</span><span class="n">k</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>  <span class="n">k</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>  <span class="c"># pylint: disable=bad-whitespace</span>
+                  <span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">,</span>     <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>  <span class="c"># pylint: disable=bad-whitespace</span>
+                  <span class="p">[</span><span class="o">-</span><span class="n">k</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>  <span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>     <span class="mi">0</span><span class="p">]])</span>  <span class="c"># pylint: disable=bad-whitespace</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">K</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+
+    <span class="c"># now use the same formula to roll around the the origin-p2 axis</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">180.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">roll</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span>    <span class="p">,</span> <span class="o">-</span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>  <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>  <span class="c"># pylint: disable=bad-whitespace</span>
+                  <span class="p">[</span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">,</span>     <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>  <span class="c"># pylint: disable=bad-whitespace</span>
+                  <span class="p">[</span><span class="o">-</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>  <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>     <span class="mi">0</span><span class="p">]])</span>  <span class="c"># pylint: disable=bad-whitespace</span>
+    <span class="n">Rroll</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> <span class="o">*</span> <span class="n">K</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Rroll</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="SeedGen"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SeedGen">[docs]</a><span class="k">class</span> <span class="nc">SeedGen</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;All about seeds</span>
+
+<span class="sd">    These objects are good for defining the root points of streamlines</span>
+<span class="sd">    or locations for interpolation.</span>
+
+<span class="sd">    - For Developers</span>
+<span class="sd">        - Mandatory</span>
+<span class="sd">            Subclasses **must** override</span>
+
+<span class="sd">            - :py:meth:`get_nr_points`: get total number of seeds</span>
+<span class="sd">            - :py:meth:`get_local_shape`: get the shape of the ndarray</span>
+<span class="sd">              of local coordinates</span>
+<span class="sd">            - :py:meth:`to_3d`: transform an array in local</span>
+<span class="sd">              coordinates to 3D space. Should return a 3xN ndarray.</span>
+<span class="sd">            - :py:meth:`to_local`: transform a 3xN ndarray to an</span>
+<span class="sd">              ndarray of coordinates in local space. It&#39;s ok to raise</span>
+<span class="sd">              NotImplementedError.</span>
+<span class="sd">            - :py:meth:`_make_local_points`: Make an ndarray that is</span>
+<span class="sd">              used in :py:meth:`_make_3d_points`</span>
+<span class="sd">            - :py:meth:`_make_local_axes`: Make a tuple of arrays with</span>
+<span class="sd">              lengths that match :py:attr:`local_shape`. It&#39;s ok to</span>
+<span class="sd">              raise NotImplementedError if the local representation has</span>
+<span class="sd">              no axes.</span>
+
+<span class="sd">        - Optional</span>
+<span class="sd">            Subclasses *may* override</span>
+
+<span class="sd">            - :py:meth:`_make_3d_points`: By default, this is a</span>
+<span class="sd">              combination of :py:meth:`_make_local_points` and</span>
+<span class="sd">              :py:meth:`to_3d`. It can be overridden if there is a more</span>
+<span class="sd">              efficient way te get points in 3d.</span>
+<span class="sd">            - :py:meth:`iter_points`:  If a seed generator can be made</span>
+<span class="sd">              lazy, then this should return an iterator that yields</span>
+<span class="sd">              (x, y, z) points.</span>
+<span class="sd">            - :py:meth:`get_rotation`: This should return an</span>
+<span class="sd">              orthonormal rotation matrix if there is some rotation</span>
+<span class="sd">              required to go from local coordinates to 3D space.</span>
+<span class="sd">            - :py:meth:`as_mesh`</span>
+<span class="sd">            - :py:meth:`as_coordinates`</span>
+<span class="sd">            - :py:meth:`wrap_field`</span>
+
+<span class="sd">        - Off Limits</span>
+<span class="sd">            Don&#39;t override unless you know what you&#39;re doing</span>
+
+<span class="sd">            - :py:meth:`get_points`</span>
+
+<span class="sd">    - For Users</span>
+<span class="sd">        - 3D</span>
+<span class="sd">            These attributes give the seed points in 3D (xyz) space</span>
+
+<span class="sd">            - :py:attr:`nr_points`</span>
+<span class="sd">            - :py:meth:`get_points`</span>
+<span class="sd">            - :py:meth:`iter_points`</span>
+<span class="sd">            - :py:meth:`to_3d`</span>
+
+<span class="sd">        - Generator Specific</span>
+<span class="sd">            There is also the concept of local points, which are points</span>
+<span class="sd">            that are meaningful for the specific SeedGen subclass. For</span>
+<span class="sd">            example, for the Sphere subclass, local points are labled</span>
+<span class="sd">            with (theta, phi) on the surface of the sphere. As such,</span>
+<span class="sd">            :py:meth:`wrap_field` can be used to facilitate wrapping</span>
+<span class="sd">            the result of :py:func:`trilin_interp` for easy plotting.</span>
+
+<span class="sd">            - :py:attr:`local_shape`</span>
+<span class="sd">            - :py:meth:`to_local`</span>
+<span class="sd">            - :py:meth:`as_mesh`</span>
+<span class="sd">            - :py:meth:`as_coordinates`</span>
+<span class="sd">            - :py:meth:`wrap_field`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_cache</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">_points</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">dtype</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span> <span class="o">=</span> <span class="n">cache</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span> <span class="o">=</span> <span class="n">dtype</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">nr_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_nr_points</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">local_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Shape of local representation of seeds&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_shape</span><span class="p">()</span>
+
+<div class="viewcode-block" id="SeedGen.get_nr_points"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SeedGen.get_nr_points">[docs]</a>    <span class="k">def</span> <span class="nf">get_nr_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="SeedGen.get_local_shape"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SeedGen.get_local_shape">[docs]</a>    <span class="k">def</span> <span class="nf">get_local_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="SeedGen.to_3d"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SeedGen.to_3d">[docs]</a>    <span class="k">def</span> <span class="nf">to_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts_local</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Transform points from the seed coordinate space to 3d</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            pts_local (ndarray): An array of points in local crds</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            3xN ndarray of N xyz points</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="SeedGen.to_local"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SeedGen.to_local">[docs]</a>    <span class="k">def</span> <span class="nf">to_local</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts_3d</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Transform points from 3d to the seed coordinate space</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            pts_local (ndarray): A 3xN array of N points in 3d</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            ndarray similar in shape to self.local_shape</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</div>
+    <span class="k">def</span> <span class="nf">_make_local_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Make a set of points in the local representation&quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_make_local_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Make a tuple of arrays that match :py:attr:`local_shape`&quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_make_3d_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Make a 3xN ndarray of N xyz points&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_3d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_make_local_points</span><span class="p">())</span>
+
+<div class="viewcode-block" id="SeedGen.points"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SeedGen.points">[docs]</a>    <span class="k">def</span> <span class="nf">points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Alias for :py:meth:`get_points`&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_points</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="SeedGen.get_points"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SeedGen.get_points">[docs]</a>    <span class="k">def</span> <span class="nf">get_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c"># pylint: disable=unused-argument</span>
+        <span class="sd">&quot;&quot;&quot;Get a 3xN ndarray of N xyz points&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span>
+        <span class="n">pts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_3d_points</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_points</span> <span class="o">=</span> <span class="n">pts</span>
+        <span class="k">return</span> <span class="n">pts</span>
+</div>
+<div class="viewcode-block" id="SeedGen.iter_points"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SeedGen.iter_points">[docs]</a>    <span class="k">def</span> <span class="nf">iter_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c"># pylint: disable=unused-argument</span>
+        <span class="sd">&quot;&quot;&quot;Make an iterator that yields `(x, y, z)` points</span>
+
+<span class="sd">        This can be overridden in a subclass if it&#39;s more efficient to</span>
+<span class="sd">        iterate than a call to :meth:`_make_points`. Calling iter_points</span>
+<span class="sd">        should make an effort to be the fastest way to iterate through</span>
+<span class="sd">        the points, regardless of caching.</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">            In Cython, it seems to take twice the time to</span>
+<span class="sd">            iterate over a generator than to use a for loop over</span>
+<span class="sd">            indices of an array, but only if the array already exists.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_points</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">izip</span><span class="p">(</span><span class="n">pts</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:])</span>
+</div>
+<div class="viewcode-block" id="SeedGen.get_rotation"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SeedGen.get_rotation">[docs]</a>    <span class="k">def</span> <span class="nf">get_rotation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Make a rotation matrix to go local -&gt; real 3D space&quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;{0} does not define get_rotation&quot;</span>
+                           <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__name__</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="SeedGen.as_coordinates"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SeedGen.as_coordinates">[docs]</a>    <span class="k">def</span> <span class="nf">as_coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Make :py:class:`Coordinates` for the local representation&quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;{0} does not define as_coordinates&quot;</span>
+                           <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__name__</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="SeedGen.wrap_field"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SeedGen.wrap_field">[docs]</a>    <span class="k">def</span> <span class="nf">wrap_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;NoName&quot;</span><span class="p">,</span> <span class="n">fldtype</span><span class="o">=</span><span class="s">&quot;scalar&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Wrap an ndarray into a field in the local representation&quot;&quot;&quot;</span>
+        <span class="n">crds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">as_coordinates</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">viscid</span><span class="o">.</span><span class="n">wrap_field</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">crds</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">fldtype</span><span class="o">=</span><span class="n">fldtype</span><span class="p">,</span>
+                                 <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="SeedGen.as_mesh"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SeedGen.as_mesh">[docs]</a>    <span class="k">def</span> <span class="nf">as_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Make a 3xUxV array that describes a 3D mesh surface&quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;{0} does not define as_mesh&quot;</span>
+                           <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__name__</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="SeedGen.arr2mesh"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SeedGen.arr2mesh">[docs]</a>    <span class="k">def</span> <span class="nf">arr2mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>  <span class="c"># pylint: disable=unused-argument</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;{0} does not define arr2mesh&quot;</span>
+                           <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__name__</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="SeedGen.wrap_mesh"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SeedGen.wrap_mesh">[docs]</a>    <span class="k">def</span> <span class="nf">wrap_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">arrs</span><span class="p">):</span>
+        <span class="n">vertices</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">as_mesh</span><span class="p">()</span>
+        <span class="n">arrs</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">arr2mesh</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span> <span class="k">for</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">arrs</span><span class="p">]</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">vertices</span><span class="p">]</span> <span class="o">+</span> <span class="n">arrs</span>
+
+</div></div>
+<div class="viewcode-block" id="Point"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Point">[docs]</a><span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="n">SeedGen</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Collection of points&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Seed with an explicit set of points</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            pts (ndarray or list): should look like something that</span>
+<span class="sd">                np.array(pts) can turn to an 3xN array of xyz</span>
+<span class="sd">                points. This can be Nx3 as long as N != 3.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Point</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pts</span> <span class="o">=</span> <span class="n">pts</span>
+
+<div class="viewcode-block" id="Point.get_nr_points"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Point.get_nr_points">[docs]</a>    <span class="k">def</span> <span class="nf">get_nr_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_points</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="Point.get_local_shape"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Point.get_local_shape">[docs]</a>    <span class="k">def</span> <span class="nf">get_local_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nr_points</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Point.to_3d"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Point.to_3d">[docs]</a>    <span class="k">def</span> <span class="nf">to_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts_local</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">pts_local</span>
+</div>
+<div class="viewcode-block" id="Point.to_local"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Point.to_local">[docs]</a>    <span class="k">def</span> <span class="nf">to_local</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts_3d</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">pts_3d</span>
+</div>
+    <span class="k">def</span> <span class="nf">_make_local_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pts</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pts</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pts</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pts</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pts</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Malformed points&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pts_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pts</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">pts_arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pts</span> <span class="o">=</span> <span class="n">pts_arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="n">pts_arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pts</span> <span class="o">=</span> <span class="n">pts_arr</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Malformed points&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pts</span>
+
+    <span class="k">def</span> <span class="nf">_make_local_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+</div>
+<div class="viewcode-block" id="MeshPoints"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.MeshPoints">[docs]</a><span class="k">class</span> <span class="nc">MeshPoints</span><span class="p">(</span><span class="n">SeedGen</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Generic points with 2d mesh information</span>
+
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Generic set of 2d points</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            pts (ndarray): must have shape 3xNUxNV for the uv mesh</span>
+<span class="sd">                directions</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MeshPoints</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">pts</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;First index of pts must be xyz&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pts</span> <span class="o">=</span> <span class="n">pts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nu</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nv</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<div class="viewcode-block" id="MeshPoints.get_nr_points"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.MeshPoints.get_nr_points">[docs]</a>    <span class="k">def</span> <span class="nf">get_nr_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nu</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">nv</span>
+</div>
+<div class="viewcode-block" id="MeshPoints.get_local_shape"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.MeshPoints.get_local_shape">[docs]</a>    <span class="k">def</span> <span class="nf">get_local_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nu</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nv</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="MeshPoints.to_3d"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.MeshPoints.to_3d">[docs]</a>    <span class="k">def</span> <span class="nf">to_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts_local</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">pts_local</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="MeshPoints.to_local"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.MeshPoints.to_local">[docs]</a>    <span class="k">def</span> <span class="nf">to_local</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts_3d</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</div>
+    <span class="k">def</span> <span class="nf">_make_local_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pts</span>
+
+    <span class="k">def</span> <span class="nf">_make_local_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nu</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nv</span><span class="p">)</span>
+
+<div class="viewcode-block" id="MeshPoints.as_coordinates"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.MeshPoints.as_coordinates">[docs]</a>    <span class="k">def</span> <span class="nf">as_coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">l</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_local_axes</span><span class="p">()</span>
+        <span class="n">crds</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">wrap_crds</span><span class="p">(</span><span class="s">&quot;nonuniform_cartesian&quot;</span><span class="p">,</span> <span class="p">((</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="n">l</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">crds</span>
+</div>
+<div class="viewcode-block" id="MeshPoints.as_mesh"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.MeshPoints.as_mesh">[docs]</a>    <span class="k">def</span> <span class="nf">as_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_points</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nu</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nv</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="MeshPoints.arr2mesh"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.MeshPoints.arr2mesh">[docs]</a>    <span class="k">def</span> <span class="nf">arr2mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">local_shape</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="Line"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Line">[docs]</a><span class="k">class</span> <span class="nc">Line</span><span class="p">(</span><span class="n">SeedGen</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A line of seed points&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">p1</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+                 <span class="n">cache</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;p0 &amp; p1 are `(x, y, z)` points as</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            p0 (list, tuple, or ndarray): starting point `(x, y, z)`</span>
+<span class="sd">            p1 (list, tuple, or ndarray): ending point `(x, y, z)`</span>
+<span class="sd">            n (int): number of points on the line</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Line</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">p0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">p1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="n">n</span>
+
+<div class="viewcode-block" id="Line.get_nr_points"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Line.get_nr_points">[docs]</a>    <span class="k">def</span> <span class="nf">get_nr_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span>
+</div>
+<div class="viewcode-block" id="Line.get_local_shape"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Line.get_local_shape">[docs]</a>    <span class="k">def</span> <span class="nf">get_local_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nr_points</span><span class="p">,</span> <span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Line.to_3d"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Line.to_3d">[docs]</a>    <span class="k">def</span> <span class="nf">to_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts_local</span><span class="p">):</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">p1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">p0</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">ds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">pts_local</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">ds</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">pts_local</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p0</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">ds</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">pts_local</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">])</span>
+</div>
+<div class="viewcode-block" id="Line.to_local"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Line.to_local">[docs]</a>    <span class="k">def</span> <span class="nf">to_local</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts_3d</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</div>
+    <span class="k">def</span> <span class="nf">_make_local_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_local_axes</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_make_local_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Line.as_coordinates"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Line.as_coordinates">[docs]</a>    <span class="k">def</span> <span class="nf">as_coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">dp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">p1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">p0</span>
+        <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="n">dp</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">crd</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">wrap_crds</span><span class="p">(</span><span class="s">&quot;nonuniform_cartesian&quot;</span><span class="p">,</span> <span class="p">((</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">),))</span>
+        <span class="k">return</span> <span class="n">crd</span>
+</div>
+<div class="viewcode-block" id="Line.as_mesh"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Line.as_mesh">[docs]</a>    <span class="k">def</span> <span class="nf">as_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_points</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="Plane"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Plane">[docs]</a><span class="k">class</span> <span class="nc">Plane</span><span class="p">(</span><span class="n">SeedGen</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A plane of seed points&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pN</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">pL</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                 <span class="n">len_l</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">len_m</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nl</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">nm</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">NL_are_vectors</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                 <span class="n">cache</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Make a plane in L,M,N coordinates.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            p0 (list, tuple, or ndarray): Origin of plane as (x, y, z)</span>
+<span class="sd">            pN (list, tuple, or ndarray): Point as (x, y, z) such that</span>
+<span class="sd">                a vector from p0 to pN is normal to the plane</span>
+<span class="sd">            pL (list, tuple, or ndarray): Point as (x, y, z) such</span>
+<span class="sd">                that a vector from p0 to pL is the `L` (`x`) axis of</span>
+<span class="sd">                the plane. The `M` (`y`) axis is `N` cross `L`. `pL`</span>
+<span class="sd">                is projected into the plane if needed.</span>
+<span class="sd">            len_l (float, list): Length of the plane along the `L`</span>
+<span class="sd">                axis. If given as a float, the plane extents from</span>
+<span class="sd">                (-len_l / 2, len_l / 2). If given as a list, one can</span>
+<span class="sd">                specify the axis limits explicitly.</span>
+<span class="sd">            len_m (float, list): Length of the plane along the `M` axis</span>
+<span class="sd">                with the same semantics as `len_l`.</span>
+<span class="sd">            nl (int): number of points in the `L` direction</span>
+<span class="sd">            nm (int): number of points in the `M` direction</span>
+<span class="sd">            NL_are_vectors (bool): If True, then pN and pL are</span>
+<span class="sd">                interpreted as vectors such that the basis vectors</span>
+<span class="sd">                are `pN - p0` and `pL - p0`, otherwise they are</span>
+<span class="sd">                interpreted as basis vectors themselves.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            RuntimeError: if Ndir == Ldir, can&#39;t determine a plane</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">Plane</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+        <span class="n">p0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">pN</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pN</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">pL</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pL</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">NL_are_vectors</span><span class="p">:</span>
+            <span class="n">Ndir</span> <span class="o">=</span> <span class="n">pN</span>
+            <span class="n">Ldir</span> <span class="o">=</span> <span class="n">pL</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">Ndir</span> <span class="o">=</span> <span class="n">pN</span> <span class="o">-</span> <span class="n">p0</span>
+            <span class="n">Ldir</span> <span class="o">=</span> <span class="n">pL</span> <span class="o">-</span> <span class="n">p0</span>
+
+        <span class="c"># normalize normal direction</span>
+        <span class="n">Ndir</span> <span class="o">=</span> <span class="n">Ndir</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Ndir</span><span class="p">,</span> <span class="n">Ndir</span><span class="p">))</span>
+        <span class="c"># project Ldir into the plane perpendicular to Ndir</span>
+        <span class="c"># (N already normalized)</span>
+        <span class="n">Ldir</span> <span class="o">=</span> <span class="n">Ldir</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Ldir</span><span class="p">,</span> <span class="n">Ndir</span><span class="p">)</span> <span class="o">*</span> <span class="n">Ndir</span>
+        <span class="c"># normalize Ldir</span>
+        <span class="n">Ldir</span> <span class="o">=</span> <span class="n">Ldir</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Ldir</span><span class="p">,</span> <span class="n">Ldir</span><span class="p">))</span>
+        <span class="c"># compute Mdir</span>
+        <span class="n">Mdir</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">Ndir</span><span class="p">,</span> <span class="n">Ldir</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">Mdir</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]):</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;N and L can&#39;t be parallel&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">len_l</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="n">len_l</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">len_l</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">len_l</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">len_m</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="n">len_m</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">len_m</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">len_m</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">p0</span> <span class="o">=</span> <span class="n">p0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Ndir</span> <span class="o">=</span> <span class="n">Ndir</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Ldir</span> <span class="o">=</span> <span class="n">Ldir</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Mdir</span> <span class="o">=</span> <span class="n">Mdir</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">len_l</span> <span class="o">=</span> <span class="n">len_l</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">len_m</span> <span class="o">=</span> <span class="n">len_m</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nl</span> <span class="o">=</span> <span class="n">nl</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nm</span> <span class="o">=</span> <span class="n">nm</span>
+
+<div class="viewcode-block" id="Plane.get_nr_points"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Plane.get_nr_points">[docs]</a>    <span class="k">def</span> <span class="nf">get_nr_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nl</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">nm</span>
+</div>
+<div class="viewcode-block" id="Plane.get_local_shape"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Plane.get_local_shape">[docs]</a>    <span class="k">def</span> <span class="nf">get_local_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nl</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nm</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Plane.to_3d"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Plane.to_3d">[docs]</a>    <span class="k">def</span> <span class="nf">to_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts_local</span><span class="p">):</span>
+        <span class="n">lmn_to_xyz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_rotation</span><span class="p">()</span>
+        <span class="n">rot_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s">&quot;ij,jk-&gt;ik&quot;</span><span class="p">,</span> <span class="n">lmn_to_xyz</span><span class="p">,</span> <span class="n">pts_local</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">p0</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="n">rot_pts</span>
+</div>
+<div class="viewcode-block" id="Plane.to_local"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Plane.to_local">[docs]</a>    <span class="k">def</span> <span class="nf">to_local</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts_3d</span><span class="p">):</span>
+        <span class="n">xyz_to_lmn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_rotation</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s">&quot;ij,jk-&gt;ik&quot;</span><span class="p">,</span>
+                         <span class="n">xyz_to_lmn</span><span class="p">,</span> <span class="n">pts_3d</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">p0</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
+</div>
+    <span class="k">def</span> <span class="nf">_make_local_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">plane_lmn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nl</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">nm</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">l</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_local_axes</span><span class="p">()</span>
+        <span class="n">plane_lmn</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nm</span><span class="p">)</span>
+        <span class="n">plane_lmn</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nl</span><span class="p">)</span>
+        <span class="n">plane_lmn</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">return</span> <span class="n">plane_lmn</span>
+
+    <span class="k">def</span> <span class="nf">_make_local_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">len_l</span><span class="p">,</span> <span class="n">len_m</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">len_l</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">len_m</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">len_l</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">len_l</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">nl</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">len_m</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">len_m</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">nm</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">l</span><span class="p">,</span> <span class="n">m</span>
+
+<div class="viewcode-block" id="Plane.get_rotation"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Plane.get_rotation">[docs]</a>    <span class="k">def</span> <span class="nf">get_rotation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get rotation from lmn -&gt; xyz</span>
+
+<span class="sd">        To transform xyz -&gt; lmn, transpose the result since it&#39;s</span>
+<span class="sd">        an orthogonal matrix.</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">            Remember that the p0 offset (the center of the plane) is</span>
+<span class="sd">            not done with the rotation.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            3x3 ndarray</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; # Transform a set of points from lmn coordinates to xyz</span>
+<span class="sd">            &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">            &gt;&gt;&gt; import viscid</span>
+<span class="sd">            &gt;&gt;&gt;</span>
+<span class="sd">            &gt;&gt;&gt; # p0 is the origin of the plane</span>
+<span class="sd">            &gt;&gt;&gt; p0 = np.array([0, 0, 0]).reshape(-1, 1)</span>
+<span class="sd">            &gt;&gt;&gt; plane = viscid.Plane(p0=p0, pN=(1, 1, 0),</span>
+<span class="sd">            &gt;&gt;&gt;                      pL=(1, -1, 0),</span>
+<span class="sd">            &gt;&gt;&gt;                      len_l=2.0, len_m=2.0)</span>
+<span class="sd">            &gt;&gt;&gt; lmn_to_xyz = plane.get_rotation()</span>
+<span class="sd">            &gt;&gt;&gt;</span>
+<span class="sd">            &gt;&gt;&gt; # make 10 random points in lmn coorinates</span>
+<span class="sd">            &gt;&gt;&gt; lmn = 2 * np.random.rand(3, 10) - 1</span>
+<span class="sd">            &gt;&gt;&gt; lmn[2] = 0.0</span>
+<span class="sd">            &gt;&gt;&gt; xyz = p0 + np.dot(lmn_to_xyz, lmn)</span>
+<span class="sd">            &gt;&gt;&gt;</span>
+<span class="sd">            &gt;&gt;&gt; from viscid.plot import mvi</span>
+<span class="sd">            &gt;&gt;&gt; verts = plane.as_mesh()</span>
+<span class="sd">            &gt;&gt;&gt; mvi.mlab.mesh(verts[0], verts[1], verts[2])</span>
+<span class="sd">            &gt;&gt;&gt; mvi.mlab.points3d(xyz[0], xyz[1], xyz[2])</span>
+<span class="sd">            &gt;&gt;&gt; mvi.show()</span>
+
+<span class="sd">            &gt;&gt;&gt; # Transform vector compenents from xyz to lmn</span>
+<span class="sd">            &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">            &gt;&gt;&gt; import viscid</span>
+<span class="sd">            &gt;&gt;&gt;</span>
+<span class="sd">            &gt;&gt;&gt; x = np.linspace(-1, 1, 32)</span>
+<span class="sd">            &gt;&gt;&gt; y = np.linspace(-1, 1, 32)</span>
+<span class="sd">            &gt;&gt;&gt; z = np.linspace(-1, 1, 32)</span>
+<span class="sd">            &gt;&gt;&gt; Bxyz = viscid.zeros([x, y, z], center=&#39;node&#39;,</span>
+<span class="sd">            &gt;&gt;&gt;                     nr_comps=3, layout=&quot;interlaced&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; Bxyz[&#39;x&#39;] = 1.0</span>
+<span class="sd">            &gt;&gt;&gt;</span>
+<span class="sd">            &gt;&gt;&gt; plane = viscid.Plane(p0=[0, 0, 0], pN=[1, 1, 0],</span>
+<span class="sd">            &gt;&gt;&gt;                      pL=[1, -1, 1],</span>
+<span class="sd">            &gt;&gt;&gt;                      len_l=0.5, len_m=0.5)</span>
+<span class="sd">            &gt;&gt;&gt; vals = viscid.interp_trilin(Bxyz, plane)</span>
+<span class="sd">            &gt;&gt;&gt; B_interp = plane.wrap_field(vals, fldtype=&#39;vector&#39;,</span>
+<span class="sd">            &gt;&gt;&gt;                             layout=&#39;interlaced&#39;)</span>
+<span class="sd">            &gt;&gt;&gt; xyz_to_lmn = plane.get_rotation().T</span>
+<span class="sd">            &gt;&gt;&gt; Blmn = np.einsum(&quot;ij,lmj-&gt;lmi&quot;, xyz_to_lmn, B_interp)</span>
+<span class="sd">            &gt;&gt;&gt; Blmn = B_interp.wrap(Blmn)</span>
+<span class="sd">            &gt;&gt;&gt;</span>
+<span class="sd">            &gt;&gt;&gt; # use xyz to show in 3d via mayavi</span>
+<span class="sd">            &gt;&gt;&gt; from viscid.plot import mvi</span>
+<span class="sd">            &gt;&gt;&gt; verts, s = plane.wrap_mesh(Blmn[&#39;z&#39;].data)</span>
+<span class="sd">            &gt;&gt;&gt; mvi.mlab.mesh(verts[0], verts[1], verts[2], scalars=s)</span>
+<span class="sd">            &gt;&gt;&gt; verts, vx, vy, vz = plane.wrap_mesh(B_interp[&#39;x&#39;].data,</span>
+<span class="sd">            &gt;&gt;&gt;                                     B_interp[&#39;y&#39;].data,</span>
+<span class="sd">            &gt;&gt;&gt;                                     B_interp[&#39;z&#39;].data)</span>
+<span class="sd">            &gt;&gt;&gt; mvi.mlab.quiver3d(verts[0], verts[1], verts[2],</span>
+<span class="sd">            &gt;&gt;&gt;                   vx, vy, vz)</span>
+<span class="sd">            &gt;&gt;&gt; mvi.show()</span>
+<span class="sd">            &gt;&gt;&gt;</span>
+<span class="sd">            &gt;&gt;&gt; # use lmn to show in-plane / out-of-plane</span>
+<span class="sd">            &gt;&gt;&gt; from viscid.plot import mpl</span>
+<span class="sd">            &gt;&gt;&gt; mpl.plot(Blmn[&#39;z&#39;])  # z means n here</span>
+<span class="sd">            &gt;&gt;&gt; mpl.plot2d_quiver(Blmn)</span>
+<span class="sd">            &gt;&gt;&gt; mpl.plt.show()</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">Ldir</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Mdir</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Ndir</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+</div>
+<div class="viewcode-block" id="Plane.as_coordinates"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Plane.as_coordinates">[docs]</a>    <span class="k">def</span> <span class="nf">as_coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">l</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_local_axes</span><span class="p">()</span>
+        <span class="n">crds</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">wrap_crds</span><span class="p">(</span><span class="s">&quot;nonuniform_cartesian&quot;</span><span class="p">,</span> <span class="p">((</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="n">l</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">crds</span>
+</div>
+<div class="viewcode-block" id="Plane.as_mesh"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Plane.as_mesh">[docs]</a>    <span class="k">def</span> <span class="nf">as_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_points</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nl</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nm</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Plane.arr2mesh"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Plane.arr2mesh">[docs]</a>    <span class="k">def</span> <span class="nf">arr2mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">local_shape</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="Volume"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Volume">[docs]</a><span class="k">class</span> <span class="nc">Volume</span><span class="p">(</span><span class="n">SeedGen</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A volume of seed points</span>
+
+<span class="sd">    Defined by two opposite corners of a box in 3D</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xl</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">xh</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+                 <span class="n">cache</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Make a volume</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            xl (list, tuple, or ndarray): Lower corner as (x, y, z)</span>
+<span class="sd">            xh (list, tuple, or ndarray): Upper corner as (x, y, z)</span>
+<span class="sd">            n (list, tuple, or ndarray): number of points (nx, ny, nz)</span>
+<span class="sd">                defaults to (20, 20, 20)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Volume</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">xl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">xl</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">xh</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xl</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">&#39;i&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">n</span>
+
+<div class="viewcode-block" id="Volume.get_nr_points"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Volume.get_nr_points">[docs]</a>    <span class="k">def</span> <span class="nf">get_nr_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Volume.get_local_shape"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Volume.get_local_shape">[docs]</a>    <span class="k">def</span> <span class="nf">get_local_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Volume.to_3d"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Volume.to_3d">[docs]</a>    <span class="k">def</span> <span class="nf">to_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts_local</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">pts_local</span>
+</div>
+<div class="viewcode-block" id="Volume.to_local"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Volume.to_local">[docs]</a>    <span class="k">def</span> <span class="nf">to_local</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts_3d</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">pts_3d</span>
+</div>
+    <span class="k">def</span> <span class="nf">_make_local_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">crds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_local_axes</span><span class="p">()</span>
+        <span class="n">shape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">local_shape</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">shape</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">shape</span><span class="p">)])</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">crds</span><span class="p">):</span>
+            <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">shape</span><span class="p">[:</span><span class="n">i</span><span class="p">])),</span>
+                                  <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]))</span>
+        <span class="k">return</span> <span class="n">arr</span>
+
+    <span class="k">def</span> <span class="nf">_make_local_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xl</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">xh</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xl</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">xh</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xl</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">xh</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
+
+<div class="viewcode-block" id="Volume.iter_points"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Volume.iter_points">[docs]</a>    <span class="k">def</span> <span class="nf">iter_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_local_axes</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Volume.as_coordinates"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Volume.as_coordinates">[docs]</a>    <span class="k">def</span> <span class="nf">as_coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_local_axes</span><span class="p">()</span>
+        <span class="n">crd</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">wrap_crds</span><span class="p">(</span><span class="s">&quot;nonuniform_cartesian&quot;</span><span class="p">,</span>
+                               <span class="p">((</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;z&#39;</span><span class="p">,</span> <span class="n">z</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">crd</span>
+</div>
+<div class="viewcode-block" id="Volume.as_mesh"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Volume.as_mesh">[docs]</a>    <span class="k">def</span> <span class="nf">as_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">ind</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">pts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_points</span><span class="p">()</span>
+            <span class="n">n</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">pts</span><span class="o">.</span><span class="n">reshape</span><span class="p">([</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;Can&#39;t make a 2d surface from a 3d volume&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Volume.arr2mesh"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Volume.arr2mesh">[docs]</a>    <span class="k">def</span> <span class="nf">arr2mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+        <span class="n">vertices</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">as_mesh</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">vertices</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+</div></div>
+<div class="viewcode-block" id="Sphere"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Sphere">[docs]</a><span class="k">class</span> <span class="nc">Sphere</span><span class="p">(</span><span class="n">SeedGen</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Make seeds on the surface of a sphere&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">r</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">pole</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">ntheta</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">nphi</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+                 <span class="n">thetalim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">180.0</span><span class="p">),</span> <span class="n">philim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">360.0</span><span class="p">),</span> <span class="n">phi_endpoint</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                 <span class="n">pole_is_vector</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">theta_phi</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">roll</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                 <span class="n">cache</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Make seeds on the surface of a sphere</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            p0 (list, tuple, or ndarray): Origin of sphere as (x, y, z)</span>
+<span class="sd">            r (float): Radius of sphere; or calculated from pole if 0</span>
+<span class="sd">            pole (list, tuple, or ndarray): Vector pointing</span>
+<span class="sd">                in the direction of the north pole of the sphere.</span>
+<span class="sd">                Defaults to (0, 0, 1).</span>
+<span class="sd">            ntheta (int): Number of points in theta</span>
+<span class="sd">            nphi (int): Number of points in phi</span>
+<span class="sd">            thetalim (list): min and max theta (in degrees)</span>
+<span class="sd">            philim (list): min and max phi (in degrees)</span>
+<span class="sd">            phi_endpoint (bool): if true, then let phi inclue upper</span>
+<span class="sd">                value. This is false by default since 0 == 2pi.</span>
+<span class="sd">            pole_is_vector (bool): Whether pole is a vector or a</span>
+<span class="sd">                vector</span>
+<span class="sd">            theta_phi (bool): If True, reult can be reshaped as</span>
+<span class="sd">                (theta, phi), otherwise it&#39;s (phi, theta)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Sphere</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">p0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">pole_is_vector</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pole</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">pole</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">pole</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">pole</span> <span class="o">=</span> <span class="n">p0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">pole</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">pole</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">pole</span> <span class="o">=</span> <span class="n">pole</span> <span class="o">-</span> <span class="n">p0</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">r</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pole</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pole</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pole</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pole</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">thetalim</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">philim</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;thetalim and philim must have both min and max&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ntheta</span> <span class="o">=</span> <span class="n">ntheta</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nphi</span> <span class="o">=</span> <span class="n">nphi</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">thetalim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">thetalim</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">philim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">philim</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">phi_endpoint</span> <span class="o">=</span> <span class="n">phi_endpoint</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">theta_phi</span> <span class="o">=</span> <span class="n">theta_phi</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">roll</span> <span class="o">=</span> <span class="n">roll</span>
+
+<div class="viewcode-block" id="Sphere.get_nr_points"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Sphere.get_nr_points">[docs]</a>    <span class="k">def</span> <span class="nf">get_nr_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ntheta</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">nphi</span>
+</div>
+<div class="viewcode-block" id="Sphere.get_local_shape"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Sphere.get_local_shape">[docs]</a>    <span class="k">def</span> <span class="nf">get_local_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">theta_phi</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ntheta</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nphi</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nphi</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ntheta</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Sphere.to_3d"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Sphere.to_3d">[docs]</a>    <span class="k">def</span> <span class="nf">to_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts_local</span><span class="p">):</span>
+        <span class="n">r</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">P</span> <span class="o">=</span> <span class="n">pts_local</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">pts_local</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="n">pts_local</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="n">pts_local</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">P</span><span class="p">))</span>
+        <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">P</span><span class="p">))</span>
+        <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.0</span> <span class="o">*</span> <span class="n">P</span><span class="p">)</span>
+
+        <span class="n">rot_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s">&quot;ij,jk-&gt;ik&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_rotation</span><span class="p">(),</span> <span class="n">a</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">p0</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="n">rot_pts</span>
+</div>
+<div class="viewcode-block" id="Sphere.to_local"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Sphere.to_local">[docs]</a>    <span class="k">def</span> <span class="nf">to_local</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts_3d</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</div>
+    <span class="k">def</span> <span class="nf">_make_local_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ntheta</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">nphi</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_local_axes</span><span class="p">()</span>
+        <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span>
+        <span class="c"># Note: arr[1, :] is always theta and arr[2, :] is always phi</span>
+        <span class="c"># what changes is the way the points are ordered in the 2nd dimension</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">theta_phi</span><span class="p">:</span>
+            <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nphi</span><span class="p">)</span>
+            <span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ntheta</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nphi</span><span class="p">)</span>
+            <span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ntheta</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">arr</span>
+
+    <span class="k">def</span> <span class="nf">_make_local_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">thetalim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">thetalim</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">ntheta</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+                            <span class="n">endpoint</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="n">theta</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">philim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">philim</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">nphi</span><span class="p">,</span>
+                          <span class="n">endpoint</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">phi_endpoint</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span>
+
+<div class="viewcode-block" id="Sphere.get_rotation"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Sphere.get_rotation">[docs]</a>    <span class="k">def</span> <span class="nf">get_rotation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">make_rotation_matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">pole</span><span class="p">,</span>
+                                    <span class="n">roll</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">roll</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Sphere.as_coordinates"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Sphere.as_coordinates">[docs]</a>    <span class="k">def</span> <span class="nf">as_coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_local_axes</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">theta_phi</span><span class="p">:</span>
+            <span class="n">crds</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">wrap_crds</span><span class="p">(</span><span class="s">&quot;nonuniform_cartesian&quot;</span><span class="p">,</span>
+                                    <span class="p">((</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="n">theta</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">phi</span><span class="p">)))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">crds</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">wrap_crds</span><span class="p">(</span><span class="s">&quot;nonuniform_cartesian&quot;</span><span class="p">,</span>
+                                    <span class="p">((</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">theta</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">crds</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_is_whole_sphere</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">delta_theta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">thetalim</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">thetalim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">delta_phi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">philim</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">philim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">([</span><span class="n">delta_theta</span><span class="p">,</span> <span class="n">delta_phi</span><span class="p">],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">])</span>
+
+<div class="viewcode-block" id="Sphere.as_mesh"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Sphere.as_mesh">[docs]</a>    <span class="k">def</span> <span class="nf">as_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">new_shape</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">local_shape</span><span class="p">)</span>
+        <span class="n">pts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_points</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">new_shape</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_whole_sphere</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">theta_phi</span><span class="p">:</span>
+                <span class="n">pole0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nphi</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">pts</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+                <span class="n">pole1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nphi</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">pts</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">pole0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nphi</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">pts</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+                <span class="n">pole1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nphi</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">pts</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
+            <span class="n">pole0</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p0</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">pole</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">pole1</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p0</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">pole</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">theta_phi</span><span class="p">:</span>
+                <span class="n">pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">pole0</span><span class="p">,</span> <span class="n">pts</span><span class="p">,</span> <span class="n">pole1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">pts</span><span class="p">,</span> <span class="n">pts</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">None</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">pole0</span><span class="p">,</span> <span class="n">pts</span><span class="p">,</span> <span class="n">pole1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+                <span class="n">pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">pts</span><span class="p">,</span> <span class="n">pts</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="p">:]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">theta_phi</span><span class="p">:</span>
+            <span class="n">pts</span> <span class="o">=</span> <span class="n">pts</span><span class="p">[:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>  <span class="c"># normals out</span>
+
+        <span class="k">return</span> <span class="n">pts</span>
+</div>
+<div class="viewcode-block" id="Sphere.arr2mesh"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Sphere.arr2mesh">[docs]</a>    <span class="k">def</span> <span class="nf">arr2mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">local_shape</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_whole_sphere</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">theta_phi</span><span class="p">:</span>
+                <span class="n">p0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="bp">None</span><span class="p">],</span> <span class="n">keepdims</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                               <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">p1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="bp">None</span><span class="p">],</span> <span class="n">keepdims</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                               <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">p0</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">p1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">arr</span><span class="p">,</span> <span class="n">arr</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">None</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">p0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">arr</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">None</span><span class="p">],</span> <span class="n">keepdims</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                               <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">p1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">arr</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">None</span><span class="p">],</span> <span class="n">keepdims</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                               <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">p0</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">p1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">arr</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="p">:]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">theta_phi</span><span class="p">:</span>
+            <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>  <span class="c"># normals out</span>
+
+        <span class="k">return</span> <span class="n">arr</span>
+
+</div></div>
+<div class="viewcode-block" id="SphericalCap"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SphericalCap">[docs]</a><span class="k">class</span> <span class="nc">SphericalCap</span><span class="p">(</span><span class="n">Sphere</span><span class="p">):</span>  <span class="c"># pylint: disable=abstract-class-little-used</span>
+    <span class="sd">&quot;&quot;&quot;A spherical cone or cap of seeds</span>
+
+<span class="sd">    Defined by a center, and a point indicating the direction of the</span>
+<span class="sd">    cone, and the half angle of the cone.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">r</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">pole</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">angle</span><span class="o">=</span><span class="mf">90.0</span><span class="p">,</span>
+                 <span class="n">ntheta</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">nphi</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">pole_is_vector</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">theta_phi</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                 <span class="n">roll</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Summary</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            p0 (list, tuple, or ndarray): Origin of sphere as (x, y, z)</span>
+<span class="sd">            r (float): Radius of sphere; or calculated from pole if 0</span>
+<span class="sd">            pole (list, tuple, or ndarray): Vector pointing</span>
+<span class="sd">                in the direction of the north pole of the sphere.</span>
+<span class="sd">                Defaults to (0, 0, 1).</span>
+<span class="sd">            angle (float): cone angle of the cap in degrees</span>
+<span class="sd">            ntheta (int): Number of points in theta</span>
+<span class="sd">            nphi (int): Number of points in phi</span>
+<span class="sd">            pole_is_vector (bool): Whether pole is a vector or a</span>
+<span class="sd">                vector</span>
+<span class="sd">            theta_phi (bool): If True, reult can be reshaped as</span>
+<span class="sd">                (theta, phi), otherwise it&#39;s (phi, theta)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SphericalCap</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">pole</span><span class="o">=</span><span class="n">pole</span><span class="p">,</span> <span class="n">ntheta</span><span class="o">=</span><span class="n">ntheta</span><span class="p">,</span>
+                                           <span class="n">nphi</span><span class="o">=</span><span class="n">nphi</span><span class="p">,</span>
+                                           <span class="n">pole_is_vector</span><span class="o">=</span><span class="n">pole_is_vector</span><span class="p">,</span>
+                                           <span class="n">theta_phi</span><span class="o">=</span><span class="n">theta_phi</span><span class="p">,</span> <span class="n">roll</span><span class="o">=</span><span class="n">roll</span><span class="p">,</span>
+                                           <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">angle</span> <span class="o">=</span> <span class="n">angle</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">180.0</span><span class="p">)</span>
+
+<div class="viewcode-block" id="SphericalCap.to_local"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SphericalCap.to_local">[docs]</a>    <span class="k">def</span> <span class="nf">to_local</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts_3d</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</div>
+    <span class="k">def</span> <span class="nf">_make_local_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">angle</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ntheta</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">theta</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nphi</span><span class="p">,</span>
+                          <span class="n">endpoint</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span>
+
+<div class="viewcode-block" id="SphericalCap.as_mesh"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SphericalCap.as_mesh">[docs]</a>    <span class="k">def</span> <span class="nf">as_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">pts</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">SphericalCap</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">as_mesh</span><span class="p">()</span>
+
+        <span class="c"># don&#39;t include anti-pole direction since this is a cap</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">theta_phi</span><span class="p">:</span>
+            <span class="n">pts</span> <span class="o">=</span> <span class="n">pts</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pts</span> <span class="o">=</span> <span class="n">pts</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">pts</span>
+</div>
+<div class="viewcode-block" id="SphericalCap.arr2mesh"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SphericalCap.arr2mesh">[docs]</a>    <span class="k">def</span> <span class="nf">arr2mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">SphericalCap</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">arr2mesh</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+        <span class="c"># don&#39;t include anti-pole direction since this is a cap</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">theta_phi</span><span class="p">:</span>
+            <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">arr</span>
+</div></div>
+<div class="viewcode-block" id="Circle"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Circle">[docs]</a><span class="k">class</span> <span class="nc">Circle</span><span class="p">(</span><span class="n">SphericalCap</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A circle of seeds</span>
+
+<span class="sd">    Defined by a center and a point normal to the plane of the circle</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pole</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">pole_is_vector</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">roll</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Summary</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            p0 (list, tuple, or ndarray): Center of circle as (x, y, z)</span>
+<span class="sd">            pole (list, tuple, or ndarray): Vector pointing</span>
+<span class="sd">                in the direction normal to the circle. Defaults to</span>
+<span class="sd">                (0, 0, 1).</span>
+<span class="sd">            n (int): Number of points around the circle</span>
+<span class="sd">            r (float): Radius of circle; or calculated from pole if 0</span>
+<span class="sd">            pole_is_vector (bool): Whether pole is a vector or a</span>
+<span class="sd">                vector</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Circle</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">pole</span><span class="o">=</span><span class="n">pole</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="mf">90.0</span><span class="p">,</span> <span class="n">nphi</span><span class="o">=</span><span class="n">n</span><span class="p">,</span>
+                                     <span class="n">pole_is_vector</span><span class="o">=</span><span class="n">pole_is_vector</span><span class="p">,</span> <span class="n">roll</span><span class="o">=</span><span class="n">roll</span><span class="p">,</span>
+                                     <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Circle.to_local"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.Circle.to_local">[docs]</a>    <span class="k">def</span> <span class="nf">to_local</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts_3d</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+</div></div>
+<div class="viewcode-block" id="SphericalPatch"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SphericalPatch">[docs]</a><span class="k">class</span> <span class="nc">SphericalPatch</span><span class="p">(</span><span class="n">SeedGen</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Make a rectangular (in theta and phi) patch on a sphere&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">p1</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">max_alpha</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">max_beta</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span>
+                 <span class="n">nalpha</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">nbeta</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">roll</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">p1_is_vector</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                 <span class="n">cache</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SphericalPatch</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+        <span class="n">max_alpha</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">180.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">max_alpha</span>
+        <span class="n">max_beta</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">180.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">max_beta</span>
+
+        <span class="n">p0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">p1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">p1_is_vector</span><span class="p">:</span>
+            <span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">-</span> <span class="n">p0</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">r</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">p1</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">max_alpha</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">max_beta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Invalid alpha/beta ranges, if you want &quot;</span>
+                             <span class="s">&quot;something with more angular coverage you&#39;ll &quot;</span>
+                             <span class="s">&quot;need a SphericalCap&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">p0</span> <span class="o">=</span> <span class="n">p0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_alpha</span> <span class="o">=</span> <span class="n">max_alpha</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_beta</span> <span class="o">=</span> <span class="n">max_beta</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nalpha</span> <span class="o">=</span> <span class="n">nalpha</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nbeta</span> <span class="o">=</span> <span class="n">nbeta</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">roll</span> <span class="o">=</span> <span class="n">roll</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
+
+<div class="viewcode-block" id="SphericalPatch.get_nr_points"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SphericalPatch.get_nr_points">[docs]</a>    <span class="k">def</span> <span class="nf">get_nr_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nalpha</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">nbeta</span>
+</div>
+<div class="viewcode-block" id="SphericalPatch.get_local_shape"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SphericalPatch.get_local_shape">[docs]</a>    <span class="k">def</span> <span class="nf">get_local_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nalpha</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nbeta</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="SphericalPatch.to_3d"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SphericalPatch.to_3d">[docs]</a>    <span class="k">def</span> <span class="nf">to_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts_local</span><span class="p">):</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="n">pts_local</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">pts_local</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:])</span>
+        <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">pts_local</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>
+        <span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">rot_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s">&quot;ij,jk-&gt;ik&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_rotation</span><span class="p">(),</span> <span class="n">arr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">p0</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="n">rot_pts</span>
+</div>
+<div class="viewcode-block" id="SphericalPatch.to_local"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SphericalPatch.to_local">[docs]</a>    <span class="k">def</span> <span class="nf">to_local</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pts_3d</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</div>
+    <span class="k">def</span> <span class="nf">_make_local_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_local_axes</span><span class="p">()</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nr_points</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nbeta</span><span class="p">)</span>
+        <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nalpha</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">arr</span>
+
+    <span class="k">def</span> <span class="nf">_make_local_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_alpha</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_alpha</span><span class="p">,</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">nalpha</span><span class="p">)</span>
+        <span class="n">beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_beta</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_beta</span><span class="p">,</span>
+                           <span class="bp">self</span><span class="o">.</span><span class="n">nbeta</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span>
+
+<div class="viewcode-block" id="SphericalPatch.get_rotation"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SphericalPatch.get_rotation">[docs]</a>    <span class="k">def</span> <span class="nf">get_rotation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">make_rotation_matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">p1</span><span class="p">,</span>
+                                    <span class="n">roll</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">roll</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="SphericalPatch.as_coordinates"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SphericalPatch.as_coordinates">[docs]</a>    <span class="k">def</span> <span class="nf">as_coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_local_axes</span><span class="p">()</span>
+        <span class="n">crds</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">wrap_crds</span><span class="p">(</span><span class="s">&quot;nonuniform_cartesian&quot;</span><span class="p">,</span>
+                                <span class="p">((</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">beta</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">crds</span>
+</div>
+<div class="viewcode-block" id="SphericalPatch.as_mesh"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SphericalPatch.as_mesh">[docs]</a>    <span class="k">def</span> <span class="nf">as_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_points</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nalpha</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nbeta</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="SphericalPatch.arr2mesh"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.SphericalPatch.arr2mesh">[docs]</a>    <span class="k">def</span> <span class="nf">arr2mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">local_shape</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="PolarIonosphere"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.PolarIonosphere">[docs]</a><span class="k">class</span> <span class="nc">PolarIonosphere</span><span class="p">(</span><span class="n">Sphere</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">PolarIonosphere</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+<div class="viewcode-block" id="PolarIonosphere.to_local"><a class="viewcode-back" href="../../api/viscid.seed.html#viscid.PolarIonosphere.to_local">[docs]</a>    <span class="k">def</span> <span class="nf">to_local</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+<span class="c">##</span>
+<span class="c">## EOF</span>
+<span class="c">##</span></div></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
