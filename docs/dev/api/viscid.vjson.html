@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.vjson module &mdash; Viscid 0.95.0 dev documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.95.0 dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 dev documentation" href="../index.html" />
+    <link rel="up" title="viscid package" href="viscid.html" />
+    <link rel="next" title="viscid.vlab module" href="viscid.vlab.html" />
+    <link rel="prev" title="viscid.verror module" href="viscid.verror.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0 dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../changes.html">ChangeLog</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">viscid.vjson module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-viscid.vjson">
+<span id="viscid-vjson-module"></span><h1>viscid.vjson module<a class="headerlink" href="#module-viscid.vjson" title="Permalink to this headline">¶</a></h1>
+<p>Wrap python&#8217;s json parser enabling comments and trailing commas</p>
+<p>Comments are either # or //</p>
+<dl class="function">
+<dt id="viscid.vjson.dump">
+<code class="descclassname">viscid.vjson.</code><code class="descname">dump</code><span class="sig-paren">(</span><em>obj</em>, <em>f</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vjson.html#dump"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vjson.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrap Python&#8217;s <code class="xref py py-func docutils literal"><span class="pre">json.dump()</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>obj</strong> &#8211; some object that Python&#8217;s <code class="xref py py-func docutils literal"><span class="pre">json.dump()</span></code> understands</li>
+<li><strong>f</strong> &#8211; file-like object with a write method</li>
+<li><strong>**kwargs</strong> &#8211; passed to Python&#8217;s <code class="xref py py-func docutils literal"><span class="pre">json.dump()</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vjson.dumps">
+<code class="descclassname">viscid.vjson.</code><code class="descname">dumps</code><span class="sig-paren">(</span><em>obj</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vjson.html#dumps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vjson.dumps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrap Python&#8217;s <code class="xref py py-func docutils literal"><span class="pre">json.dumps()</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>obj</strong> &#8211; some object that Python&#8217;s <code class="xref py py-func docutils literal"><span class="pre">json.dumps()</span></code> understands</li>
+<li><strong>**kwargs</strong> &#8211; passed to Python&#8217;s <code class="xref py py-func docutils literal"><span class="pre">json.dumps()</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vjson.find_all">
+<code class="descclassname">viscid.vjson.</code><code class="descname">find_all</code><span class="sig-paren">(</span><em>s</em>, <em>substrings</em>, <em>start=0</em>, <em>end=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vjson.html#find_all"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vjson.find_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate all ocurances of sub in s</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>s</strong> (<em>str</em>) &#8211; whole string</li>
+<li><strong>sub</strong> (<em>str, list</em>) &#8211; substring or list of substrings to find</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Yields:</th><td class="field-body"><p class="first last">index of start of sub in s</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vjson.load">
+<code class="descclassname">viscid.vjson.</code><code class="descname">load</code><span class="sig-paren">(</span><em>f</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vjson.html#load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vjson.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read file and pass to <a class="reference internal" href="#viscid.vjson.loads" title="viscid.vjson.loads"><code class="xref py py-func docutils literal"><span class="pre">loads()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>f</strong> &#8211; file-like object with a read method</li>
+<li><strong>**kwargs</strong> &#8211; passed to <a class="reference internal" href="#viscid.vjson.loads" title="viscid.vjson.loads"><code class="xref py py-func docutils literal"><span class="pre">loads()</span></code></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vjson.loads">
+<code class="descclassname">viscid.vjson.</code><code class="descname">loads</code><span class="sig-paren">(</span><em>text</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vjson.html#loads"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vjson.loads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrap Python&#8217;s <code class="xref py py-func docutils literal"><span class="pre">json.loads()</span></code></p>
+<p>Trims out comments and trailing commas first</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>text</strong> &#8211; json as a string</li>
+<li><strong>**kwargs</strong> &#8211; passed to Python&#8217;s <code class="xref py py-func docutils literal"><span class="pre">json.loads()</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vjson.rfind_all">
+<code class="descclassname">viscid.vjson.</code><code class="descname">rfind_all</code><span class="sig-paren">(</span><em>s</em>, <em>substrings</em>, <em>start=0</em>, <em>end=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vjson.html#rfind_all"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vjson.rfind_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate all ocurances of sub in s</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>s</strong> (<em>str</em>) &#8211; whole string</li>
+<li><strong>sub</strong> (<em>str, list</em>) &#8211; substring or list of substrings to find</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Yields:</th><td class="field-body"><p class="first last">index of start of sub in s</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/api/viscid.vjson.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

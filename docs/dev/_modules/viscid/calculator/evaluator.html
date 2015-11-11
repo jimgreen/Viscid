@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.calculator.evaluator &mdash; Viscid 0.95.0 dev documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.95.0 dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 dev documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0 dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../changes.html">ChangeLog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for viscid.calculator.evaluator</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="sd">&quot;&quot;&quot;Used for evaluating equations given to a script from the user</span>
+
+<span class="sd">This tries very feebly to limit the namespace available to</span>
+<span class="sd">the equation which is done using eval. As a result, this</span>
+<span class="sd">functionality should NOT be used on untrusted input. To make</span>
+<span class="sd">this super clear, the user MUST enable this functionality on</span>
+<span class="sd">a per-script basis, or by setting calculator.evaluator.enabled: true</span>
+<span class="sd">in their viscidrc.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">division</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="c"># raise ImportError</span>
+    <span class="kn">import</span> <span class="nn">numexpr</span> <span class="kn">as</span> <span class="nn">ne</span>
+    <span class="n">_has_numexpr</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">_has_numexpr</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">field</span>
+<span class="kn">from</span> <span class="nn">viscid.calculator</span> <span class="kn">import</span> <span class="n">calc</span>
+
+<span class="n">enabled</span> <span class="o">=</span> <span class="bp">False</span>
+
+
+<div class="viewcode-block" id="evaluate"><a class="viewcode-back" href="../../../api/viscid.calculator.evaluator.html#viscid.calculator.evaluator.evaluate">[docs]</a><span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">result_name</span><span class="p">,</span> <span class="n">eqn</span><span class="p">,</span> <span class="n">try_numexpr</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">slc</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Evaluate an equation on a grid</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        To use this function directly</span>
+
+<span class="sd">            &gt;&gt;&gt; evaluator.enabled = True</span>
+<span class="sd">            &gt;&gt;&gt; f = viscid.load_file(&quot;...&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; evaluator.evaluate(f.get_grid(),</span>
+<span class="sd">                                   &quot;sqrt(vx**2+vy**2+vz**2)&quot;,</span>
+<span class="sd">                                   &quot;speed&quot;)</span>
+<span class="sd">            &lt;viscid.field.ScalarField object at ...&gt;</span>
+
+<span class="sd">        Or, for short, you can as a grid to evaluate implicitly,</span>
+
+<span class="sd">            &gt;&gt; evaluator.enabled = True</span>
+<span class="sd">            &gt;&gt; f = viscid.load_file(&quot;...&quot;)</span>
+<span class="sd">            &gt;&gt; speed = f[&quot;speed=sqrt(vx**2+vy**2+vz**2)&quot;]</span>
+<span class="sd">            &lt;viscid.field.ScalarField object at ...&gt;</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        grid: a grid instance where the fields live</span>
+<span class="sd">        result_name (str): Used for the name and pretty_name of the</span>
+<span class="sd">            resulting field</span>
+<span class="sd">        eqn (str): the equation, if a symbol exists in the numpy</span>
+<span class="sd">            namespace, then that&#39;s how it is interpreted, otherwise,</span>
+<span class="sd">            the symbol will be looked up in the grid</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Field instance</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">enabled</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;You must enable the evaluator with &quot;</span>
+                           <span class="s">&quot;`viscid.calculator.evaluator.enabled = True`, &quot;</span>
+                           <span class="s">&quot;or in your viscidrc.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">try_numexpr</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">_evaluate_numexpr</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">result_name</span><span class="p">,</span> <span class="n">eqn</span><span class="p">,</span> <span class="n">slc</span><span class="o">=</span><span class="n">slc</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">RuntimeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Numexpr couldn&#39;t understand a math function you &quot;</span>
+                        <span class="s">&quot;tried to use in &#39;{0}&#39;, falling back to numpy&quot;</span>
+                        <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">eqn</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">_evaluate_numpy</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">result_name</span><span class="p">,</span> <span class="n">eqn</span><span class="p">,</span> <span class="n">slc</span><span class="o">=</span><span class="n">slc</span><span class="p">)</span>
+</div>
+<span class="k">def</span> <span class="nf">_evaluate_numexpr</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">result_name</span><span class="p">,</span> <span class="n">eqn</span><span class="p">,</span> <span class="n">slc</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        Field</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        RuntimeError, if no numexpr, or if evaluate is not enabled</span>
+<span class="sd">        TypeError, if numexpr couldn&#39;t understand a math input</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">_has_numexpr</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;Evaluate not enabled, or numexpr not installed.&quot;</span><span class="p">)</span>
+
+    <span class="c"># salt symbols that don&#39;t look like math functions and look them up</span>
+    <span class="c"># in the grid</span>
+    <span class="n">salt</span> <span class="o">=</span> <span class="s">&quot;SALT&quot;</span>
+    <span class="n">_symbol_re</span> <span class="o">=</span> <span class="s">r&quot;\b([_A-Za-z][_a-zA-Z0-9]*)\b&quot;</span>
+    <span class="n">var_re</span> <span class="o">=</span> <span class="n">_symbol_re</span> <span class="o">+</span> <span class="s">r&quot;(?!\s*\()&quot;</span>
+    <span class="n">flds</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c"># for security</span>
+    <span class="n">eqn</span> <span class="o">=</span> <span class="n">eqn</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;__&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">local_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">var_salter</span><span class="p">(</span><span class="n">symbols</span><span class="p">):</span>
+        <span class="n">symbol</span> <span class="o">=</span> <span class="n">symbols</span><span class="o">.</span><span class="n">groups</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">salted_symbol</span> <span class="o">=</span> <span class="n">salt</span> <span class="o">+</span> <span class="n">symbol</span>
+        <span class="c"># yes, i&#39;m not using dict.update on purpose since grid&#39;s</span>
+        <span class="c"># getitem might copy the array</span>
+        <span class="k">if</span> <span class="n">salted_symbol</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">local_dict</span><span class="p">:</span>
+            <span class="n">this_fld</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">get_field</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">slc</span><span class="o">=</span><span class="n">slc</span><span class="p">)</span>
+            <span class="n">local_dict</span><span class="p">[</span><span class="n">salted_symbol</span><span class="p">]</span> <span class="o">=</span> <span class="n">this_fld</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flds</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">this_fld</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">Field</span><span class="p">):</span>
+                    <span class="n">flds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">this_fld</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;reduced to scalar, no need for numexpr&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">salted_symbol</span>
+
+    <span class="n">salted_eqn</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">var_re</span><span class="p">,</span> <span class="n">var_salter</span><span class="p">,</span> <span class="n">eqn</span><span class="p">)</span>
+
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">ne</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">salted_eqn</span><span class="p">,</span> <span class="n">local_dict</span><span class="o">=</span><span class="n">local_dict</span><span class="p">,</span>
+                      <span class="n">global_dict</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;__builtins__&quot;</span><span class="p">:</span> <span class="p">{}})</span>
+
+    <span class="c"># FIXME: actually detect the type of field instead of asserting it&#39;s</span>
+    <span class="c"># a scalar... also maybe auto-detect reduction operations?</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flds</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ctx</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">result_name</span><span class="p">,</span> <span class="n">pretty_name</span><span class="o">=</span><span class="n">result_name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">flds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">ctx</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Strange input to numexpr evaluator: </span><span class="si">%s</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">eqn</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">field</span><span class="o">.</span><span class="n">wrap_field</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">crds</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">result_name</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_evaluate_numpy</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">result_name</span><span class="p">,</span> <span class="n">eqn</span><span class="p">,</span> <span class="n">slc</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        Field</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">enabled</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;Evaluate is not enabled&quot;</span><span class="p">)</span>
+
+    <span class="c"># salt variable names</span>
+    <span class="n">salt</span> <span class="o">=</span> <span class="s">&quot;SALT&quot;</span>
+    <span class="n">_symbol_re</span> <span class="o">=</span> <span class="s">r&quot;([&#39;</span><span class="se">\&quot;</span><span class="s">]?\b[_A-Za-z][_a-zA-Z0-9]*)\b&quot;</span>
+    <span class="n">var_re</span> <span class="o">=</span> <span class="n">_symbol_re</span> <span class="o">+</span> <span class="s">r&quot;(?!\s*\()&quot;</span>
+    <span class="c"># for security</span>
+    <span class="n">eqn</span> <span class="o">=</span> <span class="n">eqn</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;__&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">local_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">var_salter</span><span class="p">(</span><span class="n">symbols</span><span class="p">):</span>
+        <span class="n">symbol</span> <span class="o">=</span> <span class="n">symbols</span><span class="o">.</span><span class="n">groups</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">symbol</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;&#39;&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">symbol</span>
+        <span class="n">salted_symbol</span> <span class="o">=</span> <span class="n">salt</span> <span class="o">+</span> <span class="n">symbol</span>
+        <span class="c"># yes, i&#39;m not using dict.update on purpose since grid&#39;s</span>
+        <span class="c"># getitem might copy the array</span>
+        <span class="k">if</span> <span class="n">salted_symbol</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">local_dict</span><span class="p">:</span>
+            <span class="n">local_dict</span><span class="p">[</span><span class="n">salted_symbol</span><span class="p">]</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">get_field</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">slc</span><span class="o">=</span><span class="n">slc</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">salted_symbol</span>
+    <span class="n">salted_eqn</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">var_re</span><span class="p">,</span> <span class="n">var_salter</span><span class="p">,</span> <span class="n">eqn</span><span class="p">)</span>
+
+    <span class="c"># salt function names</span>
+    <span class="n">func_re</span> <span class="o">=</span> <span class="n">_symbol_re</span> <span class="o">+</span> <span class="s">r&quot;(\s*\()&quot;</span>
+    <span class="k">def</span> <span class="nf">func_salter</span><span class="p">(</span><span class="n">symbols</span><span class="p">):</span>
+        <span class="n">symbol</span> <span class="o">=</span> <span class="n">symbols</span><span class="o">.</span><span class="n">groups</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">salted_symbol</span> <span class="o">=</span> <span class="n">salt</span> <span class="o">+</span> <span class="n">symbol</span>
+        <span class="k">if</span> <span class="n">salted_symbol</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">local_dict</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">calc</span><span class="p">,</span> <span class="n">symbol</span><span class="p">):</span>
+                <span class="n">local_dict</span><span class="p">[</span><span class="n">salted_symbol</span><span class="p">]</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">calc</span><span class="p">,</span> <span class="n">symbol</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">np</span><span class="p">,</span> <span class="n">symbol</span><span class="p">):</span>
+                <span class="n">local_dict</span><span class="p">[</span><span class="n">salted_symbol</span><span class="p">]</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">np</span><span class="p">,</span> <span class="n">symbol</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">salted_symbol</span> <span class="o">+</span> <span class="s">&quot;(&quot;</span>
+    <span class="n">salted_eqn</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">func_re</span><span class="p">,</span> <span class="n">func_salter</span><span class="p">,</span> <span class="n">salted_eqn</span><span class="p">)</span>
+
+    <span class="c"># run eval</span>
+    <span class="n">fld</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">salted_eqn</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;__builtins__&quot;</span><span class="p">:</span> <span class="p">{}},</span> <span class="n">local_dict</span><span class="p">)</span>  <span class="c"># pylint: disable=eval-used</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">fld</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">result_name</span>
+        <span class="n">fld</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="n">result_name</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">fld</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="kn">import</span> <span class="nn">viscid</span>
+    <span class="kn">from</span> <span class="nn">viscid.plot</span> <span class="kn">import</span> <span class="n">mpl</span>
+    <span class="kn">from</span> <span class="nn">viscid.plot.mpl</span> <span class="kn">import</span> <span class="n">plt</span>
+    <span class="n">enabled</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">_d</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">viscid</span><span class="o">.</span><span class="n">__file__</span><span class="p">)</span>
+    <span class="n">_g</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="n">_d</span> <span class="o">+</span> <span class="s">&quot;/../sample/sample.py_0.xdmf&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_grid</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span>
+    <span class="n">_fld</span> <span class="o">=</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">_g</span><span class="p">,</span> <span class="s">&quot;speed&quot;</span><span class="p">,</span> <span class="s">&quot;sqrt(vx**2 + vy**2 + sqrt(vz**4))&quot;</span><span class="p">)</span>
+    <span class="n">mpl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">_fld</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span>
+    <span class="n">_fld</span> <span class="o">=</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">_g</span><span class="p">,</span> <span class="s">&quot;speed&quot;</span><span class="p">,</span> <span class="s">&quot;sqrt(vx**2 + vy**2 + sqrt(vz**4))&quot;</span><span class="p">,</span>
+                    <span class="n">try_numexpr</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">mpl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">_fld</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c">##</span>
+<span class="c">## EOF</span>
+<span class="c">##</span>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

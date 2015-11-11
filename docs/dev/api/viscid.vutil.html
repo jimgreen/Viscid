@@ -1,0 +1,690 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.vutil module &mdash; Viscid 0.95.0 dev documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.95.0 dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 dev documentation" href="../index.html" />
+    <link rel="up" title="viscid package" href="viscid.html" />
+    <link rel="prev" title="viscid.vlab module" href="viscid.vlab.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0 dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../changes.html">ChangeLog</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">viscid.vutil module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-viscid.vutil">
+<span id="viscid-vutil-module"></span><h1>viscid.vutil module<a class="headerlink" href="#module-viscid.vutil" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="viscid.vutil.add_animate_arguments">
+<code class="descclassname">viscid.vutil.</code><code class="descname">add_animate_arguments</code><span class="sig-paren">(</span><em>parser</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#add_animate_arguments"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.add_animate_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>add common options for animating, you may want to make sure parser was
+constructed with conflict_handler=&#8217;resolve&#8217;</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.add_mpl_output_arguments">
+<code class="descclassname">viscid.vutil.</code><code class="descname">add_mpl_output_arguments</code><span class="sig-paren">(</span><em>parser</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#add_mpl_output_arguments"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.add_mpl_output_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>add common options for tuning matplotlib output, you may want to make
+sure parser was constructed with conflict_handler=&#8217;resolve&#8217;</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.common_argparse">
+<code class="descclassname">viscid.vutil.</code><code class="descname">common_argparse</code><span class="sig-paren">(</span><em>parser</em>, <em>default_verb=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#common_argparse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.common_argparse" title="Permalink to this definition">¶</a></dt>
+<dd><p>add some common verbosity stuff to argparse, parse the
+command line args, and setup the logging levels
+parser should be an ArgumentParser instance, and kwargs
+should be options that get passed to logger.basicConfig
+returns the args namespace</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.convert_deprecated_floats">
+<code class="descclassname">viscid.vutil.</code><code class="descname">convert_deprecated_floats</code><span class="sig-paren">(</span><em>value</em>, <em>varname='value'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#convert_deprecated_floats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.convert_deprecated_floats" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.extract_index">
+<code class="descclassname">viscid.vutil.</code><code class="descname">extract_index</code><span class="sig-paren">(</span><em>arr</em>, <em>start=None</em>, <em>stop=None</em>, <em>step=None</em>, <em>endpoint=True</em>, <em>tol=100</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#extract_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.extract_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get integer indices for slice parts</p>
+<p>If start, stop, or step are strings, they are either cast to
+integers or used for a float lookup if they have a trailing &#8216;f&#8217;.</p>
+<dl class="docutils">
+<dt>An example float lookup is::</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">][</span><span class="s">&#39;0.2f:0.6f:2&#39;</span><span class="p">]</span>
+<span class="go">[0.2, 0.4, 0.6]</span>
+</pre></div>
+</div>
+</dd>
+<dt>The rules for float lookup endpoints are:</dt>
+<dd><ul class="first last simple">
+<li>The slice will never include an element whose value in arr
+is &lt; start (or &gt; if the slice is backward)</li>
+<li>The slice will never include an element whose value in arr
+is &gt; stop (or &lt; if the slice is backward)</li>
+<li>!! The slice WILL INCLUDE stop if you don&#8217;t change endpoint.
+This is different from normal slicing, but
+it&#8217;s more natural when specifying a slice as a float.
+To this end, an epsilon tolerance can be given to
+determine what&#8217;s close enough.</li>
+<li>TODO: implement floating point steps, this is tricky
+since arr need not be uniformly spaced, so step is
+ambiguous in this case</li>
+</ul>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> (<em>ndarray</em>) &#8211; filled with floats to do the lookup</li>
+<li><strong>start</strong> (<em>None, int, str</em>) &#8211; like slice().start</li>
+<li><strong>stop</strong> (<em>None, int, str</em>) &#8211; like slice().stop</li>
+<li><strong>step</strong> (<em>None, int</em>) &#8211; like slice().step</li>
+<li><strong>endpoint</strong> (<em>bool</em>) &#8211; iff True then include stop in the slice.
+Set to False to get python slicing symantics when it
+comes to excluding stop, but fair warning, python
+symantics feel awkward here. Consider the case
+[0.1, 0.2, 0.3][:0.25]. If you think this should include
+0.2, then leave keep endpoint=True.</li>
+<li><strong>tol</strong> (<em>int</em>) &#8211; number of machine epsilons to consider
+&#8220;close enough&#8221;</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">start, stop, step after floating point vals have been
+converted to integers</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.find_field">
+<code class="descclassname">viscid.vutil.</code><code class="descname">find_field</code><span class="sig-paren">(</span><em>vfile</em>, <em>fld_name_lst</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#find_field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.find_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>convenience function to get a field that could be called many things
+returns the first fld_name in the list that is in the file</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.format_datetime">
+<code class="descclassname">viscid.vutil.</code><code class="descname">format_datetime</code><span class="sig-paren">(</span><em>dt</em>, <em>fmt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#format_datetime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.format_datetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper around datetime.datetime.strftime</p>
+<p>This function allows one to specify the precision of fractional
+seconds (mircoseconds) using something like &#8216;%2f&#8217; to round to
+the nearest hundredth of a second.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dt</strong> (<em>datetime.datetime</em>) &#8211; time to format</li>
+<li><strong>fmt</strong> (<em>str</em>) &#8211; format string that strftime understands with the
+addition of &#8216;%.?[0-9]f&#8217; to the syntax.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">str</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.format_time">
+<code class="descclassname">viscid.vutil.</code><code class="descname">format_time</code><span class="sig-paren">(</span><em>t</em>, <em>style='.02f'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#format_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.format_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format time as a string</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If t is a datetime.datetime instance, then this function
+returns the result of format_datetime(t, style), which is
+basically datetime.datetime.strftime</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>t</strong> (<em>float</em>) &#8211; time</li>
+<li><strong>style</strong> (<em>str</em>) &#8211; for this method, can be::
+style          |   time   | string
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;
+&#8216;hms&#8217;          | 90015.0  | &#8220;25:00:15.000&#8221;
+&#8216;hms&#8217;          | 90000.0  | &#8220;1 day 01:00:15.000&#8221;
+&#8216;hmss&#8217;         | 90015.0  | &#8220;25:00:15.000 (90015)&#8221;
+&#8216;dhms&#8217;         |   900.0  | &#8220;0 days 00:15:00.000&#8221;
+&#8216;.02f&#8217;         |   900.0  | &#8216;900.00&#8217;</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">str</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.make_animation">
+<code class="descclassname">viscid.vutil.</code><code class="descname">make_animation</code><span class="sig-paren">(</span><em>args</em>, <em>program='ffmpeg'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#make_animation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.make_animation" title="Permalink to this definition">¶</a></dt>
+<dd><p>make animation by calling program (only ffmpeg works for now) using
+args, which is a namespace filled by the argparse options from
+add_animate_arguments. Plots are expected to be named
+${args.prefix}_000001.png where the number is in order from 1 up</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.make_fwd_slice">
+<code class="descclassname">viscid.vutil.</code><code class="descname">make_fwd_slice</code><span class="sig-paren">(</span><em>shape</em>, <em>slices</em>, <em>reverse=None</em>, <em>cull_second=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#make_fwd_slice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.make_fwd_slice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure slices go forward</p>
+<p>This function returns two slices equivalent to <cite>slices</cite> such
+that the first slice always goes forward. This is necessary because
+h5py can&#8217;t deal with reverse slices such as [::-1].</p>
+<p>The optional <cite>reverse</cite> can be used to interpret a dimension as
+flipped. This is used if the indices in a slice are based on a
+coordinate array that has already been flipped. For instance, the
+result is equivalent to <cite>arr[::-1][slices]</cite>, but in a way that can
+be  handled by h5py. This lets us efficiently load small subsets
+of large arrays on disk, which is most useful when the large array
+is coming through sshfs.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The only restriction on slices is that neither start nor stop
+can be outide the range [-L, L].</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>shape</strong> &#8211; shape of the array that is to be sliced</li>
+<li><strong>slices</strong> &#8211; a tuple of slices to work with</li>
+<li><strong>reverse</strong> (<em>optional</em>) &#8211; list of bools that indicate if the
+corresponding value in slices should be ineterpreted as
+flipped</li>
+<li><strong>cull_second</strong> (<em>bool, optional</em>) &#8211; iff True, remove elements of
+the second slice for dimensions that don&#8217;t exist after
+the first slice has completed. This is only here for
+a super-hacky case when slicing fields.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><p>(first_slice, second_slice)</p>
+<ul class="simple">
+<li>first_slice: a forward-only slice that retrieves the
+desired elements of an array</li>
+<li>second_slice: a slice that does [::1] or [::-1] as needed
+to make the result equivalent to slices. If keep_all,
+then this may contain None indicating that this
+dimension no longer exists after the first slice.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<p>&gt;&gt; a = np.arange(8)
+&gt;&gt; first, second = make_fwd_slice(len(a),slice(None, None, -1))
+&gt;&gt; (a[::-1] == a[first][second]).all()
+True</p>
+<p>&gt;&gt; a = np.arange(4*5*6).reshape((4, 5, 6))
+&gt;&gt; first, second = make_fwd_slice(a.shape,
+&gt;&gt;                                [slice(None, -1, 1),
+&gt;&gt;                                 slice(-1, None, 1),
+&gt;&gt;                                 slice(-4, -1, 2)],
+&gt;&gt;                                [True, True, True])
+&gt;&gt; a1 = a[::-1, ::-1, ::-1][:-1, -1:, -4:-1:2]
+&gt;&gt; a2 = a[first][second]
+&gt;&gt; a1 == a2
+True</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.make_slice_inclusive">
+<code class="descclassname">viscid.vutil.</code><code class="descname">make_slice_inclusive</code><span class="sig-paren">(</span><em>start</em>, <em>stop=None</em>, <em>step=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#make_slice_inclusive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.make_slice_inclusive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extend the end of a slice by 1 element</p>
+<p>Chances are you don&#8217;t want to use this function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>start</strong> (<em>int, None</em>) &#8211; same as a slice.start</li>
+<li><strong>stop</strong> (<em>int, None</em>) &#8211; same as a slice.stop</li>
+<li><strong>step</strong> (<em>int, None</em>) &#8211; same as a slice.step</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(start, stop, step) To be given to slice()</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.meshlab_convert">
+<code class="descclassname">viscid.vutil.</code><code class="descname">meshlab_convert</code><span class="sig-paren">(</span><em>fname</em>, <em>fmt='dae'</em>, <em>quiet=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#meshlab_convert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.meshlab_convert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run meshlabserver to convert 3D mesh files</p>
+<p>Uses <a class="reference external" href="http://meshlab.sourceforge.net/">MeshLab</a>, which is a great
+little program for playing with 3D meshes. The best part is that
+OS X&#8217;s Preview can open the COLLADA (<cite>*.dae</cite>) format. How cool is
+that?</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fname</strong> (<em>str</em>) &#8211; file to convert</li>
+<li><strong>fmt</strong> (<em>str</em>) &#8211; extension of result, defaults to COLLADA format</li>
+<li><strong>quiet</strong> (<em>bool</em>) &#8211; redirect output to <code class="xref py py-attr docutils literal"><span class="pre">os.devnull</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.prepare_lines">
+<code class="descclassname">viscid.vutil.</code><code class="descname">prepare_lines</code><span class="sig-paren">(</span><em>lines</em>, <em>scalars=None</em>, <em>do_connections=False</em>, <em>other=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#prepare_lines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.prepare_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Concatenate and standardize a list of lines</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lines</strong> (<em>list</em>) &#8211; Must be a list of 3xN or 4xN ndarrays of xyz(s)
+data for N points along the line. N need not be the same
+for all lines. Can alse be 6xN such that lines[:][3:, :]
+are interpreted as rgb colors</li>
+<li><strong>scalars</strong> (<em>ndarray, list</em>) &#8211; Can have shape 1xN for a single scalar
+or 3xN for an rgb color for each point. If the shape is
+1xNlines, the scalar is broadcast so the whole line gets
+the same value, and likewise for 3xNlines and rgb colors.
+Can also be a list of hex color (#ffffff) strings.
+Otherwise, scalars is reshaped to -1xN.</li>
+<li><strong>do_connections</strong> (<em>bool</em>) &#8211; Whether or not to make connections array</li>
+<li><strong>other</strong> (<em>dict</em>) &#8211; a dictionary of other arrays that should be
+reshaped and the like the same way scalars is</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>(vertices, scalars, connections, other)</p>
+<ul>
+<li><dl class="first docutils">
+<dt>vertices (ndarray): 3xN array of N xyz points. N is the sum</dt>
+<dd><p class="first last">of the lengths of all the lines</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>scalars (ndarray): N array of scalars, 3xN array of uint8</dt>
+<dd><p class="first last">rgb values, or None</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>connections (ndarray): Nx2 array of ints (indices along</dt>
+<dd><p class="first last">axis 1 of vertices) describing the forward and backward
+connectedness of the lines, or None</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">other (dict): a dict of N length arrays</p>
+</li>
+</ul>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+If rgb data is not in a valid range or the shape
+of scalars is not understood</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.slice_globbed_filenames">
+<code class="descclassname">viscid.vutil.</code><code class="descname">slice_globbed_filenames</code><span class="sig-paren">(</span><em>glob_pattern</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#slice_globbed_filenames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.slice_globbed_filenames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a slice to a glob pattern</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Slice by value works by adding an &#8216;f&#8217; to a value, as like the
+rest of Viscid.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>glob_pattern</strong> (<em>str</em>) &#8211; A string</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of filenames</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<p>If a directory contains files,</p>
+<blockquote>
+<div>file.010.txt  file.020.txt  file.030.txt  file.040.txt</div></blockquote>
+<p>then sliced globs can look like</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">expand_glob_slice</span><span class="p">(</span><span class="s">&quot;f*.[:2].txt&quot;</span><span class="p">)</span>
+<span class="go">[&quot;file.010.txt&quot;, &quot;file.020.txt&quot;]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">expand_glob_slice</span><span class="p">(</span><span class="s">&quot;f*.[10.0f::2].txt&quot;</span><span class="p">)</span>
+<span class="go">[&quot;file.010.txt&quot;, &quot;file.030.txt&quot;]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">expand_glob_slice</span><span class="p">(</span><span class="s">&quot;f*.[20f:2].txt&quot;</span><span class="p">)</span>
+<span class="go">[&quot;file.020.txt&quot;, &quot;file.040.txt&quot;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.split_floats">
+<code class="descclassname">viscid.vutil.</code><code class="descname">split_floats</code><span class="sig-paren">(</span><em>arg_str</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#split_floats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.split_floats" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.str_to_value">
+<code class="descclassname">viscid.vutil.</code><code class="descname">str_to_value</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#str_to_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.str_to_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.subclass_spider">
+<code class="descclassname">viscid.vutil.</code><code class="descname">subclass_spider</code><span class="sig-paren">(</span><em>cls</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#subclass_spider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.subclass_spider" title="Permalink to this definition">¶</a></dt>
+<dd><p>return recursive list of subclasses of cls (depth first)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.timeit">
+<code class="descclassname">viscid.vutil.</code><code class="descname">timeit</code><span class="sig-paren">(</span><em>f</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#timeit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.timeit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.timereps">
+<code class="descclassname">viscid.vutil.</code><code class="descname">timereps</code><span class="sig-paren">(</span><em>reps</em>, <em>func</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#timereps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.timereps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.to_slice">
+<code class="descclassname">viscid.vutil.</code><code class="descname">to_slice</code><span class="sig-paren">(</span><em>arr</em>, <em>s</em>, <em>endpoint=True</em>, <em>tol=100</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#to_slice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.to_slice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert anything describing a slice to a slice object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> (<em>array</em>) &#8211; Array that you&#8217;re going to slice if you specify any
+parts of the slice by value. If all slices are by index,
+<cite>arr</cite> can be <cite>None</cite>.</li>
+<li><strong>s</strong> (<em>int, str, slice</em>) &#8211; Something that can be turned into a slice.
+Ints are returned as-is. Slices and strings are parsed to
+see if they contain indices, or values. Values are strings
+that contain a number followed by an &#8216;f&#8217;. Refer to
+<a class="reference internal" href="#viscid.vutil.extract_index" title="viscid.vutil.extract_index"><code class="xref py py-func docutils literal"><span class="pre">extract_index()</span></code></a> for the slice-by-value
+semantics.</li>
+<li><strong>endpoint</strong> (<em>bool</em>) &#8211; passed to <a class="reference internal" href="#viscid.vutil.extract_index" title="viscid.vutil.extract_index"><code class="xref py py-func docutils literal"><span class="pre">extract_index()</span></code></a> if
+needed</li>
+<li><strong>tol</strong> (<em>int</em>) &#8211; passed to <a class="reference internal" href="#viscid.vutil.extract_index" title="viscid.vutil.extract_index"><code class="xref py py-func docutils literal"><span class="pre">extract_index()</span></code></a> if
+needed</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">slice object or int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference internal" href="#viscid.vutil.extract_index" title="viscid.vutil.extract_index"><code class="xref py py-func docutils literal"><span class="pre">extract_index()</span></code></a></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.to_slices">
+<code class="descclassname">viscid.vutil.</code><code class="descname">to_slices</code><span class="sig-paren">(</span><em>arrs</em>, <em>slices</em>, <em>endpoint=True</em>, <em>tol=100</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#to_slices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.to_slices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wraps <a class="reference internal" href="#viscid.vutil.to_slice" title="viscid.vutil.to_slice"><code class="xref py py-func docutils literal"><span class="pre">to_slice()</span></code></a> for multiple arrays / slices</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arrs</strong> (<em>list, None</em>) &#8211; list of arrays for float lookups, must be
+the same length as s.split(&#8216;,&#8217;). If all slices are by
+index, then <cite>arrs</cite> can be <cite>None</cite>.</li>
+<li><strong>slices</strong> (<em>list, str</em>) &#8211; list of things that
+<code class="xref py py-func docutils literal"><span class="pre">viscid.vutil.str2slice()</span></code> understands, or a comma
+separated string of slices</li>
+<li><strong>endpoint</strong> (<em>bool</em>) &#8211; passed to <a class="reference internal" href="#viscid.vutil.extract_index" title="viscid.vutil.extract_index"><code class="xref py py-func docutils literal"><span class="pre">extract_index()</span></code></a> if needed</li>
+<li><strong>tol</strong> (<em>int</em>) &#8211; passed to <a class="reference internal" href="#viscid.vutil.extract_index" title="viscid.vutil.extract_index"><code class="xref py py-func docutils literal"><span class="pre">extract_index()</span></code></a> if needed</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple of slice objects</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference internal" href="#viscid.vutil.to_slice" title="viscid.vutil.to_slice"><code class="xref py py-func docutils literal"><span class="pre">to_slice()</span></code></a></li>
+<li><a class="reference internal" href="#viscid.vutil.extract_index" title="viscid.vutil.extract_index"><code class="xref py py-func docutils literal"><span class="pre">extract_index()</span></code></a></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.vutil.value_is_float_not_int">
+<code class="descclassname">viscid.vutil.</code><code class="descname">value_is_float_not_int</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/vutil.html#value_is_float_not_int"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.vutil.value_is_float_not_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return if value is a float and not an int</p>
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/api/viscid.vutil.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

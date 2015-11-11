@@ -1,0 +1,650 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Changes &mdash; Viscid 0.95.0 dev documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.95.0 dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 dev documentation" href="index.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="Welcome to Viscid’s documentation!" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0 dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">ChangeLog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Changes</a><ul>
+<li><a class="reference internal" href="#dev">0.95.0 dev</a></li>
+<li><a class="reference internal" href="#id1">0.94.0</a></li>
+<li><a class="reference internal" href="#id2">0.91.3</a></li>
+<li><a class="reference internal" href="#id3">0.91.2</a></li>
+<li><a class="reference internal" href="#id4">0.91.0</a></li>
+<li><a class="reference internal" href="#id5">0.90.1</a></li>
+<li><a class="reference internal" href="#id6">0.90.0</a></li>
+<li><a class="reference internal" href="#id7">0.80.9</a></li>
+<li><a class="reference internal" href="#id8">0.80.8</a></li>
+<li><a class="reference internal" href="#id9">0.80.7</a></li>
+<li><a class="reference internal" href="#id10">0.80.6</a></li>
+<li><a class="reference internal" href="#id11">0.80.5</a></li>
+<li><a class="reference internal" href="#id12">0.80.4</a></li>
+<li><a class="reference internal" href="#id13">0.80.3</a></li>
+<li><a class="reference internal" href="#id14">0.80.2</a></li>
+<li><a class="reference internal" href="#id15">0.80.1</a></li>
+<li><a class="reference internal" href="#id16">0.80.0</a></li>
+<li><a class="reference internal" href="#id17">0.60.3</a></li>
+<li><a class="reference internal" href="#id18">0.60.2</a></li>
+<li><a class="reference internal" href="#id19">0.60.1</a></li>
+<li><a class="reference internal" href="#id20">0.60.0</a></li>
+<li><a class="reference internal" href="#id21">0.50.2</a></li>
+<li><a class="reference internal" href="#id22">0.50.1</a></li>
+<li><a class="reference internal" href="#release">0.50.0 Release</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="changes">
+<h1>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dev">
+<h2>0.95.0 dev<a class="headerlink" href="#dev" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Changes</dt>
+<dd><ul class="first last simple">
+<li>Travis-CI builds upload test summaries to Github Pages</li>
+<li>Makefiles now have rules for all make / deploy steps</li>
+<li>Wrap savefig with offscreen rendering on linux</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id1">
+<h2>0.94.0<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Changes:</dt>
+<dd><ul class="first last simple">
+<li>Change sample data</li>
+<li>add continuous integration tests (travis-ci)</li>
+<li>Makefiles can now be used for convenience</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>0.91.3<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Changes:</dt>
+<dd><ul class="first last simple">
+<li>add workaround comment for fortran build on OS X El Capitain</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>0.91.2<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Changes:</dt>
+<dd><ul class="first last simple">
+<li>bugfixes</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id4">
+<h2>0.91.0<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Changes:</dt>
+<dd><ul class="first last simple">
+<li>Use LinearLocator for linear colorbars by default</li>
+<li>better error message when trying to mpl.plot vector fields</li>
+<li>enable ionosphere plots in mayavi, see test_mvi.py</li>
+<li>enable plotting meshes in mayavi, see test_mvi.py</li>
+</ul>
+</dd>
+<dt>Backward Incompatible Changes:</dt>
+<dd><ul class="first last simple">
+<li>Seeds now use a unified interface. If you use seeds, check out test_seed.py to see how things work now</li>
+<li>plot_lines (both matplotlib and mayavi) use a unified interface, check out test_streamline to see how things work now</li>
+</ul>
+</dd>
+<dt>Refactors:</dt>
+<dd><ul class="first last simple">
+<li>blocks -&gt; patches everywhere</li>
+<li>block -&gt; patch everywhere</li>
+<li>vlab.multiplot argument nprocs -&gt; nr_procs</li>
+<li>lots of names in <cite>viscid.plot.mvi</cite> and <cite>viscid.calculator.topology</cite></li>
+</ul>
+</dd>
+<dt>Bugfixes:</dt>
+<dd><ul class="first last simple">
+<li>ibound topology detection (north/south accidently became dayside/nightside in version 0.90.0)</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id5">
+<h2>0.90.1<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Changes:</dt>
+<dd><ul class="first last simple">
+<li>xl and xh properties added to Fields and AMRFields</li>
+<li>Fields now have get_slice_extent</li>
+</ul>
+</dd>
+<dt>Bugfixes:</dt>
+<dd><ul class="first last simple">
+<li>XDMF reading uniform crds was wrong; ggcm is using zyx order for O+dxdydz since that seems to work for Paraview, but the xdmf docs call for xyz order, so something isn&#8217;t kosher here but I guess this works for now</li>
+<li>xyz ordering for scalar_fields_to_vector</li>
+<li>TypeError on numpy reduction operations on ScalarFields</li>
+<li>fix Volume genr_points for xyz ordering</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id6">
+<h2>0.90.0<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Backward Incompatible Changes:</dt>
+<dd><ul class="first last simple">
+<li>ALL indexing is now in the natural order (xyz as opposed to zyx). This means seeds, lines, fields... everything. Since this is such a big change that unavoidably breaks many things, this is the only feature of this release, so if you have code that depends on zyx ordering, stay at version 0.80.8.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id7">
+<h2>0.80.9<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Bugfixes:</dt>
+<dd><ul class="first last simple">
+<li>vector -&gt; scalar numpy reduction operations</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id8">
+<h2>0.80.8<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Changes:</dt>
+<dd><ul class="first last simple">
+<li>Files can now be unloaded (treating a file like a context manager will unload it on __exit__)</li>
+<li>jrrle readers can handle files with ascii in them</li>
+<li>hdf5 datawrappers can specify a component dimension / index</li>
+<li>preliminary gkeyll reader</li>
+<li>add <cite>mpl.auto_adjust_subplots()</cite> which is like tighen, but doesn&#8217;t change axes limits on you.</li>
+<li>All fields (regular + amr) now have an &#8216;interpolated_slice&#8217; method</li>
+<li>Cython Interpolate and Streamline now work on AMR Fields</li>
+</ul>
+</dd>
+<dt>Bugfixes:</dt>
+<dd><ul class="first last simple">
+<li>calling ufuncs with AMR fields</li>
+<li>numpy broadcasting with Fields of different type / shape</li>
+<li>slicing by UT time was relative to 0 instead of the start of the simulation</li>
+</ul>
+</dd>
+<dt>Backward Incompatible Changes:</dt>
+<dd><ul class="first last simple">
+<li>Slices by value are now a string of &#8216;[0-9.]+f&#8217;. Slicing by floats prints a warning.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id9">
+<h2>0.80.7<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Backward Incompatible Changes:</dt>
+<dd><ul class="first last simple">
+<li>Arguments to viscid.field.wrap_field have changed</li>
+<li>typ arguments have been refactored to fldtype and crdtype</li>
+<li>add Field methods real, imag, astype</li>
+</ul>
+</dd>
+<dt>Changes:</dt>
+<dd><ul class="first last simple">
+<li>add support for calling <cite>python -im viscid pylab</cite></li>
+<li>add viscid.field.arrays2field and viscid.coordinates.arrays2crds</li>
+<li>viscid.field now has empty, ones, zeros, empty_like, ones_like, zeros_like that act roughly the same as the numpy functions, except that these create fields</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id10">
+<h2>0.80.6<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Changes:</dt>
+<dd><ul class="first last simple">
+<li>Ascii dataset field names are now &#8220;c[0-9]+&#8221; where the number is the column number</li>
+<li>Add a way to generate your own cubehelix colormaps</li>
+<li>Sphinx has no more warnings</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id11">
+<h2>0.80.5<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Features:</dt>
+<dd><ul class="first last simple">
+<li>add amr_field.patch_indices to lookup patch index at a location</li>
+</ul>
+</dd>
+<dt>Bugfixes:</dt>
+<dd><ul class="first last simple">
+<li>AMR slicing bugs</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id12">
+<h2>0.80.4<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Bugfixes:</dt>
+<dd><ul class="first last simple">
+<li>./setup.py install wasn&#8217;t installing parsers</li>
+<li>command line utilities had bugs</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id13">
+<h2>0.80.3<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Bugfixes:</dt>
+<dd><ul class="first last simple">
+<li>Fix size of earth in AMR files</li>
+<li>Fix matplotlib colorscale options</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id14">
+<h2>0.80.2<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Features:</dt>
+<dd><ul class="first last simple">
+<li>RC file and plot_opts can be given in Yaml syntax if user has PyYaml, otherwise the rc file has to be JSON and the plot_opts have to use the weird comma/space syntax</li>
+</ul>
+</dd>
+<dt>Bugfixes:</dt>
+<dd><ul class="first last simple">
+<li>amr fields now work with command line utils</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id15">
+<h2>0.80.1<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Bugfix:</dt>
+<dd><ul class="first last simple">
+<li>vjson not found</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id16">
+<h2>0.80.0<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Features:</dt>
+<dd><ul class="first last simple">
+<li>preliminary amr support (1D and 2D matplotlib plots)</li>
+</ul>
+</dd>
+<dt>Backward Incompatible Changes:</dt>
+<dd><ul class="first last simple">
+<li>rc file is now in JSON format (in the future, this should change to YAML, but JSON is a subset of YAML, so it shouldn&#8217;t break in the future)</li>
+</ul>
+</dd>
+<dt>Changes:</dt>
+<dd><ul class="first last simple">
+<li>1:1 match between plot_opts and plot keyword arguments</li>
+</ul>
+</dd>
+<dt>Bugfixes:</dt>
+<dd><ul class="first last simple">
+<li>Ionosphere files wouldn&#8217;t plot with pcolormesh</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id17">
+<h2>0.60.3<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Features:</dt>
+<dd><ul class="first last simple">
+<li>thousands of jrrle files load fast over sshfs</li>
+<li>when loading xdmf files, one can specify a root directory for hdf5 files
+so one can copy xdmf files locally and read the hdf5 files over sshfs</li>
+</ul>
+</dd>
+<dt>Changes:</dt>
+<dd><ul class="first last simple">
+<li>Lots of little bugfixes</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id18">
+<h2>0.60.2<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Features:</dt>
+<dd><ul class="first last simple">
+<li>The attribute <cite>grid.Grid.longterm_field_caches</cite> controls how long caches hang around</li>
+<li>Athena binary / ascii / hst readers (doesn&#8217;t read SMR grids)</li>
+<li>Can hyperslice into xdmf/HDF5 datasets so only data that is needed is read</li>
+<li>Slicing in time can now take H:M:S styled times</li>
+<li>New ways to print / get the time of a Dataset/Grid/Field
+- <cite>format_time</cite>
+- <cite>time_as_datetime</cite></li>
+</ul>
+</dd>
+<dt>Changes:</dt>
+<dd><ul class="first last simple">
+<li>Spatial slices completely rewritten</li>
+<li>info dicts (for Datasets/Grids/Fields) are now private
+- <cite>get_info(key)</cite>: gets info from a specific object
+- <cite>find_info(key)</cite>: gets info from an object, or its parents
+- <cite>set_info(key)</cite>: sets info for an object
+- <cite>update_info(key)</cite>: updates info wherever in the tree it exists</li>
+</ul>
+</dd>
+<dt>Other:</dt>
+<dd><ul class="first last simple">
+<li>Customization attributes have their own sphinx page for easy lookup</li>
+<li>performance enhancements when globbing files on a remote server</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id19">
+<h2>0.60.1<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Bugfix:</dt>
+<dd><ul class="first last simple">
+<li>Time slices were acting silly</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id20">
+<h2>0.60.0<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Features:</dt>
+<dd><ul class="first last simple">
+<li>Implement Ionosphere reading / plotting</li>
+<li>Implement a Jrrle Openggcm Reader</li>
+</ul>
+</dd>
+<dt>Backward Incompatible Changes:</dt>
+<dd><ul class="first last simple">
+<li>CHANGE FIELD SLICING SYNTAX! No more trailing &#8216;i&#8217; to slice by index. Instead, use an integer to mean an index. For slicing by coordinate value, the decimal now needs to be explicit, so all code that slices like &#8220;y=0&#8221; now needs to be refactored to &#8220;y=0.0&#8221;</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id21">
+<h2>0.50.2<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Features:</dt>
+<dd><ul class="first last simple">
+<li>Support for custom grids (this allows for custom readers for GGCM / PSC / etc)</li>
+<li>Grids can supply derived fields by defining _get_varname</li>
+<li>Grids can supply generic transformations for fields / crds on load</li>
+<li>GGCM reader, can translate MHD coordinate system to GSE using <cite>viscid.readers.openggcm.GGCMGrid.mhd_to_gse_on_read = True</cite></li>
+<li>PSC reader can calculate psi (flux function)</li>
+</ul>
+</dd>
+<dt>Refactors:</dt>
+<dd><ul class="first last simple">
+<li>RectilinearCrds -&gt; NonuniformCartesianCrds</li>
+<li>&#8220;Rectilinear&#8221; -&gt; &#8220;nonuniform_cartesian&#8221;</li>
+</ul>
+</dd>
+<dt>Backward Incompatible Changes:</dt>
+<dd><ul class="first last simple">
+<li>kwargs to field constructors go to deep_meta dict if they start with a &#8216;_&#8217;, else they go to the info dict</li>
+</ul>
+</dd>
+<dt>Other:</dt>
+<dd><ul class="first last simple">
+<li>Precedence for auto-detecting classes is given to those more recently declared</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id22">
+<h2>0.50.1<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Features:</dt>
+<dd><ul class="first last simple">
+<li>Field slicing semantics are now the same as numpy in terms of when dimensions get reduced. To enforce specific reductions, use Field.slice_reduce() or Field.slice_keep()</li>
+<li>crds accessible from grids / fields / crds using get_crd_[ncef]c or get_crds_[ncef]c for one or multiple crds respectively</li>
+<li>rewrite fields to a cleaner, unified interface</li>
+<li>stringy typed things should be case insensitive if compared with the provided methods (istype() and iscentered()), otherwise everything is lowercase</li>
+<li>field properties are now even lazier and cachier</li>
+<li>add reader for 1d gnuplot like files</li>
+<li>add reader for numpy binary npz files (can also save a list of fields)</li>
+<li>add super preliminary support for writing hdf5 files with companion xdmf file, still no direct hdf5 reading</li>
+<li>add pretty_name kwarg to field constructor, this is the name that will appear in plot labels</li>
+</ul>
+</dd>
+<dt>Refactors:</dt>
+<dd><ul class="first last simple">
+<li>filed.n_points -&gt; filed.nr_points</li>
+<li>filed.n_comps -&gt; filed.nr_comps</li>
+<li>grid / dataset n_times -&gt; nr_times</li>
+<li>trilin_interp -&gt; interp_trilin</li>
+<li>keyword arg cc_slice -&gt; cc</li>
+</ul>
+</dd>
+<dt>Backward Incompatible Changes:</dt>
+<dd><ul class="first last simple">
+<li>Coordinate.get_crd used to take a list, now that use case has to call Coordinate.get_crds</li>
+</ul>
+</dd>
+<dt>Deprecated:</dt>
+<dd><ul class="first last simple">
+<li>readers.load() -&gt; readers.load_file(&#8221;...&#8221;) or readers.load_files([&#8221;...&#8221;])</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="release">
+<h2>0.50.0 Release<a class="headerlink" href="#release" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Features:</dt>
+<dd><ul class="first last simple">
+<li>Remove lxml dependency</li>
+<li>Remove Cython dependency</li>
+<li>Works with the older Python 2.6</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="_sources/changes.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

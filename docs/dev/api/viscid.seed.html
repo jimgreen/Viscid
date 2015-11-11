@@ -1,0 +1,910 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.seed module &mdash; Viscid 0.95.0 dev documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.95.0 dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 dev documentation" href="../index.html" />
+    <link rel="up" title="viscid package" href="viscid.html" />
+    <link rel="next" title="viscid.tree module" href="viscid.tree.html" />
+    <link rel="prev" title="viscid.pyeval module" href="viscid.pyeval.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0 dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../changes.html">ChangeLog</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">viscid.seed module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-viscid.seed">
+<span id="viscid-seed-module"></span><h1>viscid.seed module<a class="headerlink" href="#module-viscid.seed" title="Permalink to this headline">¶</a></h1>
+<p>Helpers to generate seed points for streamlines</p>
+<dl class="function">
+<dt id="viscid.seed.make_rotation_matrix">
+<code class="descclassname">viscid.seed.</code><code class="descname">make_rotation_matrix</code><span class="sig-paren">(</span><em>origin</em>, <em>p1</em>, <em>p2</em>, <em>roll=0.0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#make_rotation_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.make_rotation_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a matrix that rotates origin-p1 to origin-p2</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you want <cite>p1</cite> and <cite>p2</cite> to be vectors, just set <cite>origin</cite> to
+<cite>[0, 0, 0]</cite>.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>origin</strong> (<em>ndarray</em>) &#8211; Origin of the rotation in 3D</li>
+<li><strong>p1</strong> (<em>ndarray</em>) &#8211; Some point in 3D</li>
+<li><strong>p2</strong> (<em>ndarray</em>) &#8211; A point in 3D such that p1 will be rotated
+around the origin so that it lies along the origin-p2
+line</li>
+<li><strong>roll</strong> (<em>float</em>) &#8211; Angle (in degrees) of roll around the
+origin-p2 vector</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">3x3 orthonormal rotation matrix</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.seed.to_seeds">
+<code class="descclassname">viscid.seed.</code><code class="descname">to_seeds</code><span class="sig-paren">(</span><em>pts</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#to_seeds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.to_seeds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to turn anything into a set of seeds</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>points</strong> (<em>ndarray or list</em>) &#8211; should look like something that
+np.array(points) can turn to an Nx3 array of xyz points.
+This can be 3xN so long as N != 3.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.seed.SeedGen">
+<em class="property">class </em><code class="descclassname">viscid.seed.</code><code class="descname">SeedGen</code><span class="sig-paren">(</span><em>cache=False</em>, <em>dtype=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SeedGen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SeedGen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>All about seeds</p>
+<p>These objects are good for defining the root points of streamlines
+or locations for interpolation.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>For Developers</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Mandatory</dt>
+<dd><p class="first">Subclasses <strong>must</strong> override</p>
+<ul class="last simple">
+<li><a class="reference internal" href="#viscid.seed.SeedGen.get_nr_points" title="viscid.seed.SeedGen.get_nr_points"><code class="xref py py-meth docutils literal"><span class="pre">get_nr_points()</span></code></a>: get total number of seeds</li>
+<li><a class="reference internal" href="#viscid.seed.SeedGen.get_local_shape" title="viscid.seed.SeedGen.get_local_shape"><code class="xref py py-meth docutils literal"><span class="pre">get_local_shape()</span></code></a>: get the shape of the ndarray
+of local coordinates</li>
+<li><a class="reference internal" href="#viscid.seed.SeedGen.to_3d" title="viscid.seed.SeedGen.to_3d"><code class="xref py py-meth docutils literal"><span class="pre">to_3d()</span></code></a>: transform an array in local
+coordinates to 3D space. Should return a 3xN ndarray.</li>
+<li><a class="reference internal" href="#viscid.seed.SeedGen.to_local" title="viscid.seed.SeedGen.to_local"><code class="xref py py-meth docutils literal"><span class="pre">to_local()</span></code></a>: transform a 3xN ndarray to an
+ndarray of coordinates in local space. It&#8217;s ok to raise
+NotImplementedError.</li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">_make_local_points()</span></code>: Make an ndarray that is
+used in <code class="xref py py-meth docutils literal"><span class="pre">_make_3d_points()</span></code></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">_make_local_axes()</span></code>: Make a tuple of arrays with
+lengths that match <a class="reference internal" href="#viscid.seed.SeedGen.local_shape" title="viscid.seed.SeedGen.local_shape"><code class="xref py py-attr docutils literal"><span class="pre">local_shape</span></code></a>. It&#8217;s ok to
+raise NotImplementedError if the local representation has
+no axes.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Optional</dt>
+<dd><p class="first">Subclasses <em>may</em> override</p>
+<ul class="last simple">
+<li><code class="xref py py-meth docutils literal"><span class="pre">_make_3d_points()</span></code>: By default, this is a
+combination of <code class="xref py py-meth docutils literal"><span class="pre">_make_local_points()</span></code> and
+<a class="reference internal" href="#viscid.seed.SeedGen.to_3d" title="viscid.seed.SeedGen.to_3d"><code class="xref py py-meth docutils literal"><span class="pre">to_3d()</span></code></a>. It can be overridden if there is a more
+efficient way te get points in 3d.</li>
+<li><a class="reference internal" href="#viscid.seed.SeedGen.iter_points" title="viscid.seed.SeedGen.iter_points"><code class="xref py py-meth docutils literal"><span class="pre">iter_points()</span></code></a>:  If a seed generator can be made
+lazy, then this should return an iterator that yields
+(x, y, z) points.</li>
+<li><a class="reference internal" href="#viscid.seed.SeedGen.get_rotation" title="viscid.seed.SeedGen.get_rotation"><code class="xref py py-meth docutils literal"><span class="pre">get_rotation()</span></code></a>: This should return an
+orthonormal rotation matrix if there is some rotation
+required to go from local coordinates to 3D space.</li>
+<li><a class="reference internal" href="#viscid.seed.SeedGen.as_mesh" title="viscid.seed.SeedGen.as_mesh"><code class="xref py py-meth docutils literal"><span class="pre">as_mesh()</span></code></a></li>
+<li><a class="reference internal" href="#viscid.seed.SeedGen.as_coordinates" title="viscid.seed.SeedGen.as_coordinates"><code class="xref py py-meth docutils literal"><span class="pre">as_coordinates()</span></code></a></li>
+<li><a class="reference internal" href="#viscid.seed.SeedGen.wrap_field" title="viscid.seed.SeedGen.wrap_field"><code class="xref py py-meth docutils literal"><span class="pre">wrap_field()</span></code></a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Off Limits</dt>
+<dd><p class="first">Don&#8217;t override unless you know what you&#8217;re doing</p>
+<ul class="last simple">
+<li><a class="reference internal" href="#viscid.seed.SeedGen.get_points" title="viscid.seed.SeedGen.get_points"><code class="xref py py-meth docutils literal"><span class="pre">get_points()</span></code></a></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>For Users</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>3D</dt>
+<dd><p class="first">These attributes give the seed points in 3D (xyz) space</p>
+<ul class="last simple">
+<li><a class="reference internal" href="#viscid.seed.SeedGen.nr_points" title="viscid.seed.SeedGen.nr_points"><code class="xref py py-attr docutils literal"><span class="pre">nr_points</span></code></a></li>
+<li><a class="reference internal" href="#viscid.seed.SeedGen.get_points" title="viscid.seed.SeedGen.get_points"><code class="xref py py-meth docutils literal"><span class="pre">get_points()</span></code></a></li>
+<li><a class="reference internal" href="#viscid.seed.SeedGen.iter_points" title="viscid.seed.SeedGen.iter_points"><code class="xref py py-meth docutils literal"><span class="pre">iter_points()</span></code></a></li>
+<li><a class="reference internal" href="#viscid.seed.SeedGen.to_3d" title="viscid.seed.SeedGen.to_3d"><code class="xref py py-meth docutils literal"><span class="pre">to_3d()</span></code></a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Generator Specific</dt>
+<dd><p class="first">There is also the concept of local points, which are points
+that are meaningful for the specific SeedGen subclass. For
+example, for the Sphere subclass, local points are labled
+with (theta, phi) on the surface of the sphere. As such,
+<a class="reference internal" href="#viscid.seed.SeedGen.wrap_field" title="viscid.seed.SeedGen.wrap_field"><code class="xref py py-meth docutils literal"><span class="pre">wrap_field()</span></code></a> can be used to facilitate wrapping
+the result of <code class="xref py py-func docutils literal"><span class="pre">trilin_interp()</span></code> for easy plotting.</p>
+<ul class="last simple">
+<li><a class="reference internal" href="#viscid.seed.SeedGen.local_shape" title="viscid.seed.SeedGen.local_shape"><code class="xref py py-attr docutils literal"><span class="pre">local_shape</span></code></a></li>
+<li><a class="reference internal" href="#viscid.seed.SeedGen.to_local" title="viscid.seed.SeedGen.to_local"><code class="xref py py-meth docutils literal"><span class="pre">to_local()</span></code></a></li>
+<li><a class="reference internal" href="#viscid.seed.SeedGen.as_mesh" title="viscid.seed.SeedGen.as_mesh"><code class="xref py py-meth docutils literal"><span class="pre">as_mesh()</span></code></a></li>
+<li><a class="reference internal" href="#viscid.seed.SeedGen.as_coordinates" title="viscid.seed.SeedGen.as_coordinates"><code class="xref py py-meth docutils literal"><span class="pre">as_coordinates()</span></code></a></li>
+<li><a class="reference internal" href="#viscid.seed.SeedGen.wrap_field" title="viscid.seed.SeedGen.wrap_field"><code class="xref py py-meth docutils literal"><span class="pre">wrap_field()</span></code></a></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="method">
+<dt id="viscid.seed.SeedGen.arr2mesh">
+<code class="descname">arr2mesh</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SeedGen.arr2mesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SeedGen.arr2mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SeedGen.as_coordinates">
+<code class="descname">as_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SeedGen.as_coordinates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SeedGen.as_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make <code class="xref py py-class docutils literal"><span class="pre">Coordinates</span></code> for the local representation</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SeedGen.as_mesh">
+<code class="descname">as_mesh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SeedGen.as_mesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SeedGen.as_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a 3xUxV array that describes a 3D mesh surface</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.seed.SeedGen.dtype">
+<code class="descname">dtype</code><em class="property"> = None</em><a class="headerlink" href="#viscid.seed.SeedGen.dtype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SeedGen.get_local_shape">
+<code class="descname">get_local_shape</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SeedGen.get_local_shape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SeedGen.get_local_shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SeedGen.get_nr_points">
+<code class="descname">get_nr_points</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SeedGen.get_nr_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SeedGen.get_nr_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SeedGen.get_points">
+<code class="descname">get_points</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SeedGen.get_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SeedGen.get_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a 3xN ndarray of N xyz points</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SeedGen.get_rotation">
+<code class="descname">get_rotation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SeedGen.get_rotation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SeedGen.get_rotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a rotation matrix to go local -&gt; real 3D space</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SeedGen.iter_points">
+<code class="descname">iter_points</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SeedGen.iter_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SeedGen.iter_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make an iterator that yields <cite>(x, y, z)</cite> points</p>
+<p>This can be overridden in a subclass if it&#8217;s more efficient to
+iterate than a call to <code class="xref py py-meth docutils literal"><span class="pre">_make_points()</span></code>. Calling iter_points
+should make an effort to be the fastest way to iterate through
+the points, regardless of caching.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In Cython, it seems to take twice the time to
+iterate over a generator than to use a for loop over
+indices of an array, but only if the array already exists.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.seed.SeedGen.local_shape">
+<code class="descname">local_shape</code><a class="headerlink" href="#viscid.seed.SeedGen.local_shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shape of local representation of seeds</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.seed.SeedGen.nr_points">
+<code class="descname">nr_points</code><a class="headerlink" href="#viscid.seed.SeedGen.nr_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SeedGen.points">
+<code class="descname">points</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SeedGen.points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SeedGen.points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for <a class="reference internal" href="#viscid.seed.SeedGen.get_points" title="viscid.seed.SeedGen.get_points"><code class="xref py py-meth docutils literal"><span class="pre">get_points()</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SeedGen.to_3d">
+<code class="descname">to_3d</code><span class="sig-paren">(</span><em>pts_local</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SeedGen.to_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SeedGen.to_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform points from the seed coordinate space to 3d</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pts_local</strong> (<em>ndarray</em>) &#8211; An array of points in local crds</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">3xN ndarray of N xyz points</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SeedGen.to_local">
+<code class="descname">to_local</code><span class="sig-paren">(</span><em>pts_3d</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SeedGen.to_local"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SeedGen.to_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform points from 3d to the seed coordinate space</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pts_local</strong> (<em>ndarray</em>) &#8211; A 3xN array of N points in 3d</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">ndarray similar in shape to self.local_shape</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SeedGen.wrap_field">
+<code class="descname">wrap_field</code><span class="sig-paren">(</span><em>data</em>, <em>name='NoName'</em>, <em>fldtype='scalar'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SeedGen.wrap_field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SeedGen.wrap_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrap an ndarray into a field in the local representation</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SeedGen.wrap_mesh">
+<code class="descname">wrap_mesh</code><span class="sig-paren">(</span><em>*arrs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SeedGen.wrap_mesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SeedGen.wrap_mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.seed.Point">
+<em class="property">class </em><code class="descclassname">viscid.seed.</code><code class="descname">Point</code><span class="sig-paren">(</span><em>pts</em>, <em>cache=False</em>, <em>dtype=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.seed.SeedGen" title="viscid.seed.SeedGen"><code class="xref py py-class docutils literal"><span class="pre">viscid.seed.SeedGen</span></code></a></p>
+<p>Collection of points</p>
+<dl class="method">
+<dt id="viscid.seed.Point.get_local_shape">
+<code class="descname">get_local_shape</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Point.get_local_shape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Point.get_local_shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Point.get_nr_points">
+<code class="descname">get_nr_points</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Point.get_nr_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Point.get_nr_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Point.to_3d">
+<code class="descname">to_3d</code><span class="sig-paren">(</span><em>pts_local</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Point.to_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Point.to_3d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Point.to_local">
+<code class="descname">to_local</code><span class="sig-paren">(</span><em>pts_3d</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Point.to_local"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Point.to_local" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.seed.MeshPoints">
+<em class="property">class </em><code class="descclassname">viscid.seed.</code><code class="descname">MeshPoints</code><span class="sig-paren">(</span><em>pts</em>, <em>cache=False</em>, <em>dtype=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#MeshPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.MeshPoints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.seed.SeedGen" title="viscid.seed.SeedGen"><code class="xref py py-class docutils literal"><span class="pre">viscid.seed.SeedGen</span></code></a></p>
+<p>Generic points with 2d mesh information</p>
+<dl class="method">
+<dt id="viscid.seed.MeshPoints.arr2mesh">
+<code class="descname">arr2mesh</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#MeshPoints.arr2mesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.MeshPoints.arr2mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.MeshPoints.as_coordinates">
+<code class="descname">as_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#MeshPoints.as_coordinates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.MeshPoints.as_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.MeshPoints.as_mesh">
+<code class="descname">as_mesh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#MeshPoints.as_mesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.MeshPoints.as_mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.MeshPoints.get_local_shape">
+<code class="descname">get_local_shape</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#MeshPoints.get_local_shape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.MeshPoints.get_local_shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.MeshPoints.get_nr_points">
+<code class="descname">get_nr_points</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#MeshPoints.get_nr_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.MeshPoints.get_nr_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.MeshPoints.to_3d">
+<code class="descname">to_3d</code><span class="sig-paren">(</span><em>pts_local</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#MeshPoints.to_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.MeshPoints.to_3d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.MeshPoints.to_local">
+<code class="descname">to_local</code><span class="sig-paren">(</span><em>pts_3d</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#MeshPoints.to_local"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.MeshPoints.to_local" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.seed.Line">
+<em class="property">class </em><code class="descclassname">viscid.seed.</code><code class="descname">Line</code><span class="sig-paren">(</span><em>p0=(0</em>, <em>0</em>, <em>0)</em>, <em>p1=(1</em>, <em>0</em>, <em>0)</em>, <em>n=20</em>, <em>cache=False</em>, <em>dtype=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Line"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.seed.SeedGen" title="viscid.seed.SeedGen"><code class="xref py py-class docutils literal"><span class="pre">viscid.seed.SeedGen</span></code></a></p>
+<p>A line of seed points</p>
+<dl class="method">
+<dt id="viscid.seed.Line.as_coordinates">
+<code class="descname">as_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Line.as_coordinates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Line.as_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Line.as_mesh">
+<code class="descname">as_mesh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Line.as_mesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Line.as_mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Line.get_local_shape">
+<code class="descname">get_local_shape</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Line.get_local_shape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Line.get_local_shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Line.get_nr_points">
+<code class="descname">get_nr_points</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Line.get_nr_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Line.get_nr_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Line.to_3d">
+<code class="descname">to_3d</code><span class="sig-paren">(</span><em>pts_local</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Line.to_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Line.to_3d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Line.to_local">
+<code class="descname">to_local</code><span class="sig-paren">(</span><em>pts_3d</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Line.to_local"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Line.to_local" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.seed.Plane">
+<em class="property">class </em><code class="descclassname">viscid.seed.</code><code class="descname">Plane</code><span class="sig-paren">(</span><em>p0=(0</em>, <em>0</em>, <em>0)</em>, <em>pN=(0</em>, <em>0</em>, <em>1)</em>, <em>pL=(1</em>, <em>0</em>, <em>0)</em>, <em>len_l=2</em>, <em>len_m=2</em>, <em>nl=20</em>, <em>nm=20</em>, <em>NL_are_vectors=True</em>, <em>cache=False</em>, <em>dtype=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Plane"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Plane" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.seed.SeedGen" title="viscid.seed.SeedGen"><code class="xref py py-class docutils literal"><span class="pre">viscid.seed.SeedGen</span></code></a></p>
+<p>A plane of seed points</p>
+<dl class="method">
+<dt id="viscid.seed.Plane.arr2mesh">
+<code class="descname">arr2mesh</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Plane.arr2mesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Plane.arr2mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Plane.as_coordinates">
+<code class="descname">as_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Plane.as_coordinates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Plane.as_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Plane.as_mesh">
+<code class="descname">as_mesh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Plane.as_mesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Plane.as_mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Plane.get_local_shape">
+<code class="descname">get_local_shape</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Plane.get_local_shape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Plane.get_local_shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Plane.get_nr_points">
+<code class="descname">get_nr_points</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Plane.get_nr_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Plane.get_nr_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Plane.get_rotation">
+<code class="descname">get_rotation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Plane.get_rotation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Plane.get_rotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get rotation from lmn -&gt; xyz</p>
+<p>To transform xyz -&gt; lmn, transpose the result since it&#8217;s
+an orthogonal matrix.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Remember that the p0 offset (the center of the plane) is
+not done with the rotation.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">3x3 ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Transform a set of points from lmn coordinates to xyz</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">viscid</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># p0 is the origin of the plane</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plane</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">Plane</span><span class="p">(</span><span class="n">p0</span><span class="o">=</span><span class="n">p0</span><span class="p">,</span> <span class="n">pN</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>                     <span class="n">pL</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>                     <span class="n">len_l</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">len_m</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lmn_to_xyz</span> <span class="o">=</span> <span class="n">plane</span><span class="o">.</span><span class="n">get_rotation</span><span class="p">()</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># make 10 random points in lmn coorinates</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lmn</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lmn</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xyz</span> <span class="o">=</span> <span class="n">p0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">lmn_to_xyz</span><span class="p">,</span> <span class="n">lmn</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">viscid.plot</span> <span class="kn">import</span> <span class="n">mvi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">verts</span> <span class="o">=</span> <span class="n">plane</span><span class="o">.</span><span class="n">as_mesh</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mvi</span><span class="o">.</span><span class="n">mlab</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="n">verts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">verts</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">verts</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mvi</span><span class="o">.</span><span class="n">mlab</span><span class="o">.</span><span class="n">points3d</span><span class="p">(</span><span class="n">xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mvi</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Transform vector compenents from xyz to lmn</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">viscid</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Bxyz</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">],</span> <span class="n">center</span><span class="o">=</span><span class="s">&#39;node&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                    <span class="n">nr_comps</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s">&quot;interlaced&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Bxyz</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plane</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">Plane</span><span class="p">(</span><span class="n">p0</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">pN</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>                     <span class="n">pL</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>                     <span class="n">len_l</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">len_m</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vals</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">interp_trilin</span><span class="p">(</span><span class="n">Bxyz</span><span class="p">,</span> <span class="n">plane</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">B_interp</span> <span class="o">=</span> <span class="n">plane</span><span class="o">.</span><span class="n">wrap_field</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">fldtype</span><span class="o">=</span><span class="s">&#39;vector&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                            <span class="n">layout</span><span class="o">=</span><span class="s">&#39;interlaced&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xyz_to_lmn</span> <span class="o">=</span> <span class="n">plane</span><span class="o">.</span><span class="n">get_rotation</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Blmn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s">&quot;ij,lmj-&gt;lmi&quot;</span><span class="p">,</span> <span class="n">xyz_to_lmn</span><span class="p">,</span> <span class="n">B_interp</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Blmn</span> <span class="o">=</span> <span class="n">B_interp</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">Blmn</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># use xyz to show in 3d via mayavi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">viscid.plot</span> <span class="kn">import</span> <span class="n">mvi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">verts</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">plane</span><span class="o">.</span><span class="n">wrap_mesh</span><span class="p">(</span><span class="n">Blmn</span><span class="p">[</span><span class="s">&#39;z&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mvi</span><span class="o">.</span><span class="n">mlab</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="n">verts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">verts</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">verts</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">scalars</span><span class="o">=</span><span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">verts</span><span class="p">,</span> <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">vz</span> <span class="o">=</span> <span class="n">plane</span><span class="o">.</span><span class="n">wrap_mesh</span><span class="p">(</span><span class="n">B_interp</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                                    <span class="n">B_interp</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                                    <span class="n">B_interp</span><span class="p">[</span><span class="s">&#39;z&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mvi</span><span class="o">.</span><span class="n">mlab</span><span class="o">.</span><span class="n">quiver3d</span><span class="p">(</span><span class="n">verts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">verts</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">verts</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>                  <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">vz</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mvi</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># use lmn to show in-plane / out-of-plane</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">viscid.plot</span> <span class="kn">import</span> <span class="n">mpl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mpl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Blmn</span><span class="p">[</span><span class="s">&#39;z&#39;</span><span class="p">])</span>  <span class="c"># z means n here</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mpl</span><span class="o">.</span><span class="n">plot2d_quiver</span><span class="p">(</span><span class="n">Blmn</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mpl</span><span class="o">.</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Plane.to_3d">
+<code class="descname">to_3d</code><span class="sig-paren">(</span><em>pts_local</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Plane.to_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Plane.to_3d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Plane.to_local">
+<code class="descname">to_local</code><span class="sig-paren">(</span><em>pts_3d</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Plane.to_local"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Plane.to_local" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.seed.Volume">
+<em class="property">class </em><code class="descclassname">viscid.seed.</code><code class="descname">Volume</code><span class="sig-paren">(</span><em>xl=(-1</em>, <em>-1</em>, <em>-1)</em>, <em>xh=(1</em>, <em>1</em>, <em>1)</em>, <em>n=(20</em>, <em>20</em>, <em>20)</em>, <em>cache=False</em>, <em>dtype=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Volume"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.seed.SeedGen" title="viscid.seed.SeedGen"><code class="xref py py-class docutils literal"><span class="pre">viscid.seed.SeedGen</span></code></a></p>
+<p>A volume of seed points</p>
+<p>Defined by two opposite corners of a box in 3D</p>
+<dl class="method">
+<dt id="viscid.seed.Volume.arr2mesh">
+<code class="descname">arr2mesh</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Volume.arr2mesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Volume.arr2mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Volume.as_coordinates">
+<code class="descname">as_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Volume.as_coordinates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Volume.as_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Volume.as_mesh">
+<code class="descname">as_mesh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Volume.as_mesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Volume.as_mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Volume.get_local_shape">
+<code class="descname">get_local_shape</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Volume.get_local_shape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Volume.get_local_shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Volume.get_nr_points">
+<code class="descname">get_nr_points</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Volume.get_nr_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Volume.get_nr_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Volume.iter_points">
+<code class="descname">iter_points</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Volume.iter_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Volume.iter_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Volume.to_3d">
+<code class="descname">to_3d</code><span class="sig-paren">(</span><em>pts_local</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Volume.to_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Volume.to_3d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Volume.to_local">
+<code class="descname">to_local</code><span class="sig-paren">(</span><em>pts_3d</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Volume.to_local"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Volume.to_local" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.seed.Sphere">
+<em class="property">class </em><code class="descclassname">viscid.seed.</code><code class="descname">Sphere</code><span class="sig-paren">(</span><em>p0=(0</em>, <em>0</em>, <em>0)</em>, <em>r=0.0</em>, <em>pole=(0</em>, <em>0</em>, <em>1)</em>, <em>ntheta=20</em>, <em>nphi=20</em>, <em>thetalim=(0</em>, <em>180.0)</em>, <em>philim=(0</em>, <em>360.0)</em>, <em>phi_endpoint=False</em>, <em>pole_is_vector=True</em>, <em>theta_phi=False</em>, <em>roll=0.0</em>, <em>cache=False</em>, <em>dtype=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Sphere"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Sphere" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.seed.SeedGen" title="viscid.seed.SeedGen"><code class="xref py py-class docutils literal"><span class="pre">viscid.seed.SeedGen</span></code></a></p>
+<p>Make seeds on the surface of a sphere</p>
+<dl class="method">
+<dt id="viscid.seed.Sphere.arr2mesh">
+<code class="descname">arr2mesh</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Sphere.arr2mesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Sphere.arr2mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Sphere.as_coordinates">
+<code class="descname">as_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Sphere.as_coordinates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Sphere.as_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Sphere.as_mesh">
+<code class="descname">as_mesh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Sphere.as_mesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Sphere.as_mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Sphere.get_local_shape">
+<code class="descname">get_local_shape</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Sphere.get_local_shape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Sphere.get_local_shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Sphere.get_nr_points">
+<code class="descname">get_nr_points</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Sphere.get_nr_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Sphere.get_nr_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Sphere.get_rotation">
+<code class="descname">get_rotation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Sphere.get_rotation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Sphere.get_rotation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Sphere.to_3d">
+<code class="descname">to_3d</code><span class="sig-paren">(</span><em>pts_local</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Sphere.to_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Sphere.to_3d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.Sphere.to_local">
+<code class="descname">to_local</code><span class="sig-paren">(</span><em>pts_3d</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Sphere.to_local"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Sphere.to_local" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.seed.SphericalCap">
+<em class="property">class </em><code class="descclassname">viscid.seed.</code><code class="descname">SphericalCap</code><span class="sig-paren">(</span><em>p0=(0</em>, <em>0</em>, <em>0)</em>, <em>r=0.0</em>, <em>pole=(0</em>, <em>0</em>, <em>1)</em>, <em>angle=90.0</em>, <em>ntheta=20</em>, <em>nphi=20</em>, <em>pole_is_vector=True</em>, <em>theta_phi=False</em>, <em>roll=0.0</em>, <em>cache=False</em>, <em>dtype=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SphericalCap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SphericalCap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.seed.Sphere" title="viscid.seed.Sphere"><code class="xref py py-class docutils literal"><span class="pre">viscid.seed.Sphere</span></code></a></p>
+<p>A spherical cone or cap of seeds</p>
+<p>Defined by a center, and a point indicating the direction of the
+cone, and the half angle of the cone.</p>
+<dl class="method">
+<dt id="viscid.seed.SphericalCap.arr2mesh">
+<code class="descname">arr2mesh</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SphericalCap.arr2mesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SphericalCap.arr2mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SphericalCap.as_mesh">
+<code class="descname">as_mesh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SphericalCap.as_mesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SphericalCap.as_mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SphericalCap.to_local">
+<code class="descname">to_local</code><span class="sig-paren">(</span><em>pts_3d</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SphericalCap.to_local"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SphericalCap.to_local" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.seed.Circle">
+<em class="property">class </em><code class="descclassname">viscid.seed.</code><code class="descname">Circle</code><span class="sig-paren">(</span><em>p0=(0</em>, <em>0</em>, <em>0)</em>, <em>pole=(0</em>, <em>0</em>, <em>1)</em>, <em>n=20</em>, <em>r=None</em>, <em>pole_is_vector=True</em>, <em>roll=0.0</em>, <em>cache=False</em>, <em>dtype=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Circle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.seed.SphericalCap" title="viscid.seed.SphericalCap"><code class="xref py py-class docutils literal"><span class="pre">viscid.seed.SphericalCap</span></code></a></p>
+<p>A circle of seeds</p>
+<p>Defined by a center and a point normal to the plane of the circle</p>
+<dl class="method">
+<dt id="viscid.seed.Circle.to_local">
+<code class="descname">to_local</code><span class="sig-paren">(</span><em>pts_3d</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#Circle.to_local"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.Circle.to_local" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.seed.SphericalPatch">
+<em class="property">class </em><code class="descclassname">viscid.seed.</code><code class="descname">SphericalPatch</code><span class="sig-paren">(</span><em>p0=(0</em>, <em>0</em>, <em>0)</em>, <em>p1=(0</em>, <em>0</em>, <em>1)</em>, <em>max_alpha=45</em>, <em>max_beta=45</em>, <em>nalpha=20</em>, <em>nbeta=20</em>, <em>roll=0.0</em>, <em>r=0.0</em>, <em>p1_is_vector=True</em>, <em>cache=False</em>, <em>dtype=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SphericalPatch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SphericalPatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.seed.SeedGen" title="viscid.seed.SeedGen"><code class="xref py py-class docutils literal"><span class="pre">viscid.seed.SeedGen</span></code></a></p>
+<p>Make a rectangular (in theta and phi) patch on a sphere</p>
+<dl class="method">
+<dt id="viscid.seed.SphericalPatch.arr2mesh">
+<code class="descname">arr2mesh</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SphericalPatch.arr2mesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SphericalPatch.arr2mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SphericalPatch.as_coordinates">
+<code class="descname">as_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SphericalPatch.as_coordinates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SphericalPatch.as_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SphericalPatch.as_mesh">
+<code class="descname">as_mesh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SphericalPatch.as_mesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SphericalPatch.as_mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SphericalPatch.get_local_shape">
+<code class="descname">get_local_shape</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SphericalPatch.get_local_shape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SphericalPatch.get_local_shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SphericalPatch.get_nr_points">
+<code class="descname">get_nr_points</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SphericalPatch.get_nr_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SphericalPatch.get_nr_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SphericalPatch.get_rotation">
+<code class="descname">get_rotation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SphericalPatch.get_rotation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SphericalPatch.get_rotation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SphericalPatch.to_3d">
+<code class="descname">to_3d</code><span class="sig-paren">(</span><em>pts_local</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SphericalPatch.to_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SphericalPatch.to_3d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.seed.SphericalPatch.to_local">
+<code class="descname">to_local</code><span class="sig-paren">(</span><em>pts_3d</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#SphericalPatch.to_local"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.SphericalPatch.to_local" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.seed.PolarIonosphere">
+<em class="property">class </em><code class="descclassname">viscid.seed.</code><code class="descname">PolarIonosphere</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#PolarIonosphere"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.PolarIonosphere" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.seed.Sphere" title="viscid.seed.Sphere"><code class="xref py py-class docutils literal"><span class="pre">viscid.seed.Sphere</span></code></a></p>
+<dl class="method">
+<dt id="viscid.seed.PolarIonosphere.to_local">
+<code class="descname">to_local</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/seed.html#PolarIonosphere.to_local"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.seed.PolarIonosphere.to_local" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/api/viscid.seed.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

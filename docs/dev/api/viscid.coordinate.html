@@ -1,0 +1,955 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.coordinate module &mdash; Viscid 0.95.0 dev documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.95.0 dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 dev documentation" href="../index.html" />
+    <link rel="up" title="viscid package" href="viscid.html" />
+    <link rel="next" title="viscid.dataset module" href="viscid.dataset.html" />
+    <link rel="prev" title="viscid.bucket module" href="viscid.bucket.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0 dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../changes.html">ChangeLog</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">viscid.coordinate module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-viscid.coordinate">
+<span id="viscid-coordinate-module"></span><h1>viscid.coordinate module<a class="headerlink" href="#module-viscid.coordinate" title="Permalink to this headline">¶</a></h1>
+<p>Container for grid coordinates</p>
+<p>Coordinates primarily go into Field objects. The order of coords in
+the clist should mirror the data layout, as in if data[ix, iy, iz]
+(C-order, ix is fastest varying index) then list should go x, y, z...
+this is the default order</p>
+<dl class="docutils">
+<dt>types:</dt>
+<dd><dl class="first last docutils">
+<dt>&#8220;Structured&#8221;:</dt>
+<dd>&#8220;nonuniform_cartesian&#8221;
+&#8220;Cylindrical&#8221;
+&#8220;Spherical&#8221;</dd>
+<dt>&#8220;Unstructured&#8221;:</dt>
+<dd>-&gt; Not Implemented &lt;-</dd>
+</dl>
+</dd>
+<dt>FIXME: uniform coordinates are generally unsupported, but they&#8217;re just</dt>
+<dd>a special case of nonuniform coordinates, so the functionality
+is still there... it&#8217;s just unnatural to use full crd arrays
+with uniform coordinates</dd>
+</dl>
+<dl class="class">
+<dt id="viscid.coordinate.Coordinates">
+<em class="property">class </em><code class="descclassname">viscid.coordinate.</code><code class="descname">Coordinates</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#Coordinates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.Coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="viscid.coordinate.Coordinates.as_coordinates">
+<code class="descname">as_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#Coordinates.as_coordinates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.Coordinates.as_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.Coordinates.crdtype">
+<code class="descname">crdtype</code><a class="headerlink" href="#viscid.coordinate.Coordinates.crdtype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.Coordinates.is_spherical">
+<code class="descname">is_spherical</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#Coordinates.is_spherical"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.Coordinates.is_spherical" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="viscid.coordinate.Coordinates.istype">
+<em class="property">classmethod </em><code class="descname">istype</code><span class="sig-paren">(</span><em>type_str</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#Coordinates.istype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.Coordinates.istype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.coordinate.NonuniformCartesianCrds">
+<em class="property">class </em><code class="descclassname">viscid.coordinate.</code><code class="descname">NonuniformCartesianCrds</code><span class="sig-paren">(</span><em>init_clist</em>, <em>full_arrays=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#NonuniformCartesianCrds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.NonuniformCartesianCrds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.coordinate.NonuniformCrds" title="viscid.coordinate.NonuniformCrds"><code class="xref py py-class docutils literal"><span class="pre">viscid.coordinate.NonuniformCrds</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.coordinate.NonuniformCrds">
+<em class="property">class </em><code class="descclassname">viscid.coordinate.</code><code class="descname">NonuniformCrds</code><span class="sig-paren">(</span><em>init_clist</em>, <em>full_arrays=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#NonuniformCrds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.NonuniformCrds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.coordinate.StructuredCrds" title="viscid.coordinate.StructuredCrds"><code class="xref py py-class docutils literal"><span class="pre">viscid.coordinate.StructuredCrds</span></code></a></p>
+<dl class="method">
+<dt id="viscid.coordinate.NonuniformCrds.atleast_3d">
+<code class="descname">atleast_3d</code><span class="sig-paren">(</span><em>xl=-1</em>, <em>xh=1</em>, <em>cc=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#NonuniformCrds.atleast_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.NonuniformCrds.atleast_3d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.NonuniformCrds.get_clist">
+<code class="descname">get_clist</code><span class="sig-paren">(</span><em>axes=None</em>, <em>slc=None</em>, <em>full_arrays=True</em>, <em>center='node'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#NonuniformCrds.get_clist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.NonuniformCrds.get_clist" title="Permalink to this definition">¶</a></dt>
+<dd><p>??</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a clist of the coordinates sliced if you wish</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">I recommend using <code class="docutils literal"><span class="pre">numpy.s_</span></code> for making the slice</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.coordinate.NonuniformSphericalCrds">
+<em class="property">class </em><code class="descclassname">viscid.coordinate.</code><code class="descname">NonuniformSphericalCrds</code><span class="sig-paren">(</span><em>init_clist</em>, <em>full_arrays=False</em>, <em>dtype='f8'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#NonuniformSphericalCrds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.NonuniformSphericalCrds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.coordinate.UniformCrds" title="viscid.coordinate.UniformCrds"><code class="xref py py-class docutils literal"><span class="pre">viscid.coordinate.UniformCrds</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.coordinate.StructuredCrds">
+<em class="property">class </em><code class="descclassname">viscid.coordinate.</code><code class="descname">StructuredCrds</code><span class="sig-paren">(</span><em>init_clist</em>, <em>has_cc=True</em>, <em>reflect_axes=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.coordinate.Coordinates" title="viscid.coordinate.Coordinates"><code class="xref py py-class docutils literal"><span class="pre">viscid.coordinate.Coordinates</span></code></a></p>
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.L_cc">
+<code class="descname">L_cc</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.L_cc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.L_nc">
+<code class="descname">L_nc</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.L_nc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.SUFFIXES">
+<code class="descname">SUFFIXES</code><em class="property"> = ['nc', 'cc', '', 'ec', 'fc']</em><a class="headerlink" href="#viscid.coordinate.StructuredCrds.SUFFIXES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.__getitem__">
+<code class="descname">__getitem__</code><span class="sig-paren">(</span><em>axis</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.__getitem__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns coord identified by axis (shaped / centering encoded
+through capitalization of crd, and suffix), ex: &#8216;Xcc&#8217; is shaped cell
+centered, &#8216;znc&#8217; is flat node centered, &#8216;x&#8217; is flat node centered,
+2 is self._axes[2]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.__setitem__">
+<code class="descname">__setitem__</code><span class="sig-paren">(</span><em>axis</em>, <em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.__setitem__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.__setitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>I recommend against doing this since there may be unintended
+side effects</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.apply_reflections">
+<code class="descname">apply_reflections</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.apply_reflections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.apply_reflections" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Coordinates with reflections applied</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.as_mesh">
+<code class="descname">as_mesh</code><span class="sig-paren">(</span><em>center='none'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.as_mesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.as_mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.axes">
+<code class="descname">axes</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.axes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.axis_name">
+<code class="descname">axis_name</code><span class="sig-paren">(</span><em>axis</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.axis_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.axis_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.clear_cache">
+<code class="descname">clear_cache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.clear_cache"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.clear_cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.clear_crds">
+<code class="descname">clear_crds</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.clear_crds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.clear_crds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.dtype">
+<code class="descname">dtype</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.dtype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.extend_by_half">
+<code class="descname">extend_by_half</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.extend_by_half"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.extend_by_half" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extend coordinates half a grid cell in all directions</p>
+<p>Used for turning node centered fields to cell centered without
+changing the data, just the coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">New coordinates instance with same type as self</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_L">
+<code class="descname">get_L</code><span class="sig-paren">(</span><em>axes=None</em>, <em>center='node'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_L" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get lengths</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_cc">
+<code class="descname">get_cc</code><span class="sig-paren">(</span><em>axis</em>, <em>shaped=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_cc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_cc" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a flat ndarray of coordinates along a given axis
+axis can be crd name as string, or index, as in x==2, y==1, z==2</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_clist">
+<code class="descname">get_clist</code><span class="sig-paren">(</span><em>axes=None</em>, <em>slc=None</em>, <em>full_arrays=True</em>, <em>center='node'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_clist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_clist" title="Permalink to this definition">¶</a></dt>
+<dd><p>??</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a clist of the coordinates sliced if you wish</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">I recommend using <code class="docutils literal"><span class="pre">numpy.s_</span></code> for making the slice</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_crd">
+<code class="descname">get_crd</code><span class="sig-paren">(</span><em>axis</em>, <em>shaped=False</em>, <em>center='none'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_crd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_crd" title="Permalink to this definition">¶</a></dt>
+<dd><p>if axis is not specified, return all coords,
+shaped makes axis capitalized and returns ogrid like crds
+shaped is only used if axis == None
+sfx can be none, node, cell, face, edge
+raises KeyError if axis not found</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_crds">
+<code class="descname">get_crds</code><span class="sig-paren">(</span><em>axes=None</em>, <em>shaped=False</em>, <em>center='none'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_crds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_crds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get coordinate arrays</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>axes</strong> &#8211; should be a list of names or integer indices, or None
+to return all axes</li>
+<li><strong>shaped</strong> &#8211; boolean if you want a shaped or flat ndarray
+(True is the same as capitalizing axis)</li>
+<li><strong>center</strong> &#8211; &#8216;node&#8217; &#8216;cell&#8217; &#8216;edge&#8217; &#8216;face&#8217;, same as adding a suffix
+to axes</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of coords as ndarrays</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_crds_cc">
+<code class="descname">get_crds_cc</code><span class="sig-paren">(</span><em>axes=None</em>, <em>shaped=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_crds_cc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_crds_cc" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns all cell centered coords as a list of ndarrays, flat if
+shaped==False, or shaped if shaped==True</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_crds_ec">
+<code class="descname">get_crds_ec</code><span class="sig-paren">(</span><em>axes=None</em>, <em>shaped=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_crds_ec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_crds_ec" title="Permalink to this definition">¶</a></dt>
+<dd><p>return all edge centered coords as a list of ndarrays, flat if
+shaped==False, or shaped if shaped==True</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_crds_fc">
+<code class="descname">get_crds_fc</code><span class="sig-paren">(</span><em>axes=None</em>, <em>shaped=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_crds_fc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_crds_fc" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns all face centered coords as a list of ndarrays, flat if
+shaped==False, or shaped if shaped==True</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_crds_nc">
+<code class="descname">get_crds_nc</code><span class="sig-paren">(</span><em>axes=None</em>, <em>shaped=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_crds_nc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_crds_nc" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns all node centered coords as a list of ndarrays, flat if
+shaped==False, or shaped if shaped==True</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_culled_axes">
+<code class="descname">get_culled_axes</code><span class="sig-paren">(</span><em>ignore=2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_culled_axes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_culled_axes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get only good axes</p>
+<p>Discard axes whose coords have length &lt;= ignore... useful for
+2d fields that only have 1 cell</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of axes names</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_dx">
+<code class="descname">get_dx</code><span class="sig-paren">(</span><em>axes=None</em>, <em>center='node'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_dx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_dx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get cell widths if center == &#8216;node&#8217;, or distances between cell
+centers if center == &#8216;cell&#8217;</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_ec">
+<code class="descname">get_ec</code><span class="sig-paren">(</span><em>axis</em>, <em>shaped=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_ec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_ec" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a flat ndarray of coordinates along a given axis
+axis can be crd name as string, or index, as in x==2, y==1, z==2</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_fc">
+<code class="descname">get_fc</code><span class="sig-paren">(</span><em>axis</em>, <em>shaped=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_fc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_fc" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a flat ndarray of coordinates along a given axis
+axis can be crd name as string, or index, as in x==2, y==1, z==2</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_min_dx">
+<code class="descname">get_min_dx</code><span class="sig-paren">(</span><em>axes=None</em>, <em>center='node'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_min_dx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_min_dx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a minimum cell width for each axis</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_nc">
+<code class="descname">get_nc</code><span class="sig-paren">(</span><em>axis</em>, <em>shaped=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_nc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_nc" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a flat ndarray of coordinates along a given axis
+axis can be crd name as string, or index, as in x==2, y==1, z==2</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_nr_points">
+<code class="descname">get_nr_points</code><span class="sig-paren">(</span><em>center='none'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_nr_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_nr_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the number of points in a grid defined by these crds</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_points">
+<code class="descname">get_points</code><span class="sig-paren">(</span><em>center='none'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns all points in a grid defined by crds as a
+nr_dims x nr_points ndarray</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_slice_extent">
+<code class="descname">get_slice_extent</code><span class="sig-paren">(</span><em>selection</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_slice_extent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_slice_extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>work in progress</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_xh">
+<code class="descname">get_xh</code><span class="sig-paren">(</span><em>axes=None</em>, <em>center='node'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_xh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_xh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.get_xl">
+<code class="descname">get_xl</code><span class="sig-paren">(</span><em>axes=None</em>, <em>center='node'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.get_xl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.get_xl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.has_cc">
+<code class="descname">has_cc</code><em class="property"> = None</em><a class="headerlink" href="#viscid.coordinate.StructuredCrds.has_cc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.ind">
+<code class="descname">ind</code><span class="sig-paren">(</span><em>axis</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.ind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.ind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.iter_points">
+<code class="descname">iter_points</code><span class="sig-paren">(</span><em>center='none'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.iter_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.iter_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns an iterator over all the points in a grid, each
+nextitem will be a list of nr_dims numbers</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.make_slice">
+<code class="descname">make_slice</code><span class="sig-paren">(</span><em>selection</em>, <em>cc=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.make_slice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.make_slice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turns a slice string into a slice (should be private?)</p>
+<p>Slices should be made using the normal <code class="docutils literal"><span class="pre">field[selection]</span></code>
+syntax. This function is more for internal use; however it
+does document the slice string syntax.</p>
+<p>In practice, selection can be a string like
+&#8220;y = 3:6:2, z = 0.0f&#8221; where integers indicate an index as
+opposed to floats followed by an &#8216;f&#8217; which slice by crd value.
+The example slice would be the 3rd and 5th crds in y, and the
+z = 0.0 plane. Selection can also be the usual tuple of slice
+objects / integers like one would give to numpy.</p>
+<p>&#8220;y = 3:6:2, z = 0.0&#8221; will give (if z[32] is closest to z=0.0):</p>
+<div class="highlight-python"><div class="highlight"><pre>([slice(None), slice(3, 6, 2), 32],
+ [[&#39;x&#39;, ndarray(all nc x crds)], [&#39;y&#39;, array(y[3], y[5])]],
+ [[&#39;z&#39;, 0.0]],
+)
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>selection</strong> (<em>int, str, slice</em>) &#8211; slice string</li>
+<li><strong>cc</strong> (<em>bool</em>) &#8211; cell centered slice</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><p>tuple (slices, slcrds, reduced)</p>
+<ul class="simple">
+<li><strong>slices</strong>: list of slice objects, one for each axis in
+self</li>
+<li><strong>slcrds</strong>: a clist for what the coords will be after the
+slice</li>
+<li><strong>reduced</strong>: a list of (axis, location) pairs of which
+axes are sliced out</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Note: cc is necessary for finding the closest plane, otherwise it</dt>
+<dd>might be off by half a grid cell</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.make_slice_keep">
+<code class="descname">make_slice_keep</code><span class="sig-paren">(</span><em>selection</em>, <em>cc=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.make_slice_keep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.make_slice_keep" title="Permalink to this definition">¶</a></dt>
+<dd><p>make slice, but put back dims that were explicitly reduced</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.make_slice_reduce">
+<code class="descname">make_slice_reduce</code><span class="sig-paren">(</span><em>selection</em>, <em>cc=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.make_slice_reduce"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.make_slice_reduce" title="Permalink to this definition">¶</a></dt>
+<dd><p>make slice, and reduce dims that were not explicitly sliced</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.min_dx_cc">
+<code class="descname">min_dx_cc</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.min_dx_cc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.min_dx_nc">
+<code class="descname">min_dx_nc</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.min_dx_nc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="viscid.coordinate.StructuredCrds.native_slice">
+<em class="property">static </em><code class="descname">native_slice</code><span class="sig-paren">(</span><em>crd_arr</em>, <em>slc</em>, <em>center='node'</em>, <em>axis=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.native_slice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.native_slice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.nr_dims">
+<code class="descname">nr_dims</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.nr_dims" title="Permalink to this definition">¶</a></dt>
+<dd><p>number of spatial dimensions</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.nr_points">
+<code class="descname">nr_points</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.nr_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.points">
+<code class="descname">points</code><span class="sig-paren">(</span><em>center=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.print_tree">
+<code class="descname">print_tree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.print_tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.print_tree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.reflect_axes">
+<code class="descname">reflect_axes</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.reflect_axes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.reflect_fld_arr">
+<code class="descname">reflect_fld_arr</code><span class="sig-paren">(</span><em>arr</em>, <em>cc=False</em>, <em>nr_comp=None</em>, <em>nr_comps=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.reflect_fld_arr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.reflect_fld_arr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.reflect_slices">
+<code class="descname">reflect_slices</code><span class="sig-paren">(</span><em>slices</em>, <em>cc=False</em>, <em>cull_second=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.reflect_slices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.reflect_slices" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is tricky, only use if you know what&#8217;s going on</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.set_crds">
+<code class="descname">set_crds</code><span class="sig-paren">(</span><em>clist</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.set_crds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.set_crds" title="Permalink to this definition">¶</a></dt>
+<dd><p>called with a list of lists:
+((&#8216;x&#8217;, ndarray), (&#8216;y&#8217;,ndarray), (&#8216;z&#8217;,ndarray))
+Note: input crds are assumed to be node centered</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.shape">
+<code class="descname">shape</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.shape_cc">
+<code class="descname">shape_cc</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.shape_cc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.shape_nc">
+<code class="descname">shape_nc</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.shape_nc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.size">
+<code class="descname">size</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.size_cc">
+<code class="descname">size_cc</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.size_cc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.size_nc">
+<code class="descname">size_nc</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.size_nc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.slice">
+<code class="descname">slice</code><span class="sig-paren">(</span><em>selection</em>, <em>cc=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.slice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.slice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get crds that describe a slice (subset) of this grid.
+Reduces dims the same way numpy / fields do. Chances are
+you want either slice_reduce or slice_keep</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.slice_interp">
+<code class="descname">slice_interp</code><span class="sig-paren">(</span><em>selection</em>, <em>cc=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.slice_interp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.slice_interp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.slice_keep">
+<code class="descname">slice_keep</code><span class="sig-paren">(</span><em>selection</em>, <em>cc=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.slice_keep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.slice_keep" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.slice_reduce">
+<code class="descname">slice_reduce</code><span class="sig-paren">(</span><em>selection</em>, <em>cc=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.slice_reduce"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.slice_reduce" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get crds that describe a slice (subset) of this grid. Go
+through, and if the slice didn&#8217;t touch a dim with only one crd,
+reduce it</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.xh_cc">
+<code class="descname">xh_cc</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.xh_cc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.xh_nc">
+<code class="descname">xh_nc</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.xh_nc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.xl_cc">
+<code class="descname">xl_cc</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.xl_cc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.StructuredCrds.xl_nc">
+<code class="descname">xl_nc</code><a class="headerlink" href="#viscid.coordinate.StructuredCrds.xl_nc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.coordinate.UniformCartesianCrds">
+<em class="property">class </em><code class="descclassname">viscid.coordinate.</code><code class="descname">UniformCartesianCrds</code><span class="sig-paren">(</span><em>init_clist</em>, <em>full_arrays=False</em>, <em>dtype='f8'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#UniformCartesianCrds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.UniformCartesianCrds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.coordinate.UniformCrds" title="viscid.coordinate.UniformCrds"><code class="xref py py-class docutils literal"><span class="pre">viscid.coordinate.UniformCrds</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.coordinate.UniformCrds">
+<em class="property">class </em><code class="descclassname">viscid.coordinate.</code><code class="descname">UniformCrds</code><span class="sig-paren">(</span><em>init_clist</em>, <em>full_arrays=False</em>, <em>dtype='f8'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#UniformCrds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.UniformCrds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.coordinate.StructuredCrds" title="viscid.coordinate.StructuredCrds"><code class="xref py py-class docutils literal"><span class="pre">viscid.coordinate.StructuredCrds</span></code></a></p>
+<dl class="attribute">
+<dt id="viscid.coordinate.UniformCrds.L_cc">
+<code class="descname">L_cc</code><em class="property"> = None</em><a class="headerlink" href="#viscid.coordinate.UniformCrds.L_cc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.UniformCrds.L_nc">
+<code class="descname">L_nc</code><em class="property"> = None</em><a class="headerlink" href="#viscid.coordinate.UniformCrds.L_nc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.UniformCrds.atleast_3d">
+<code class="descname">atleast_3d</code><span class="sig-paren">(</span><em>xl=-1</em>, <em>xh=1</em>, <em>cc=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#UniformCrds.atleast_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.UniformCrds.atleast_3d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.UniformCrds.dtype">
+<code class="descname">dtype</code><em class="property"> = None</em><a class="headerlink" href="#viscid.coordinate.UniformCrds.dtype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.UniformCrds.extend_by_half">
+<code class="descname">extend_by_half</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#UniformCrds.extend_by_half"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.UniformCrds.extend_by_half" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extend coordinates half a grid cell in all directions</p>
+<p>Used for turning node centered fields to cell centered without
+changing the data, just the coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">New coordinates instance with same type as self</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.UniformCrds.get_L">
+<code class="descname">get_L</code><span class="sig-paren">(</span><em>axes=None</em>, <em>center='node'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#UniformCrds.get_L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.UniformCrds.get_L" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get lengths</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.UniformCrds.get_clist">
+<code class="descname">get_clist</code><span class="sig-paren">(</span><em>axes=None</em>, <em>slc=None</em>, <em>full_arrays=False</em>, <em>center='node'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#UniformCrds.get_clist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.UniformCrds.get_clist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.UniformCrds.get_min_dx">
+<code class="descname">get_min_dx</code><span class="sig-paren">(</span><em>axes=None</em>, <em>center='node'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#UniformCrds.get_min_dx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.UniformCrds.get_min_dx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a minimum cell width for each axis</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.UniformCrds.get_nr_points">
+<code class="descname">get_nr_points</code><span class="sig-paren">(</span><em>center='none'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#UniformCrds.get_nr_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.UniformCrds.get_nr_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the number of points in a grid defined by these crds</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.UniformCrds.get_xh">
+<code class="descname">get_xh</code><span class="sig-paren">(</span><em>axes=None</em>, <em>center='node'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#UniformCrds.get_xh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.UniformCrds.get_xh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.UniformCrds.get_xl">
+<code class="descname">get_xl</code><span class="sig-paren">(</span><em>axes=None</em>, <em>center='node'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#UniformCrds.get_xl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.UniformCrds.get_xl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.UniformCrds.min_dx_cc">
+<code class="descname">min_dx_cc</code><em class="property"> = None</em><a class="headerlink" href="#viscid.coordinate.UniformCrds.min_dx_cc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.UniformCrds.min_dx_nc">
+<code class="descname">min_dx_nc</code><em class="property"> = None</em><a class="headerlink" href="#viscid.coordinate.UniformCrds.min_dx_nc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="viscid.coordinate.UniformCrds.native_slice">
+<em class="property">static </em><code class="descname">native_slice</code><span class="sig-paren">(</span><em>crd_arr</em>, <em>slc</em>, <em>center='node'</em>, <em>axis=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#UniformCrds.native_slice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.UniformCrds.native_slice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.UniformCrds.nr_points">
+<code class="descname">nr_points</code><a class="headerlink" href="#viscid.coordinate.UniformCrds.nr_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.UniformCrds.shape_cc">
+<code class="descname">shape_cc</code><em class="property"> = None</em><a class="headerlink" href="#viscid.coordinate.UniformCrds.shape_cc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.UniformCrds.shape_nc">
+<code class="descname">shape_nc</code><em class="property"> = None</em><a class="headerlink" href="#viscid.coordinate.UniformCrds.shape_nc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.UniformCrds.xh_cc">
+<code class="descname">xh_cc</code><em class="property"> = None</em><a class="headerlink" href="#viscid.coordinate.UniformCrds.xh_cc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.UniformCrds.xh_nc">
+<code class="descname">xh_nc</code><em class="property"> = None</em><a class="headerlink" href="#viscid.coordinate.UniformCrds.xh_nc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.UniformCrds.xl_cc">
+<code class="descname">xl_cc</code><em class="property"> = None</em><a class="headerlink" href="#viscid.coordinate.UniformCrds.xl_cc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.coordinate.UniformCrds.xl_nc">
+<code class="descname">xl_nc</code><em class="property"> = None</em><a class="headerlink" href="#viscid.coordinate.UniformCrds.xl_nc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.coordinate.UniformSphericalCrds">
+<em class="property">class </em><code class="descclassname">viscid.coordinate.</code><code class="descname">UniformSphericalCrds</code><span class="sig-paren">(</span><em>init_clist</em>, <em>full_arrays=False</em>, <em>dtype='f8'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#UniformSphericalCrds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.UniformSphericalCrds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.coordinate.UniformCrds" title="viscid.coordinate.UniformCrds"><code class="xref py py-class docutils literal"><span class="pre">viscid.coordinate.UniformCrds</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="viscid.coordinate.UnstructuredCrds">
+<em class="property">class </em><code class="descclassname">viscid.coordinate.</code><code class="descname">UnstructuredCrds</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#UnstructuredCrds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.UnstructuredCrds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#viscid.coordinate.Coordinates" title="viscid.coordinate.Coordinates"><code class="xref py py-class docutils literal"><span class="pre">viscid.coordinate.Coordinates</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.coordinate.arrays2crds">
+<code class="descclassname">viscid.coordinate.</code><code class="descname">arrays2crds</code><span class="sig-paren">(</span><em>crd_arrs</em>, <em>crd_names='xyzuvw'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#arrays2crds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.arrays2crds" title="Permalink to this definition">¶</a></dt>
+<dd><p>make either uniform or nonuniform coordnates given full arrays</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>crd_arrs</strong> (<em>array-like</em>) &#8211; for n-dimensional crds, supply a list
+of n ndarrays</li>
+<li><strong>crd_names</strong> (<em>iterable</em>) &#8211; names of coordinates in the same order
+as crd_arrs. Should always be in xyz order.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.coordinate.lookup_crds_type">
+<code class="descclassname">viscid.coordinate.</code><code class="descname">lookup_crds_type</code><span class="sig-paren">(</span><em>type_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#lookup_crds_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.lookup_crds_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="viscid.coordinate.wrap_crds">
+<code class="descclassname">viscid.coordinate.</code><code class="descname">wrap_crds</code><span class="sig-paren">(</span><em>crdtype</em>, <em>clist</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#wrap_crds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.wrap_crds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/api/viscid.coordinate.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

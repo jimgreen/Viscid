@@ -1,0 +1,902 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.plot.mpl module &mdash; Viscid 0.95.0 dev documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.95.0 dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 dev documentation" href="../index.html" />
+    <link rel="up" title="viscid.plot package" href="viscid.plot.html" />
+    <link rel="next" title="viscid.plot.mvi module" href="viscid.plot.mvi.html" />
+    <link rel="prev" title="viscid.plot.mpl_extra module" href="viscid.plot.mpl_extra.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0 dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../changes.html">ChangeLog</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">viscid.plot.mpl module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-viscid.plot.mpl">
+<span id="viscid-plot-mpl-module"></span><h1>viscid.plot.mpl module<a class="headerlink" href="#module-viscid.plot.mpl" title="Permalink to this headline">¶</a></h1>
+<p>Convenience module for making matplotlib plots</p>
+<p>Your best friend in this module is the <a class="reference internal" href="#viscid.plot.mpl.plot" title="viscid.plot.mpl.plot"><code class="xref py py-meth docutils literal"><span class="pre">plot()</span></code></a> function, but the
+best reference for all quirky options is <a class="reference internal" href="#viscid.plot.mpl.plot2d_field" title="viscid.plot.mpl.plot2d_field"><code class="xref py py-meth docutils literal"><span class="pre">plot2d_field()</span></code></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can&#8217;t set rc parameters for this module!</p>
+</div>
+<dl class="function">
+<dt id="viscid.plot.mpl.auto_adjust_subplots">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">auto_adjust_subplots</code><span class="sig-paren">(</span><em>fig=None</em>, <em>tight_layout=True</em>, <em>subplot_params=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/plot/mpl.html#auto_adjust_subplots"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.plot.mpl.auto_adjust_subplots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper to adjust subplots w/ tight_layout remembering axes lims</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fig</strong> (<em>Figure</em>) &#8211; a matplotlib figure</li>
+<li><strong>tight_layout</strong> (<em>bool, dict</em>) &#8211; flag for whether or not to apply a
+tight layout. If a dict, then it&#8217;s unpacked into
+<cite>plt.tight_layout(...)</cite></li>
+<li><strong>subplot_params</strong> (<em>dict</em>) &#8211; unpacked into <cite>fig.subplots_adjust(...)</cite></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">keyword arguments for fig.subplots_adjust that describe
+the current figure after all adjustments are made</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.mplshow">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">mplshow</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/plot/mpl.html#mplshow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.plot.mpl.mplshow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls <code class="xref py py-meth docutils literal"><span class="pre">matplotlib.pyplot.show()</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.plot">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">plot</code><span class="sig-paren">(</span><em>fld</em>, <em>selection=':'</em>, <em>force_cartesian=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/plot/mpl.html#plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.plot.mpl.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a field by dispatching to the most appropiate funciton</p>
+<ul class="simple">
+<li>If fld has 1 spatial dimensions, call
+<code class="xref py py-meth docutils literal"><span class="pre">plot1d_field(fld[selection],</span> <span class="pre">**kwargs)()</span></code></li>
+<li>If fld has 2 spatial dimensions, call
+<code class="xref py py-meth docutils literal"><span class="pre">plot2d_field(fld[selection],</span> <span class="pre">**kwargs)()</span></code></li>
+<li>If fld is 2-D and has spherical coordinates (as is the case for
+ionospheric fields), try to use <a class="reference internal" href="#viscid.plot.mpl.plot2d_mapfield" title="viscid.plot.mpl.plot2d_mapfield"><code class="xref py py-meth docutils literal"><span class="pre">plot2d_mapfield()</span></code></a> which
+uses basemap to make its axes.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fld</strong> (<a class="reference internal" href="viscid.field.html#viscid.field.Field" title="viscid.field.Field"><em>Field</em></a>) &#8211; Some Field</li>
+<li><strong>selection</strong> (<em>optional</em>) &#8211; something that describes a field slice</li>
+<li><strong>force_cartesian</strong> (<em>bool</em>) &#8211; if false, then spherical plots will use
+plot_mapfield</li>
+<li><strong>**kwargs</strong> &#8211; Passed on to plotting function</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">(plot, colorbar)
+plot: matplotlib plot object
+colorbar: matplotlib colorbar object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference internal" href="#viscid.plot.mpl.plot1d_field" title="viscid.plot.mpl.plot1d_field"><code class="xref py py-meth docutils literal"><span class="pre">plot1d_field()</span></code></a>: target for 1d fields</li>
+<li><a class="reference internal" href="#viscid.plot.mpl.plot2d_mapfield" title="viscid.plot.mpl.plot2d_mapfield"><code class="xref py py-meth docutils literal"><span class="pre">plot2d_mapfield()</span></code></a>: target for 2d spherical fields</li>
+<li><a class="reference internal" href="#viscid.plot.mpl.plot2d_field" title="viscid.plot.mpl.plot2d_field"><code class="xref py py-meth docutils literal"><span class="pre">plot2d_field()</span></code></a>: target for 2d fields</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Field slices are done using &#8220;slice_reduce&#8221;, meaning extra
+dimensions are reduced out.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code> &#8211;
+Description</li>
+<li><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+Description</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.plot1d_field">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">plot1d_field</code><span class="sig-paren">(</span><em>fld</em>, <em>ax=None</em>, <em>plot_opts=None</em>, <em>**plot_kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/plot/mpl.html#plot1d_field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.plot.mpl.plot1d_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a 1D Field using lines</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ax</strong> (<em>matplotlib axis, optional</em>) &#8211; Plot in a specific axis object</li>
+<li><strong>plot_opts</strong> (<em>str, optional</em>) &#8211; plot options</li>
+<li><strong>**plot_kwargs</strong> (<em>str, optional</em>) &#8211; plot options</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference internal" href="../plot_options.html"><em>Plot Options</em></a>: Contains a full list of plot options</li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.plot2d_field">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">plot2d_field</code><span class="sig-paren">(</span><em>fld</em>, <em>ax=None</em>, <em>plot_opts=None</em>, <em>**plot_kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/plot/mpl.html#plot2d_field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.plot.mpl.plot2d_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a 2D Field using pcolormesh, contour, etc.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>ax</strong> (<em>matplotlib axis, optional</em>) &#8211; Plot in a specific axis object</li>
+<li><strong>plot_opts</strong> (<em>str, optional</em>) &#8211; plot options</li>
+<li><strong>**plot_kwargs</strong> (<em>str, optional</em>) &#8211; plot options</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(plot_object, colorbar_object)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference internal" href="../plot_options.html"><em>Plot Options</em></a>: Contains a full list of plot options</li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.plot2d_lines">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">plot2d_lines</code><span class="sig-paren">(</span><em>lines</em>, <em>scalars=None</em>, <em>symdir=''</em>, <em>ax=None</em>, <em>show=False</em>, <em>flip_plot=False</em>, <em>subsample=2</em>, <em>pts_interp='linear'</em>, <em>scalar_interp='linear'</em>, <em>marker=None</em>, <em>marker_kwargs=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/plot/mpl.html#plot2d_lines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.plot.mpl.plot2d_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a list of lines in 2D</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lines</strong> (<em>list</em>) &#8211; list of 3xN ndarrays describing N xyz points
+along a line</li>
+<li><strong>scalars</strong> (<em>list, ndarray</em>) &#8211; a bunch of floats, rgb tuples, or
+&#8216;#0000ff&#8217; colors. These can be given as one per line,
+or one per vertex. See
+<a class="reference internal" href="viscid.vutil.html#viscid.vutil.prepare_lines" title="viscid.vutil.prepare_lines"><code class="xref py py-func docutils literal"><span class="pre">viscid.vutil.prepare_lines()</span></code></a> for more info.</li>
+<li><strong>symdir</strong> (<em>str</em>) &#8211; direction perpendiclar to plane; one of &#8216;xyz&#8217;</li>
+<li><strong>ax</strong> (<em>matplotlib Axis, optional</em>) &#8211; axis on which to plot (should
+be a 3d axis)</li>
+<li><strong>show</strong> (<em>bool</em>) &#8211; call plt.show when finished?</li>
+<li><strong>flip_plot</strong> (<em>bool</em>) &#8211; flips x and y axes on the plot</li>
+<li><strong>subsample</strong> (<em>int</em>) &#8211; Factor for resampling the number of vertices.
+If you are plotting a line where you want the color or line
+width to change along the line to show data, you will want
+<cite>subsample &gt; 2</cite> to oversample the number of segments by a
+factor of 2. Otherwise, the colors will be off by half a
+line segment (due to limitations in matplotlib). To
+undersample the lines, you can use <cite>0 &lt; subsample &lt; 1</cite>.</li>
+<li><strong>pts_interp</strong> (<em>str</em>) &#8211; What kind of interpolation to use for
+vertices if subsample &gt; 0. Must be a value recognized by
+<code class="xref py py-func docutils literal"><span class="pre">scipy.interpolate.interp1d()</span></code>.</li>
+<li><strong>scalar_interp</strong> (<em>str</em>) &#8211; What kind of interpolation to use for
+scalars if subsample &gt; 0. Must be a value recognized by
+<code class="xref py py-func docutils literal"><span class="pre">scipy.interpolate.interp1d()</span></code>.</li>
+<li><strong>marker</strong> (<em>str</em>) &#8211; if given, plot the vertices using plt.scatter</li>
+<li><strong>marker_kwargs</strong> (<em>dict</em>) &#8211; additional kwargs for plt.scatter</li>
+<li><strong>**kwargs</strong> &#8211; passed to matplotlib.collections.LineCollection</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+If a 2D plane can&#8217;t be determined</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a LineCollection</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.plot2d_mapfield">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">plot2d_mapfield</code><span class="sig-paren">(</span><em>fld</em>, <em>ax=None</em>, <em>plot_opts=None</em>, <em>**plot_kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/plot/mpl.html#plot2d_mapfield"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.plot.mpl.plot2d_mapfield" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot data on a map projection of a sphere</p>
+<p>The default projection is polar, but any other basemap projection
+can be used.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>ax</strong> (<em>matplotlib axis, optional</em>) &#8211; Plot in a specific axis object</li>
+<li><strong>plot_opts</strong> (<em>str, optional</em>) &#8211; plot options</li>
+<li><strong>**plot_kwargs</strong> (<em>str, optional</em>) &#8211; plot options</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(plot_object, colorbar_object)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Parameters are in degrees, but if the projection is &#8216;polar&#8217;,
+then the plot is actually made in radians, which is important
+if you want to annotate a plot.</p>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference internal" href="../plot_options.html"><em>Plot Options</em></a>: Contains a full list of plot options</li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.plot2d_quiver">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">plot2d_quiver</code><span class="sig-paren">(</span><em>fld</em>, <em>step=1</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/plot/mpl.html#plot2d_quiver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.plot.mpl.plot2d_quiver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Put quivers on a 2D plot</p>
+<p>The quivers will be plotted in the 2D plane of fld, so if fld
+is 3D, then one and only one dimenstion must have shape 1.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There are some edge cases where step doesn&#8217;t work.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fld</strong> (<a class="reference internal" href="viscid.field.html#viscid.field.VectorField" title="viscid.field.VectorField"><em>VectorField</em></a>) &#8211; 2.5-D Vector field to plot</li>
+<li><strong>step</strong> (<em>int</em>) &#8211; only quiver every Nth grid cell. Can also
+be a list of ints to specify x &amp; y downscaling separatly</li>
+<li><strong>**kwargs</strong> &#8211; passed to <code class="xref py py-func docutils literal"><span class="pre">matplotlpb.pyplot.quiver()</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code> &#8211;
+vector field check</li>
+<li><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+2d field check</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">py:func:<cite>matplotlpb.pyplot.quiver</cite></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">result of</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.plot3d_lines">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">plot3d_lines</code><span class="sig-paren">(</span><em>lines</em>, <em>scalars=None</em>, <em>ax=None</em>, <em>show=False</em>, <em>subsample=2</em>, <em>pts_interp='linear'</em>, <em>scalar_interp='linear'</em>, <em>marker=''</em>, <em>marker_kwargs=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/plot/mpl.html#plot3d_lines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.plot.mpl.plot3d_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a list of lines in 3D</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lines</strong> (<em>list</em>) &#8211; list of 3xN ndarrays describing N xyz points
+along a line</li>
+<li><strong>scalars</strong> (<em>list, ndarray</em>) &#8211; a bunch of floats, rgb tuples, or
+&#8216;#0000ff&#8217; colors. These can be given as one per line,
+or one per vertex. See
+<a class="reference internal" href="viscid.vutil.html#viscid.vutil.prepare_lines" title="viscid.vutil.prepare_lines"><code class="xref py py-func docutils literal"><span class="pre">viscid.vutil.prepare_lines()</span></code></a> for more info.</li>
+<li><strong>ax</strong> (<em>matplotlib Axis, optional</em>) &#8211; axis on which to plot (should
+be a 3d axis)</li>
+<li><strong>show</strong> (<em>bool</em>) &#8211; call plt.show when finished?</li>
+<li><strong>subsample</strong> (<em>int</em>) &#8211; Factor for resampling the number of vertices.
+If you are plotting a line where you want the color or line
+width to change along the line to show data, you will want
+<cite>subsample &gt; 2</cite> to oversample the number of segments by a
+factor of 2. Otherwise, the colors will be off by half a
+line segment (due to limitations in matplotlib). To
+undersample the lines, you can use <cite>0 &lt; subsample &lt; 1</cite>.</li>
+<li><strong>pts_interp</strong> (<em>str</em>) &#8211; What kind of interpolation to use for
+vertices if subsample &gt; 0. Must be a value recognized by
+<code class="xref py py-func docutils literal"><span class="pre">scipy.interpolate.interp1d()</span></code>.</li>
+<li><strong>scalar_interp</strong> (<em>str</em>) &#8211; What kind of interpolation to use for
+scalars if subsample &gt; 0. Must be a value recognized by
+<code class="xref py py-func docutils literal"><span class="pre">scipy.interpolate.interp1d()</span></code>.</li>
+<li><strong>marker</strong> (<em>str</em>) &#8211; if given, plot the vertices using plt.scatter</li>
+<li><strong>marker_kwargs</strong> (<em>dict</em>) &#8211; additional kwargs for plt.scatter</li>
+<li><strong>**kwargs</strong> &#8211; passed to matplotlib.collections.LineCollection</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Line3DCollection</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">TYPE</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.plot_earth">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">plot_earth</code><span class="sig-paren">(</span><em>plane_spec</em>, <em>axis=None</em>, <em>scale=1.0</em>, <em>rot=0</em>, <em>daycol='w'</em>, <em>nightcol='k'</em>, <em>crd_system='mhd'</em>, <em>zorder=10</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/plot/mpl.html#plot_earth"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.plot.mpl.plot_earth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a black and white Earth to show sunward direction</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>plane_spec</strong> &#8211; Specifies the plane for determining sunlit portion.
+This can be a <a class="reference internal" href="viscid.field.html#viscid.field.Field" title="viscid.field.Field"><code class="xref py py-class docutils literal"><span class="pre">viscid.field.Field</span></code></a> object to try to
+auto-discover the plane and crd_system, or it can be a
+string like &#8220;y=0&#8221;.</li>
+<li><strong>axis</strong> (<em>matplotlib Axis</em>) &#8211; axis on which to plot</li>
+<li><strong>scale</strong> (<em>float, optional</em>) &#8211; scale of earth</li>
+<li><strong>rot</strong> (<em>float, optional</em>) &#8211; Rotation of day/night side... I forget all
+the details :(</li>
+<li><strong>daycol</strong> (<em>str, optional</em>) &#8211; color of dayside (matplotlib format)</li>
+<li><strong>nightcol</strong> (<em>str, optional</em>) &#8211; color of nightside (matplotlib format)</li>
+<li><strong>crd_system</strong> (<em>str, optional</em>) &#8211; &#8216;mhd&#8217; or &#8216;gse&#8217;, can usually be
+deduced from plane_spec if it&#8217;s a Field instance.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.plot_lines">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">plot_lines</code><span class="sig-paren">(</span><em>lines</em>, <em>scalars=None</em>, <em>ax=None</em>, <em>show=False</em>, <em>subsample=2</em>, <em>pts_interp='linear'</em>, <em>scalar_interp='linear'</em>, <em>marker=''</em>, <em>marker_kwargs=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#viscid.plot.mpl.plot_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a list of lines in 3D</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lines</strong> (<em>list</em>) &#8211; list of 3xN ndarrays describing N xyz points
+along a line</li>
+<li><strong>scalars</strong> (<em>list, ndarray</em>) &#8211; a bunch of floats, rgb tuples, or
+&#8216;#0000ff&#8217; colors. These can be given as one per line,
+or one per vertex. See
+<a class="reference internal" href="viscid.vutil.html#viscid.vutil.prepare_lines" title="viscid.vutil.prepare_lines"><code class="xref py py-func docutils literal"><span class="pre">viscid.vutil.prepare_lines()</span></code></a> for more info.</li>
+<li><strong>ax</strong> (<em>matplotlib Axis, optional</em>) &#8211; axis on which to plot (should
+be a 3d axis)</li>
+<li><strong>show</strong> (<em>bool</em>) &#8211; call plt.show when finished?</li>
+<li><strong>subsample</strong> (<em>int</em>) &#8211; Factor for resampling the number of vertices.
+If you are plotting a line where you want the color or line
+width to change along the line to show data, you will want
+<cite>subsample &gt; 2</cite> to oversample the number of segments by a
+factor of 2. Otherwise, the colors will be off by half a
+line segment (due to limitations in matplotlib). To
+undersample the lines, you can use <cite>0 &lt; subsample &lt; 1</cite>.</li>
+<li><strong>pts_interp</strong> (<em>str</em>) &#8211; What kind of interpolation to use for
+vertices if subsample &gt; 0. Must be a value recognized by
+<code class="xref py py-func docutils literal"><span class="pre">scipy.interpolate.interp1d()</span></code>.</li>
+<li><strong>scalar_interp</strong> (<em>str</em>) &#8211; What kind of interpolation to use for
+scalars if subsample &gt; 0. Must be a value recognized by
+<code class="xref py py-func docutils literal"><span class="pre">scipy.interpolate.interp1d()</span></code>.</li>
+<li><strong>marker</strong> (<em>str</em>) &#8211; if given, plot the vertices using plt.scatter</li>
+<li><strong>marker_kwargs</strong> (<em>dict</em>) &#8211; additional kwargs for plt.scatter</li>
+<li><strong>**kwargs</strong> &#8211; passed to matplotlib.collections.LineCollection</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Line3DCollection</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">TYPE</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.plot_lines2d">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">plot_lines2d</code><span class="sig-paren">(</span><em>lines</em>, <em>scalars=None</em>, <em>symdir=''</em>, <em>ax=None</em>, <em>show=False</em>, <em>flip_plot=False</em>, <em>subsample=2</em>, <em>pts_interp='linear'</em>, <em>scalar_interp='linear'</em>, <em>marker=None</em>, <em>marker_kwargs=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#viscid.plot.mpl.plot_lines2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a list of lines in 2D</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lines</strong> (<em>list</em>) &#8211; list of 3xN ndarrays describing N xyz points
+along a line</li>
+<li><strong>scalars</strong> (<em>list, ndarray</em>) &#8211; a bunch of floats, rgb tuples, or
+&#8216;#0000ff&#8217; colors. These can be given as one per line,
+or one per vertex. See
+<a class="reference internal" href="viscid.vutil.html#viscid.vutil.prepare_lines" title="viscid.vutil.prepare_lines"><code class="xref py py-func docutils literal"><span class="pre">viscid.vutil.prepare_lines()</span></code></a> for more info.</li>
+<li><strong>symdir</strong> (<em>str</em>) &#8211; direction perpendiclar to plane; one of &#8216;xyz&#8217;</li>
+<li><strong>ax</strong> (<em>matplotlib Axis, optional</em>) &#8211; axis on which to plot (should
+be a 3d axis)</li>
+<li><strong>show</strong> (<em>bool</em>) &#8211; call plt.show when finished?</li>
+<li><strong>flip_plot</strong> (<em>bool</em>) &#8211; flips x and y axes on the plot</li>
+<li><strong>subsample</strong> (<em>int</em>) &#8211; Factor for resampling the number of vertices.
+If you are plotting a line where you want the color or line
+width to change along the line to show data, you will want
+<cite>subsample &gt; 2</cite> to oversample the number of segments by a
+factor of 2. Otherwise, the colors will be off by half a
+line segment (due to limitations in matplotlib). To
+undersample the lines, you can use <cite>0 &lt; subsample &lt; 1</cite>.</li>
+<li><strong>pts_interp</strong> (<em>str</em>) &#8211; What kind of interpolation to use for
+vertices if subsample &gt; 0. Must be a value recognized by
+<code class="xref py py-func docutils literal"><span class="pre">scipy.interpolate.interp1d()</span></code>.</li>
+<li><strong>scalar_interp</strong> (<em>str</em>) &#8211; What kind of interpolation to use for
+scalars if subsample &gt; 0. Must be a value recognized by
+<code class="xref py py-func docutils literal"><span class="pre">scipy.interpolate.interp1d()</span></code>.</li>
+<li><strong>marker</strong> (<em>str</em>) &#8211; if given, plot the vertices using plt.scatter</li>
+<li><strong>marker_kwargs</strong> (<em>dict</em>) &#8211; additional kwargs for plt.scatter</li>
+<li><strong>**kwargs</strong> &#8211; passed to matplotlib.collections.LineCollection</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+If a 2D plane can&#8217;t be determined</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a LineCollection</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.plot_lines3d">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">plot_lines3d</code><span class="sig-paren">(</span><em>lines</em>, <em>scalars=None</em>, <em>ax=None</em>, <em>show=False</em>, <em>subsample=2</em>, <em>pts_interp='linear'</em>, <em>scalar_interp='linear'</em>, <em>marker=''</em>, <em>marker_kwargs=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#viscid.plot.mpl.plot_lines3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a list of lines in 3D</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lines</strong> (<em>list</em>) &#8211; list of 3xN ndarrays describing N xyz points
+along a line</li>
+<li><strong>scalars</strong> (<em>list, ndarray</em>) &#8211; a bunch of floats, rgb tuples, or
+&#8216;#0000ff&#8217; colors. These can be given as one per line,
+or one per vertex. See
+<a class="reference internal" href="viscid.vutil.html#viscid.vutil.prepare_lines" title="viscid.vutil.prepare_lines"><code class="xref py py-func docutils literal"><span class="pre">viscid.vutil.prepare_lines()</span></code></a> for more info.</li>
+<li><strong>ax</strong> (<em>matplotlib Axis, optional</em>) &#8211; axis on which to plot (should
+be a 3d axis)</li>
+<li><strong>show</strong> (<em>bool</em>) &#8211; call plt.show when finished?</li>
+<li><strong>subsample</strong> (<em>int</em>) &#8211; Factor for resampling the number of vertices.
+If you are plotting a line where you want the color or line
+width to change along the line to show data, you will want
+<cite>subsample &gt; 2</cite> to oversample the number of segments by a
+factor of 2. Otherwise, the colors will be off by half a
+line segment (due to limitations in matplotlib). To
+undersample the lines, you can use <cite>0 &lt; subsample &lt; 1</cite>.</li>
+<li><strong>pts_interp</strong> (<em>str</em>) &#8211; What kind of interpolation to use for
+vertices if subsample &gt; 0. Must be a value recognized by
+<code class="xref py py-func docutils literal"><span class="pre">scipy.interpolate.interp1d()</span></code>.</li>
+<li><strong>scalar_interp</strong> (<em>str</em>) &#8211; What kind of interpolation to use for
+scalars if subsample &gt; 0. Must be a value recognized by
+<code class="xref py py-func docutils literal"><span class="pre">scipy.interpolate.interp1d()</span></code>.</li>
+<li><strong>marker</strong> (<em>str</em>) &#8211; if given, plot the vertices using plt.scatter</li>
+<li><strong>marker_kwargs</strong> (<em>dict</em>) &#8211; additional kwargs for plt.scatter</li>
+<li><strong>**kwargs</strong> &#8211; passed to matplotlib.collections.LineCollection</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Line3DCollection</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">TYPE</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.plot_opts_to_kwargs">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">plot_opts_to_kwargs</code><span class="sig-paren">(</span><em>plot_opts</em>, <em>plot_kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/plot/mpl.html#plot_opts_to_kwargs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.plot.mpl.plot_opts_to_kwargs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn plot options from string to items in plot_kwargs</p>
+<p>The Reason for this to to be able to specify arbitrary plotting
+kwargs from the command line</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>plot_opts</strong> (<em>str</em>) &#8211; plot kwargs as string</li>
+<li><strong>plot_kwargs</strong> (<em>dict</em>) &#8211; kwargs to be popped by hand or passed to
+plotting function</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None, the plot_opts are stuffed into plot_kwargs</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.plot_streamlines">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">plot_streamlines</code><span class="sig-paren">(</span><em>lines</em>, <em>scalars=None</em>, <em>ax=None</em>, <em>show=False</em>, <em>subsample=2</em>, <em>pts_interp='linear'</em>, <em>scalar_interp='linear'</em>, <em>marker=''</em>, <em>marker_kwargs=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#viscid.plot.mpl.plot_streamlines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a list of lines in 3D</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lines</strong> (<em>list</em>) &#8211; list of 3xN ndarrays describing N xyz points
+along a line</li>
+<li><strong>scalars</strong> (<em>list, ndarray</em>) &#8211; a bunch of floats, rgb tuples, or
+&#8216;#0000ff&#8217; colors. These can be given as one per line,
+or one per vertex. See
+<a class="reference internal" href="viscid.vutil.html#viscid.vutil.prepare_lines" title="viscid.vutil.prepare_lines"><code class="xref py py-func docutils literal"><span class="pre">viscid.vutil.prepare_lines()</span></code></a> for more info.</li>
+<li><strong>ax</strong> (<em>matplotlib Axis, optional</em>) &#8211; axis on which to plot (should
+be a 3d axis)</li>
+<li><strong>show</strong> (<em>bool</em>) &#8211; call plt.show when finished?</li>
+<li><strong>subsample</strong> (<em>int</em>) &#8211; Factor for resampling the number of vertices.
+If you are plotting a line where you want the color or line
+width to change along the line to show data, you will want
+<cite>subsample &gt; 2</cite> to oversample the number of segments by a
+factor of 2. Otherwise, the colors will be off by half a
+line segment (due to limitations in matplotlib). To
+undersample the lines, you can use <cite>0 &lt; subsample &lt; 1</cite>.</li>
+<li><strong>pts_interp</strong> (<em>str</em>) &#8211; What kind of interpolation to use for
+vertices if subsample &gt; 0. Must be a value recognized by
+<code class="xref py py-func docutils literal"><span class="pre">scipy.interpolate.interp1d()</span></code>.</li>
+<li><strong>scalar_interp</strong> (<em>str</em>) &#8211; What kind of interpolation to use for
+scalars if subsample &gt; 0. Must be a value recognized by
+<code class="xref py py-func docutils literal"><span class="pre">scipy.interpolate.interp1d()</span></code>.</li>
+<li><strong>marker</strong> (<em>str</em>) &#8211; if given, plot the vertices using plt.scatter</li>
+<li><strong>marker_kwargs</strong> (<em>dict</em>) &#8211; additional kwargs for plt.scatter</li>
+<li><strong>**kwargs</strong> &#8211; passed to matplotlib.collections.LineCollection</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Line3DCollection</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">TYPE</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.plot_streamlines2d">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">plot_streamlines2d</code><span class="sig-paren">(</span><em>lines</em>, <em>scalars=None</em>, <em>symdir=''</em>, <em>ax=None</em>, <em>show=False</em>, <em>flip_plot=False</em>, <em>subsample=2</em>, <em>pts_interp='linear'</em>, <em>scalar_interp='linear'</em>, <em>marker=None</em>, <em>marker_kwargs=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#viscid.plot.mpl.plot_streamlines2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a list of lines in 2D</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lines</strong> (<em>list</em>) &#8211; list of 3xN ndarrays describing N xyz points
+along a line</li>
+<li><strong>scalars</strong> (<em>list, ndarray</em>) &#8211; a bunch of floats, rgb tuples, or
+&#8216;#0000ff&#8217; colors. These can be given as one per line,
+or one per vertex. See
+<a class="reference internal" href="viscid.vutil.html#viscid.vutil.prepare_lines" title="viscid.vutil.prepare_lines"><code class="xref py py-func docutils literal"><span class="pre">viscid.vutil.prepare_lines()</span></code></a> for more info.</li>
+<li><strong>symdir</strong> (<em>str</em>) &#8211; direction perpendiclar to plane; one of &#8216;xyz&#8217;</li>
+<li><strong>ax</strong> (<em>matplotlib Axis, optional</em>) &#8211; axis on which to plot (should
+be a 3d axis)</li>
+<li><strong>show</strong> (<em>bool</em>) &#8211; call plt.show when finished?</li>
+<li><strong>flip_plot</strong> (<em>bool</em>) &#8211; flips x and y axes on the plot</li>
+<li><strong>subsample</strong> (<em>int</em>) &#8211; Factor for resampling the number of vertices.
+If you are plotting a line where you want the color or line
+width to change along the line to show data, you will want
+<cite>subsample &gt; 2</cite> to oversample the number of segments by a
+factor of 2. Otherwise, the colors will be off by half a
+line segment (due to limitations in matplotlib). To
+undersample the lines, you can use <cite>0 &lt; subsample &lt; 1</cite>.</li>
+<li><strong>pts_interp</strong> (<em>str</em>) &#8211; What kind of interpolation to use for
+vertices if subsample &gt; 0. Must be a value recognized by
+<code class="xref py py-func docutils literal"><span class="pre">scipy.interpolate.interp1d()</span></code>.</li>
+<li><strong>scalar_interp</strong> (<em>str</em>) &#8211; What kind of interpolation to use for
+scalars if subsample &gt; 0. Must be a value recognized by
+<code class="xref py py-func docutils literal"><span class="pre">scipy.interpolate.interp1d()</span></code>.</li>
+<li><strong>marker</strong> (<em>str</em>) &#8211; if given, plot the vertices using plt.scatter</li>
+<li><strong>marker_kwargs</strong> (<em>dict</em>) &#8211; additional kwargs for plt.scatter</li>
+<li><strong>**kwargs</strong> &#8211; passed to matplotlib.collections.LineCollection</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+If a 2D plane can&#8217;t be determined</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a LineCollection</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.scatter_3d">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">scatter_3d</code><span class="sig-paren">(</span><em>points</em>, <em>c='b'</em>, <em>ax=None</em>, <em>show=False</em>, <em>equal=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/plot/mpl.html#scatter_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.plot.mpl.scatter_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot scattered points on a matplotlib 3d plot</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>points</strong> &#8211; something shaped 3xN for N points, where 3 are the
+xyz cartesian directions in that order</li>
+<li><strong>c</strong> (<em>str, optional</em>) &#8211; color (in matplotlib format)</li>
+<li><strong>ax</strong> (<em>matplotlib Axis, optional</em>) &#8211; axis on which to plot (should
+be a 3d axis)</li>
+<li><strong>show</strong> (<em>bool, optional</em>) &#8211; show</li>
+<li><strong>kwargs</strong> &#8211; passed along to <code class="xref py py-meth docutils literal"><span class="pre">plt.statter()</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.show">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">show</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#viscid.plot.mpl.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls <code class="xref py py-meth docutils literal"><span class="pre">matplotlib.pyplot.show()</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.streamplot">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">streamplot</code><span class="sig-paren">(</span><em>fld</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/plot/mpl.html#streamplot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.plot.mpl.streamplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot 2D streamlines with <code class="xref py py-func docutils literal"><span class="pre">matplotlib.pyplot.streamplot()</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fld</strong> (<a class="reference internal" href="viscid.field.html#viscid.field.VectorField" title="viscid.field.VectorField"><em>VectorField</em></a>) &#8211; Some 2.5-D Vector Field</li>
+<li><strong>**kwargs</strong> &#8211; passed to <code class="xref py py-func docutils literal"><span class="pre">matplotlib.pyplot.streamplot()</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code> &#8211;
+vector field check</li>
+<li><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+2d field check</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">py:func:<cite>matplotlib.pyplot.streamplot</cite></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">result of</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl.tighten">
+<code class="descclassname">viscid.plot.mpl.</code><code class="descname">tighten</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/plot/mpl.html#tighten"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.plot.mpl.tighten" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls <cite>matplotlib.pyplot.tight_layout(**kwargs)</cite></p>
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/api/viscid.plot.mpl.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

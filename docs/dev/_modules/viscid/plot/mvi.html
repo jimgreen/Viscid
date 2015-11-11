@@ -1,0 +1,813 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.plot.mvi &mdash; Viscid 0.95.0 dev documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.95.0 dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 dev documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0 dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../changes.html">ChangeLog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for viscid.plot.mvi</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot;Convevience module for making 3d plots with Mayavi</span>
+
+<span class="sd">Note:</span>
+<span class="sd">    You can&#39;t set rc parameters for this module!</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">code</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">mayavi</span>
+<span class="kn">from</span> <span class="nn">mayavi</span> <span class="kn">import</span> <span class="n">mlab</span>
+<span class="kn">from</span> <span class="nn">mayavi.sources.builtin_surface</span> <span class="kn">import</span> <span class="n">BuiltinSurface</span>
+<span class="kn">from</span> <span class="nn">mayavi.sources.vtk_data_source</span> <span class="kn">import</span> <span class="n">VTKDataSource</span>
+<span class="kn">from</span> <span class="nn">tvtk.api</span> <span class="kn">import</span> <span class="n">tvtk</span>
+<span class="kn">import</span> <span class="nn">viscid</span>
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">field</span>
+
+
+<div class="viewcode-block" id="add_source"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.add_source">[docs]</a><span class="k">def</span> <span class="nf">add_source</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Add a vtk data source to a figure</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        src (VTKDataSource): Description</span>
+<span class="sd">        figure (mayavi.core.scene.Scene): specific figure, or</span>
+<span class="sd">            :py:func:`mayavi.mlab.gcf`</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">figure</span><span class="p">:</span>
+        <span class="n">figure</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">src</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">figure</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+        <span class="n">engine</span> <span class="o">=</span> <span class="n">figure</span><span class="o">.</span><span class="n">parent</span>
+        <span class="n">engine</span><span class="o">.</span><span class="n">add_source</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">scene</span><span class="o">=</span><span class="n">figure</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="add_lines"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.add_lines">[docs]</a><span class="k">def</span> <span class="nf">add_lines</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;NoName&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Add list of lines to a figure</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        lines (list): See :py:func:`lines2source`</span>
+<span class="sd">        scalars (ndarray): See :py:func:`lines2source`</span>
+<span class="sd">        figure (mayavi.core.scene.Scene): specific figure, or</span>
+<span class="sd">            :py:func:`mayavi.mlab.gcf`</span>
+<span class="sd">        name (str): name of vtk object</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        :py:class:`mayavi.sources.vtk_data_source.VTKDataSource`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">src</span> <span class="o">=</span> <span class="n">lines2source</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="n">scalars</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">add_source</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">figure</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">src</span>
+</div>
+<div class="viewcode-block" id="add_field"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.add_field">[docs]</a><span class="k">def</span> <span class="nf">add_field</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Add a Viscid Field to a mayavi figure</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        fld (Field): Some Viscid Field</span>
+<span class="sd">        figure (mayavi.core.scene.Scene): specific figure, or</span>
+<span class="sd">            :py:func:`mayavi.mlab.gcf`</span>
+<span class="sd">        center (str): &#39;cell&#39; or &#39;node&#39;, leave blank to use fld.center</span>
+<span class="sd">        name (str): name of vtk object, leave black for fld.name</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        :py:class:`mayavi.sources.vtk_data_source.VTKDataSource`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">src</span> <span class="o">=</span> <span class="n">field2source</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="n">center</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">add_source</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">figure</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">src</span>
+</div>
+<div class="viewcode-block" id="points2source"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.points2source">[docs]</a><span class="k">def</span> <span class="nf">points2source</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;NoName&quot;</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">vutil</span><span class="o">.</span><span class="n">prepare_vertices</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">scalars</span><span class="p">)</span>
+    <span class="n">verts</span><span class="p">,</span> <span class="n">scalars</span><span class="p">,</span> <span class="n">other</span> <span class="o">=</span> <span class="n">r</span>
+
+    <span class="n">src</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">scalar_scatter</span><span class="p">(</span><span class="n">verts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">verts</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">verts</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">scalars</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">scalars</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s">&#39;u1&#39;</span><span class="p">):</span>
+            <span class="n">sc</span> <span class="o">=</span> <span class="n">tvtk</span><span class="o">.</span><span class="n">UnsignedCharArray</span><span class="p">()</span>
+            <span class="n">sc</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">scalars</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+            <span class="n">scalars</span> <span class="o">=</span> <span class="n">sc</span>
+        <span class="n">src</span><span class="o">.</span><span class="n">mlab_source</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">point_data</span><span class="o">.</span><span class="n">scalars</span> <span class="o">=</span> <span class="n">scalars</span>
+        <span class="n">src</span><span class="o">.</span><span class="n">mlab_source</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">modified</span><span class="p">()</span>
+    <span class="n">src</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">return</span> <span class="n">src</span>
+</div>
+<div class="viewcode-block" id="lines2source"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.lines2source">[docs]</a><span class="k">def</span> <span class="nf">lines2source</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;NoName&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Turn a list of lines as ndarrays into vtk data source</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        lines (list): List of 3xN, 4xN, 6xN ndarrays of xyz, xyzs, or</span>
+<span class="sd">            xyzrgb data for N points along the line. N need not be the</span>
+<span class="sd">            same for all lines.</span>
+<span class="sd">        scalars (ndarray, list): Scalars for each point, or each line.</span>
+<span class="sd">            See :py:func:`viscid.vutil.prepare_lines` for more details</span>
+<span class="sd">        name (str): name of vtk object</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        :py:class:`mayavi.sources.vtk_data_source.VTKDataSource`</span>
+
+<span class="sd">    See Also:</span>
+<span class="sd">        * :py:func:`viscid.vutil.prepare_lines`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">vutil</span><span class="o">.</span><span class="n">prepare_lines</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">scalars</span><span class="p">,</span> <span class="n">do_connections</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">lines</span><span class="p">,</span> <span class="n">scalars</span><span class="p">,</span> <span class="n">connections</span><span class="p">,</span> <span class="n">other</span> <span class="o">=</span> <span class="n">r</span>
+
+    <span class="n">src</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">scalar_scatter</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">lines</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">scalars</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">scalars</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s">&#39;u1&#39;</span><span class="p">):</span>
+            <span class="n">sc</span> <span class="o">=</span> <span class="n">tvtk</span><span class="o">.</span><span class="n">UnsignedCharArray</span><span class="p">()</span>
+            <span class="n">sc</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">scalars</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+            <span class="n">scalars</span> <span class="o">=</span> <span class="n">sc</span>
+        <span class="n">src</span><span class="o">.</span><span class="n">mlab_source</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">point_data</span><span class="o">.</span><span class="n">scalars</span> <span class="o">=</span> <span class="n">scalars</span>
+        <span class="n">src</span><span class="o">.</span><span class="n">mlab_source</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">modified</span><span class="p">()</span>
+    <span class="n">src</span><span class="o">.</span><span class="n">mlab_source</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="n">connections</span>
+    <span class="n">src</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">return</span> <span class="n">src</span>
+</div>
+<div class="viewcode-block" id="field2source"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.field2source">[docs]</a><span class="k">def</span> <span class="nf">field2source</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convert a field to a vtk data source</span>
+
+<span class="sd">    This dispatches to either :meth:`field_to_point_source` or</span>
+<span class="sd">    :meth:`field_to_cell_source` depending on the centering of</span>
+<span class="sd">    `fld`.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        fld: field to convert</span>
+<span class="sd">        center (str): Either &quot;cell&quot;, &quot;node&quot;, or &quot;&quot; to use the</span>
+<span class="sd">            same centering as fld</span>
+<span class="sd">        name (str): Add specific name. Leave as &quot;&quot; to use fld.name</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        mayavi source</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        NotImplementedError: If center (or fld.center) is not</span>
+<span class="sd">            recognized</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">center</span><span class="p">:</span>
+        <span class="n">center</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">center</span>
+    <span class="n">center</span> <span class="o">=</span> <span class="n">center</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">center</span> <span class="o">==</span> <span class="s">&quot;node&quot;</span><span class="p">:</span>
+        <span class="n">src</span> <span class="o">=</span> <span class="n">field2point_source</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">center</span> <span class="o">==</span> <span class="s">&quot;cell&quot;</span><span class="p">:</span>
+        <span class="n">src</span> <span class="o">=</span> <span class="n">field2cell_source</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s">&quot;cell / node only for now&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">src</span>
+</div>
+<div class="viewcode-block" id="field2point_source"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.field2point_source">[docs]</a><span class="k">def</span> <span class="nf">field2point_source</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convert a field to a vtk point data source&quot;&quot;&quot;</span>
+    <span class="n">grid</span><span class="p">,</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">_prep_field</span><span class="p">(</span><span class="n">fld</span><span class="p">)</span>
+    <span class="n">dat_target</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">point_data</span>
+
+    <span class="k">if</span> <span class="n">fld</span><span class="o">.</span><span class="n">iscentered</span><span class="p">(</span><span class="s">&quot;Cell&quot;</span><span class="p">):</span>
+        <span class="n">grid</span><span class="o">.</span><span class="n">dimensions</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">fld</span><span class="o">.</span><span class="n">crds</span><span class="o">.</span><span class="n">shape_cc</span><span class="p">)</span>
+        <span class="n">grid</span><span class="o">.</span><span class="n">x_coordinates</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">get_crd_cc</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c"># (&#39;x&#39;)</span>
+        <span class="n">grid</span><span class="o">.</span><span class="n">y_coordinates</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">get_crd_cc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c"># (&#39;y&#39;)</span>
+        <span class="n">grid</span><span class="o">.</span><span class="n">z_coordinates</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">get_crd_cc</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c"># (&#39;z&#39;)</span>
+    <span class="k">elif</span> <span class="n">fld</span><span class="o">.</span><span class="n">iscentered</span><span class="p">(</span><span class="s">&quot;Node&quot;</span><span class="p">):</span>
+        <span class="n">grid</span><span class="o">.</span><span class="n">dimensions</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">fld</span><span class="o">.</span><span class="n">crds</span><span class="o">.</span><span class="n">shape_nc</span><span class="p">)</span>
+        <span class="n">grid</span><span class="o">.</span><span class="n">x_coordinates</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">get_crd_nc</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c"># (&#39;x&#39;)</span>
+        <span class="n">grid</span><span class="o">.</span><span class="n">y_coordinates</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">get_crd_nc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c"># (&#39;y&#39;)</span>
+        <span class="n">grid</span><span class="o">.</span><span class="n">z_coordinates</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">get_crd_nc</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c"># (&#39;z&#39;)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;cell or node only please&quot;</span><span class="p">)</span>
+
+    <span class="n">src</span> <span class="o">=</span> <span class="n">_finalize_source</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">dat_target</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
+        <span class="n">src</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">return</span> <span class="n">src</span>
+</div>
+<div class="viewcode-block" id="field2cell_source"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.field2cell_source">[docs]</a><span class="k">def</span> <span class="nf">field2cell_source</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convert a field to a vtk cell data source&quot;&quot;&quot;</span>
+    <span class="n">grid</span><span class="p">,</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">_prep_field</span><span class="p">(</span><span class="n">fld</span><span class="p">)</span>
+    <span class="n">dat_target</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">cell_data</span>
+
+    <span class="k">if</span> <span class="n">fld</span><span class="o">.</span><span class="n">iscentered</span><span class="p">(</span><span class="s">&quot;Cell&quot;</span><span class="p">):</span>
+        <span class="n">grid</span><span class="o">.</span><span class="n">dimensions</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">fld</span><span class="o">.</span><span class="n">crds</span><span class="o">.</span><span class="n">shape_nc</span><span class="p">)</span>
+        <span class="n">grid</span><span class="o">.</span><span class="n">x_coordinates</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">get_crd_nc</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c"># (&#39;x&#39;)</span>
+        <span class="n">grid</span><span class="o">.</span><span class="n">y_coordinates</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">get_crd_nc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c"># (&#39;y&#39;)</span>
+        <span class="n">grid</span><span class="o">.</span><span class="n">z_coordinates</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">get_crd_nc</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c"># (&#39;z&#39;)</span>
+    <span class="k">elif</span> <span class="n">fld</span><span class="o">.</span><span class="n">iscentered</span><span class="p">(</span><span class="s">&quot;Node&quot;</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s">&quot;can&#39;t do lossless cell data from nodes yet&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;cell or node only please&quot;</span><span class="p">)</span>
+
+    <span class="n">src</span> <span class="o">=</span> <span class="n">_finalize_source</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">dat_target</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
+        <span class="n">src</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">return</span> <span class="n">src</span>
+
+</div>
+<span class="k">def</span> <span class="nf">_prep_field</span><span class="p">(</span><span class="n">fld</span><span class="p">):</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">tvtk</span><span class="o">.</span><span class="n">RectilinearGrid</span><span class="p">()</span>
+
+    <span class="c"># note, the transpose operations are b/c fld.data is now xyz ordered,</span>
+    <span class="c"># but vtk expects zyx data</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">ScalarField</span><span class="p">):</span>
+        <span class="n">zyx_dat</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">T</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">zyx_dat</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,))</span>
+        <span class="c"># vtk expects zyx data, but fld.data is now xyz</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">VectorField</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">fld</span><span class="o">.</span><span class="n">layout</span> <span class="o">==</span> <span class="n">field</span><span class="o">.</span><span class="n">LAYOUT_INTERLACED</span><span class="p">:</span>
+            <span class="n">zyx_dat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">fld</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+            <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">zyx_dat</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">fld</span><span class="o">.</span><span class="n">layout</span> <span class="o">==</span> <span class="n">field</span><span class="o">.</span><span class="n">LAYOUT_FLAT</span><span class="p">:</span>
+            <span class="n">zyx_dat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">fld</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rollaxis</span><span class="p">(</span><span class="n">zyx_dat</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fld</span><span class="o">.</span><span class="n">shape</span><span class="p">)),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Unexpected fld type: {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">fld</span><span class="p">)))</span>
+    <span class="c"># swap endian if needed</span>
+    <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;&gt;&quot;</span><span class="p">):</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">byteswap</span><span class="p">()</span><span class="o">.</span><span class="n">newbyteorder</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">grid</span><span class="p">,</span> <span class="n">arr</span>
+
+<span class="k">def</span> <span class="nf">_finalize_source</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">dat_target</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">ScalarField</span><span class="p">):</span>
+        <span class="n">dat_target</span><span class="o">.</span><span class="n">scalars</span> <span class="o">=</span> <span class="n">arr</span>
+        <span class="n">dat_target</span><span class="o">.</span><span class="n">scalars</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">name</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">VectorField</span><span class="p">):</span>
+        <span class="n">dat_target</span><span class="o">.</span><span class="n">vectors</span> <span class="o">=</span> <span class="n">arr</span>
+        <span class="n">dat_target</span><span class="o">.</span><span class="n">vectors</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">src</span> <span class="o">=</span> <span class="n">VTKDataSource</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">grid</span><span class="p">)</span>
+    <span class="n">src</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">name</span>
+    <span class="k">return</span> <span class="n">src</span>
+
+<span class="c"># def plot_mesh(vertices, scalars=None, color=None, name=&quot;NoName&quot;, **kwargs):</span>
+<span class="c">#     &quot;&quot;&quot;Plot :py:class:`viscid.SeedGen` as a mesh&quot;&quot;&quot;</span>
+<span class="c">#     # discover the 2d shape of vertices that indicates the connectivity</span>
+<span class="c">#     # of vertices</span>
+<span class="c">#     connective_shape = list(vertices.shape[1:])</span>
+<span class="c">#     r = viscid.vutil.prepare_vertices(vertices.reshape(3, -1), scalars)</span>
+<span class="c">#     verts, scalars, other = r  # pylint: disable=unused-variable</span>
+
+<span class="c">#     # reshape verts, scalars, and color</span>
+<span class="c">#     target_shape = [3] + connective_shape</span>
+<span class="c">#     verts = verts.reshape(target_shape)</span>
+
+<span class="c">#     if scalars is not None:</span>
+<span class="c">#         if color is None and scalars.dtype == np.dtype(&#39;u1&#39;):</span>
+<span class="c">#             color = scalars.astype(&#39;f&#39;).reshape(target_shape) / 255.0</span>
+<span class="c">#             scalars = None</span>
+<span class="c">#         elif scalars.dtype == np.dtype(&#39;u1&#39;):</span>
+<span class="c">#             # color should have precidence over this since it was explicitly</span>
+<span class="c">#             # given</span>
+<span class="c">#             pass</span>
+<span class="c">#         else:</span>
+<span class="c">#             scalars = scalars.reshape(target_shape[1:])</span>
+
+<span class="c">#     src = mlab.mesh(verts[0], verts[1], verts[2], scalars=scalars,</span>
+<span class="c">#                     color=color, name=name, **kwargs)</span>
+<span class="c">#     return src</span>
+
+<div class="viewcode-block" id="plot_line"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.plot_line">[docs]</a><span class="k">def</span> <span class="nf">plot_line</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">plot_lines</span><span class="p">([</span><span class="n">line</span><span class="p">],</span> <span class="n">scalars</span><span class="o">=</span><span class="n">scalars</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="plot_lines"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.plot_lines">[docs]</a><span class="k">def</span> <span class="nf">plot_lines</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">&quot;tube&quot;</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+               <span class="n">name</span><span class="o">=</span><span class="s">&quot;Lines&quot;</span><span class="p">,</span> <span class="n">tube_radius</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">tube_sides</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Make 3D mayavi plot of lines</span>
+
+<span class="sd">    Scalars can be a bunch of single values, or a bunch of rgb data</span>
+<span class="sd">    to set the color of each line / vertex explicitly. This is</span>
+<span class="sd">    explained in :py:func:`lines2source`.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        A common use case of setting the line color from a topology</span>
+<span class="sd">        will want to use :py:func:`viscid.topology2color`::</span>
+
+<span class="sd">            &gt;&gt;&gt; import viscid</span>
+<span class="sd">            &gt;&gt;&gt; from viscid.plot import mvi</span>
+<span class="sd">            &gt;&gt;&gt;</span>
+<span class="sd">            &gt;&gt;&gt; B = viscid.vlab.get_dipole()</span>
+<span class="sd">            &gt;&gt;&gt; seeds = viscid.Line([-4, 0, 0], [4, 0, 0])</span>
+<span class="sd">            &gt;&gt;&gt; lines, topology = viscid.calc_streamlines(B, seeds,</span>
+<span class="sd">            &gt;&gt;&gt;                                           ibound=0.05)</span>
+<span class="sd">            &gt;&gt;&gt; scalars = viscid.topology2color(topology)</span>
+<span class="sd">            &gt;&gt;&gt; mvi.plot_lines(lines, scalars, tube_radius=0.02)</span>
+<span class="sd">            &gt;&gt;&gt; mvi.mlab.savefig(&quot;dipole.x3d&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; viscid.vutil.meshlab_convert(&quot;dipole.x3d&quot;, &quot;dae&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; mvi.show()</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        lines (list): See :py:func:`lines2source`</span>
+<span class="sd">        scalar (ndarray): See :py:func:`lines2source`</span>
+<span class="sd">        style (str): &#39;strip&#39; or &#39;tube&#39;</span>
+<span class="sd">        figure (mayavi.core.scene.Scene): specific figure, or</span>
+<span class="sd">            :py:func:`mayavi.mlab.gcf`</span>
+<span class="sd">        name (str): Description</span>
+<span class="sd">        tube_radius (float): Radius if style == &#39;tube&#39;</span>
+<span class="sd">        tube_sides (int): Angular resolution if style == &#39;tube&#39;</span>
+<span class="sd">        **kwargs: passed to :meth:`mayavi.mlab.pipeline.surface`. This</span>
+<span class="sd">            is useful for setting a colormap among other things.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Mayavi surface module</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: if style is neither tube nor strip</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">figure</span><span class="p">:</span>
+        <span class="n">figure</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
+
+    <span class="n">src</span> <span class="o">=</span> <span class="n">lines2source</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="n">scalars</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">style</span> <span class="o">==</span> <span class="s">&quot;tube&quot;</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">tube</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">figure</span><span class="p">,</span> <span class="n">tube_radius</span><span class="o">=</span><span class="n">tube_radius</span><span class="p">,</span>
+                                   <span class="n">tube_sides</span><span class="o">=</span><span class="n">tube_sides</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">style</span> <span class="o">==</span> <span class="s">&quot;strip&quot;</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">stripper</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">figure</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Unknown style for lines: {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">style</span><span class="p">))</span>
+
+    <span class="n">surface</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">surface</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">surface</span>
+</div>
+<div class="viewcode-block" id="plot_ionosphere"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.plot_ionosphere">[docs]</a><span class="k">def</span> <span class="nf">plot_ionosphere</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">1.063</span><span class="p">,</span> <span class="n">crd_system</span><span class="o">=</span><span class="s">&quot;mhd&quot;</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                    <span class="n">bounding_lat</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Plot an ionospheric field</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        fld (Field): Some spherical (phi, theta) / (lot, lat) field</span>
+<span class="sd">        radius (float): Defaults to 1Re + 400km == 1.063Re</span>
+<span class="sd">        crd_system (str): Either &#39;gse&#39; or &#39;mhd&#39;</span>
+<span class="sd">        figure (mayavi.core.scene.Scene): specific figure, or</span>
+<span class="sd">            :py:func:`mayavi.mlab.gcf`</span>
+<span class="sd">        bounding_lat (float): Description</span>
+<span class="sd">        **kwargs: passed to :py:func:`mayavi.mlab.mesh`</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: Description</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">figure</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">figure</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">crd_system</span> <span class="o">==</span> <span class="s">&quot;mhd&quot;</span><span class="p">:</span>
+        <span class="n">roll</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">elif</span> <span class="n">crd_system</span> <span class="o">==</span> <span class="s">&quot;gse&quot;</span><span class="p">:</span>
+        <span class="n">roll</span> <span class="o">=</span> <span class="mf">180.0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;crd_system == &#39;{0}&#39; not understood&quot;</span>
+                         <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">crd_system</span><span class="p">))</span>
+
+    <span class="n">nphi</span><span class="p">,</span> <span class="n">ntheta</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">sphere</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">Sphere</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">r</span><span class="o">=</span><span class="n">radius</span><span class="p">,</span> <span class="n">ntheta</span><span class="o">=</span><span class="n">ntheta</span><span class="p">,</span> <span class="n">nphi</span><span class="o">=</span><span class="n">nphi</span><span class="p">,</span>
+                           <span class="n">theta_phi</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">roll</span><span class="o">=</span><span class="n">roll</span><span class="p">)</span>
+    <span class="n">verts</span><span class="p">,</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">sphere</span><span class="o">.</span><span class="n">wrap_mesh</span><span class="p">(</span><span class="n">fld</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="s">&#39;name&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="n">verts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">verts</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">verts</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">scalars</span><span class="o">=</span><span class="n">arr</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">figure</span><span class="p">,</span>
+                  <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">bounding_lat</span><span class="p">:</span>
+        <span class="n">rp</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">radius</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">180.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">bounding_lat</span><span class="p">)</span>
+        <span class="n">clip</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">data_set_clipper</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">module_manager</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span>
+        <span class="n">clip</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">place_widget</span><span class="p">(</span><span class="o">-</span><span class="n">rp</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="o">-</span><span class="n">rp</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="o">-</span><span class="n">z</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+        <span class="n">clip</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">update_implicit_function</span><span class="p">()</span>
+        <span class="n">clip</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="n">insert_filter</span><span class="p">(</span><span class="n">clip</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">module_manager</span><span class="p">)</span>
+        <span class="c"># m.module_manager.parent.parent.filter.auto_orient_normals = True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">pass</span>
+        <span class="c"># m.module_manager.parent.filter.auto_orient_normals = True</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">mapper</span><span class="o">.</span><span class="n">interpolate_scalars_before_mapping</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="n">m</span><span class="o">.</span><span class="n">module_manager</span><span class="o">.</span><span class="n">scalar_lut_manager</span><span class="o">.</span><span class="n">lut_mode</span> <span class="o">=</span> <span class="s">&#39;RdBu&#39;</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">module_manager</span><span class="o">.</span><span class="n">scalar_lut_manager</span><span class="o">.</span><span class="n">reverse_lut</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="k">return</span> <span class="n">m</span>
+</div>
+<div class="viewcode-block" id="insert_filter"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.insert_filter">[docs]</a><span class="k">def</span> <span class="nf">insert_filter</span><span class="p">(</span><span class="n">filtr</span><span class="p">,</span> <span class="n">module_manager</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Insert a filter above an existing module_manager</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        filter (TYPE): Description</span>
+<span class="sd">        module_manager (TYPE): Description</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">filtr</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">module_manager</span><span class="p">)</span>
+    <span class="n">filtr</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">module_manager</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="plot_blue_marble"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.plot_blue_marble">[docs]</a><span class="k">def</span> <span class="nf">plot_blue_marble</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Plot Earth using the blue marble NASA image&quot;&quot;&quot;</span>
+    <span class="c"># make a plane, then deform it into a sphere</span>
+    <span class="n">eps</span> <span class="o">=</span> <span class="mf">1e-4</span>
+    <span class="n">ps</span> <span class="o">=</span> <span class="n">tvtk</span><span class="o">.</span><span class="n">PlaneSource</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="n">eps</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                          <span class="n">point1</span><span class="o">=</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="n">eps</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span>
+                          <span class="n">point2</span><span class="o">=</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">eps</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                          <span class="n">x_resolution</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+                          <span class="n">y_resolution</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">ps</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">tvtk</span><span class="o">.</span><span class="n">SphericalTransform</span><span class="p">()</span>
+    <span class="n">tpoly</span> <span class="o">=</span> <span class="n">tvtk</span><span class="o">.</span><span class="n">TransformPolyDataFilter</span><span class="p">(</span><span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span> <span class="nb">input</span><span class="o">=</span><span class="n">ps</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
+    <span class="n">src</span> <span class="o">=</span> <span class="n">VTKDataSource</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tpoly</span><span class="o">.</span><span class="n">output</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;blue_marble&quot;</span><span class="p">)</span>
+    <span class="n">surf</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">surface</span><span class="p">(</span><span class="n">src</span><span class="p">)</span>
+
+    <span class="c"># now load a jpg, and use it to texture the sphere</span>
+    <span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;/blue_marble.jpg&#39;</span><span class="p">)</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">tvtk</span><span class="o">.</span><span class="n">JPEGReader</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="n">fname</span><span class="p">)</span>
+    <span class="n">texture</span> <span class="o">=</span> <span class="n">tvtk</span><span class="o">.</span><span class="n">Texture</span><span class="p">(</span><span class="n">interpolate</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">texture</span><span class="o">.</span><span class="n">input</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">output</span>
+    <span class="n">surf</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">enable_texture</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">surf</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="n">texture</span>
+
+    <span class="k">if</span> <span class="n">orientation</span><span class="p">:</span>
+        <span class="n">surf</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="n">orientation</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">surf</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">45.0</span><span class="p">)</span>
+
+    <span class="n">add_source</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">figure</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">src</span>
+</div>
+<div class="viewcode-block" id="plot_earth_3d"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.plot_earth_3d">[docs]</a><span class="k">def</span> <span class="nf">plot_earth_3d</span><span class="p">(</span><span class="n">figure</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">daycol</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">nightcol</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                  <span class="n">radius</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">res</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">crd_system</span><span class="o">=</span><span class="s">&quot;mhd&quot;</span><span class="p">,</span> <span class="n">night_only</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                  <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Plot a black and white sphere (Earth) showing sunward direction</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        figure (mayavi.core.scene.Scene): specific figure, or</span>
+<span class="sd">            :py:func:`mayavi.mlab.gcf`</span>
+<span class="sd">        daycol (tuple, optional): color of dayside (RGB)</span>
+<span class="sd">        nightcol (tuple, optional): color of nightside (RGB)</span>
+<span class="sd">        res (optional): rosolution of teh sphere</span>
+<span class="sd">        crd_system (str, optional): &#39;mhd&#39; or &#39;gse&#39;, can be gotten from</span>
+<span class="sd">            an openggcm field using ``fld.meta[&quot;crd_system&quot;]``.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Tuple (day, night) as vtk sources</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">figure</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">figure</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
+
+    <span class="n">crd_system</span> <span class="o">=</span> <span class="n">crd_system</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">crd_system</span> <span class="o">==</span> <span class="s">&quot;mhd&quot;</span><span class="p">:</span>
+        <span class="n">theta_dusk</span><span class="p">,</span> <span class="n">theta_dawn</span> <span class="o">=</span> <span class="mi">270</span><span class="p">,</span> <span class="mi">90</span>
+    <span class="k">elif</span> <span class="n">crd_system</span> <span class="o">==</span> <span class="s">&quot;gse&quot;</span><span class="p">:</span>
+        <span class="n">theta_dusk</span><span class="p">,</span> <span class="n">theta_dawn</span> <span class="o">=</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">270</span>
+
+    <span class="n">night</span> <span class="o">=</span> <span class="n">BuiltinSurface</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="s">&#39;sphere&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;night&#39;</span><span class="p">)</span>
+    <span class="n">night</span><span class="o">.</span><span class="n">data_source</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="n">radius</span><span class="p">,</span>
+                          <span class="n">start_theta</span><span class="o">=</span><span class="n">theta_dusk</span><span class="p">,</span> <span class="n">end_theta</span><span class="o">=</span><span class="n">theta_dawn</span><span class="p">,</span>
+                          <span class="n">theta_resolution</span><span class="o">=</span><span class="n">res</span><span class="p">,</span> <span class="n">phi_resolution</span><span class="o">=</span><span class="n">res</span><span class="p">)</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">surface</span><span class="p">(</span><span class="n">night</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">nightcol</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">figure</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">mod</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">property</span><span class="o">.</span><span class="n">backface_culling</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">night_only</span><span class="p">:</span>
+        <span class="n">day</span> <span class="o">=</span> <span class="n">BuiltinSurface</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="s">&#39;sphere&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;day&#39;</span><span class="p">)</span>
+        <span class="n">day</span><span class="o">.</span><span class="n">data_source</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="n">radius</span><span class="p">,</span>
+                            <span class="n">start_theta</span><span class="o">=</span><span class="n">theta_dawn</span><span class="p">,</span> <span class="n">end_theta</span><span class="o">=</span><span class="n">theta_dusk</span><span class="p">,</span>
+                            <span class="n">theta_resolution</span><span class="o">=</span><span class="n">res</span><span class="p">,</span> <span class="n">phi_resolution</span><span class="o">=</span><span class="n">res</span><span class="p">)</span>
+        <span class="n">mod</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">surface</span><span class="p">(</span><span class="n">day</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">daycol</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">figure</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">mod</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">property</span><span class="o">.</span><span class="n">backface_culling</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">day</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">return</span> <span class="n">day</span><span class="p">,</span> <span class="n">night</span>
+</div>
+<div class="viewcode-block" id="show"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.show">[docs]</a><span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="n">stop</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calls :meth:`mayavi.mlab.show(stop=stop)`&quot;&quot;&quot;</span>
+    <span class="n">mlab</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="clf"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.clf">[docs]</a><span class="k">def</span> <span class="nf">clf</span><span class="p">(</span><span class="n">figure</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Clear source data, then clear figure</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        figure (mayavi.core.scene.Scene): specific figure, or</span>
+<span class="sd">            :py:func:`mayavi.mlab.gcf`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">figure</span><span class="p">:</span>
+        <span class="n">figure</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
+    <span class="n">clear_data</span><span class="p">(</span><span class="n">figure</span><span class="p">)</span>
+    <span class="n">mlab</span><span class="o">.</span><span class="n">clf</span><span class="p">(</span><span class="n">figure</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="remove_source"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.remove_source">[docs]</a><span class="k">def</span> <span class="nf">remove_source</span><span class="p">(</span><span class="n">src</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Safely remove a specific vtk source</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        src (vtk_data_source): vtk data source to remove</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">src</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">src</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">release_data_flag</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">src</span><span class="o">.</span><span class="n">cell_scalars_name</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+        <span class="n">src</span><span class="o">.</span><span class="n">cell_tensors_name</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+        <span class="n">src</span><span class="o">.</span><span class="n">cell_vectors_name</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+        <span class="n">src</span><span class="o">.</span><span class="n">point_scalars_name</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+        <span class="n">src</span><span class="o">.</span><span class="n">point_tensors_name</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+        <span class="n">src</span><span class="o">.</span><span class="n">point_vectors_name</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="n">src</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">src</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+    <span class="n">src</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="clear_data"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.clear_data">[docs]</a><span class="k">def</span> <span class="nf">clear_data</span><span class="p">(</span><span class="n">figures</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Workaround for Mayavi / VTK memory leak</span>
+
+<span class="sd">    This is needed when Mayavi/VTK keeps a reference to source data</span>
+<span class="sd">    when you would expect it to be freed like on a call to `mlab.clf()`</span>
+<span class="sd">    or when removing sources from the pipeline.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        This must be called when the pipeline still has the source, so</span>
+<span class="sd">        before a call to `mlab.clf()`, etc.</span>
+
+<span class="sd">    1. Set release_data_flag on all sources&#39; data</span>
+<span class="sd">    2. Remove reference to the data</span>
+<span class="sd">    3. Remove the data source</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        figures (None, mayavi.core.scene.Scene, or &#39;all&#39;): if None,</span>
+<span class="sd">            gets current scene; if Scene object, just that one; if</span>
+<span class="sd">            &#39;all&#39;, act on all scenes in the current engine. Can also be</span>
+<span class="sd">            a list of Scene objects</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">figures</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">figures</span> <span class="o">=</span> <span class="p">[</span><span class="n">mlab</span><span class="o">.</span><span class="n">gcf</span><span class="p">()]</span>
+    <span class="k">elif</span> <span class="n">figures</span> <span class="o">==</span> <span class="s">&quot;all&quot;</span><span class="p">:</span>
+        <span class="n">figures</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">get_engine</span><span class="p">()</span><span class="o">.</span><span class="n">scenes</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">figures</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+        <span class="n">figures</span> <span class="o">=</span> <span class="p">[</span><span class="n">figures</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">fig</span> <span class="ow">is</span> <span class="bp">None</span> <span class="k">for</span> <span class="n">fig</span> <span class="ow">in</span> <span class="n">figures</span><span class="p">):</span>
+        <span class="k">return</span>
+
+    <span class="k">for</span> <span class="n">fig</span> <span class="ow">in</span> <span class="n">figures</span><span class="p">:</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">fig</span><span class="o">.</span><span class="n">children</span><span class="p">):</span>
+            <span class="n">remove_source</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="k">return</span>
+</div>
+<div class="viewcode-block" id="resize"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.resize">[docs]</a><span class="k">def</span> <span class="nf">resize</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Summary</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        size (tuple): width, height in pixels</span>
+<span class="sd">        figure (mayavi.core.scene.Scene): specific figure, or</span>
+<span class="sd">            :py:func:`mayavi.mlab.gcf`</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">figure</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">figure</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c"># scene.set_size doesn&#39;t seem to work when rendering on screen, so</span>
+        <span class="c"># go into the backend and do it by hand</span>
+        <span class="k">if</span> <span class="n">mlab</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">offscreen</span><span class="p">:</span>
+            <span class="n">figure</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">set_size</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">toolkit</span> <span class="o">=</span> <span class="n">mayavi</span><span class="o">.</span><span class="n">ETSConfig</span><span class="o">.</span><span class="n">toolkit</span>
+
+            <span class="k">if</span> <span class="n">toolkit</span> <span class="o">==</span> <span class="s">&#39;qt4&#39;</span><span class="p">:</span>
+                <span class="n">sc</span> <span class="o">=</span> <span class="n">figure</span><span class="o">.</span><span class="n">scene</span>
+                <span class="n">window_height</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">parent</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">height</span><span class="p">()</span>
+                <span class="n">render_height</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">render_window</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">h</span> <span class="o">=</span> <span class="n">window_height</span> <span class="o">-</span> <span class="n">render_height</span>
+                <span class="n">sc</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">parent</span><span class="p">()</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span>
+
+            <span class="k">elif</span> <span class="n">toolkit</span> <span class="o">==</span> <span class="s">&#39;wx&#39;</span><span class="p">:</span>
+                <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">figure</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Parent</span><span class="o">.</span><span class="n">Parent</span><span class="o">.</span><span class="n">SetClientSizeWH</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">viscid</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Unknown mayavi backend {0} (not qt4 or &quot;</span>
+                                   <span class="s">&quot;wx); not resizing.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">toolkit</span><span class="p">))</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  <span class="c"># pylint: disable=broad-except</span>
+        <span class="n">viscid</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Resize didn&#39;t work:: {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
+</div>
+<div class="viewcode-block" id="savefig"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.savefig">[docs]</a><span class="k">def</span> <span class="nf">savefig</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Wrap mayavi.mlab.savefig with offscreen hack&quot;&quot;&quot;</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
+    <span class="n">prev_offscreen_state</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">off_screen_rendering</span>
+    <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">!=</span> <span class="s">&quot;darwin&quot;</span><span class="p">:</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">off_screen_rendering</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="n">mlab</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">fig</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">off_screen_rendering</span> <span class="o">!=</span> <span class="n">prev_offscreen_state</span><span class="p">:</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">off_screen_rendering</span> <span class="o">=</span> <span class="n">prev_offscreen_state</span>
+</div>
+<div class="viewcode-block" id="interact"><a class="viewcode-back" href="../../../api/viscid.plot.mvi.html#viscid.plot.mvi.interact">[docs]</a><span class="k">def</span> <span class="nf">interact</span><span class="p">(</span><span class="n">local</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Switch to interactive interpreter</span>
+
+<span class="sd">    This can be handy if you want to interact with a 3d plot using</span>
+<span class="sd">    python.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        local (dict, optional): Local namespace for the interactive</span>
+<span class="sd">            session. Usually you want ``interact(local=locals())``</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">banner</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;Have some fun with mayavi :)</span>
+<span class="s">    hints:</span>
+<span class="s">        - use locals() to explore the namespace</span>
+<span class="s">        - mlab.show(stop=True) or mvi.show() to interact with the plot/gui</span>
+<span class="s">        - mayavi objects all have a trait_names() method</span>
+<span class="s">        - Use Ctrl-D (eof) to end interaction &quot;&quot;&quot;</span>
+    <span class="n">code</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">banner</span><span class="p">,</span> <span class="n">local</span><span class="o">=</span><span class="n">local</span><span class="p">)</span>
+
+<span class="c">##</span>
+<span class="c">## EOF</span>
+<span class="c">##</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

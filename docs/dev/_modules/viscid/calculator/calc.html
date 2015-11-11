@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.calculator.calc &mdash; Viscid 0.95.0 dev documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.95.0 dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 dev documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0 dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../changes.html">ChangeLog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for viscid.calculator.calc</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="sd">&quot;&quot;&quot; This has a mechanism to dispatch to different backends. You can change the</span>
+<span class="sd">order of preference of the backend by changing default_backends.</span>
+<span class="sd">TODO: this dispatch mechanism is very simple, maybe something a little more</span>
+<span class="sd">flexable would be useful down the line? &quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">count</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">viscid</span>
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">verror</span>
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">seed</span>
+<span class="kn">from</span> <span class="nn">viscid.compat</span> <span class="kn">import</span> <span class="n">izip</span><span class="p">,</span> <span class="n">OrderedDict</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">viscid.calculator</span> <span class="kn">import</span> <span class="n">cycalc</span>
+    <span class="n">has_cython</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">has_cython</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">viscid.calculator</span> <span class="kn">import</span> <span class="n">necalc</span>
+    <span class="n">has_numexpr</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">has_numexpr</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;add&#39;</span><span class="p">,</span> <span class="s">&#39;diff&#39;</span><span class="p">,</span> <span class="s">&#39;mul&#39;</span><span class="p">,</span> <span class="s">&#39;relative_diff&#39;</span><span class="p">,</span> <span class="s">&#39;abs_diff&#39;</span><span class="p">,</span> <span class="s">&#39;abs_val&#39;</span><span class="p">,</span>
+           <span class="s">&#39;abs_max&#39;</span><span class="p">,</span> <span class="s">&#39;abs_min&#39;</span><span class="p">,</span> <span class="s">&#39;magnitude&#39;</span><span class="p">,</span> <span class="s">&#39;dot&#39;</span><span class="p">,</span> <span class="s">&#39;cross&#39;</span><span class="p">,</span> <span class="s">&#39;div&#39;</span><span class="p">,</span> <span class="s">&#39;curl&#39;</span><span class="p">,</span>
+           <span class="s">&#39;normalize&#39;</span><span class="p">,</span> <span class="s">&#39;project&#39;</span><span class="p">,</span> <span class="s">&#39;project_vector&#39;</span><span class="p">,</span> <span class="s">&#39;project_along_line&#39;</span><span class="p">,</span>
+           <span class="s">&#39;resample_lines&#39;</span><span class="p">,</span> <span class="s">&#39;integrate_along_line&#39;</span><span class="p">,</span> <span class="s">&#39;integrate_along_lines&#39;</span><span class="p">,</span>
+           <span class="s">&#39;jacobian_at_point&#39;</span><span class="p">,</span> <span class="s">&#39;jacobian_at_ind&#39;</span><span class="p">,</span> <span class="s">&#39;jacobian_eig_at_point&#39;</span><span class="p">,</span>
+           <span class="s">&#39;jacobian_eig_at_ind&#39;</span><span class="p">,</span> <span class="s">&#39;div_at_point&#39;</span><span class="p">,</span> <span class="s">&#39;curl_at_point&#39;</span><span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">Operation</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">default_backends</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;numexpr&quot;</span><span class="p">,</span> <span class="s">&quot;cython&quot;</span><span class="p">,</span> <span class="s">&quot;numpy&quot;</span><span class="p">]</span>
+
+    <span class="n">_imps</span> <span class="o">=</span> <span class="bp">None</span>  <span class="c"># implementations</span>
+    <span class="n">opname</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">short_name</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">short_name</span><span class="p">,</span> <span class="n">implementations</span><span class="o">=</span><span class="p">[]):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">opname</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">short_name</span> <span class="o">=</span> <span class="n">short_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_imps</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_implementations</span><span class="p">(</span><span class="n">implementations</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_implementation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_imps</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span>
+
+    <span class="k">def</span> <span class="nf">add_implementations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">implementations</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">implementations</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_imp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preferred</span><span class="p">,</span> <span class="n">only</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">preferred</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">preferred</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">preferred</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_imps</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">preferred</span> <span class="o">=</span> <span class="p">[</span><span class="n">preferred</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">preferred</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_imps</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_imps</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+
+        <span class="n">msg</span> <span class="o">=</span> <span class="s">&quot;{0} :: {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">opname</span><span class="p">,</span> <span class="n">preferred</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">only</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">verror</span><span class="o">.</span><span class="n">BackendNotFound</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;No preferred backends available: &quot;</span> <span class="o">+</span> <span class="n">msg</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_backends</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_imps</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_imps</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_imps</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">verror</span><span class="o">.</span><span class="n">BackendNotFound</span><span class="p">(</span><span class="s">&quot;No backends available&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_imps</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">preferred</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&quot;preferred&quot;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">only</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&quot;only&quot;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+        <span class="n">func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_imp</span><span class="p">(</span><span class="n">preferred</span><span class="p">,</span> <span class="n">only</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">UnaryOperation</span><span class="p">(</span><span class="n">Operation</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">UnaryOperation</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__call__</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">ret</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;{0} {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">short_name</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span>
+
+<span class="k">class</span> <span class="nc">BinaryOperation</span><span class="p">(</span><span class="n">Operation</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">BinaryOperation</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__call__</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">ret</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;{0} {1} {2}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">short_name</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span>
+
+<span class="n">add</span> <span class="o">=</span> <span class="n">BinaryOperation</span><span class="p">(</span><span class="s">&quot;add&quot;</span><span class="p">,</span> <span class="s">&quot;+&quot;</span><span class="p">)</span>
+<span class="n">diff</span> <span class="o">=</span> <span class="n">BinaryOperation</span><span class="p">(</span><span class="s">&quot;diff&quot;</span><span class="p">,</span> <span class="s">&quot;-&quot;</span><span class="p">)</span>
+<span class="n">mul</span> <span class="o">=</span> <span class="n">BinaryOperation</span><span class="p">(</span><span class="s">&quot;mul&quot;</span><span class="p">,</span> <span class="s">&quot;*&quot;</span><span class="p">)</span>
+<span class="n">relative_diff</span> <span class="o">=</span> <span class="n">BinaryOperation</span><span class="p">(</span><span class="s">&quot;relative diff&quot;</span><span class="p">,</span> <span class="s">&quot;%-&quot;</span><span class="p">)</span>
+<span class="n">abs_diff</span> <span class="o">=</span> <span class="n">BinaryOperation</span><span class="p">(</span><span class="s">&quot;abs diff&quot;</span><span class="p">,</span> <span class="s">&quot;|-|&quot;</span><span class="p">)</span>
+<span class="n">abs_val</span> <span class="o">=</span> <span class="n">UnaryOperation</span><span class="p">(</span><span class="s">&quot;abs val&quot;</span><span class="p">,</span> <span class="s">&quot;absval&quot;</span><span class="p">)</span>
+<span class="n">abs_max</span> <span class="o">=</span> <span class="n">Operation</span><span class="p">(</span><span class="s">&quot;abs max&quot;</span><span class="p">,</span> <span class="s">&quot;absmax&quot;</span><span class="p">)</span>
+<span class="n">abs_min</span> <span class="o">=</span> <span class="n">Operation</span><span class="p">(</span><span class="s">&quot;abs min&quot;</span><span class="p">,</span> <span class="s">&quot;absmin&quot;</span><span class="p">)</span>
+<span class="n">magnitude</span> <span class="o">=</span> <span class="n">UnaryOperation</span><span class="p">(</span><span class="s">&quot;magnitude&quot;</span><span class="p">,</span> <span class="s">&quot;magnitude&quot;</span><span class="p">)</span>
+<span class="n">dot</span> <span class="o">=</span> <span class="n">BinaryOperation</span><span class="p">(</span><span class="s">&quot;dot&quot;</span><span class="p">,</span> <span class="s">&quot;dot&quot;</span><span class="p">)</span>
+<span class="n">cross</span> <span class="o">=</span> <span class="n">BinaryOperation</span><span class="p">(</span><span class="s">&quot;cross&quot;</span><span class="p">,</span> <span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">project</span> <span class="o">=</span> <span class="n">BinaryOperation</span><span class="p">(</span><span class="s">&quot;project&quot;</span><span class="p">,</span> <span class="s">&quot;dot mag&quot;</span><span class="p">)</span>
+<span class="n">normalize</span> <span class="o">=</span> <span class="n">UnaryOperation</span><span class="p">(</span><span class="s">&quot;normalize&quot;</span><span class="p">,</span> <span class="s">&quot;normalize&quot;</span><span class="p">)</span>
+<span class="n">div</span> <span class="o">=</span> <span class="n">UnaryOperation</span><span class="p">(</span><span class="s">&quot;div&quot;</span><span class="p">,</span> <span class="s">&quot;div&quot;</span><span class="p">)</span>
+<span class="n">curl</span> <span class="o">=</span> <span class="n">UnaryOperation</span><span class="p">(</span><span class="s">&quot;curl&quot;</span><span class="p">,</span> <span class="s">&quot;curl&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">has_numexpr</span><span class="p">:</span>
+    <span class="n">add</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numexpr&quot;</span><span class="p">,</span> <span class="n">necalc</span><span class="o">.</span><span class="n">add</span><span class="p">)</span>
+    <span class="n">diff</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numexpr&quot;</span><span class="p">,</span> <span class="n">necalc</span><span class="o">.</span><span class="n">diff</span><span class="p">)</span>
+    <span class="n">mul</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numexpr&quot;</span><span class="p">,</span> <span class="n">necalc</span><span class="o">.</span><span class="n">mul</span><span class="p">)</span>
+    <span class="n">relative_diff</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numexpr&quot;</span><span class="p">,</span> <span class="n">necalc</span><span class="o">.</span><span class="n">relative_diff</span><span class="p">)</span>
+    <span class="n">abs_diff</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numexpr&quot;</span><span class="p">,</span> <span class="n">necalc</span><span class="o">.</span><span class="n">abs_diff</span><span class="p">)</span>
+    <span class="n">abs_val</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numexpr&quot;</span><span class="p">,</span> <span class="n">necalc</span><span class="o">.</span><span class="n">abs_val</span><span class="p">)</span>
+    <span class="n">abs_max</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numexpr&quot;</span><span class="p">,</span> <span class="n">necalc</span><span class="o">.</span><span class="n">abs_max</span><span class="p">)</span>
+    <span class="n">abs_min</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numexpr&quot;</span><span class="p">,</span> <span class="n">necalc</span><span class="o">.</span><span class="n">abs_min</span><span class="p">)</span>
+    <span class="n">magnitude</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numexpr&quot;</span><span class="p">,</span> <span class="n">necalc</span><span class="o">.</span><span class="n">magnitude</span><span class="p">)</span>
+    <span class="n">dot</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numexpr&quot;</span><span class="p">,</span> <span class="n">necalc</span><span class="o">.</span><span class="n">dot</span><span class="p">)</span>
+    <span class="n">cross</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numexpr&quot;</span><span class="p">,</span> <span class="n">necalc</span><span class="o">.</span><span class="n">cross</span><span class="p">)</span>
+    <span class="n">project</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numexpr&quot;</span><span class="p">,</span> <span class="n">necalc</span><span class="o">.</span><span class="n">project</span><span class="p">)</span>
+    <span class="n">normalize</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numexpr&quot;</span><span class="p">,</span> <span class="n">necalc</span><span class="o">.</span><span class="n">normalize</span><span class="p">)</span>
+    <span class="n">div</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numexpr&quot;</span><span class="p">,</span> <span class="n">necalc</span><span class="o">.</span><span class="n">div</span><span class="p">)</span>
+    <span class="n">curl</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numexpr&quot;</span><span class="p">,</span> <span class="n">necalc</span><span class="o">.</span><span class="n">curl</span><span class="p">)</span>
+
+<span class="c"># numpy versions</span>
+<span class="n">add</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numpy&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">diff</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numpy&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">mul</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numpy&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">relative_diff</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numpy&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">abs_diff</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numpy&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">))</span>
+<span class="n">abs_val</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numpy&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">)</span>
+<span class="n">abs_max</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numpy&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span>
+<span class="n">abs_min</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numpy&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span>
+
+<span class="k">def</span> <span class="nf">_dot_np</span><span class="p">(</span><span class="n">fld_a</span><span class="p">,</span> <span class="n">fld_b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">fld_a</span><span class="o">.</span><span class="n">nr_comp</span> <span class="o">!=</span> <span class="n">fld_b</span><span class="o">.</span><span class="n">nr_comp</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;field must have same layout (flat or interlaced)&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">fld_a</span> <span class="o">*</span> <span class="n">fld_b</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">fld_a</span><span class="o">.</span><span class="n">nr_comp</span><span class="p">)</span>
+<span class="n">dot</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numpy&quot;</span><span class="p">,</span> <span class="n">_dot_np</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_magnitude_np</span><span class="p">(</span><span class="n">fld</span><span class="p">):</span>
+    <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">vz</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">component_views</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">vx</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">vy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">vz</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">magnitude</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numpy&quot;</span><span class="p">,</span> <span class="n">_magnitude_np</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_project_np</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; project a along b (a dot b / |b|) &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">b</span><span class="o">.</span><span class="n">nr_comp</span><span class="p">)</span> <span class="o">/</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">b</span><span class="o">.</span><span class="n">nr_comp</span><span class="p">)))</span>
+<span class="n">project</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numpy&quot;</span><span class="p">,</span> <span class="n">_project_np</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_normalize_np</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; normalize a vector field &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">nr_comp</span><span class="p">)</span>
+<span class="n">normalize</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;numpy&quot;</span><span class="p">,</span> <span class="n">_normalize_np</span><span class="p">)</span>
+
+<span class="c"># native versions</span>
+<span class="k">def</span> <span class="nf">_magnitude_native</span><span class="p">(</span><span class="n">fld</span><span class="p">):</span>
+    <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">vz</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">component_views</span><span class="p">()</span>
+    <span class="n">mag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">vx</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mag</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mag</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mag</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>
+                <span class="n">mag</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">vx</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">vy</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span>
+                                       <span class="n">vz</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">vx</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">mag</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;{0} magnitude&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fld</span><span class="o">.</span><span class="n">name</span><span class="p">)})</span>
+
+<span class="n">magnitude</span><span class="o">.</span><span class="n">add_implementation</span><span class="p">(</span><span class="s">&quot;native&quot;</span><span class="p">,</span> <span class="n">_magnitude_native</span><span class="p">)</span>
+
+<div class="viewcode-block" id="project_vector"><a class="viewcode-back" href="../../../api/viscid.calculator.calc.html#viscid.project_vector">[docs]</a><span class="k">def</span> <span class="nf">project_vector</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns (a dot b) * b hat&quot;&quot;&quot;</span>
+    <span class="n">bnorm</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;&gt;&gt;&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">bnorm</span><span class="p">),</span> <span class="n">bnorm</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">bnorm</span><span class="o">.</span><span class="n">nr_comps</span><span class="p">,</span>
+          <span class="s">&quot;MIN&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">bnorm</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">b</span><span class="o">.</span><span class="n">nr_comp</span><span class="p">)),</span>
+          <span class="s">&quot;MAX&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">bnorm</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">b</span><span class="o">.</span><span class="n">nr_comp</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">project</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">bnorm</span>
+</div>
+<div class="viewcode-block" id="resample_lines"><a class="viewcode-back" href="../../../api/viscid.calculator.calc.html#viscid.resample_lines">[docs]</a><span class="k">def</span> <span class="nf">resample_lines</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s">&quot;linear&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Resample a bunch of lines</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        lines (sequence): a list of 3xN ndarrays that are lines</span>
+<span class="sd">        factor (float): how to resample. 2 will give a point at</span>
+<span class="sd">            the midpoint of all points, 3 will give two points, etc.</span>
+<span class="sd">            0.5 will leave half the number of points, etc. This should</span>
+<span class="sd">            be &gt; 0.0.</span>
+<span class="sd">        kind (str): How to interpolate; must be a value recognized by</span>
+<span class="sd">            :py:func:`scipy.interpolate.interp1d`</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: List of resampled 3xN ndarrays</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># FIXME: this is wicked slow</span>
+    <span class="k">if</span> <span class="n">factor</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;factor should be &gt; 0&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">factor</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">lines</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lines</span><span class="p">):</span>
+        <span class="n">nr_sdims</span><span class="p">,</span> <span class="n">nold</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">nnew</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">factor</span> <span class="o">*</span> <span class="p">(</span><span class="n">nold</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">newline</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">nr_sdims</span><span class="p">,</span> <span class="n">nnew</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">line</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">sold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nold</span><span class="p">)</span>
+        <span class="n">snew</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nnew</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c"># raise ImportError</span>
+            <span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">interp1d</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nr_sdims</span><span class="p">):</span>
+                <span class="n">newline</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">sold</span><span class="p">,</span> <span class="n">line</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="p">:],</span> <span class="n">kind</span><span class="o">=</span><span class="n">kind</span><span class="p">)(</span><span class="n">snew</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">kind</span> <span class="o">!=</span> <span class="s">&#39;linear&#39;</span><span class="p">:</span>
+                <span class="n">viscid</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;Scipy is required to do anything &quot;</span>
+                                    <span class="s">&quot;other than linear interpolation&quot;</span><span class="p">)</span>
+                <span class="k">raise</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nr_sdims</span><span class="p">):</span>
+                <span class="n">newline</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">snew</span><span class="p">,</span> <span class="n">sold</span><span class="p">,</span> <span class="n">line</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="p">:])</span>
+        <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">newline</span>
+    <span class="k">return</span> <span class="n">lines</span>
+</div>
+<div class="viewcode-block" id="project_along_line"><a class="viewcode-back" href="../../../api/viscid.calculator.calc.html#viscid.project_along_line">[docs]</a><span class="k">def</span> <span class="nf">project_along_line</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">fld</span><span class="p">):</span>
+    <span class="n">fld_on_verts</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">interp_trilin</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+    <span class="n">dsvec</span> <span class="o">=</span> <span class="n">line</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">:]</span> <span class="o">-</span> <span class="n">line</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">dsvec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">dsvec</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">],</span> <span class="n">dsvec</span><span class="p">,</span> <span class="n">dsvec</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">dsvec</span> <span class="o">=</span> <span class="n">dsvec</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dsvec</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">fld_on_verts</span> <span class="o">*</span> <span class="n">dsvec</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="integrate_along_line"><a class="viewcode-back" href="../../../api/viscid.calculator.calc.html#viscid.integrate_along_line">[docs]</a><span class="k">def</span> <span class="nf">integrate_along_line</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">fld</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="s">&quot;dot&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Integrate the value of fld along a line</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        line (ndarray): 3xN ndarray</span>
+<span class="sd">        fld (Field): Field to interpolate / integrate</span>
+<span class="sd">        reduction (str): If fld is a vector field, what quantity to</span>
+<span class="sd">            integrate. Can be &quot;dot&quot; to dot the vectors with ds along</span>
+<span class="sd">            the line, or &quot;mag&quot; to integrate the magnitude.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        a scalar with the same dtype as fld</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">integrate_along_lines</span><span class="p">([</span><span class="n">line</span><span class="p">],</span> <span class="n">fld</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="n">reduction</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="integrate_along_lines"><a class="viewcode-back" href="../../../api/viscid.calculator.calc.html#viscid.integrate_along_lines">[docs]</a><span class="k">def</span> <span class="nf">integrate_along_lines</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">fld</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="s">&quot;dot&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Integrate the value of fld along a list of lines</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        lines (list): list of 3xN ndarrays, N needs not be the same for</span>
+<span class="sd">            all lines</span>
+<span class="sd">        fld (Field): Field to interpolate / integrate</span>
+<span class="sd">        reduction (str): If fld is a vector field, what quantity to</span>
+<span class="sd">            integrate. Can be &quot;dot&quot; to dot the vectors with ds along</span>
+<span class="sd">            the line, or &quot;mag&quot; to integrate the magnitude.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        ndarray with shape (len(lines), )</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">),),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">fld</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
+    <span class="n">cum_n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">])</span>
+    <span class="n">all_verts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">fld_on_verts</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">interp_trilin</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">all_verts</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="ow">in</span> <span class="n">izip</span><span class="p">(</span><span class="n">count</span><span class="p">(),</span> <span class="n">cum_n</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">cum_n</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">][:,</span> <span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">][:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">fld_on_verts</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">reduction</span> <span class="o">=</span> <span class="n">reduction</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">reduction</span> <span class="o">==</span> <span class="s">&quot;dot&quot;</span><span class="p">:</span>
+                <span class="n">dsvec</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">][:,</span> <span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">][:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">dsvec</span> <span class="o">=</span> <span class="n">dsvec</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dsvec</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">values</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">fld_on_verts</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+</span>
+                                <span class="n">fld_on_verts</span><span class="p">[</span><span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="n">stop</span><span class="p">,</span> <span class="p">:])</span>
+                <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">values</span> <span class="o">*</span> <span class="n">dsvec</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">reduction</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;mag&quot;</span><span class="p">,</span> <span class="s">&quot;magnitude&quot;</span><span class="p">,</span> <span class="s">&quot;norm&quot;</span><span class="p">]:</span>
+                <span class="n">mag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">fld_on_verts</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">values</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">mag</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">mag</span><span class="p">[</span><span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="n">stop</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Unknown reduction: {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">reduction</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">fld_on_verts</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span>
+                            <span class="n">fld_on_verts</span><span class="p">[</span><span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="n">stop</span><span class="p">])</span>
+
+        <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">values</span> <span class="o">*</span> <span class="n">ds</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">arr</span>
+</div>
+<span class="k">def</span> <span class="nf">local_vector_points</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dz</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get B at 6 points surrounding X</span>
+
+<span class="sd">    X = [x, y, z] with spacing [+/-dx, +/-dy, +/-dz]</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        B (VectorField): B field</span>
+<span class="sd">        x (float, ndarray, list): x (single value)</span>
+<span class="sd">        y (float, ndarray, list): y (single value)</span>
+<span class="sd">        z (float, ndarray, list): z (single value)</span>
+<span class="sd">        dx (float, optional): dx, one grid cell if None</span>
+<span class="sd">        dy (float, optional): dy, one grid cell if None</span>
+<span class="sd">        dz (float, optional): dz, one grid cell if None</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (bs, pts, dcrd)</span>
+
+<span class="sd">        * bs (ndarary): shape (6, 3) where 0-3 -&gt; Bx,By,Bz</span>
+<span class="sd">          and 0-6 -&gt; X-dx, X+dx, X-dy, X+dy, X-dz, X+dz</span>
+<span class="sd">        * pts (ndarray): shape (6, 3); the location of the</span>
+<span class="sd">          points of the bs, but this time, 0-3 -&gt; x,y,z</span>
+<span class="sd">        * dcrd (list): [dx, dy, dz]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">has_cython</span>  <span class="c"># if a problem, you need to build Viscid</span>
+    <span class="k">assert</span> <span class="n">B</span><span class="o">.</span><span class="n">iscentered</span><span class="p">(</span><span class="s">&quot;Cell&quot;</span><span class="p">)</span>
+
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">]]</span>
+    <span class="n">crds</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">get_crds</span><span class="p">(</span><span class="s">&quot;xyz&quot;</span><span class="p">)</span>
+    <span class="n">inds</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">crds</span><span class="p">)</span>
+    <span class="n">dcrd</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">crds</span><span class="p">)</span>
+    <span class="c"># This makes points in xyz order</span>
+    <span class="n">pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">],</span> <span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">crd</span><span class="p">,</span> <span class="n">loc</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">count</span><span class="p">(),</span> <span class="n">crds</span><span class="p">,</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">],</span> <span class="p">[</span><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">dz</span><span class="p">]):</span>
+        <span class="n">inds</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">cycalc</span><span class="o">.</span><span class="n">closest_ind</span><span class="p">(</span><span class="n">crd</span><span class="p">,</span> <span class="n">loc</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">d</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">dcrd</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">crd</span><span class="p">[</span><span class="n">inds</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">crd</span><span class="p">[</span><span class="n">inds</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dcrd</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span>
+        <span class="n">pts</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dcrd</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">pts</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="n">dcrd</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">bs</span> <span class="o">=</span> <span class="n">cycalc</span><span class="o">.</span><span class="n">interp_trilin</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">seed</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="n">pts</span><span class="p">))</span>
+    <span class="c"># import code; code.interact(&quot;in local_vector_points&quot;, local=locals())</span>
+    <span class="k">return</span> <span class="n">bs</span><span class="p">,</span> <span class="n">pts</span><span class="p">,</span> <span class="n">dcrd</span>
+
+<div class="viewcode-block" id="jacobian_at_point"><a class="viewcode-back" href="../../../api/viscid.calculator.calc.html#viscid.jacobian_at_point">[docs]</a><span class="k">def</span> <span class="nf">jacobian_at_point</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dz</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get the Jacobian at a point</span>
+
+<span class="sd">    If dx|dy|dz == None, then their set to the grid spacing</span>
+<span class="sd">    at the point of interest</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The jacobian as a 3x3 ndarray. The result is in xyz order,</span>
+<span class="sd">        in other words::</span>
+
+<span class="sd">          [ [d_x Bx, d_y Bx, d_z Bx],</span>
+<span class="sd">            [d_x By, d_y By, d_z By],</span>
+<span class="sd">            [d_x Bz, d_y Bz, d_z Bz] ]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">bs</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">dcrd</span> <span class="o">=</span> <span class="n">local_vector_points</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">dz</span><span class="p">)</span>
+    <span class="n">gradb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">B</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
+    <span class="c"># bs is in xyz spatial order, but components are in xyz order</span>
+    <span class="c"># dcrd is in xyz order</span>
+    <span class="c"># gradb has xyz order for everything</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">gradb</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">bs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">bs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dcrd</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c"># d_x Bi</span>
+        <span class="n">gradb</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">bs</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">bs</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dcrd</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c"># d_y Bi</span>
+        <span class="n">gradb</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">bs</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">bs</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dcrd</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>  <span class="c"># d_z Bi</span>
+    <span class="k">return</span> <span class="n">gradb</span>
+</div>
+<div class="viewcode-block" id="jacobian_at_ind"><a class="viewcode-back" href="../../../api/viscid.calculator.calc.html#viscid.jacobian_at_ind">[docs]</a><span class="k">def</span> <span class="nf">jacobian_at_ind</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get the Jacobian at index</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The jacobian as a 3x3 ndarray. The result is in xyz order,</span>
+<span class="sd">        in other words::</span>
+
+<span class="sd">          [ [d_x Bx, d_y Bx, d_z Bx],</span>
+<span class="sd">            [d_x By, d_y By, d_z By],</span>
+<span class="sd">            [d_x Bz, d_y Bz, d_z Bz] ]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">bz</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">component_views</span><span class="p">()</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">get_crds</span><span class="p">(</span><span class="s">&quot;xyz&quot;</span><span class="p">)</span>
+    <span class="n">gradb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">B</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">bi</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">bz</span><span class="p">]):</span>
+        <span class="c"># d_x Bi, d_y Bi, d_z Bi</span>
+        <span class="n">gradb</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">bi</span><span class="p">[</span><span class="n">ix</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">]</span> <span class="o">-</span> <span class="n">bi</span><span class="p">[</span><span class="n">ix</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">ix</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="n">ix</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">gradb</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">bi</span><span class="p">[</span><span class="n">ix</span><span class="p">,</span> <span class="n">iy</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">iz</span><span class="p">]</span> <span class="o">-</span> <span class="n">bi</span><span class="p">[</span><span class="n">ix</span><span class="p">,</span> <span class="n">iy</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">iz</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">iy</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="n">iy</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">gradb</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">bi</span><span class="p">[</span><span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">bi</span><span class="p">[</span><span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="n">iz</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">z</span><span class="p">[</span><span class="n">iz</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">gradb</span>
+</div>
+<div class="viewcode-block" id="jacobian_eig_at_point"><a class="viewcode-back" href="../../../api/viscid.calculator.calc.html#viscid.jacobian_eig_at_point">[docs]</a><span class="k">def</span> <span class="nf">jacobian_eig_at_point</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dz</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get the eigen vals/vecs of the jacobian</span>
+
+<span class="sd">    Returns: evals, evecs (3x3 ndarray)</span>
+<span class="sd">        The evec[:, i] corresponds to evals[i].</span>
+<span class="sd">        Eigen vectors are returned in xyz order, aka</span>
+<span class="sd">        evec[:, 0] is [x, y, z] for the 0th eigen vector</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">gradb</span> <span class="o">=</span> <span class="n">jacobian_at_point</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">dz</span><span class="p">)</span>
+    <span class="n">evals</span><span class="p">,</span> <span class="n">evecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">gradb</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">evals</span><span class="p">,</span> <span class="n">evecs</span>
+</div>
+<div class="viewcode-block" id="jacobian_eig_at_ind"><a class="viewcode-back" href="../../../api/viscid.calculator.calc.html#viscid.jacobian_eig_at_ind">[docs]</a><span class="k">def</span> <span class="nf">jacobian_eig_at_ind</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get the eigen vals/vecs of the jacobian</span>
+
+<span class="sd">    Returns: evals, evecs (3x3 ndarray)</span>
+<span class="sd">        The evec[:, i] corresponds to evals[i].</span>
+<span class="sd">        Eigen vectors are returned in xyz order, aka</span>
+<span class="sd">        evec[:, 0] is [x, y, z] for the 0th eigen vector</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">gradb</span> <span class="o">=</span> <span class="n">jacobian_at_ind</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">)</span>
+    <span class="n">evals</span><span class="p">,</span> <span class="n">evecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">gradb</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">evals</span><span class="p">,</span> <span class="n">evecs</span>
+</div>
+<div class="viewcode-block" id="div_at_point"><a class="viewcode-back" href="../../../api/viscid.calculator.calc.html#viscid.div_at_point">[docs]</a><span class="k">def</span> <span class="nf">div_at_point</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dz</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns divergence at a point&quot;&quot;&quot;</span>
+    <span class="n">As</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">dcrd</span> <span class="o">=</span> <span class="n">local_vector_points</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">dz</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="p">(</span><span class="n">As</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">As</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dcrd</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">d</span>
+</div>
+<div class="viewcode-block" id="curl_at_point"><a class="viewcode-back" href="../../../api/viscid.calculator.calc.html#viscid.curl_at_point">[docs]</a><span class="k">def</span> <span class="nf">curl_at_point</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dz</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns curl at point as ndarray with shape (3,) xyz&quot;&quot;&quot;</span>
+    <span class="n">As</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">dcrd</span> <span class="o">=</span> <span class="n">local_vector_points</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">dz</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
+    <span class="c"># this is confusing: In As, first index is xyz, 2nd index is xyz</span>
+    <span class="c">#             xi+dxi  comp      xi-dxi   comp /   (2 * dxi)</span>
+    <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">As</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">As</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dcrd</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span>
+            <span class="p">(</span><span class="n">As</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">As</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dcrd</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+    <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">As</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">As</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dcrd</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">-</span>
+            <span class="p">(</span><span class="n">As</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">As</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dcrd</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">c</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">As</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">As</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dcrd</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span>
+            <span class="p">(</span><span class="n">As</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">As</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dcrd</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">c</span>
+
+<span class="c">##</span>
+<span class="c">## EOF</span>
+<span class="c">##</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.parallel &mdash; Viscid 0.95.0 dev documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.95.0 dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 dev documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0 dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changes.html">ChangeLog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for viscid.parallel</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot;common tools for parallel processing&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">ceil</span>
+<span class="kn">import</span> <span class="nn">multiprocessing</span> <span class="kn">as</span> <span class="nn">mp</span>
+<span class="kn">import</span> <span class="nn">multiprocessing.pool</span>
+<span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">closing</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">repeat</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">viscid</span>
+<span class="kn">from</span> <span class="nn">viscid.compat</span> <span class="kn">import</span> <span class="n">izip</span>
+
+<span class="c"># Non daemonic processes are probably a really bad idea</span>
+<div class="viewcode-block" id="NoDaemonProcess"><a class="viewcode-back" href="../../api/viscid.parallel.html#viscid.parallel.NoDaemonProcess">[docs]</a><span class="k">class</span> <span class="nc">NoDaemonProcess</span><span class="p">(</span><span class="n">mp</span><span class="o">.</span><span class="n">Process</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Using this is probably a bad idea&quot;&quot;&quot;</span>
+    <span class="c"># make &#39;daemon&#39; attribute always return False</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_get_daemon</span><span class="p">():</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">def</span> <span class="nf">_set_daemon</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="n">daemon</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">_get_daemon</span><span class="p">,</span> <span class="n">_set_daemon</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="NoDaemonPool"><a class="viewcode-back" href="../../api/viscid.parallel.html#viscid.parallel.NoDaemonPool">[docs]</a><span class="k">class</span> <span class="nc">NoDaemonPool</span><span class="p">(</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">pool</span><span class="o">.</span><span class="n">Pool</span><span class="p">):</span>  <span class="c"># pylint: disable=W0223</span>
+    <span class="sd">&quot;&quot;&quot; I am vulnerable to armies of undead worker processes, chances</span>
+<span class="sd">    are you don&#39;t actually want to use me</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">Process</span> <span class="o">=</span> <span class="n">NoDaemonProcess</span>
+
+</div>
+<div class="viewcode-block" id="chunk_list"><a class="viewcode-back" href="../../api/viscid.parallel.html#viscid.parallel.chunk_list">[docs]</a><span class="k">def</span> <span class="nf">chunk_list</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">nchunks</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Chunk a list</span>
+
+<span class="sd">    slice seq into chunks of nchunks size, seq can be a anything</span>
+<span class="sd">    sliceable such as lists, numpy arrays, etc. These chunks will be</span>
+<span class="sd">    &#39;contiguous&#39;, see :meth:`chunk_interslice` for picking every nth</span>
+<span class="sd">    element.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        size: if given, set nchunks such that chunks have about &#39;size&#39;</span>
+<span class="sd">            elements</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        nchunks slices of length N = (len(lst) // nchunks) or N - 1</span>
+
+<span class="sd">    See Also:</span>
+<span class="sd">        Use :meth:`chunk_iterator` to chunk up iterators</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; it1, it2, it3 = chunk_list(range(8), 3)</span>
+<span class="sd">        &gt;&gt;&gt; it1 == range(0, 3)  # 3 vals</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; it2 == range(3, 6)  # 3 vals</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; it3 == range(6, 8)  # 2 vals</span>
+<span class="sd">        True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nel</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">nchunks</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">nel</span> <span class="o">/</span> <span class="n">nchunks</span><span class="p">))</span>
+
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">chunk_slices</span><span class="p">(</span><span class="n">nel</span><span class="p">,</span> <span class="n">nchunks</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nchunks</span><span class="p">):</span>
+        <span class="n">ret</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">seq</span><span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="o">*</span><span class="n">ret</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span>
+    <span class="k">return</span> <span class="n">ret</span>
+</div>
+<div class="viewcode-block" id="chunk_slices"><a class="viewcode-back" href="../../api/viscid.parallel.html#viscid.parallel.chunk_slices">[docs]</a><span class="k">def</span> <span class="nf">chunk_slices</span><span class="p">(</span><span class="n">nel</span><span class="p">,</span> <span class="n">nchunks</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot;Make continuous chunks</span>
+
+<span class="sd">    Get the slice info (can be unpacked and passed to the slice builtin</span>
+<span class="sd">    as in slice(\*ret[i])) for nchunks contiguous chunks in a list with</span>
+<span class="sd">    nel elements</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        nel: how many elements are in one pass of the original list</span>
+<span class="sd">        nchunks: how many chunks to make</span>
+<span class="sd">        size: if given, set nchunks such that chunks have about &#39;size&#39;</span>
+<span class="sd">            elements</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        a list of (start, stop) tuples with length nchunks</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; sl1, sl2 = chunk_slices(5, 2)</span>
+<span class="sd">        &gt;&gt;&gt; sl1 == (0, 3)  # 3 vals</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; sl2 == (3, 5)  # 2 vals</span>
+<span class="sd">        True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">nchunks</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">nel</span> <span class="o">/</span> <span class="n">nchunks</span><span class="p">))</span>
+
+    <span class="n">nlong</span> <span class="o">=</span> <span class="n">nel</span> <span class="o">%</span> <span class="n">nchunks</span>  <span class="c"># nshort guarenteed &lt; nchunks</span>
+    <span class="n">lenshort</span> <span class="o">=</span> <span class="n">nel</span> <span class="o">//</span> <span class="n">nchunks</span>
+    <span class="n">lenlong</span> <span class="o">=</span> <span class="n">lenshort</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="n">ret</span> <span class="o">=</span> <span class="p">[</span><span class="bp">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">nchunks</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nlong</span><span class="p">):</span>
+        <span class="n">ret</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">start</span> <span class="o">+</span> <span class="n">lenlong</span><span class="p">)</span>
+        <span class="n">start</span> <span class="o">+=</span> <span class="n">lenlong</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nlong</span><span class="p">,</span> <span class="n">nchunks</span><span class="p">):</span>
+        <span class="n">ret</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">start</span> <span class="o">+</span> <span class="n">lenshort</span><span class="p">)</span>
+        <span class="n">start</span> <span class="o">+=</span> <span class="n">lenshort</span>
+    <span class="k">return</span> <span class="n">ret</span>
+</div>
+<div class="viewcode-block" id="chunk_interslices"><a class="viewcode-back" href="../../api/viscid.parallel.html#viscid.parallel.chunk_interslices">[docs]</a><span class="k">def</span> <span class="nf">chunk_interslices</span><span class="p">(</span><span class="n">nchunks</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Make staggered chunks</span>
+
+<span class="sd">    Similar to chunk_slices, but pick every nth element instead of</span>
+<span class="sd">    getting a contiguous patch for each chunk</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        nchunks: how many chunks to make</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        a list of (start, stop, step) tuples with length nchunks</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; chunk_slices(2) == [(0, None, 2), (1, None, 2)]</span>
+<span class="sd">        True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="p">[</span><span class="bp">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">nchunks</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nchunks</span><span class="p">):</span>
+        <span class="n">ret</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">nchunks</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ret</span>
+</div>
+<div class="viewcode-block" id="chunk_sizes"><a class="viewcode-back" href="../../api/viscid.parallel.html#viscid.parallel.chunk_sizes">[docs]</a><span class="k">def</span> <span class="nf">chunk_sizes</span><span class="p">(</span><span class="n">nel</span><span class="p">,</span> <span class="n">nchunks</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;For chunking up lists, how big is each chunk</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        nel: how many elements are in one pass of the original list</span>
+<span class="sd">        nchunks: is inferred from the length of iter_list</span>
+<span class="sd">        size: if given, set nchunks such that chunks have about &#39;size&#39;</span>
+<span class="sd">            elements</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        an ndarray of the number of elements in each chunk, this</span>
+<span class="sd">        should be the same for chunk_list, chunk_slices and</span>
+<span class="sd">        chunk_interslices</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; nel1, nel2 = chunk_sizes(5, 2)</span>
+<span class="sd">        &gt;&gt;&gt; nel1 == 2</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; nel2 == 3</span>
+<span class="sd">        True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">nchunks</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">nel</span> <span class="o">/</span> <span class="n">nchunks</span><span class="p">))</span>
+
+    <span class="n">nlong</span> <span class="o">=</span> <span class="n">nel</span> <span class="o">%</span> <span class="n">nchunks</span>  <span class="c"># nshort guarenteed &lt; nchunks</span>
+    <span class="n">lenshort</span> <span class="o">=</span> <span class="n">nel</span> <span class="o">//</span> <span class="n">nchunks</span>
+    <span class="n">lenlong</span> <span class="o">=</span> <span class="n">lenshort</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">nchunks</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="s">&quot;int&quot;</span><span class="p">)</span>
+    <span class="n">ret</span><span class="p">[:</span><span class="n">nlong</span><span class="p">]</span> <span class="o">=</span> <span class="n">lenlong</span>
+    <span class="n">ret</span><span class="p">[</span><span class="n">nlong</span><span class="p">:]</span> <span class="o">=</span> <span class="n">lenshort</span>
+    <span class="k">return</span> <span class="n">ret</span>
+</div>
+<span class="k">def</span> <span class="nf">_star_passthrough</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; this is so we can give a zipped iterable to func &quot;&quot;&quot;</span>
+    <span class="c"># args[0] is function, args[1] is positional args, and args[2] is kwargs</span>
+    <span class="k">return</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="o">*</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="o">**</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+
+<div class="viewcode-block" id="map"><a class="viewcode-back" href="../../api/viscid.parallel.html#viscid.parallel.map">[docs]</a><span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="n">nr_procs</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">args_iter</span><span class="p">,</span> <span class="n">args_kw</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">1e8</span><span class="p">,</span>
+        <span class="n">daemonic</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">threads</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">pool</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">force_subprocess</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Just like ``subprocessing.map``?</span>
+
+<span class="sd">    same as :meth:`map_async`, except it waits for the result to</span>
+<span class="sd">    be ready and returns it</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">args_kw</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">args_kw</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c"># don&#39;t waste time spinning up a new process</span>
+    <span class="k">if</span> <span class="n">pool</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">nr_procs</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">force_subprocess</span><span class="p">:</span>
+        <span class="n">args_iter</span> <span class="o">=</span> <span class="n">izip</span><span class="p">(</span><span class="n">repeat</span><span class="p">(</span><span class="n">func</span><span class="p">),</span> <span class="n">args_iter</span><span class="p">,</span> <span class="n">repeat</span><span class="p">(</span><span class="n">args_kw</span><span class="p">))</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">_star_passthrough</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="k">for</span> <span class="n">args</span> <span class="ow">in</span> <span class="n">args_iter</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">p</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">map_async</span><span class="p">(</span><span class="n">nr_procs</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">args_iter</span><span class="p">,</span> <span class="n">args_kw</span><span class="o">=</span><span class="n">args_kw</span><span class="p">,</span>
+                         <span class="n">daemonic</span><span class="o">=</span><span class="n">daemonic</span><span class="p">,</span> <span class="n">threads</span><span class="o">=</span><span class="n">threads</span><span class="p">,</span> <span class="n">pool</span><span class="o">=</span><span class="n">pool</span><span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">timeout</span><span class="p">))</span>
+        <span class="c"># in principle this join should return almost immediately since</span>
+        <span class="c"># we already called r.get</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret</span>
+</div>
+<div class="viewcode-block" id="map_async"><a class="viewcode-back" href="../../api/viscid.parallel.html#viscid.parallel.map_async">[docs]</a><span class="k">def</span> <span class="nf">map_async</span><span class="p">(</span><span class="n">nr_procs</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">args_iter</span><span class="p">,</span> <span class="n">args_kw</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">daemonic</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+              <span class="n">threads</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">pool</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Wrap python&#39;s ``map_async``</span>
+
+<span class="sd">    This has some utility stuff like star passthrough</span>
+
+<span class="sd">    Run func on nr_procs with arguments given by args_iter. args_iter</span>
+<span class="sd">    should be an iterable of the list of arguments that can be unpacked</span>
+<span class="sd">    for each invocation. kwargs are passed to func as keyword arguments</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (tuple) (pool, multiprocessing.pool.AsyncResult)</span>
+
+<span class="sd">    Note: daemonic can be set to False if one needs to spawn child</span>
+<span class="sd">        processes in func, BUT this could be vulnerable to creating</span>
+<span class="sd">        an undead army of worker processes, only use this if you</span>
+<span class="sd">        really really need it, and know what you&#39;re doing</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; func = lambda i, letter: print i, letter</span>
+<span class="sd">        &gt;&gt;&gt; p, r = map_async(2, func, itertools.izip(itertools.count(), &#39;abc&#39;))</span>
+<span class="sd">        &gt;&gt;&gt; r.get(1e8)</span>
+<span class="sd">        &gt;&gt;&gt; p.join()</span>
+<span class="sd">        &gt;&gt;&gt; # the following is printed from 2 processes</span>
+<span class="sd">        0 a</span>
+<span class="sd">        1 b</span>
+<span class="sd">        2 c</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">threads</span> <span class="ow">and</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s">&#39;darwin&#39;</span> <span class="ow">and</span> <span class="p">(</span><span class="s">&quot;mayavi.mlab&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span> <span class="ow">or</span>
+                                                     <span class="s">&quot;mayavi&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">mayavi</span>
+        <span class="k">if</span> <span class="n">mayavi</span><span class="o">.</span><span class="n">ETSConfig</span><span class="o">.</span><span class="n">toolkit</span> <span class="o">==</span> <span class="s">&#39;qt4&#39;</span><span class="p">:</span>
+            <span class="n">viscid</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">&quot;Using multiprocessing with Mayavi + Qt4 &quot;</span>
+                                   <span class="s">&quot;will cause segfaults on join.</span><span class="se">\n</span><span class="s">&quot;</span>
+                                   <span class="s">&quot;A workaround is to use the wx backend &quot;</span>
+                                   <span class="s">&quot;(`os.environ[&#39;ETS_TOOLKIT&#39;] = &#39;wx&#39;`).&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">args_kw</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">args_kw</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">args_iter</span> <span class="o">=</span> <span class="n">izip</span><span class="p">(</span><span class="n">repeat</span><span class="p">(</span><span class="n">func</span><span class="p">),</span> <span class="n">args_iter</span><span class="p">,</span> <span class="n">repeat</span><span class="p">(</span><span class="n">args_kw</span><span class="p">))</span>
+
+    <span class="c"># if given a pool, don&#39;t close it when we&#39;re done delegating tasks</span>
+    <span class="k">if</span> <span class="n">pool</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pool</span><span class="p">,</span> <span class="n">pool</span><span class="o">.</span><span class="n">map_async</span><span class="p">(</span><span class="n">_star_passthrough</span><span class="p">,</span> <span class="n">args_iter</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">threads</span><span class="p">:</span>
+            <span class="n">pool</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">pool</span><span class="o">.</span><span class="n">ThreadPool</span><span class="p">(</span><span class="n">nr_procs</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">daemonic</span><span class="p">:</span>
+            <span class="n">pool</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">nr_procs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pool</span> <span class="o">=</span> <span class="n">NoDaemonPool</span><span class="p">(</span><span class="n">nr_procs</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="n">closing</span><span class="p">(</span><span class="n">pool</span><span class="p">)</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">p</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">map_async</span><span class="p">(</span><span class="n">_star_passthrough</span><span class="p">,</span> <span class="n">args_iter</span><span class="p">)</span>
+
+<span class="c">##</span>
+<span class="c">## EOF</span>
+<span class="c">##</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

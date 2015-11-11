@@ -1,0 +1,875 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.readers.openggcm &mdash; Viscid 0.95.0 dev documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.95.0 dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 dev documentation" href="../../../index.html" />
+    <link rel="up" title="viscid.readers" href="../readers.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0 dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../changes.html">ChangeLog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for viscid.readers.openggcm</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="sd">&quot;&quot;&quot; Wrapper grid for some OpenGGCM convenience &quot;&quot;&quot;</span>
+
+<span class="c"># look at what &#39;copy_on_transform&#39; actually does... the fact</span>
+<span class="c"># that it&#39;s here is awkward</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">division</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">islice</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">numexpr</span>
+    <span class="n">_has_numexpr</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">_has_numexpr</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">viscid.compat</span> <span class="kn">import</span> <span class="n">string_types</span>
+<span class="kn">from</span> <span class="nn">viscid.readers.vfile_bucket</span> <span class="kn">import</span> <span class="n">ContainerFile</span>
+<span class="kn">from</span> <span class="nn">viscid.readers.ggcm_logfile</span> <span class="kn">import</span> <span class="n">GGCMLogFile</span>
+<span class="c"># from viscid.dataset import Dataset, DatasetTemporal</span>
+<span class="c"># from viscid.vutil import time_as_datetime, time_as_timedelta</span>
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">vutil</span>
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">grid</span>
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">field</span>
+<span class="kn">from</span> <span class="nn">viscid.coordinate</span> <span class="kn">import</span> <span class="n">wrap_crds</span>
+<span class="kn">from</span> <span class="nn">viscid.calculator</span> <span class="kn">import</span> <span class="n">plasma</span>
+
+
+<div class="viewcode-block" id="find_file_uptree"><a class="viewcode-back" href="../../../api/viscid.readers.openggcm.html#viscid.readers.openggcm.find_file_uptree">[docs]</a><span class="k">def</span> <span class="nf">find_file_uptree</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">basename</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">_depth</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Find basename by going up the file tree</span>
+
+<span class="sd">    Keep going up a directory until you find one that has the file</span>
+<span class="sd">    &quot;basename&quot;</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        directory (str): directory to start the search</span>
+<span class="sd">        basename (str): bare file name</span>
+<span class="sd">        max_depth (int): max number of directories to seach</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Relative path to file, or None if not found</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">max_depth</span> <span class="o">=</span> <span class="mi">5</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;this is non-sensicle: {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">directory</span><span class="p">))</span>
+
+    <span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">basename</span><span class="p">)</span>
+    <span class="c"># log_fname = &quot;{0}/{1}.log&quot;.format(d, self.find_info(&quot;run&quot;))</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">fname</span>
+
+    <span class="k">if</span> <span class="n">_depth</span> <span class="o">&gt;</span> <span class="n">max_depth</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span> <span class="o">==</span> <span class="s">&#39;/&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">None</span>
+
+    <span class="k">return</span> <span class="n">find_file_uptree</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s">&quot;..&quot;</span><span class="p">),</span> <span class="n">basename</span><span class="p">,</span>
+                            <span class="n">_depth</span><span class="o">=</span><span class="p">(</span><span class="n">_depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="group_ggcm_files_common"><a class="viewcode-back" href="../../../api/viscid.readers.openggcm.html#viscid.readers.openggcm.group_ggcm_files_common">[docs]</a><span class="k">def</span> <span class="nf">group_ggcm_files_common</span><span class="p">(</span><span class="n">detector</span><span class="p">,</span> <span class="n">fnames</span><span class="p">):</span>
+    <span class="n">infolst</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">fnames</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">detector</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">grps</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">runname</span><span class="o">=</span><span class="n">grps</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ftype</span><span class="o">=</span><span class="n">grps</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                 <span class="n">fname</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">string</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">d</span><span class="p">[</span><span class="s">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">grps</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+            <span class="c"># grps[2] is none for &quot;RUN.3d.xdmf&quot; files</span>
+            <span class="n">d</span><span class="p">[</span><span class="s">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">infolst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+    <span class="c"># careful with sorting, only consecutive files will be grouped</span>
+    <span class="n">infolst</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="s">&quot;time&quot;</span><span class="p">))</span>
+    <span class="n">infolst</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="s">&quot;ftype&quot;</span><span class="p">))</span>
+    <span class="n">infolst</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="s">&quot;runname&quot;</span><span class="p">))</span>
+
+    <span class="n">info_groups</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">info_group</span> <span class="o">=</span> <span class="p">[</span><span class="n">infolst</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">infolst</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">last</span> <span class="o">=</span> <span class="n">info_group</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">info</span><span class="p">[</span><span class="s">&#39;runname&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">last</span><span class="p">[</span><span class="s">&#39;runname&#39;</span><span class="p">]</span> <span class="ow">and</span> \
+           <span class="n">info</span><span class="p">[</span><span class="s">&#39;ftype&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">last</span><span class="p">[</span><span class="s">&#39;ftype&#39;</span><span class="p">]:</span>
+            <span class="n">info_group</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">info_groups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info_group</span><span class="p">)</span>
+            <span class="n">info_group</span> <span class="o">=</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span>
+    <span class="n">info_groups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info_group</span><span class="p">)</span>
+
+    <span class="c"># turn info_groups into groups of just file names</span>
+    <span class="n">groups</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">info_group</span> <span class="ow">in</span> <span class="n">info_groups</span><span class="p">:</span>
+        <span class="n">groups</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">info</span><span class="p">[</span><span class="s">&#39;fname&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">info_group</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">groups</span>
+
+
+<span class="c"># these are just functions because refrences to instance methods can&#39;t be pickled,</span>
+<span class="c"># so grids couldn&#39;t be pickled over to other precesses</span></div>
+<div class="viewcode-block" id="mhd2gse_field_scalar_m1"><a class="viewcode-back" href="../../../api/viscid.readers.openggcm.html#viscid.readers.openggcm.mhd2gse_field_scalar_m1">[docs]</a><span class="k">def</span> <span class="nf">mhd2gse_field_scalar_m1</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">crds</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">comp_slc</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                            <span class="n">copy_on_transform</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>  <span class="c"># pylint: disable=unused-argument</span>
+    <span class="c"># This is always copied since the -1.0 * arr will need new</span>
+    <span class="c"># memory anyway</span>
+    <span class="c"># a = np.array(arr[:, ::-1, ::-1], copy=False)</span>
+    <span class="k">if</span> <span class="n">copy_on_transform</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">_has_numexpr</span><span class="p">:</span>
+            <span class="n">m1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">1.0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>  <span class="c"># pylint: disable=unused-variable</span>
+            <span class="n">arr</span> <span class="o">=</span> <span class="n">numexpr</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="s">&quot;arr * m1&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">arr</span> <span class="o">*=</span> <span class="o">-</span><span class="mf">1.0</span>
+    <span class="k">return</span> <span class="n">arr</span>
+</div>
+<div class="viewcode-block" id="mhd2gse_field_scalar"><a class="viewcode-back" href="../../../api/viscid.readers.openggcm.html#viscid.readers.openggcm.mhd2gse_field_scalar">[docs]</a><span class="k">def</span> <span class="nf">mhd2gse_field_scalar</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">crds</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">comp_slc</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                         <span class="n">copy_on_transform</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="c"># Note: field._data will be set to whatever is returned (after</span>
+    <span class="c"># being reshaped to the crd shape), so if you return a view,</span>
+    <span class="c"># field._data will be a view</span>
+    <span class="k">if</span> <span class="n">copy_on_transform</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">arr</span>
+</div>
+<div class="viewcode-block" id="mhd2gse_field_vector"><a class="viewcode-back" href="../../../api/viscid.readers.openggcm.html#viscid.readers.openggcm.mhd2gse_field_vector">[docs]</a><span class="k">def</span> <span class="nf">mhd2gse_field_vector</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">crds</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">comp_slc</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                         <span class="n">copy_on_transform</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">layout</span>
+    <span class="n">shp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">crds</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">layout</span> <span class="o">==</span> <span class="n">field</span><span class="o">.</span><span class="n">LAYOUT_INTERLACED</span><span class="p">:</span>
+        <span class="n">shp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">layout</span> <span class="o">==</span> <span class="n">field</span><span class="o">.</span><span class="n">LAYOUT_FLAT</span><span class="p">:</span>
+        <span class="n">shp</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;well what am i looking at then...&quot;</span><span class="p">)</span>
+    <span class="n">factor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">shp</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">comp_slc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">tmpslc</span> <span class="o">=</span> <span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span> <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">comp_slc</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">shp</span><span class="p">]</span>
+        <span class="n">factor</span> <span class="o">=</span> <span class="n">factor</span><span class="p">[</span><span class="n">tmpslc</span><span class="p">]</span>
+    <span class="c"># print(&quot;** factor&quot;, factor.shape, factor.flatten())</span>
+    <span class="k">if</span> <span class="n">copy_on_transform</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">_has_numexpr</span><span class="p">:</span>
+            <span class="n">arr</span> <span class="o">=</span> <span class="n">numexpr</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="s">&quot;arr * factor&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span> <span class="o">*</span> <span class="n">factor</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">arr</span> <span class="o">*=</span> <span class="n">factor</span>
+    <span class="k">return</span> <span class="n">arr</span>
+
+<span class="c"># def mhd2gse_crds(crds, arr, copy_on_transform=False):  # pylint: disable=unused-argument</span>
+<span class="c">#     # print(&quot;transforming crds&quot;)</span>
+<span class="c">#     raise RuntimeError(&quot;This functionality is now in crds&quot;)</span>
+<span class="c">#     return np.array(-1.0 * arr[::-1], copy=copy_on_transform)</span>
+
+</div>
+<div class="viewcode-block" id="GGCMGrid"><a class="viewcode-back" href="../../../api/viscid.readers.openggcm.html#viscid.readers.openggcm.GGCMGrid">[docs]</a><span class="k">class</span> <span class="nc">GGCMGrid</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">Grid</span><span class="p">):</span>
+    <span class="sd">r&quot;&quot;&quot; This defines some cool openggcm convinience stuff...</span>
+<span class="sd">    The following attributes can be set by saying</span>
+
+<span class="sd">        ``viscid.grid.readers.openggcm.GGCMGrid.flag = value``.</span>
+
+<span class="sd">    This should be done before a call to readers.load_file so that all</span>
+<span class="sd">    grids that are instantiated have the flags you want.</span>
+
+<span class="sd">    Derived quantities accessable by dictionary lookup</span>
+<span class="sd">        - T: Temperature, for now, just pressure / density</span>
+<span class="sd">        - bx, by, bz: CC mag field components, if not already stored by</span>
+<span class="sd">          component)</span>
+<span class="sd">        - b: mag field as vector, layout affected by</span>
+<span class="sd">          GGCMGrid.derived_vector_layout</span>
+<span class="sd">        - v: velocity as vector, same idea as b</span>
+<span class="sd">        - beta: plasma beta, just pp/b^2</span>
+<span class="sd">        - psi: flux function (only works for 2d files/grids)</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        mhd_to_gse_on_read (bool, str): flips arrays on load to be in</span>
+<span class="sd">            GSE crds. If &#39;auto&#39;, then try to use the runtime parameters</span>
+<span class="sd">            to figure out if conversion is needed; auto requires</span>
+<span class="sd">            reading the logfile. (default is False)</span>
+<span class="sd">        copy_on_transform (bool): True means array will be contiguous</span>
+<span class="sd">            after transform (if one is done), but makes data load</span>
+<span class="sd">            50\%-60\% slower (default is True)</span>
+<span class="sd">        force_vector_layout (str): inherited from grid.Grid, enforces</span>
+<span class="sd">            layout for vector fields on load (default is</span>
+<span class="sd">            :py:const:`viscid.field.LAYOUT_DEFAULT`)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_flip_vect_comp_names</span> <span class="o">=</span> <span class="s">&quot;bx, by, b1x, b1y, &quot;</span> \
+                            <span class="s">&quot;vx, vy, rv1x, rv1y, &quot;</span> \
+                            <span class="s">&quot;jx, jy, ex, ey, ex_cc, ey_cc&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;, &#39;</span><span class="p">)</span>
+    <span class="n">_flip_vect_names</span> <span class="o">=</span> <span class="s">&quot;v, b, j, xj&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;, &#39;</span><span class="p">)</span>
+    <span class="c"># _flip_vect_comp_names = []</span>
+    <span class="c"># _flip_vect_names = []</span>
+
+    <span class="n">mhd_to_gse_on_read</span> <span class="o">=</span> <span class="bp">False</span>  <span class="c"># True, False, auto, or auto_true</span>
+    <span class="n">copy_on_transform</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="k">def</span> <span class="nf">_do_mhd_to_gse_on_read</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return True if we &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mhd_to_gse_on_read</span><span class="p">,</span> <span class="n">string_types</span><span class="p">):</span>
+            <span class="c"># we already know what this data file needs</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_info</span><span class="p">(</span><span class="s">&quot;_viscid_do_mhd_to_gse_on_read&quot;</span><span class="p">):</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">find_info</span><span class="p">(</span><span class="s">&quot;_viscid_do_mhd_to_gse_on_read&quot;</span><span class="p">)</span>
+
+            <span class="c"># what are we asking for?</span>
+            <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mhd_to_gse_on_read</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;auto&quot;</span><span class="p">):</span>
+                <span class="c"># setup the default</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">&quot;true&quot;</span><span class="p">):</span>
+                    <span class="n">ret</span> <span class="o">=</span> <span class="bp">True</span>
+
+                <span class="c"># sanity check the logfile stuffs</span>
+                <span class="n">log_fname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find_info</span><span class="p">(</span><span class="s">&quot;_viscid_log_fname&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">log_fname</span> <span class="ow">is</span> <span class="bp">False</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;If you&#39;re using &#39;auto&#39; for mhd-&gt;gse &quot;</span>
+                                       <span class="s">&quot;conversion, reading the logfile &quot;</span>
+                                       <span class="s">&quot;MUST be turned on.&quot;</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">log_fname</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Tried to determine coordinate system using &quot;</span>
+                                <span class="s">&quot;logfile parameters, but no logfile found. &quot;</span>
+                                <span class="s">&quot;Copy over the log file to use auto mhd-&gt;gse &quot;</span>
+                                <span class="s">&quot;conversion. (Using default {0})&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ret</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c"># ok, we want auto, and we have a logfile so let&#39;s figure</span>
+                    <span class="c"># out the current layout</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="c"># if we&#39;re using a mirdip IC, and low edge is at least</span>
+                        <span class="c"># twice smaller than the high edge, then assume</span>
+                        <span class="c"># it&#39;s a magnetosphere box with xl &lt; 0.0 is the sunward</span>
+                        <span class="c"># edge in &quot;MHD&quot; coordinates</span>
+                        <span class="n">is_openggcm</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">find_info</span><span class="p">(</span><span class="s">&#39;ggcm_mhd_type&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s">&quot;ggcm&quot;</span><span class="p">)</span>
+                        <span class="c"># this 2nd check is in case the ggcm_mhd view in the</span>
+                        <span class="c"># log file is mangled... this happens sometimes</span>
+                        <span class="n">ic_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find_info</span><span class="p">(</span><span class="s">&#39;ggcm_mhd_ic_type&#39;</span><span class="p">)</span>
+                        <span class="n">is_openggcm</span> <span class="o">|=</span> <span class="p">(</span><span class="n">ic_type</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;mirdip&quot;</span><span class="p">))</span>
+                        <span class="n">xl</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">find_info</span><span class="p">(</span><span class="s">&#39;mrc_crds_l&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+                        <span class="n">xh</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">find_info</span><span class="p">(</span><span class="s">&#39;mrc_crds_h&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+                        <span class="k">if</span> <span class="n">is_openggcm</span> <span class="ow">and</span> <span class="n">xl</span> <span class="o">&lt;</span> <span class="mf">0.0</span> <span class="ow">and</span> <span class="n">xh</span> <span class="o">&gt;</span> <span class="mf">0.0</span> <span class="ow">and</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">xl</span> <span class="o">&lt;</span> <span class="n">xh</span><span class="p">:</span>
+                            <span class="n">ret</span> <span class="o">=</span> <span class="bp">True</span>
+                    <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Could not determine coordiname system; &quot;</span>
+                                    <span class="s">&quot;either the logfile is mangled, or &quot;</span>
+                                    <span class="s">&quot;the libmrc options I&#39;m using in infer &quot;</span>
+                                    <span class="s">&quot;crd system have changed (</span><span class="si">%s</span><span class="s">)&quot;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_info</span><span class="p">(</span><span class="s">&quot;_viscid_do_mhd_to_gse_on_read&quot;</span><span class="p">,</span> <span class="n">ret</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">ret</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Invalid value for mhd_to_gse_on_read: &quot;</span>
+                                 <span class="s">&quot;&#39;{0}&#39;; valid choices: (True, False, auto, &quot;</span>
+                                 <span class="s">&quot;auto_true)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mhd_to_gse_on_read</span><span class="p">))</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mhd_to_gse_on_read</span>
+
+<div class="viewcode-block" id="GGCMGrid.set_crds"><a class="viewcode-back" href="../../../api/viscid.readers.openggcm.html#viscid.readers.openggcm.GGCMGrid.set_crds">[docs]</a>    <span class="k">def</span> <span class="nf">set_crds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">crds_object</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_do_mhd_to_gse_on_read</span><span class="p">():</span>
+            <span class="c"># transform_dict = {}</span>
+            <span class="c"># transform_dict[&#39;y&#39;] = mhd2gse_crds</span>
+            <span class="c"># transform_dict[&#39;x&#39;] = mhd2gse_crds</span>
+            <span class="c"># crds_object.transform_funcs = transform_dict</span>
+            <span class="c"># crds_object.transform_kwargs = dict(copy_on_transform=self.copy_on_transform)</span>
+            <span class="n">crds_object</span><span class="o">.</span><span class="n">reflect_axes</span> <span class="o">=</span> <span class="s">&quot;xy&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GGCMGrid</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">set_crds</span><span class="p">(</span><span class="n">crds_object</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="GGCMGrid.add_field"><a class="viewcode-back" href="../../../api/viscid.readers.openggcm.html#viscid.readers.openggcm.GGCMGrid.add_field">[docs]</a>    <span class="k">def</span> <span class="nf">add_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">fields</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_do_mhd_to_gse_on_read</span><span class="p">():</span>
+                <span class="c"># what a pain... vector components also need to be flipped</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">VectorField</span><span class="p">):</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">post_reshape_transform_func</span> <span class="o">=</span> <span class="n">mhd2gse_field_vector</span>
+                <span class="k">elif</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_flip_vect_comp_names</span><span class="p">:</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">post_reshape_transform_func</span> <span class="o">=</span> <span class="n">mhd2gse_field_scalar_m1</span>
+                <span class="k">elif</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_flip_vect_names</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s">&quot;this shouldn&#39;t happen&quot;</span><span class="p">)</span>
+                    <span class="c"># f.post_reshape_transform_func = mhd2gse_field_vector</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">post_reshape_transform_func</span> <span class="o">=</span> <span class="n">mhd2gse_field_scalar</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">transform_func_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">copy_on_transform</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">copy_on_transform</span><span class="p">)</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s">&quot;crd_system&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;gse&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s">&quot;crd_system&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;mhd&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GGCMGrid</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">add_field</span><span class="p">(</span><span class="o">*</span><span class="n">fields</span><span class="p">)</span>
+</div>
+    <span class="k">def</span> <span class="nf">_get_T</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">T</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&quot;pp&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="p">[</span><span class="s">&quot;rr&quot;</span><span class="p">]</span>
+        <span class="n">T</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;T&quot;</span>
+        <span class="n">T</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">&quot;T&quot;</span>
+        <span class="k">return</span> <span class="n">T</span>
+
+    <span class="k">def</span> <span class="nf">_get_bx</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;b&#39;</span><span class="p">][</span><span class="s">&#39;x&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_get_by</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;b&#39;</span><span class="p">][</span><span class="s">&#39;y&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_get_bz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;b&#39;</span><span class="p">][</span><span class="s">&#39;z&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_get_vx</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;v&#39;</span><span class="p">][</span><span class="s">&#39;x&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_get_vy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;v&#39;</span><span class="p">][</span><span class="s">&#39;y&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_get_vz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;v&#39;</span><span class="p">][</span><span class="s">&#39;z&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_assemble_vector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_name</span><span class="p">,</span> <span class="n">comp_names</span><span class="o">=</span><span class="s">&quot;xyz&quot;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+                         <span class="n">forget_source</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">forget_source</span><span class="o">=</span><span class="n">forget_source</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="c"># caching behavior depends on self.longterm_field_caches</span>
+        <span class="n">comps</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="p">[</span><span class="n">base_name</span> <span class="o">+</span> <span class="n">c</span> <span class="o">+</span> <span class="n">suffix</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comp_names</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">field</span><span class="o">.</span><span class="n">scalar_fields_to_vector</span><span class="p">(</span><span class="n">comps</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">base_name</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_b</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assemble_vector</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="n">_force_layout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">force_vector_layout</span><span class="p">,</span>
+                                     <span class="n">pretty_name</span><span class="o">=</span><span class="s">&quot;B&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_v</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assemble_vector</span><span class="p">(</span><span class="s">&quot;v&quot;</span><span class="p">,</span> <span class="n">_force_layout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">force_vector_layout</span><span class="p">,</span>
+                                     <span class="n">pretty_name</span><span class="o">=</span><span class="s">&quot;V&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_e</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assemble_vector</span><span class="p">(</span><span class="s">&quot;e&quot;</span><span class="p">,</span> <span class="n">_force_layout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">force_vector_layout</span><span class="p">,</span>
+                                     <span class="n">pretty_name</span><span class="o">=</span><span class="s">&quot;E&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_e_cc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assemble_vector</span><span class="p">(</span><span class="s">&quot;e&quot;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s">&quot;_cc&quot;</span><span class="p">,</span>
+                                     <span class="n">_force_layout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">force_vector_layout</span><span class="p">,</span>
+                                     <span class="n">pretty_name</span><span class="o">=</span><span class="s">&quot;E&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_j</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assemble_vector</span><span class="p">(</span><span class="s">&quot;j&quot;</span><span class="p">,</span> <span class="n">_force_layout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">force_vector_layout</span><span class="p">,</span>
+                                     <span class="n">pretty_name</span><span class="o">=</span><span class="s">&quot;J&quot;</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_calc_mag</span><span class="p">(</span><span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">vz</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">_has_numexpr</span><span class="p">:</span>
+            <span class="n">vmag</span> <span class="o">=</span> <span class="n">numexpr</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="s">&quot;sqrt(vx**2 + vy**2 + vz**2)&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">vx</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">vmag</span><span class="p">,</span> <span class="n">fldtype</span><span class="o">=</span><span class="s">&quot;Scalar&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">vmag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">vx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">vy</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">vz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">vmag</span>
+
+    <span class="k">def</span> <span class="nf">_get_bmag</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># caching behavior depends on self.longterm_field_caches</span>
+        <span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">bz</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;bx&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;by&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;bz&#39;</span><span class="p">]</span>
+        <span class="n">bmag</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc_mag</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">bz</span><span class="p">)</span>
+        <span class="n">bmag</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;|B|&quot;</span>
+        <span class="k">return</span> <span class="n">bmag</span>
+
+    <span class="k">def</span> <span class="nf">_get_jmag</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># caching behavior depends on self.longterm_field_caches</span>
+        <span class="n">jx</span><span class="p">,</span> <span class="n">jy</span><span class="p">,</span> <span class="n">jz</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;jx&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;jy&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;jz&#39;</span><span class="p">]</span>
+        <span class="n">jmag</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc_mag</span><span class="p">(</span><span class="n">jx</span><span class="p">,</span> <span class="n">jy</span><span class="p">,</span> <span class="n">jz</span><span class="p">)</span>
+        <span class="n">jmag</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;|J|&quot;</span>
+        <span class="k">return</span> <span class="n">jmag</span>
+
+    <span class="k">def</span> <span class="nf">_get_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># caching behavior depends on self.longterm_field_caches</span>
+        <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">vz</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;vx&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;vy&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;vz&#39;</span><span class="p">]</span>
+        <span class="n">speed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc_mag</span><span class="p">(</span><span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">vz</span><span class="p">)</span>
+        <span class="n">speed</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;speed&quot;</span>
+        <span class="n">speed</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">&quot;|V|&quot;</span>
+        <span class="k">return</span> <span class="n">speed</span>
+
+    <span class="k">def</span> <span class="nf">_get_beta</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># caching behavior depends on self.longterm_field_caches</span>
+        <span class="k">return</span> <span class="n">plasma</span><span class="o">.</span><span class="n">calc_beta</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="s">&#39;pp&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;b&#39;</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">_get_psi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">B</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;b&#39;</span><span class="p">]</span>
+
+        <span class="n">rev</span> <span class="o">=</span> <span class="bp">True</span> <span class="k">if</span> <span class="n">B</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s">&quot;crd_system&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;gse&quot;</span> <span class="k">else</span> <span class="bp">False</span>
+        <span class="n">psi</span> <span class="o">=</span> <span class="n">plasma</span><span class="o">.</span><span class="n">calc_psi</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="nb">reversed</span><span class="o">=</span><span class="n">rev</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">psi</span>
+
+</div>
+<div class="viewcode-block" id="GGCMFile"><a class="viewcode-back" href="../../../api/viscid.readers.openggcm.html#viscid.readers.openggcm.GGCMFile">[docs]</a><span class="k">class</span> <span class="nc">GGCMFile</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>  <span class="c"># pylint: disable=abstract-method</span>
+    <span class="sd">&quot;&quot;&quot;Mixin some GGCM convenience stuff</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        read_log_file (bool): search for a log file to load some of the</span>
+<span class="sd">            libmrc runtime parameters. This does not read parameters</span>
+<span class="sd">            from all libmrc classes, but can be customized with</span>
+<span class="sd">            :py:const`viscid.readers.ggcm_logfile.GGCMLogFile.</span>
+<span class="sd">            watched_classes`. Defaults to False for performance.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_grid_type</span> <span class="o">=</span> <span class="n">GGCMGrid</span>
+    <span class="n">_iono</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="n">_already_warned_about_logfile</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="c"># this can be set to true if these parameters are needed</span>
+    <span class="c"># i thought that reading a log file over sshfs would be a big</span>
+    <span class="c"># bottle neck, but it seems opening files over sshfs is appropriately</span>
+    <span class="c"># buffered, so maybe it&#39;s no big deal since we&#39;re only reading the</span>
+    <span class="c"># &quot;views&quot; printed at the beginning anyway</span>
+    <span class="n">read_log_file</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="n">_collection</span> <span class="o">=</span> <span class="bp">None</span>
+
+<div class="viewcode-block" id="GGCMFile.read_logfile"><a class="viewcode-back" href="../../../api/viscid.readers.openggcm.html#viscid.readers.openggcm.GGCMFile.read_logfile">[docs]</a>    <span class="k">def</span> <span class="nf">read_logfile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_log_file</span><span class="p">:</span>
+            <span class="n">log_basename</span> <span class="o">=</span> <span class="s">&quot;{0}.log&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">find_info</span><span class="p">(</span><span class="s">&#39;run&#39;</span><span class="p">))</span>
+            <span class="c"># FYI, default max_depth should be 8</span>
+            <span class="n">log_fname</span> <span class="o">=</span> <span class="n">find_file_uptree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dirname</span><span class="p">,</span> <span class="n">log_basename</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">log_fname</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">log_fname</span> <span class="o">=</span> <span class="n">find_file_uptree</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">,</span> <span class="n">log_basename</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">log_fname</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">log_fname</span> <span class="o">=</span> <span class="n">find_file_uptree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dirname</span><span class="p">,</span> <span class="s">&quot;log.txt&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">log_fname</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">log_fname</span> <span class="o">=</span> <span class="n">find_file_uptree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dirname</span><span class="p">,</span> <span class="s">&quot;log.log&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">log_fname</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">log_fname</span> <span class="o">=</span> <span class="n">find_file_uptree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dirname</span><span class="p">,</span> <span class="s">&quot;log&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">log_fname</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_info</span><span class="p">(</span><span class="s">&quot;_viscid_log_fname&quot;</span><span class="p">,</span> <span class="n">log_fname</span><span class="p">)</span>
+
+                <span class="k">with</span> <span class="n">GGCMLogFile</span><span class="p">(</span><span class="n">log_fname</span><span class="p">)</span> <span class="k">as</span> <span class="n">log_f</span><span class="p">:</span>
+                    <span class="c"># self._info.update(log_f.info)</span>
+                    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">log_f</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">update_info</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c"># print(&quot;**&quot;, log_f)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_info</span><span class="p">(</span><span class="s">&quot;_viscid_log_fname&quot;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">GGCMFile</span><span class="o">.</span><span class="n">_already_warned_about_logfile</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;You wanted to read parameters from the &quot;</span>
+                                <span class="s">&quot;logfile, but I couldn&#39;t find one. Maybe &quot;</span>
+                                <span class="s">&quot;you need to copy it from somewhere?&quot;</span><span class="p">)</span>
+                    <span class="n">GGCMFile</span><span class="o">.</span><span class="n">_already_warned_about_logfile</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_info</span><span class="p">(</span><span class="s">&quot;_viscid_log_fname&quot;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+</div>
+    <span class="k">def</span> <span class="nf">_get_dipoletime_as_datetime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c"># FIXME: this should be STARTTIME, but that&#39;s not part</span>
+            <span class="c"># of a libmrc object</span>
+            <span class="n">diptime</span> <span class="o">=</span> <span class="s">&quot;:&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">find_info</span><span class="p">(</span><span class="s">&#39;ggcm_dipole_dipoltime&#39;</span><span class="p">))</span>
+            <span class="n">dipoletime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">diptime</span><span class="p">,</span> <span class="s">&quot;%Y:%m:</span><span class="si">%d</span><span class="s">:%H:%M:%S.</span><span class="si">%f</span><span class="s">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s">&quot;Can&#39;t use UT times without reading &quot;</span>
+                           <span class="s">&quot;a logfile that has a value for &quot;</span>
+                           <span class="s">&quot;ggcm_dipole_dipoltime&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Dipoletime from the logfile is mangled &quot;</span>
+                             <span class="s">&quot;({0}). You may need to fix the log file&quot;</span>
+                             <span class="s">&quot;by hand.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">diptime</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">dipoletime</span>
+
+    <span class="k">def</span> <span class="nf">_sub_translate_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">string_types</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="s">&quot;UT%Y:%m:</span><span class="si">%d</span><span class="s">:%H:%M:%S.</span><span class="si">%f</span><span class="s">&quot;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">year</span> <span class="o">&lt;</span> <span class="mi">1967</span><span class="p">:</span>
+                <span class="c"># times &lt; 1967 are not valid GGCM UT times, so pass them to</span>
+                <span class="c"># the super class</span>
+                <span class="k">return</span> <span class="bp">NotImplemented</span>
+            <span class="n">dipoletime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_dipoletime_as_datetime</span><span class="p">()</span>
+            <span class="c"># Why was this relative to time 0?</span>
+            <span class="c"># delta = dipoletime - datetime.strptime(&quot;00&quot;, &quot;%S&quot;)</span>
+            <span class="n">delta</span> <span class="o">=</span> <span class="n">time</span> <span class="o">-</span> <span class="n">dipoletime</span>
+            <span class="k">return</span> <span class="n">delta</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+    <span class="k">def</span> <span class="nf">_sub_format_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">&quot;.02f&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Args:</span>
+<span class="sd">            t (float): time</span>
+<span class="sd">            info (dict): info dict</span>
+<span class="sd">            style (str): for this method, can be anything</span>
+<span class="sd">                :func:`viscid.vutil.format_time` can understand, or</span>
+<span class="sd">                &#39;UT&#39; to print a UT time</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            string or NotImplemented if style is not understood</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">style</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;ut&quot;</span><span class="p">):</span>
+            <span class="n">style</span> <span class="o">=</span> <span class="n">style</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">dipoletime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_dipoletime_as_datetime</span><span class="p">()</span>
+            <span class="n">ut_time</span> <span class="o">=</span> <span class="n">dipoletime</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_as_timedelta</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">vutil</span><span class="o">.</span><span class="n">format_time</span><span class="p">(</span><span class="n">ut_time</span><span class="p">,</span> <span class="n">style</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+    <span class="k">def</span> <span class="nf">_sub_time_as_datetime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">epoch</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">dipoletime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_dipoletime_as_datetime</span><span class="p">()</span>
+            <span class="n">ut_time</span> <span class="o">=</span> <span class="n">dipoletime</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_as_timedelta</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">ut_time</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+            <span class="k">pass</span>
+        <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+</div>
+<div class="viewcode-block" id="GGCMFileFortran"><a class="viewcode-back" href="../../../api/viscid.readers.openggcm.html#viscid.readers.openggcm.GGCMFileFortran">[docs]</a><span class="k">class</span> <span class="nc">GGCMFileFortran</span><span class="p">(</span><span class="n">GGCMFile</span><span class="p">,</span> <span class="n">ContainerFile</span><span class="p">):</span>  <span class="c"># pylint: disable=abstract-method</span>
+    <span class="sd">&quot;&quot;&quot;An abstract class from which jrrle and fortbin files are derived</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        All subclasses should implement a _shape_discovery_hack</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_detector</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="n">_crds</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">_fld_templates</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">grid2</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">crds</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">fld_templates</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_crds</span> <span class="o">=</span> <span class="n">crds</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fld_templates</span> <span class="o">=</span> <span class="n">fld_templates</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GGCMFileFortran</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GGCMFileFortran.group_fnames"><a class="viewcode-back" href="../../../api/viscid.readers.openggcm.html#viscid.readers.openggcm.GGCMFileFortran.group_fnames">[docs]</a>    <span class="k">def</span> <span class="nf">group_fnames</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">fnames</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Group File names</span>
+
+<span class="sd">        The default implementation just returns fnames, but some file</span>
+<span class="sd">        types might do something fancy here</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            fnames (list): names that can be logically grouped, as in</span>
+<span class="sd">                a bunch of file names that are different time steps</span>
+<span class="sd">                of a given run</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A list of things that can be given to the constructor of</span>
+<span class="sd">            this class</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">group_ggcm_files_common</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">_detector</span><span class="p">,</span> <span class="n">fnames</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="GGCMFileFortran.load"><a class="viewcode-back" href="../../../api/viscid.readers.openggcm.html#viscid.readers.openggcm.GGCMFileFortran.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_collection</span> <span class="o">=</span> <span class="n">fname</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_collection</span> <span class="o">=</span> <span class="p">[</span><span class="n">fname</span><span class="p">]</span>
+
+        <span class="n">fname0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_collection</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">fname1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">collective_name</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+
+        <span class="c"># info[&#39;run&#39;] is needed for finding the grid2 file</span>
+        <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">fname0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_info</span><span class="p">(</span><span class="s">&#39;run&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_detector</span><span class="p">,</span> <span class="n">basename</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_info</span><span class="p">(</span><span class="s">&#39;fieldtype&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_detector</span><span class="p">,</span> <span class="n">basename</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+
+        <span class="c"># HACKY- setting dirname is done in super().load, but we</span>
+        <span class="c"># need it to read the log file, which needs to happen before</span>
+        <span class="c"># parsing since it sets flags for data transformation and</span>
+        <span class="c"># all that stuff</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dirname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">fname1</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">read_logfile</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GGCMFileFortran</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname1</span><span class="p">)</span>
+</div>
+    <span class="k">def</span> <span class="nf">_parse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># look for and parse grid2 file or whatever else needs be done</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crds</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_crds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_crds</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_collection</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c"># load a single file</span>
+            <span class="n">_grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_file</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fname</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">_grid</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c"># load each file, and add it to the bucket</span>
+            <span class="n">data_temporal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_dataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dset_type</span><span class="o">=</span><span class="s">&quot;temporal&quot;</span><span class="p">,</span>
+                                               <span class="n">name</span><span class="o">=</span><span class="s">&quot;GGCMTemporalCollection&quot;</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fld_templates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_template</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_collection</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+            <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_collection</span><span class="p">:</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_child_file</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">index_handle</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                                          <span class="n">file_type</span><span class="o">=</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span>
+                                          <span class="n">crds</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_crds</span><span class="p">,</span>
+                                          <span class="n">fld_templates</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_fld_templates</span><span class="p">)</span>
+                <span class="n">data_temporal</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="n">data_temporal</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">data_temporal</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<div class="viewcode-block" id="GGCMFileFortran.make_crds"><a class="viewcode-back" href="../../../api/viscid.readers.openggcm.html#viscid.readers.openggcm.GGCMFileFortran.make_crds">[docs]</a>    <span class="k">def</span> <span class="nf">make_crds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_info</span><span class="p">(</span><span class="s">&#39;fieldtype&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s">&#39;iof&#39;</span><span class="p">:</span>
+            <span class="c"># 181, 61</span>
+            <span class="n">nlon</span><span class="p">,</span> <span class="n">nlat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shape_discovery_hack</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_collection</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">crdlst</span> <span class="o">=</span> <span class="p">[[</span><span class="s">&#39;lon&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">360.0</span><span class="p">,</span> <span class="n">nlon</span><span class="p">]],</span>
+                      <span class="p">[</span><span class="s">&#39;lat&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">180.0</span><span class="p">,</span> <span class="n">nlat</span><span class="p">]]]</span>
+            <span class="k">return</span> <span class="n">wrap_crds</span><span class="p">(</span><span class="s">&quot;uniform_spherical&quot;</span><span class="p">,</span> <span class="n">crdlst</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_grid2</span><span class="p">()</span>
+</div>
+    <span class="k">def</span> <span class="nf">_shape_discovery_hack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Used if we can&#39;t get data&#39;s shape from grid2 file</span>
+
+<span class="sd">        In short, for subclasses, they should read the metadata for</span>
+<span class="sd">        the first field and return the data shape. This is not elegant,</span>
+<span class="sd">        and it should be implemented by all subclasses.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple of ints, shape of a field in the file</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+<div class="viewcode-block" id="GGCMFileFortran.read_grid2"><a class="viewcode-back" href="../../../api/viscid.readers.openggcm.html#viscid.readers.openggcm.GGCMFileFortran.read_grid2">[docs]</a>    <span class="k">def</span> <span class="nf">read_grid2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># TODO: iof files can be hacked in here</span>
+        <span class="n">grid2_basename</span> <span class="o">=</span> <span class="s">&quot;{0}.grid2&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">find_info</span><span class="p">(</span><span class="s">&#39;run&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid2</span> <span class="o">=</span> <span class="n">find_file_uptree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dirname</span><span class="p">,</span> <span class="n">grid2_basename</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid2</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">grid2</span> <span class="o">=</span> <span class="n">find_file_uptree</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">,</span> <span class="n">grid2_basename</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid2</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s">&quot;Could not find a grid2 file for &quot;</span>
+                          <span class="s">&quot;{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fname</span><span class="p">))</span>
+
+        <span class="c"># load the cell centered grid</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid2</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">:</span>
+            <span class="n">nx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">fin</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">gx</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">islice</span><span class="p">(</span><span class="n">fin</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="n">gx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">gx</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">&#39;f4&#39;</span><span class="p">)</span>
+
+            <span class="n">ny</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">fin</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">gy</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">islice</span><span class="p">(</span><span class="n">fin</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="n">gy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">gy</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">&#39;f4&#39;</span><span class="p">)</span>
+
+            <span class="n">nz</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">fin</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">gz</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">islice</span><span class="p">(</span><span class="n">fin</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nz</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="n">gz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">gz</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">&#39;f4&#39;</span><span class="p">)</span>
+
+        <span class="n">xnc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">gx</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gx</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">ync</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">gy</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gy</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">znc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">gz</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gz</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">cc</span><span class="p">,</span> <span class="n">nc</span> <span class="ow">in</span> <span class="p">[(</span><span class="n">gx</span><span class="p">,</span> <span class="n">xnc</span><span class="p">),</span> <span class="p">(</span><span class="n">gy</span><span class="p">,</span> <span class="n">ync</span><span class="p">),</span> <span class="p">(</span><span class="n">gz</span><span class="p">,</span> <span class="n">znc</span><span class="p">)]:</span>
+            <span class="n">hd</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">cc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">cc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">nc</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">cc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">hd</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">hd</span><span class="p">,</span> <span class="n">cc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">hd</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+
+        <span class="c"># for 2d files</span>
+        <span class="n">crdlst</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">dim</span><span class="p">,</span> <span class="n">nc</span><span class="p">,</span> <span class="n">cc</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="s">&quot;xyz&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">xnc</span><span class="p">,</span> <span class="n">ync</span><span class="p">,</span> <span class="n">znc</span><span class="p">],</span> <span class="p">[</span><span class="n">gx</span><span class="p">,</span> <span class="n">gy</span><span class="p">,</span> <span class="n">gz</span><span class="p">]):</span>
+            <span class="n">fieldtype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_info</span><span class="p">(</span><span class="s">&#39;fieldtype&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">fieldtype</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;p&#39;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_info</span><span class="p">(</span><span class="s">&#39;plane&#39;</span><span class="p">,</span> <span class="n">fieldtype</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">fieldtype</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">dim</span><span class="p">:</span>
+                    <span class="n">planeloc</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">fieldtype</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;_&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+                    <span class="n">planeloc</span> <span class="o">/=</span> <span class="mi">10</span>  <span class="c"># value is in tenths of Re</span>
+                    <span class="c"># FIXME: it is not good to depend on an attribute of</span>
+                    <span class="c"># GGCMGrid like this... it could lead to unexpected</span>
+                    <span class="c"># behavior if the user starts playing with the value</span>
+                    <span class="c"># of an instance, but I&#39;m not sure in practice how or why</span>
+                    <span class="c"># since reading the grid should happen fairly early in</span>
+                    <span class="c"># the construction process</span>
+                    <span class="k">if</span> <span class="n">GGCMGrid</span><span class="o">.</span><span class="n">mhd_to_gse_on_read</span> <span class="ow">and</span> <span class="n">dim</span> <span class="ow">in</span> <span class="s">&#39;xy&#39;</span><span class="p">:</span>
+                        <span class="n">planeloc</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">set_info</span><span class="p">(</span><span class="s">&#39;planeloc&#39;</span><span class="p">,</span> <span class="n">planeloc</span><span class="p">)</span>
+                    <span class="n">ccind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">cc</span> <span class="o">-</span> <span class="n">planeloc</span><span class="p">))</span>
+                    <span class="n">nc</span> <span class="o">=</span> <span class="n">nc</span><span class="p">[</span><span class="n">ccind</span><span class="p">:</span><span class="n">ccind</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span>
+            <span class="n">crdlst</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">dim</span><span class="p">,</span> <span class="n">nc</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">wrap_crds</span><span class="p">(</span><span class="s">&quot;nonuniform_cartesian&quot;</span><span class="p">,</span> <span class="n">crdlst</span><span class="p">)</span>
+
+    <span class="c"># def _parse_many(fnames):</span>
+    <span class="c">#     pass</span>
+
+    <span class="c"># def _parse_single(fnames):</span>
+    <span class="c">#     pass</span>
+
+<span class="c">##</span>
+<span class="c">## EOF</span>
+<span class="c">##</span></div></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

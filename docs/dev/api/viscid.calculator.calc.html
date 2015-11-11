@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.calculator.calc module &mdash; Viscid 0.95.0 dev documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.95.0 dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 dev documentation" href="../index.html" />
+    <link rel="up" title="viscid.calculator package" href="viscid.calculator.html" />
+    <link rel="next" title="viscid.calculator.evaluator module" href="viscid.calculator.evaluator.html" />
+    <link rel="prev" title="viscid.calculator package" href="viscid.calculator.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0 dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../changes.html">ChangeLog</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">viscid.calculator.calc module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-viscid.calculator.calc">
+<span id="viscid-calculator-calc-module"></span><h1>viscid.calculator.calc module<a class="headerlink" href="#module-viscid.calculator.calc" title="Permalink to this headline">¶</a></h1>
+<p>This has a mechanism to dispatch to different backends. You can change the
+order of preference of the backend by changing default_backends.
+TODO: this dispatch mechanism is very simple, maybe something a little more
+flexable would be useful down the line?</p>
+<dl class="function">
+<dt id="viscid.calculator.calc.project_vector">
+<code class="descclassname">viscid.calculator.calc.</code><code class="descname">project_vector</code><span class="sig-paren">(</span><em>a</em>, <em>b</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/calc.html#project_vector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.calculator.calc.project_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns (a dot b) * b hat</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.calculator.calc.project_along_line">
+<code class="descclassname">viscid.calculator.calc.</code><code class="descname">project_along_line</code><span class="sig-paren">(</span><em>line</em>, <em>fld</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/calc.html#project_along_line"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.calculator.calc.project_along_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="viscid.calculator.calc.resample_lines">
+<code class="descclassname">viscid.calculator.calc.</code><code class="descname">resample_lines</code><span class="sig-paren">(</span><em>lines</em>, <em>factor=1</em>, <em>kind='linear'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/calc.html#resample_lines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.calculator.calc.resample_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resample a bunch of lines</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lines</strong> (<em>sequence</em>) &#8211; a list of 3xN ndarrays that are lines</li>
+<li><strong>factor</strong> (<em>float</em>) &#8211; how to resample. 2 will give a point at
+the midpoint of all points, 3 will give two points, etc.
+0.5 will leave half the number of points, etc. This should
+be &gt; 0.0.</li>
+<li><strong>kind</strong> (<em>str</em>) &#8211; How to interpolate; must be a value recognized by
+<code class="xref py py-func docutils literal"><span class="pre">scipy.interpolate.interp1d()</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211;
+List of resampled 3xN ndarrays</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.calculator.calc.integrate_along_line">
+<code class="descclassname">viscid.calculator.calc.</code><code class="descname">integrate_along_line</code><span class="sig-paren">(</span><em>line</em>, <em>fld</em>, <em>reduction='dot'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/calc.html#integrate_along_line"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.calculator.calc.integrate_along_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Integrate the value of fld along a line</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>line</strong> (<em>ndarray</em>) &#8211; 3xN ndarray</li>
+<li><strong>fld</strong> (<a class="reference internal" href="viscid.field.html#viscid.field.Field" title="viscid.field.Field"><em>Field</em></a>) &#8211; Field to interpolate / integrate</li>
+<li><strong>reduction</strong> (<em>str</em>) &#8211; If fld is a vector field, what quantity to
+integrate. Can be &#8220;dot&#8221; to dot the vectors with ds along
+the line, or &#8220;mag&#8221; to integrate the magnitude.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a scalar with the same dtype as fld</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.calculator.calc.integrate_along_lines">
+<code class="descclassname">viscid.calculator.calc.</code><code class="descname">integrate_along_lines</code><span class="sig-paren">(</span><em>lines</em>, <em>fld</em>, <em>reduction='dot'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/calc.html#integrate_along_lines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.calculator.calc.integrate_along_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Integrate the value of fld along a list of lines</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lines</strong> (<em>list</em>) &#8211; list of 3xN ndarrays, N needs not be the same for
+all lines</li>
+<li><strong>fld</strong> (<a class="reference internal" href="viscid.field.html#viscid.field.Field" title="viscid.field.Field"><em>Field</em></a>) &#8211; Field to interpolate / integrate</li>
+<li><strong>reduction</strong> (<em>str</em>) &#8211; If fld is a vector field, what quantity to
+integrate. Can be &#8220;dot&#8221; to dot the vectors with ds along
+the line, or &#8220;mag&#8221; to integrate the magnitude.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">ndarray with shape (len(lines), )</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.calculator.calc.jacobian_at_point">
+<code class="descclassname">viscid.calculator.calc.</code><code class="descname">jacobian_at_point</code><span class="sig-paren">(</span><em>B</em>, <em>x</em>, <em>y</em>, <em>z</em>, <em>dx=None</em>, <em>dy=None</em>, <em>dz=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/calc.html#jacobian_at_point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.calculator.calc.jacobian_at_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the Jacobian at a point</p>
+<p>If dx|dy|dz == None, then their set to the grid spacing
+at the point of interest</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The jacobian as a 3x3 ndarray. The result is in xyz order,
+in other words:<div class="highlight-python"><div class="highlight"><pre>[ [d_x Bx, d_y Bx, d_z Bx],
+  [d_x By, d_y By, d_z By],
+  [d_x Bz, d_y Bz, d_z Bz] ]
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.calculator.calc.jacobian_at_ind">
+<code class="descclassname">viscid.calculator.calc.</code><code class="descname">jacobian_at_ind</code><span class="sig-paren">(</span><em>B</em>, <em>ix</em>, <em>iy</em>, <em>iz</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/calc.html#jacobian_at_ind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.calculator.calc.jacobian_at_ind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the Jacobian at index</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The jacobian as a 3x3 ndarray. The result is in xyz order,
+in other words:<div class="highlight-python"><div class="highlight"><pre>[ [d_x Bx, d_y Bx, d_z Bx],
+  [d_x By, d_y By, d_z By],
+  [d_x Bz, d_y Bz, d_z Bz] ]
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.calculator.calc.jacobian_eig_at_point">
+<code class="descclassname">viscid.calculator.calc.</code><code class="descname">jacobian_eig_at_point</code><span class="sig-paren">(</span><em>B</em>, <em>x</em>, <em>y</em>, <em>z</em>, <em>dx=None</em>, <em>dy=None</em>, <em>dz=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/calc.html#jacobian_eig_at_point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.calculator.calc.jacobian_eig_at_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the eigen vals/vecs of the jacobian</p>
+<dl class="docutils">
+<dt>Returns: evals, evecs (3x3 ndarray)</dt>
+<dd>The evec[:, i] corresponds to evals[i].
+Eigen vectors are returned in xyz order, aka
+evec[:, 0] is [x, y, z] for the 0th eigen vector</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.calculator.calc.jacobian_eig_at_ind">
+<code class="descclassname">viscid.calculator.calc.</code><code class="descname">jacobian_eig_at_ind</code><span class="sig-paren">(</span><em>B</em>, <em>ix</em>, <em>iy</em>, <em>iz</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/calc.html#jacobian_eig_at_ind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.calculator.calc.jacobian_eig_at_ind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the eigen vals/vecs of the jacobian</p>
+<dl class="docutils">
+<dt>Returns: evals, evecs (3x3 ndarray)</dt>
+<dd>The evec[:, i] corresponds to evals[i].
+Eigen vectors are returned in xyz order, aka
+evec[:, 0] is [x, y, z] for the 0th eigen vector</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.calculator.calc.div_at_point">
+<code class="descclassname">viscid.calculator.calc.</code><code class="descname">div_at_point</code><span class="sig-paren">(</span><em>A</em>, <em>x</em>, <em>y</em>, <em>z</em>, <em>dx=None</em>, <em>dy=None</em>, <em>dz=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/calc.html#div_at_point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.calculator.calc.div_at_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns divergence at a point</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.calculator.calc.curl_at_point">
+<code class="descclassname">viscid.calculator.calc.</code><code class="descname">curl_at_point</code><span class="sig-paren">(</span><em>A</em>, <em>x</em>, <em>y</em>, <em>z</em>, <em>dx=None</em>, <em>dy=None</em>, <em>dz=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/calc.html#curl_at_point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.calculator.calc.curl_at_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns curl at point as ndarray with shape (3,) xyz</p>
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/api/viscid.calculator.calc.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

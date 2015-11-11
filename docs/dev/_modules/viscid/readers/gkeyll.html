@@ -1,0 +1,525 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.readers.gkeyll &mdash; Viscid 0.95.0 dev documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.95.0 dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 dev documentation" href="../../../index.html" />
+    <link rel="up" title="viscid.readers" href="../readers.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0 dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../changes.html">ChangeLog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for viscid.readers.gkeyll</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="sd">&quot;&quot;&quot; Wrapper grid for some OpenGGCM convenience &quot;&quot;&quot;</span>
+
+<span class="c"># look at what &#39;copy_on_transform&#39; actually does... the fact</span>
+<span class="c"># that it&#39;s here is awkward</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">division</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">h5py</span>
+    <span class="n">HAS_H5PY</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">HAS_H5PY</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="kn">from</span> <span class="nn">viscid.readers.vfile_bucket</span> <span class="kn">import</span> <span class="n">ContainerFile</span>
+<span class="kn">from</span> <span class="nn">viscid.readers.hdf5</span> <span class="kn">import</span> <span class="n">FileHDF5</span><span class="p">,</span> <span class="n">H5pyDataWrapper</span>
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">grid</span>
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">field</span>
+<span class="kn">from</span> <span class="nn">viscid.coordinate</span> <span class="kn">import</span> <span class="n">wrap_crds</span>
+
+
+<span class="n">base_hydro_names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;rho&#39;</span><span class="p">,</span> <span class="s">&#39;rhoux&#39;</span><span class="p">,</span> <span class="s">&#39;rhouy&#39;</span><span class="p">,</span> <span class="s">&#39;rhouz&#39;</span><span class="p">,</span> <span class="s">&#39;e&#39;</span><span class="p">]</span>
+<span class="n">base_hydro_pretty_names</span> <span class="o">=</span> <span class="p">[</span><span class="s">r&#39;$\rho$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\rhou_x$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\rhou_y$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\rhou_z$&#39;</span><span class="p">,</span>
+                           <span class="s">r&#39;$e$&#39;</span><span class="p">]</span>
+
+<span class="n">base_5m_names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;rho_e&#39;</span><span class="p">,</span> <span class="s">&#39;rhoux_e&#39;</span><span class="p">,</span> <span class="s">&#39;rhouy_e&#39;</span><span class="p">,</span> <span class="s">&#39;rhouz_e&#39;</span><span class="p">,</span> <span class="s">&#39;e_e&#39;</span><span class="p">,</span>
+                 <span class="s">&#39;rho_i&#39;</span><span class="p">,</span> <span class="s">&#39;rhoux_i&#39;</span><span class="p">,</span> <span class="s">&#39;rhouy_i&#39;</span><span class="p">,</span> <span class="s">&#39;rhouz_i&#39;</span><span class="p">,</span> <span class="s">&#39;e_i&#39;</span><span class="p">,</span>
+                 <span class="s">&#39;Ex&#39;</span><span class="p">,</span> <span class="s">&#39;Ey&#39;</span><span class="p">,</span> <span class="s">&#39;Ez&#39;</span><span class="p">,</span> <span class="s">&#39;Bx&#39;</span><span class="p">,</span> <span class="s">&#39;By&#39;</span><span class="p">,</span> <span class="s">&#39;Bz&#39;</span><span class="p">]</span>
+<span class="n">base_5m_pretty_names</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">r&#39;$\rho_e$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\rho u_{x,e}$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\rho u_{y,e}$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\rho u_{z,e}$&#39;</span><span class="p">,</span> <span class="s">r&#39;$e_e$&#39;</span><span class="p">,</span>
+    <span class="s">r&#39;$\rho_i$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\rho u_{x,i}$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\rho u_{y,i}$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\rho u_{z,i}$&#39;</span><span class="p">,</span> <span class="s">r&#39;$e_i$&#39;</span><span class="p">,</span>
+    <span class="s">r&#39;$E_x$&#39;</span><span class="p">,</span> <span class="s">r&#39;$E_y$&#39;</span><span class="p">,</span> <span class="s">r&#39;$E_z$&#39;</span><span class="p">,</span> <span class="s">r&#39;$B_x$&#39;</span><span class="p">,</span> <span class="s">r&#39;$B_y$&#39;</span><span class="p">,</span> <span class="s">r&#39;$B_z$&#39;</span><span class="p">]</span>
+
+<span class="n">base_10m_names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;rho_e&#39;</span><span class="p">,</span> <span class="s">&#39;rhoux_e&#39;</span><span class="p">,</span> <span class="s">&#39;rhouy_e&#39;</span><span class="p">,</span> <span class="s">&#39;rhouz_e&#39;</span><span class="p">,</span>
+                  <span class="s">&#39;pxx_e&#39;</span><span class="p">,</span> <span class="s">&#39;pxy_e&#39;</span><span class="p">,</span> <span class="s">&#39;pxz_e&#39;</span><span class="p">,</span> <span class="s">&#39;pyy_e&#39;</span><span class="p">,</span> <span class="s">&#39;pyz_e&#39;</span><span class="p">,</span> <span class="s">&#39;pzz_e&#39;</span><span class="p">,</span>
+                  <span class="s">&#39;rho_i&#39;</span><span class="p">,</span> <span class="s">&#39;rhoux_i&#39;</span><span class="p">,</span> <span class="s">&#39;rhouy_i&#39;</span><span class="p">,</span> <span class="s">&#39;rhouz_i&#39;</span><span class="p">,</span>
+                  <span class="s">&#39;pxx_i&#39;</span><span class="p">,</span> <span class="s">&#39;pxy_i&#39;</span><span class="p">,</span> <span class="s">&#39;pxz_i&#39;</span><span class="p">,</span> <span class="s">&#39;pyy_i&#39;</span><span class="p">,</span> <span class="s">&#39;pyz_i&#39;</span><span class="p">,</span> <span class="s">&#39;pzz_i&#39;</span><span class="p">,</span>
+                  <span class="s">&#39;Ex&#39;</span><span class="p">,</span> <span class="s">&#39;Ey&#39;</span><span class="p">,</span> <span class="s">&#39;Ez&#39;</span><span class="p">,</span> <span class="s">&#39;Bx&#39;</span><span class="p">,</span> <span class="s">&#39;By&#39;</span><span class="p">,</span> <span class="s">&#39;Bz&#39;</span><span class="p">]</span>
+<span class="n">base_10m_pretty_names</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">r&#39;$\rho_e$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\rho u_{x,e}$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\rho u_{y,e}$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\rho u_{z,e}$&#39;</span><span class="p">,</span>
+    <span class="s">r&#39;$\mathcal{P}_{xx,e}$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\mathcal{P}_{xy,e}$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\mathcal{P}_{xz,e}$&#39;</span><span class="p">,</span>
+    <span class="s">r&#39;$\mathcal{P}_{yy,e}$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\mathcal{P}_{yz,e}$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\mathcal{P}_{zz,e}$&#39;</span><span class="p">,</span>
+    <span class="s">r&#39;$\rho_i$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\rho u_{x,i}$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\rho u_{y,i}$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\rho u_{z,i}$&#39;</span><span class="p">,</span>
+    <span class="s">r&#39;$\mathcal{P}_{xx,i}$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\mathcal{P}_{xy,i}$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\mathcal{P}_{xz,i}$&#39;</span><span class="p">,</span>
+    <span class="s">r&#39;$\mathcal{P}_{yy,i}$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\mathcal{P}_{yz,i}$&#39;</span><span class="p">,</span> <span class="s">r&#39;$\mathcal{P}_{zz,i}$&#39;</span><span class="p">,</span>
+    <span class="s">r&#39;$E_x$&#39;</span><span class="p">,</span> <span class="s">r&#39;$E_y$&#39;</span><span class="p">,</span> <span class="s">r&#39;$E_z$&#39;</span><span class="p">,</span> <span class="s">r&#39;$B_x$&#39;</span><span class="p">,</span> <span class="s">r&#39;$B_y$&#39;</span><span class="p">,</span> <span class="s">r&#39;$B_z$&#39;</span><span class="p">]</span>
+
+<span class="n">_type_info</span> <span class="o">=</span> <span class="p">{</span><span class="nb">len</span><span class="p">(</span><span class="n">base_hydro_names</span><span class="p">):</span> <span class="p">{</span><span class="s">&#39;field_type&#39;</span><span class="p">:</span> <span class="s">&#39;hydro&#39;</span><span class="p">,</span>
+                                      <span class="s">&#39;names&#39;</span><span class="p">:</span> <span class="n">base_hydro_names</span><span class="p">,</span>
+                                      <span class="s">&#39;pretty_names&#39;</span><span class="p">:</span> <span class="n">base_hydro_pretty_names</span><span class="p">},</span>
+              <span class="nb">len</span><span class="p">(</span><span class="n">base_5m_names</span><span class="p">):</span> <span class="p">{</span><span class="s">&#39;field_type&#39;</span><span class="p">:</span> <span class="s">&#39;five-moment&#39;</span><span class="p">,</span>
+                                   <span class="s">&#39;names&#39;</span><span class="p">:</span> <span class="n">base_5m_names</span><span class="p">,</span>
+                                   <span class="s">&#39;pretty_names&#39;</span><span class="p">:</span> <span class="n">base_5m_pretty_names</span><span class="p">},</span>
+              <span class="nb">len</span><span class="p">(</span><span class="n">base_10m_names</span><span class="p">):</span> <span class="p">{</span><span class="s">&#39;field_type&#39;</span><span class="p">:</span> <span class="s">&#39;ten-moment&#39;</span><span class="p">,</span>
+                                    <span class="s">&#39;names&#39;</span><span class="p">:</span> <span class="n">base_10m_names</span><span class="p">,</span>
+                                    <span class="s">&#39;pretty_names&#39;</span><span class="p">:</span> <span class="n">base_10m_pretty_names</span><span class="p">}}</span>
+
+
+<div class="viewcode-block" id="GkeyllGrid"><a class="viewcode-back" href="../../../api/viscid.readers.gkeyll.html#viscid.readers.gkeyll.GkeyllGrid">[docs]</a><span class="k">class</span> <span class="nc">GkeyllGrid</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">Grid</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">_get_ux_e</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ux_e</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;rhoux_e&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;rho_e&#39;</span><span class="p">]</span>
+        <span class="n">ux_e</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;ux_e&#39;</span>
+        <span class="n">ux_e</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">r&#39;$u_{x,e}$&#39;</span>
+        <span class="k">return</span> <span class="n">ux_e</span>
+
+    <span class="k">def</span> <span class="nf">_get_uy_e</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">uy_e</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;rhouy_e&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;rho_e&#39;</span><span class="p">]</span>
+        <span class="n">uy_e</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;uy_e&#39;</span>
+        <span class="n">uy_e</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">r&#39;$u_{y,e}$&#39;</span>
+        <span class="k">return</span> <span class="n">uy_e</span>
+
+    <span class="k">def</span> <span class="nf">_get_uz_e</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">uz_e</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;rhouz_e&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;rho_e&#39;</span><span class="p">]</span>
+        <span class="n">uz_e</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;uz_e&#39;</span>
+        <span class="n">uz_e</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">r&#39;$u_{z,e}$&#39;</span>
+        <span class="k">return</span> <span class="n">uz_e</span>
+
+    <span class="k">def</span> <span class="nf">_get_ux_i</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ux_i</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;rhoux_i&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;rho_i&#39;</span><span class="p">]</span>
+        <span class="n">ux_i</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;ux_i&#39;</span>
+        <span class="n">ux_i</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">r&#39;$u_{x,i}$&#39;</span>
+        <span class="k">return</span> <span class="n">ux_i</span>
+
+    <span class="k">def</span> <span class="nf">_get_uy_i</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">uy_i</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;rhouy_i&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;rho_i&#39;</span><span class="p">]</span>
+        <span class="n">uy_i</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;uy_i&#39;</span>
+        <span class="n">uy_i</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">r&#39;$u_{y,i}$&#39;</span>
+        <span class="k">return</span> <span class="n">uy_i</span>
+
+    <span class="k">def</span> <span class="nf">_get_uz_i</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">uz_i</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;rhouz_i&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;rho_i&#39;</span><span class="p">]</span>
+        <span class="n">uz_i</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;uz_i&#39;</span>
+        <span class="n">uz_i</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="s">r&#39;$u_{z,i}$&#39;</span>
+        <span class="k">return</span> <span class="n">uz_i</span>
+
+</div>
+<div class="viewcode-block" id="GkeyllFile"><a class="viewcode-back" href="../../../api/viscid.readers.gkeyll.html#viscid.readers.gkeyll.GkeyllFile">[docs]</a><span class="k">class</span> <span class="nc">GkeyllFile</span><span class="p">(</span><span class="n">FileHDF5</span><span class="p">,</span> <span class="n">ContainerFile</span><span class="p">):</span>  <span class="c"># pylint: disable=abstract-method</span>
+    <span class="sd">&quot;&quot;&quot;&quot;&quot;&quot;</span>
+    <span class="n">_detector</span> <span class="o">=</span> <span class="s">r&quot;^\s*(.*)_(q)_([0-9]+).(h5)\s*$&quot;</span>
+    <span class="n">_grid_type</span> <span class="o">=</span> <span class="n">GkeyllGrid</span>
+
+    <span class="n">SAVE_ONLY</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="n">_crds</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">_fld_templates</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">crds</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">fld_templates</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">HAS_H5PY</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_crds</span> <span class="o">=</span> <span class="n">crds</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fld_templates</span> <span class="o">=</span> <span class="n">fld_templates</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GkeyllFile</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GkeyllFile.group_fnames"><a class="viewcode-back" href="../../../api/viscid.readers.gkeyll.html#viscid.readers.gkeyll.GkeyllFile.group_fnames">[docs]</a>    <span class="k">def</span> <span class="nf">group_fnames</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">fnames</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Group File names</span>
+
+<span class="sd">        The default implementation just returns fnames, but some file</span>
+<span class="sd">        types might do something fancy here</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            fnames (list): names that can be logically grouped, as in</span>
+<span class="sd">                a bunch of file names that are different time steps</span>
+<span class="sd">                of a given run</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A list of things that can be given to the constructor of</span>
+<span class="sd">            this class</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">infolst</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">fnames</span><span class="p">:</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">_detector</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="n">grps</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">runname</span><span class="o">=</span><span class="n">grps</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ftype</span><span class="o">=</span><span class="n">grps</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                     <span class="n">fname</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">string</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">d</span><span class="p">[</span><span class="s">&quot;frame&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">grps</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+                <span class="c"># grps[2] is none for &quot;RUN.3d.xdmf&quot; files</span>
+                <span class="n">d</span><span class="p">[</span><span class="s">&quot;frame&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="n">infolst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+        <span class="c"># careful with sorting, only consecutive files will be grouped</span>
+        <span class="n">infolst</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="s">&quot;frame&quot;</span><span class="p">))</span>
+        <span class="n">infolst</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="s">&quot;ftype&quot;</span><span class="p">))</span>
+        <span class="n">infolst</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="s">&quot;runname&quot;</span><span class="p">))</span>
+
+        <span class="n">info_groups</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">info_group</span> <span class="o">=</span> <span class="p">[</span><span class="n">infolst</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">infolst</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="n">last</span> <span class="o">=</span> <span class="n">info_group</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">info</span><span class="p">[</span><span class="s">&#39;runname&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">last</span><span class="p">[</span><span class="s">&#39;runname&#39;</span><span class="p">]</span> <span class="ow">and</span> \
+               <span class="n">info</span><span class="p">[</span><span class="s">&#39;ftype&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">last</span><span class="p">[</span><span class="s">&#39;ftype&#39;</span><span class="p">]:</span>
+                <span class="n">info_group</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">info_groups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info_group</span><span class="p">)</span>
+                <span class="n">info_group</span> <span class="o">=</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span>
+        <span class="n">info_groups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info_group</span><span class="p">)</span>
+
+        <span class="c"># turn info_groups into groups of just file names</span>
+        <span class="n">groups</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">info_group</span> <span class="ow">in</span> <span class="n">info_groups</span><span class="p">:</span>
+            <span class="n">groups</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">info</span><span class="p">[</span><span class="s">&#39;fname&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">info_group</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">groups</span>
+</div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GkeyllFile.collective_name_from_group"><a class="viewcode-back" href="../../../api/viscid.readers.gkeyll.html#viscid.readers.gkeyll.GkeyllFile.collective_name_from_group">[docs]</a>    <span class="k">def</span> <span class="nf">collective_name_from_group</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">fnames</span><span class="p">):</span>
+        <span class="n">fname0</span> <span class="o">=</span> <span class="n">fnames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">fname0</span><span class="p">)</span>
+        <span class="n">run</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">_detector</span><span class="p">,</span> <span class="n">basename</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">fldtype</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">_detector</span><span class="p">,</span> <span class="n">basename</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">new_basename</span> <span class="o">=</span> <span class="s">&quot;{0}.{1}.STAR.h5&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">run</span><span class="p">,</span> <span class="n">fldtype</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">fname0</span><span class="p">),</span> <span class="n">new_basename</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="GkeyllFile.load"><a class="viewcode-back" href="../../../api/viscid.readers.gkeyll.html#viscid.readers.gkeyll.GkeyllFile.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_collection</span> <span class="o">=</span> <span class="n">fname</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_collection</span> <span class="o">=</span> <span class="p">[</span><span class="n">fname</span><span class="p">]</span>
+
+        <span class="n">fname0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_collection</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">fname1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">collective_name</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+
+        <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">fname0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_info</span><span class="p">(</span><span class="s">&#39;run&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_detector</span><span class="p">,</span> <span class="n">basename</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_info</span><span class="p">(</span><span class="s">&#39;fieldtype&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_detector</span><span class="p">,</span> <span class="n">basename</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">GkeyllFile</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname1</span><span class="p">)</span>
+</div>
+    <span class="k">def</span> <span class="nf">_parse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_collection</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c"># load a single file</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crds</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_crds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_crds</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fname</span><span class="p">)</span>
+            <span class="n">_grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_file</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fname</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">_grid</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c"># load each file, and add it to the bucket</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crds</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_crds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_crds</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_collection</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">data_temporal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_dataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dset_type</span><span class="o">=</span><span class="s">&quot;temporal&quot;</span><span class="p">,</span>
+                                               <span class="n">name</span><span class="o">=</span><span class="s">&quot;GkeyllTemporalCollection&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fld_templates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_template</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_collection</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+            <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_collection</span><span class="p">:</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_child_file</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">index_handle</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                                          <span class="n">file_type</span><span class="o">=</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span>
+                                          <span class="n">crds</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_crds</span><span class="p">,</span>
+                                          <span class="n">fld_templates</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_fld_templates</span><span class="p">)</span>
+                <span class="n">data_temporal</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="n">data_temporal</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">data_temporal</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_parse_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">parent_node</span><span class="p">):</span>
+        <span class="c"># we do minimal file parsing here for performance. we just</span>
+        <span class="c"># make data wrappers from the templates we got from the first</span>
+        <span class="c"># file in the group, and package them up into grids</span>
+
+        <span class="c"># frame = int(re.match(self._detector, filename).group(3))</span>
+
+        <span class="n">_grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_grid</span><span class="p">(</span><span class="n">parent_node</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;&lt;GkeyllGrid&gt;&quot;</span><span class="p">,</span>
+                                <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_grid_opts</span><span class="p">)</span>
+
+        <span class="c"># FIXME: To get the time at load, we have to open all hdf5 files</span>
+        <span class="c"># which defeats the purpose of making templates etc. in attempt to</span>
+        <span class="c"># be lazy. Maybe there&#39;s a way to use frame above?</span>
+        <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">step</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;timeData&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s">&#39;vsStep&#39;</span><span class="p">]</span>
+            <span class="n">time</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;timeData&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s">&#39;vsTime&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_info</span><span class="p">(</span><span class="s">&quot;step&quot;</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">time</span>
+        <span class="n">_grid</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">time</span>
+        <span class="n">_grid</span><span class="o">.</span><span class="n">set_crds</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_crds</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fld_templates</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fld_templates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_template</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">meta</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fld_templates</span><span class="p">):</span>
+            <span class="c"># FIXME: the transpose goes xyz -&gt; zyx</span>
+            <span class="n">h5_data</span> <span class="o">=</span> <span class="n">H5pyDataWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fname</span><span class="p">,</span> <span class="s">&quot;StructGridField&quot;</span><span class="p">,</span>
+                                      <span class="n">comp_dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">comp_idx</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">fld</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">wrap_field</span><span class="p">(</span><span class="n">h5_data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crds</span><span class="p">,</span> <span class="n">meta</span><span class="p">[</span><span class="s">&#39;fld_name&#39;</span><span class="p">],</span>
+                                   <span class="n">center</span><span class="o">=</span><span class="s">&quot;cell&quot;</span><span class="p">,</span> <span class="n">pretty_name</span><span class="o">=</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;pretty_name&#39;</span><span class="p">])</span>
+            <span class="n">_grid</span><span class="o">.</span><span class="n">add_field</span><span class="p">(</span><span class="n">fld</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_grid</span>
+
+    <span class="k">def</span> <span class="nf">_make_template</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;&quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">shape</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&quot;StructGridField&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+            <span class="n">sshape</span> <span class="o">=</span> <span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">nr_fields</span> <span class="o">=</span> <span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span>  <span class="c"># len(sshape)  # why - 2?</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">type_info</span> <span class="o">=</span> <span class="n">_type_info</span><span class="p">[</span><span class="n">nr_fields</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;Could not desipher type (hydro, 5m, 10m)&quot;</span><span class="p">)</span>
+
+            <span class="n">template</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="c"># TODO: use nr_fields to figure out the names of the fields?</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nr_fields</span><span class="p">):</span>
+                <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fldnum</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="n">sshape</span><span class="p">,</span>
+                         <span class="n">fld_name</span><span class="o">=</span><span class="n">type_info</span><span class="p">[</span><span class="s">&#39;names&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span>
+                         <span class="n">pretty_name</span><span class="o">=</span><span class="n">type_info</span><span class="p">[</span><span class="s">&#39;pretty_names&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+                <span class="n">template</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_info</span><span class="p">(</span><span class="s">&quot;field_type&quot;</span><span class="p">,</span> <span class="n">type_info</span><span class="p">[</span><span class="s">&#39;field_type&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">template</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_get_single_crd</span><span class="p">(</span><span class="n">h5file</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">nr_crds</span><span class="p">):</span>
+        <span class="n">gridType</span> <span class="o">=</span> <span class="n">h5file</span><span class="p">[</span><span class="s">&#39;StructGrid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s">&#39;vsKind&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">gridType</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;uniform&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">idx</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">h5file</span><span class="p">[</span><span class="s">&#39;StructGrid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s">&#39;vsNumCells&#39;</span><span class="p">]):</span>
+                <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">()</span>
+            <span class="n">lower</span> <span class="o">=</span> <span class="n">h5file</span><span class="p">[</span><span class="s">&#39;StructGrid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s">&#39;vsLowerBounds&#39;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
+            <span class="n">upper</span> <span class="o">=</span> <span class="n">h5file</span><span class="p">[</span><span class="s">&#39;StructGrid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s">&#39;vsUpperBounds&#39;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
+            <span class="n">num</span> <span class="o">=</span> <span class="n">h5file</span><span class="p">[</span><span class="s">&#39;StructGrid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s">&#39;vsNumCells&#39;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">,</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">gridType</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;structured&#39;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+            <span class="c"># nr_flds = h5file[&#39;StructGrid&#39;].shape[-1] - nr_crds</span>
+            <span class="c"># slc = [0] * nr_crds + [nr_flds + idx]</span>
+            <span class="c"># slc[idx] = slice(None)</span>
+            <span class="c"># crd_arr = h5file[&#39;StructGrid&#39;][tuple(slc)]</span>
+            <span class="n">crd_arr</span> <span class="o">=</span> <span class="n">h5file</span><span class="p">[</span><span class="s">&#39;StructGrid&#39;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
+            <span class="c"># make crd_arr node centered</span>
+            <span class="n">dxl</span> <span class="o">=</span> <span class="n">crd_arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">crd_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">dxh</span> <span class="o">=</span> <span class="n">crd_arr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">crd_arr</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">crd_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="n">crd_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">dxl</span><span class="p">],</span>
+                                      <span class="n">crd_arr</span><span class="p">,</span>
+                                      <span class="p">[</span><span class="n">crd_arr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dxh</span><span class="p">]])</span>
+            <span class="n">crd_arr</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">crd_arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="n">crd_arr</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">crd_arr</span>
+
+<div class="viewcode-block" id="GkeyllFile.make_crds"><a class="viewcode-back" href="../../../api/viscid.readers.gkeyll.html#viscid.readers.gkeyll.GkeyllFile.make_crds">[docs]</a>    <span class="k">def</span> <span class="nf">make_crds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">clist</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="c"># FIXME: xyz</span>
+            <span class="n">crds</span> <span class="o">=</span> <span class="s">&quot;xyz&quot;</span>
+            <span class="n">nr_crds</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s">&#39;StructGridField&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nr_crds</span><span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">clist</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">crds</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_single_crd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">nr_crds</span><span class="p">)))</span>
+                <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+                    <span class="k">pass</span>
+
+            <span class="k">if</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;StructGrid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s">&#39;vsKind&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;uniform&#39;</span><span class="p">]:</span>
+                <span class="c"># FIXME: this goes xyz -&gt; zyx</span>
+                <span class="n">crds</span> <span class="o">=</span> <span class="n">wrap_crds</span><span class="p">(</span><span class="s">&quot;uniform_cartesian&quot;</span><span class="p">,</span> <span class="n">clist</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">crds</span> <span class="o">=</span> <span class="n">wrap_crds</span><span class="p">(</span><span class="s">&quot;nonuniform_cartesian&quot;</span><span class="p">,</span> <span class="n">clist</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">crds</span>
+
+<span class="c">##</span>
+<span class="c">## EOF</span>
+<span class="c">##</span></div></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

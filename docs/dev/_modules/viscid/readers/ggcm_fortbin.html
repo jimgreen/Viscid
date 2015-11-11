@@ -1,0 +1,593 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.readers.ggcm_fortbin &mdash; Viscid 0.95.0 dev documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.95.0 dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 dev documentation" href="../../../index.html" />
+    <link rel="up" title="viscid.readers" href="../readers.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0 dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../changes.html">ChangeLog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for viscid.readers.ggcm_fortbin</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">struct</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">grid</span>
+<span class="kn">from</span> <span class="nn">viscid.readers</span> <span class="kn">import</span> <span class="n">vfile</span>
+<span class="kn">from</span> <span class="nn">viscid.readers</span> <span class="kn">import</span> <span class="n">openggcm</span>
+<span class="kn">from</span> <span class="nn">viscid.compat</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+
+
+<span class="c"># raise NotImplementedError(&quot;fortbin reader is not at all&quot;)</span>
+
+
+<div class="viewcode-block" id="GGCMFileFortbinMHD"><a class="viewcode-back" href="../../../api/viscid.readers.ggcm_fortbin.html#viscid.readers.ggcm_fortbin.GGCMFileFortbinMHD">[docs]</a><span class="k">class</span> <span class="nc">GGCMFileFortbinMHD</span><span class="p">(</span><span class="n">openggcm</span><span class="o">.</span><span class="n">GGCMFileFortran</span><span class="p">):</span>  <span class="c"># pylint: disable=abstract-method</span>
+    <span class="sd">&quot;&quot;&quot;Binary files&quot;&quot;&quot;</span>
+    <span class="n">_detector</span> <span class="o">=</span> <span class="s">r&quot;^\s*(.*)\.(p[xyz]_[0-9]+|3df)&quot;</span> \
+                <span class="s">r&quot;\.([0-9]{6}).b\s*$&quot;</span>
+
+    <span class="n">_file_wrapper</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">_data_item_templates</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">_def_fld_center</span> <span class="o">=</span> <span class="s">&quot;Cell&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GGCMFileFortbinMHD</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_shape_discovery_hack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">GGCMFortbinFileWrapper</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">inquire_next</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">meta</span><span class="p">[</span><span class="s">&#39;dims&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_parse_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">parent_node</span><span class="p">):</span>
+        <span class="c"># we do minimal file parsing here for performance. we just</span>
+        <span class="c"># make data wrappers from the templates we got from the first</span>
+        <span class="c"># file in the group, and package them up into grids</span>
+
+        <span class="c"># find the time from the first field&#39;s meta data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_file_wrapper</span> <span class="o">=</span> <span class="n">GGCMFortbinFileWrapper</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+        <span class="n">int_time</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_detector</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+        <span class="n">time</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">int_time</span><span class="p">)</span>
+
+        <span class="n">_grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_grid</span><span class="p">(</span><span class="n">parent_node</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;&lt;FortbinGrid&gt;&quot;</span><span class="p">,</span>
+                                <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_grid_opts</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">time</span>
+        <span class="n">_grid</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">time</span>
+        <span class="n">_grid</span><span class="o">.</span><span class="n">set_crds</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_crds</span><span class="p">)</span>
+
+        <span class="n">templates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fld_templates</span>
+        <span class="k">if</span> <span class="n">templates</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">templates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_template</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+        <span class="c"># make a DataWrapper and a Field for each template that we</span>
+        <span class="c"># have from the first file that we parsed, then add it to</span>
+        <span class="c"># the _grid</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iono</span><span class="p">:</span>
+            <span class="n">data_wrapper</span> <span class="o">=</span> <span class="n">FortbinDataWrapper</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">data_wrapper</span> <span class="o">=</span> <span class="n">FortbinDataWrapper</span>
+
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">templates</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data_wrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file_wrapper</span><span class="p">,</span> <span class="n">item</span><span class="p">[</span><span class="s">&#39;fld_name&#39;</span><span class="p">],</span>
+                                <span class="n">item</span><span class="p">[</span><span class="s">&#39;shape&#39;</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="s">&#39;file_position&#39;</span><span class="p">])</span>
+            <span class="n">fld</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_field</span><span class="p">(</span><span class="n">_grid</span><span class="p">,</span> <span class="s">&quot;Scalar&quot;</span><span class="p">,</span> <span class="n">item</span><span class="p">[</span><span class="s">&#39;fld_name&#39;</span><span class="p">],</span>
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">_crds</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_def_fld_center</span><span class="p">,</span>
+                                   <span class="n">time</span><span class="o">=</span><span class="n">time</span><span class="p">,</span> <span class="n">zyx_native</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+            <span class="n">_grid</span><span class="o">.</span><span class="n">add_field</span><span class="p">(</span><span class="n">fld</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_grid</span>
+
+    <span class="k">def</span> <span class="nf">_make_template</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;read meta data for all fields in a file to get</span>
+<span class="sd">        a list of field names and shapes, all the required info</span>
+<span class="sd">        to make a FortbinDataWrapper</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">GGCMFortbinFileWrapper</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">inquire_all_fields</span><span class="p">()</span>
+            <span class="n">template</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="n">meta</span> <span class="o">=</span> <span class="bp">None</span>
+            <span class="k">for</span> <span class="n">fld_name</span><span class="p">,</span> <span class="n">meta</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">fields_seen</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fld_name</span><span class="o">=</span><span class="n">fld_name</span><span class="p">,</span>
+                         <span class="n">shape</span><span class="o">=</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;dims&#39;</span><span class="p">],</span>
+                         <span class="n">file_position</span><span class="o">=</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;file_position&#39;</span><span class="p">])</span>
+                <span class="n">template</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">meta</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">timestr</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;timestr&#39;</span><span class="p">])</span>
+                <span class="c"># WARNING: lstrip is &#39;character-wise&#39;, this works</span>
+                <span class="c"># cause the first thing we care about is a number</span>
+                <span class="n">timestr</span> <span class="o">=</span> <span class="n">timestr</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s">&quot;time=&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+                <span class="n">t</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">timestr</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">ut</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">timestr</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s">&quot;%Y:%m:</span><span class="si">%d</span><span class="s">:%H:%M:%S.</span><span class="si">%f</span><span class="s">&quot;</span><span class="p">)</span>
+                <span class="n">dipole_time</span> <span class="o">=</span> <span class="n">ut</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="n">t</span><span class="p">)</span>
+                <span class="n">dipole_time</span> <span class="o">=</span> <span class="n">dipole_time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&quot;%Y:%m:</span><span class="si">%d</span><span class="s">:%H:%M:%S.</span><span class="si">%f</span><span class="s">&quot;</span><span class="p">)</span>
+                <span class="n">dipole_time</span> <span class="o">=</span> <span class="n">dipole_time</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;:&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_info</span><span class="p">(</span><span class="s">&quot;ggcm_dipole_dipoltime&quot;</span><span class="p">,</span> <span class="n">dipole_time</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">template</span>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GGCMFileFortbinMHD.collective_name_from_group"><a class="viewcode-back" href="../../../api/viscid.readers.ggcm_fortbin.html#viscid.readers.ggcm_fortbin.GGCMFileFortbinMHD.collective_name_from_group">[docs]</a>    <span class="k">def</span> <span class="nf">collective_name_from_group</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">fnames</span><span class="p">):</span>
+        <span class="n">fname0</span> <span class="o">=</span> <span class="n">fnames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">fname0</span><span class="p">)</span>
+        <span class="n">run</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">_detector</span><span class="p">,</span> <span class="n">basename</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">fldtype</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">_detector</span><span class="p">,</span> <span class="n">basename</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">new_basename</span> <span class="o">=</span> <span class="s">&quot;{0}.{1}.b&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">run</span><span class="p">,</span> <span class="n">fldtype</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">fname0</span><span class="p">),</span> <span class="n">new_basename</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="GGCMFileFortbinIono"><a class="viewcode-back" href="../../../api/viscid.readers.ggcm_fortbin.html#viscid.readers.ggcm_fortbin.GGCMFileFortbinIono">[docs]</a><span class="k">class</span> <span class="nc">GGCMFileFortbinIono</span><span class="p">(</span><span class="n">GGCMFileFortbinMHD</span><span class="p">):</span>  <span class="c"># pylint: disable=abstract-method</span>
+    <span class="sd">&quot;&quot;&quot;Binary files&quot;&quot;&quot;</span>
+    <span class="n">_detector</span> <span class="o">=</span> <span class="s">r&quot;^\s*(.*)\.(iof)\.([0-9]{6}).b\s*$&quot;</span>
+    <span class="n">_iono</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">_grid_type</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">Grid</span>
+    <span class="n">_def_fld_center</span> <span class="o">=</span> <span class="s">&quot;Node&quot;</span>
+
+</div>
+<div class="viewcode-block" id="GGCMFortbinFileWrapper"><a class="viewcode-back" href="../../../api/viscid.readers.ggcm_fortbin.html#viscid.readers.ggcm_fortbin.GGCMFortbinFileWrapper">[docs]</a><span class="k">class</span> <span class="nc">GGCMFortbinFileWrapper</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A File-like object for interfacing with OpenGGCM binary files&quot;&quot;&quot;</span>
+    <span class="n">_file</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">_endian</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="n">filename</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">_file_meta</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">fields_seen</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">seen_all_fields</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fields_seen</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seen_all_fields</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">file_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file_meta</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">_</span><span class="p">:</span>
+                <span class="c"># just opening the file makes it read the meta data</span>
+                <span class="k">pass</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file_meta</span>
+
+<div class="viewcode-block" id="GGCMFortbinFileWrapper.read_field"><a class="viewcode-back" href="../../../api/viscid.readers.ggcm_fortbin.html#viscid.readers.ggcm_fortbin.GGCMFortbinFileWrapper.read_field">[docs]</a>    <span class="k">def</span> <span class="nf">read_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fld_name</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Read a field given a seekable location</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            fld_name(str): name of field we&#39;re expecting to read</span>
+<span class="sd">            pos(int): position in file we can seek to</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple (field name, dict of meta data, array)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">pos</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+            <span class="n">found_fld</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inquire_next</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">found_fld</span> <span class="o">!=</span> <span class="n">fld_name</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;The file {0} didn&#39;t contain field {1} at &quot;</span>
+                                 <span class="s">&quot;position {2}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span>
+                                                       <span class="n">fld_name</span><span class="p">,</span> <span class="n">pos</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">meta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inquire</span><span class="p">(</span><span class="n">fld_name</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;file_position&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">meta</span><span class="p">[</span><span class="s">&#39;header_size&#39;</span><span class="p">])</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_endian</span> <span class="o">+</span> <span class="s">&#39;f&#39;</span><span class="p">),</span>
+                           <span class="n">count</span><span class="o">=</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;nelem&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">meta</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;dims&#39;</span><span class="p">],</span> <span class="n">order</span><span class="o">=</span><span class="s">&#39;F&#39;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="GGCMFortbinFileWrapper.inquire_all_fields"><a class="viewcode-back" href="../../../api/viscid.readers.ggcm_fortbin.html#viscid.readers.ggcm_fortbin.GGCMFortbinFileWrapper.inquire_all_fields">[docs]</a>    <span class="k">def</span> <span class="nf">inquire_all_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reinquire</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">reinquire</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">seen_all_fields</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fields_seen</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">seen_all_fields</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">seen_all_fields</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">inquire_next</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file_meta</span><span class="p">[</span><span class="s">&#39;nbytes&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="GGCMFortbinFileWrapper.inquire"><a class="viewcode-back" href="../../../api/viscid.readers.ggcm_fortbin.html#viscid.readers.ggcm_fortbin.GGCMFortbinFileWrapper.inquire">[docs]</a>    <span class="k">def</span> <span class="nf">inquire</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fld_name</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">meta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields_seen</span><span class="p">[</span><span class="n">fld_name</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;file_position&#39;</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">meta</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">last_added</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fields_seen</span><span class="p">))</span>
+                <span class="c"># go to the last seen field and go one field past it</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fields_seen</span><span class="p">[</span><span class="n">last_added</span><span class="p">][</span><span class="s">&#39;file_position&#39;</span><span class="p">]</span> <span class="o">+</span>
+                          <span class="bp">self</span><span class="o">.</span><span class="n">file_meta</span><span class="p">[</span><span class="s">&#39;nbytes&#39;</span><span class="p">])</span>
+            <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+            <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">seen_all_fields</span><span class="p">:</span>
+                <span class="n">found_fld_name</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inquire_next</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">found_fld_name</span> <span class="o">==</span> <span class="n">fld_name</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">meta</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file_meta</span><span class="p">[</span><span class="s">&#39;nbytes&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s">&quot;file &#39;{0}&#39; has no field &#39;{1}&#39;&quot;</span>
+                           <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">fld_name</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="GGCMFortbinFileWrapper.inquire_next"><a class="viewcode-back" href="../../../api/viscid.readers.ggcm_fortbin.html#viscid.readers.ggcm_fortbin.GGCMFortbinFileWrapper.inquire_next">[docs]</a>    <span class="k">def</span> <span class="nf">inquire_next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Collect the meta-data from the next field in the file</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple (field name, dict of meta data) both</span>
+<span class="sd">            of which will be None if there are no more Fields</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">            After this operation is done, the file-pointer will be reset</span>
+<span class="sd">            to the position it was before the inquiry.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">isopen</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;file is not open&quot;</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">fld_name</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_header</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+            <span class="n">fld_name</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">fld_name</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">seen_all_fields</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="k">return</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span>
+
+        <span class="k">if</span> <span class="n">fld_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields_seen</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fields_seen</span><span class="p">[</span><span class="n">fld_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta</span>
+
+        <span class="k">return</span> <span class="n">fld_name</span><span class="p">,</span> <span class="n">meta</span>
+</div>
+<div class="viewcode-block" id="GGCMFortbinFileWrapper.open"><a class="viewcode-back" href="../../../api/viscid.readers.ggcm_fortbin.html#viscid.readers.ggcm_fortbin.GGCMFortbinFileWrapper.open">[docs]</a>    <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_endian</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file_meta</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_read_file_header</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="k">raise</span> <span class="n">e</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">isopen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
+
+<div class="viewcode-block" id="GGCMFortbinFileWrapper.close"><a class="viewcode-back" href="../../../api/viscid.readers.ggcm_fortbin.html#viscid.readers.ggcm_fortbin.GGCMFortbinFileWrapper.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="bp">None</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</div>
+    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_read_file_header</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_size</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;load up the file&#39;s meta data&quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_header</span><span class="p">(</span><span class="n">data_size</span><span class="o">=</span><span class="n">data_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_file_meta</span> <span class="o">=</span> <span class="n">meta</span>
+
+    <span class="k">def</span> <span class="nf">_read_header</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_size</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;read a field&#39;s header; returns None, None if EOF</span>
+<span class="sd">        Raises:</span>
+<span class="sd">            Both of the following are raised if there are no more</span>
+<span class="sd">            fields in a file (although it&#39;ll more likely be an IOError)</span>
+
+<span class="sd">            IOError: couldn&#39;t detect endian</span>
+<span class="sd">            struct.error: not enough lines in file to get a header</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">isopen</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;Trying to read header, but file is closed.&quot;</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+            <span class="n">endian_marker</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">endian_marker</span> <span class="o">==</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">&#39;&lt;i&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_endian</span> <span class="o">=</span> <span class="s">&#39;&lt;&#39;</span>
+            <span class="k">elif</span> <span class="n">endian_marker</span> <span class="o">==</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">&#39;&gt;i&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_endian</span> <span class="o">=</span> <span class="s">&#39;&gt;&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s">&quot;Can&#39;t detect endian, not a fortbin file: &quot;</span>
+                              <span class="s">&quot;{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">))</span>
+
+            <span class="n">inttime</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_endian</span> <span class="o">+</span> <span class="s">&#39;i&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">ndim</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_endian</span> <span class="o">+</span> <span class="s">&#39;i&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">dims</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_endian</span> <span class="o">+</span> <span class="s">&#39;{0}i&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ndim</span><span class="p">),</span>
+                                 <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">ndim</span><span class="p">))</span>
+
+            <span class="n">fld_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">asciitime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+
+            <span class="n">header_size</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">ndim</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+            <span class="n">nelem</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">dims</span><span class="p">)</span>
+            <span class="n">nbytes</span> <span class="o">=</span> <span class="n">header_size</span> <span class="o">+</span> <span class="n">data_size</span> <span class="o">*</span> <span class="n">nelem</span>
+
+            <span class="n">fld_meta</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">header_size</span><span class="o">=</span><span class="n">header_size</span><span class="p">,</span>
+                            <span class="n">timestr</span><span class="o">=</span><span class="n">asciitime</span><span class="p">,</span>
+                            <span class="n">inttime</span><span class="o">=</span><span class="n">inttime</span><span class="p">,</span>
+                            <span class="n">ndim</span><span class="o">=</span><span class="n">ndim</span><span class="p">,</span>
+                            <span class="n">dims</span><span class="o">=</span><span class="n">dims</span><span class="p">,</span>
+                            <span class="n">nelem</span><span class="o">=</span><span class="n">nelem</span><span class="p">,</span>
+                            <span class="n">nbytes</span><span class="o">=</span><span class="n">nbytes</span><span class="p">,</span>
+                            <span class="n">file_position</span><span class="o">=</span><span class="n">pos</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">fld_name</span> <span class="o">==</span> <span class="s">&quot;&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">fld_name</span><span class="p">,</span> <span class="n">fld_meta</span>
+        <span class="k">except</span> <span class="n">struct</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span>
+</div>
+<div class="viewcode-block" id="FortbinDataWrapper"><a class="viewcode-back" href="../../../api/viscid.readers.ggcm_fortbin.html#viscid.readers.ggcm_fortbin.FortbinDataWrapper">[docs]</a><span class="k">class</span> <span class="nc">FortbinDataWrapper</span><span class="p">(</span><span class="n">vfile</span><span class="o">.</span><span class="n">DataWrapper</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Interface for lazily pointing to a field in a binary file&quot;&quot;&quot;</span>
+    <span class="n">file_wrapper</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">fld_name</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">expected_shape</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">file_position</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_wrapper</span><span class="p">,</span> <span class="n">fld_name</span><span class="p">,</span> <span class="n">expected_shape</span><span class="p">,</span> <span class="n">file_position</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Lazy wrapper for a field in a Fortbin file</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            expected_shape (tuple): shape of data in the file (xyz)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">FortbinDataWrapper</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_wrapper</span> <span class="o">=</span> <span class="n">file_wrapper</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">file_wrapper</span><span class="o">.</span><span class="n">filename</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fld_name</span> <span class="o">=</span> <span class="n">fld_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">expected_shape</span> <span class="o">=</span> <span class="n">expected_shape</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_position</span> <span class="o">=</span> <span class="n">file_position</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            zyx shape since that&#39;s the shape __array__ returns</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">expected_shape</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dtype</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s">&quot;float32&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__array__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_wrapper</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="c"># fld_name, meta, arr = f.read_field_at(self.loc, ndim)</span>
+            <span class="n">meta</span><span class="p">,</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read_field</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fld_name</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">file_position</span><span class="p">)</span>
+            <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s">&#39;F&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s">&#39;dims&#39;</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span>
+                           <span class="n">order</span><span class="o">=</span><span class="s">&#39;C&#39;</span><span class="p">)</span>
+
+        <span class="c"># meta&#39;s dims are xyz (from file), but ex</span>
+        <span class="k">if</span> <span class="n">meta</span><span class="p">[</span><span class="s">&#39;dims&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expected_shape</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;Field &#39;{0}&#39; from file &#39;{1}&#39; has shape {2} &quot;</span>
+                               <span class="s">&quot;instead of {3}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">fld_name</span><span class="p">,</span>
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">meta</span><span class="p">[</span><span class="s">&#39;dims&#39;</span><span class="p">],</span>
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">expected_shape</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
+<div class="viewcode-block" id="FortbinDataWrapper.read_direct"><a class="viewcode-back" href="../../../api/viscid.readers.ggcm_fortbin.html#viscid.readers.ggcm_fortbin.FortbinDataWrapper.read_direct">[docs]</a>    <span class="k">def</span> <span class="nf">read_direct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array__</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="FortbinDataWrapper.len"><a class="viewcode-back" href="../../../api/viscid.readers.ggcm_fortbin.html#viscid.readers.ggcm_fortbin.FortbinDataWrapper.len">[docs]</a>    <span class="k">def</span> <span class="nf">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</div>
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array__</span><span class="p">()</span><span class="o">.</span><span class="n">__getitem__</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+
+<span class="c"># class FortbinIonoDataWrapper(FortbinDataWrapper):</span>
+<span class="c">#     @property</span>
+<span class="c">#     def shape(self):</span>
+<span class="c">#         ret = tuple([n - 1 for n in reversed(self.expected_shape)])</span>
+<span class="c">#         return ret</span>
+
+<span class="c">#     def __array__(self, *args, **kwargs):</span>
+<span class="c">#         arr = super(FortbinIonoDataWrapper, self).__array__(*args, **kwargs)</span>
+<span class="c">#         ndim = len(self.expected_shape)</span>
+<span class="c">#         return arr[[slice(None, -1)]*ndim]</span>
+
+<span class="c">##</span>
+<span class="c">## EOF</span>
+<span class="c">##</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

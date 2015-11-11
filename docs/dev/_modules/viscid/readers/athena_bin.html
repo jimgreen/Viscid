@@ -1,0 +1,584 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.readers.athena_bin &mdash; Viscid 0.95.0 dev documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.95.0 dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 dev documentation" href="../../../index.html" />
+    <link rel="up" title="viscid.readers" href="../readers.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0 dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../changes.html">ChangeLog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for viscid.readers.athena_bin</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot; Athena binary file reader</span>
+
+<span class="sd">At the moment, this reader assumes the conserved fields are in the</span>
+<span class="sd">files. The Athena custom Grid has methods to do vx = M1 / d, etc.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">viscid.readers</span> <span class="kn">import</span> <span class="n">vfile</span>
+<span class="kn">from</span> <span class="nn">viscid.readers.vfile_bucket</span> <span class="kn">import</span> <span class="n">ContainerFile</span>
+<span class="kn">from</span> <span class="nn">viscid.readers</span> <span class="kn">import</span> <span class="n">athena</span>
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">coordinate</span>
+
+
+<div class="viewcode-block" id="AthenaBinFile"><a class="viewcode-back" href="../../../api/viscid.readers.athena_bin.html#viscid.readers.athena_bin.AthenaBinFile">[docs]</a><span class="k">class</span> <span class="nc">AthenaBinFile</span><span class="p">(</span><span class="n">athena</span><span class="o">.</span><span class="n">AthenaFile</span><span class="p">,</span> <span class="n">ContainerFile</span><span class="p">):</span>  <span class="c"># pylint: disable=abstract-method</span>
+    <span class="sd">&quot;&quot;&quot;An Athena binary file reader&quot;&quot;&quot;</span>
+    <span class="n">_detector</span> <span class="o">=</span> <span class="s">r&quot;^\s*(.*)\.([0-9]+)\.(bin)\s*$&quot;</span>
+
+    <span class="n">_def_fld_center</span> <span class="o">=</span> <span class="s">&quot;Cell&quot;</span>
+
+    <span class="n">_collection</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="n">_file_wrapper</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">float_type_name</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">var_type</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">_crds</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">crds</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">float_type_name</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">var_type</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Keyword Arguments:</span>
+<span class="sd">            float_type_name (str): should be &#39;f4&#39; or &#39;f8&#39; if you know</span>
+<span class="sd">                the data type of the file&#39;s data.</span>
+<span class="sd">            var_type (str): either &#39;cons&#39; or &#39;prim&#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># there is no parent bucket, so we need to new one up for children</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">float_type_name</span> <span class="o">=</span> <span class="n">float_type_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">var_type</span> <span class="o">=</span> <span class="n">var_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_crds</span> <span class="o">=</span> <span class="n">crds</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AthenaBinFile</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="AthenaBinFile.group_fnames"><a class="viewcode-back" href="../../../api/viscid.readers.athena_bin.html#viscid.readers.athena_bin.AthenaBinFile.group_fnames">[docs]</a>    <span class="k">def</span> <span class="nf">group_fnames</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">fnames</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">athena</span><span class="o">.</span><span class="n">group_athena_files_common</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">_detector</span><span class="p">,</span> <span class="n">fnames</span><span class="p">)</span>
+</div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="AthenaBinFile.collective_name_from_group"><a class="viewcode-back" href="../../../api/viscid.readers.athena_bin.html#viscid.readers.athena_bin.AthenaBinFile.collective_name_from_group">[docs]</a>    <span class="k">def</span> <span class="nf">collective_name_from_group</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">fnames</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">athena</span><span class="o">.</span><span class="n">athena_collective_name_from_group</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">_detector</span><span class="p">,</span>
+                                                        <span class="n">fnames</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="AthenaBinFile.load"><a class="viewcode-back" href="../../../api/viscid.readers.athena_bin.html#viscid.readers.athena_bin.AthenaBinFile.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_collection</span> <span class="o">=</span> <span class="n">fname</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_collection</span> <span class="o">=</span> <span class="p">[</span><span class="n">fname</span><span class="p">]</span>
+
+        <span class="n">fname0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_collection</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">fname1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">collective_name</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+
+        <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">fname0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_info</span><span class="p">(</span><span class="s">&#39;run&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_detector</span><span class="p">,</span> <span class="n">basename</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">AthenaBinFile</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname1</span><span class="p">)</span>
+</div>
+    <span class="k">def</span> <span class="nf">_parse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crds</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_crds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_crds</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_collection</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_collection</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c"># load a single file</span>
+            <span class="n">_grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_file</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fname</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">_grid</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c"># load each file, and add it to teh bucket</span>
+            <span class="n">data_temporal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_dataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dset_type</span><span class="o">=</span><span class="s">&quot;temporal&quot;</span><span class="p">,</span>
+                                               <span class="n">name</span><span class="o">=</span><span class="s">&quot;AthenaTemporalCollection&quot;</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_collection</span><span class="p">:</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_child_file</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">index_handle</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                                          <span class="n">file_type</span><span class="o">=</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span>
+                                          <span class="n">crds</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_crds</span><span class="p">,</span>
+                                          <span class="n">float_type_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">float_type_name</span><span class="p">,</span>
+                                          <span class="n">var_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">var_type</span><span class="p">)</span>
+                <span class="n">data_temporal</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="n">data_temporal</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">data_temporal</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_parse_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">parent_node</span><span class="p">):</span>
+        <span class="c"># we do minimal file parsing here for performance. we just</span>
+        <span class="c"># make data wrappers from the templates we got from the first</span>
+        <span class="c"># file in the group, and package them up into grids</span>
+
+        <span class="c"># find the time from the first field&#39;s meta data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_file_wrapper</span> <span class="o">=</span> <span class="n">AthenaBinFileWrapper</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span>
+                                                  <span class="n">float_type_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">float_type_name</span><span class="p">,</span>
+                                                  <span class="n">var_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">var_type</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_file_wrapper</span><span class="o">.</span><span class="n">read_header</span><span class="p">()</span>
+        <span class="n">time</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file_wrapper</span><span class="o">.</span><span class="n">time</span>
+
+        <span class="n">_grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_grid</span><span class="p">(</span><span class="n">parent_node</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;&lt;AthenaGrid&gt;&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">time</span>
+        <span class="n">_grid</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">time</span>
+        <span class="n">_grid</span><span class="o">.</span><span class="n">set_crds</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_crds</span><span class="p">)</span>
+
+        <span class="c"># make a DataWrapper and a Field for each template that we</span>
+        <span class="c"># have from the first file that we parsed, then add it to</span>
+        <span class="c"># the _grid</span>
+        <span class="n">data_wrapper</span> <span class="o">=</span> <span class="n">AthenaBinDataWrapper</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">fld_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file_wrapper</span><span class="o">.</span><span class="n">fld_names</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_def_fld_center</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s">&quot;cell&quot;</span><span class="p">:</span>
+                <span class="n">shape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crds</span><span class="o">.</span><span class="n">shape_cc</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">shape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crds</span><span class="o">.</span><span class="n">shape_nc</span>
+
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data_wrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file_wrapper</span><span class="p">,</span> <span class="n">fld_name</span><span class="p">,</span>
+                                <span class="n">shape</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">i</span><span class="p">)</span>
+            <span class="n">fld</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_field</span><span class="p">(</span><span class="n">_grid</span><span class="p">,</span> <span class="s">&quot;Scalar&quot;</span><span class="p">,</span> <span class="n">fld_name</span><span class="p">,</span>
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">_crds</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="n">time</span><span class="p">,</span>
+                                   <span class="n">center</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_def_fld_center</span><span class="p">,</span>
+                                   <span class="n">zyx_native</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+            <span class="n">_grid</span><span class="o">.</span><span class="n">add_field</span><span class="p">(</span><span class="n">fld</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_grid</span>
+
+    <span class="k">def</span> <span class="nf">_make_crds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="n">fw</span> <span class="o">=</span> <span class="n">AthenaBinFileWrapper</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">keep_crd_clist</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                                  <span class="n">float_type_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">float_type_name</span><span class="p">,</span>
+                                  <span class="n">var_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">var_type</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">fw</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">crd_clist</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">crd_clist</span>
+            <span class="n">new_clist</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">dxmin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">crd_clist</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">dxmin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">([</span><span class="n">dxmin</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">])])</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">cli</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">crd_clist</span><span class="p">):</span>
+                <span class="n">cc</span> <span class="o">=</span> <span class="n">cli</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">hd</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">cc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">cc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+                    <span class="n">nc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">cc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">hd</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                                    <span class="n">cc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">hd</span><span class="p">,</span>
+                                    <span class="n">cc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">hd</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+                <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+                    <span class="n">dxminh</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">dxmin</span>
+                    <span class="n">nc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">cc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">dxminh</span><span class="p">,</span> <span class="n">cc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">dxminh</span><span class="p">])</span>
+                <span class="n">new_clist</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">crd_clist</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">nc</span><span class="p">])</span>
+            <span class="n">crds</span> <span class="o">=</span> <span class="n">coordinate</span><span class="o">.</span><span class="n">wrap_crds</span><span class="p">(</span><span class="s">&quot;nonuniform_cartesian&quot;</span><span class="p">,</span> <span class="n">new_clist</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">crds</span>
+
+</div>
+<div class="viewcode-block" id="AthenaBinFileWrapper"><a class="viewcode-back" href="../../../api/viscid.readers.athena_bin.html#viscid.readers.athena_bin.AthenaBinFileWrapper">[docs]</a><span class="k">class</span> <span class="nc">AthenaBinFileWrapper</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A File-like object for interfacing with Athena binary files</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        float_type_name (str): default float data type, should be</span>
+<span class="sd">            &#39;f4&#39; or &#39;f8&#39;; deufaults to double (&#39;f8&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># translation is is purely for convenience</span>
+    <span class="n">float_type_name</span> <span class="o">=</span> <span class="s">&quot;f8&quot;</span>
+    <span class="n">var_type</span> <span class="o">=</span> <span class="s">&quot;cons&quot;</span>
+
+    <span class="n">_file</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">_loc_after_header</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">_endian</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">_float_dtype</span> <span class="o">=</span> <span class="bp">None</span>  <span class="c"># = np.dtype(_endian + float_type_name)</span>
+
+    <span class="n">filename</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">keep_crd_clist</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="n">fld_names</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">nvars</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">nscalars</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">_file_meta</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">crd_clist</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">keep_crd_clist</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">float_type_name</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">var_type</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">keep_crd_clist</span> <span class="o">=</span> <span class="n">keep_crd_clist</span>
+        <span class="k">if</span> <span class="n">float_type_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">float_type_name</span> <span class="o">=</span> <span class="n">float_type_name</span>
+        <span class="k">if</span> <span class="n">var_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">var_type</span> <span class="o">=</span> <span class="n">var_type</span>
+
+    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">float_dtype</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_float_dtype</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">_</span><span class="p">:</span>
+                <span class="c"># just opening the file makes it read the meta data</span>
+                <span class="k">pass</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_float_dtype</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">field_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fld_names_lookup</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">_</span><span class="p">:</span>
+                <span class="c"># just opening the file makes it read the meta data</span>
+                <span class="k">pass</span>
+
+<div class="viewcode-block" id="AthenaBinFileWrapper.read_field"><a class="viewcode-back" href="../../../api/viscid.readers.athena_bin.html#viscid.readers.athena_bin.AthenaBinFileWrapper.read_field">[docs]</a>    <span class="k">def</span> <span class="nf">read_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fld_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Read a field given a seekable location</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            fld_id(int): number of field in file</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple array</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">fld_id</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nvars</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s">&quot;File {0} only has {1} fields, you asked for &quot;</span>
+                             <span class="s">&quot;fld number {2}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span>
+                                                     <span class="bp">self</span><span class="o">.</span><span class="n">nvars</span><span class="p">,</span> <span class="n">fld_id</span><span class="p">))</span>
+
+        <span class="n">fld_size_bytes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_float_dtype</span><span class="o">.</span><span class="n">itemsize</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_loc_after_header</span> <span class="o">+</span> <span class="n">fld_id</span> <span class="o">*</span> <span class="n">fld_size_bytes</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_float_dtype</span><span class="p">,</span>
+                           <span class="n">count</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+        <span class="c"># return ndarray as native endian</span>
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_float_dtype</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="AthenaBinFileWrapper.read_header"><a class="viewcode-back" href="../../../api/viscid.readers.athena_bin.html#viscid.readers.athena_bin.AthenaBinFileWrapper.read_header">[docs]</a>    <span class="k">def</span> <span class="nf">read_header</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_endian</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">with</span> <span class="bp">self</span> <span class="k">as</span> <span class="n">_</span><span class="p">:</span>
+                <span class="c"># just opening the file makes it read the header</span>
+                <span class="k">pass</span>
+</div>
+<div class="viewcode-block" id="AthenaBinFileWrapper.open"><a class="viewcode-back" href="../../../api/viscid.readers.athena_bin.html#viscid.readers.athena_bin.AthenaBinFileWrapper.open">[docs]</a>    <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_endian</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_read_file_header</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="k">raise</span> <span class="n">e</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">isopen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
+
+<div class="viewcode-block" id="AthenaBinFileWrapper.close"><a class="viewcode-back" href="../../../api/viscid.readers.athena_bin.html#viscid.readers.athena_bin.AthenaBinFileWrapper.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="bp">None</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</div>
+    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_read_file_header</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;load up the file&#39;s meta data&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">coordsys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">&quot;&lt;i&quot;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">dims</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">&quot;&lt;i&quot;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+        <span class="c"># if nvar makes sense, we were right, use little endian</span>
+        <span class="k">if</span> <span class="n">dims</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_endian</span> <span class="o">=</span> <span class="s">&quot;&lt;&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_endian</span> <span class="o">=</span> <span class="s">&quot;&gt;&quot;</span>
+            <span class="n">coordsys</span> <span class="o">=</span> <span class="n">coordsys</span><span class="o">.</span><span class="n">byteswap</span><span class="p">()</span>
+            <span class="n">dims</span> <span class="o">=</span> <span class="n">dims</span><span class="o">.</span><span class="n">byteswap</span><span class="p">()</span>
+
+        <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nz</span> <span class="o">=</span> <span class="n">dims</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">nvars</span><span class="p">,</span> <span class="n">nscalars</span> <span class="o">=</span> <span class="n">dims</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>  <span class="c"># pylint: disable=unused-variable</span>
+
+        <span class="n">dtyp_int</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_endian</span> <span class="o">+</span> <span class="s">&quot;i4&quot;</span><span class="p">)</span>  <span class="c"># 32bit int</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_float_dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_endian</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">float_type_name</span><span class="p">)</span>
+
+        <span class="c"># ignore self_gravity and particles flags for now</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtyp_int</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="c"># ignore gamm1 and cs for now</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_float_dtype</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="c"># determine field names from hints about how athena was run</span>
+        <span class="c"># for BAROTROPIC EOS HDYRO: NVAR = 4 + NSCALARS</span>
+        <span class="c"># for BAROTROPIC EOS MHD: NVAR = 7 + NSCALARS</span>
+        <span class="c"># for ADIABATIC HDYRO: NVAR = 5 + NSCALARS</span>
+        <span class="c"># for ADIABATIC MHD: NVAR = 8 + NSCALARS</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">var_type</span> <span class="o">==</span> <span class="s">&quot;cons&quot;</span><span class="p">:</span>
+            <span class="n">_all_fld_names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;d&#39;</span><span class="p">,</span> <span class="s">&#39;M1&#39;</span><span class="p">,</span> <span class="s">&#39;M2&#39;</span><span class="p">,</span> <span class="s">&#39;M3&#39;</span><span class="p">,</span> <span class="s">&#39;E&#39;</span><span class="p">,</span> <span class="s">&quot;B1&quot;</span><span class="p">,</span> <span class="s">&quot;B2&quot;</span><span class="p">,</span> <span class="s">&quot;B3&quot;</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">var_type</span> <span class="o">==</span> <span class="s">&quot;prim&quot;</span><span class="p">:</span>
+            <span class="n">_all_fld_names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;d&#39;</span><span class="p">,</span> <span class="s">&#39;V1&#39;</span><span class="p">,</span> <span class="s">&#39;V2&#39;</span><span class="p">,</span> <span class="s">&#39;V3&#39;</span><span class="p">,</span> <span class="s">&#39;P&#39;</span><span class="p">,</span> <span class="s">&quot;B1c&quot;</span><span class="p">,</span> <span class="s">&quot;B2c&quot;</span><span class="p">,</span> <span class="s">&quot;B3c&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;var_type must be cons or prim&quot;</span><span class="p">)</span>
+
+        <span class="n">nprim_flds</span> <span class="o">=</span> <span class="n">nvars</span> <span class="o">-</span> <span class="n">nscalars</span>
+        <span class="n">fld_names</span> <span class="o">=</span> <span class="n">_all_fld_names</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+        <span class="c"># adiabatic runs have an &#39;E&#39; (energy)</span>
+        <span class="k">if</span> <span class="n">nprim_flds</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+            <span class="n">fld_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_all_fld_names</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+        <span class="c"># MHD runs have magnetic fields</span>
+        <span class="k">if</span> <span class="n">nprim_flds</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+            <span class="n">fld_names</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">_all_fld_names</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">8</span><span class="p">])</span>
+        <span class="n">fld_names</span><span class="o">.</span><span class="n">extend</span><span class="p">((</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nprim_flds</span><span class="p">,</span> <span class="n">nvars</span><span class="p">)))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fld_names</span> <span class="o">=</span> <span class="n">fld_names</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_float_dtype</span><span class="p">,</span>
+                                         <span class="n">count</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_float_dtype</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="n">nx</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_float_dtype</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="n">ny</span><span class="p">)</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_float_dtype</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="n">nz</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">keep_crd_clist</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">crd_clist</span> <span class="o">=</span> <span class="p">[(</span><span class="s">&#39;z&#39;</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_float_dtype</span><span class="o">.</span><span class="n">name</span><span class="p">)),</span>
+                              <span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_float_dtype</span><span class="o">.</span><span class="n">name</span><span class="p">)),</span>
+                              <span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_float_dtype</span><span class="o">.</span><span class="n">name</span><span class="p">))]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nvars</span> <span class="o">=</span> <span class="n">nvars</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nscalars</span> <span class="o">=</span> <span class="n">nscalars</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="n">nz</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_loc_after_header</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="bp">None</span>
+
+</div>
+<div class="viewcode-block" id="AthenaBinDataWrapper"><a class="viewcode-back" href="../../../api/viscid.readers.athena_bin.html#viscid.readers.athena_bin.AthenaBinDataWrapper">[docs]</a><span class="k">class</span> <span class="nc">AthenaBinDataWrapper</span><span class="p">(</span><span class="n">vfile</span><span class="o">.</span><span class="n">DataWrapper</span><span class="p">):</span>
+    <span class="n">file_wrapper</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">fld_name</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">expected_shape</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">fld_number</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_wrapper</span><span class="p">,</span> <span class="n">fld_name</span><span class="p">,</span> <span class="n">expected_shape</span><span class="p">,</span> <span class="n">fld_number</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Lazy wrapper for a field in a Fortbin file</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            expected_shape (tuple): shape of data in the file (zyx)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AthenaBinDataWrapper</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_wrapper</span> <span class="o">=</span> <span class="n">file_wrapper</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">file_wrapper</span><span class="o">.</span><span class="n">filename</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fld_name</span> <span class="o">=</span> <span class="n">fld_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">expected_shape</span> <span class="o">=</span> <span class="n">expected_shape</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fld_number</span> <span class="o">=</span> <span class="n">fld_number</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            zyx shape since that&#39;s the shape __array__ returns</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">expected_shape</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dtype</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_wrapper</span><span class="o">.</span><span class="n">float_dtype</span>
+
+    <span class="k">def</span> <span class="nf">__array__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_wrapper</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">arr</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read_field</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fld_number</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expected_shape</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
+<div class="viewcode-block" id="AthenaBinDataWrapper.read_direct"><a class="viewcode-back" href="../../../api/viscid.readers.athena_bin.html#viscid.readers.athena_bin.AthenaBinDataWrapper.read_direct">[docs]</a>    <span class="k">def</span> <span class="nf">read_direct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array__</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="AthenaBinDataWrapper.len"><a class="viewcode-back" href="../../../api/viscid.readers.athena_bin.html#viscid.readers.athena_bin.AthenaBinDataWrapper.len">[docs]</a>    <span class="k">def</span> <span class="nf">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</div>
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array__</span><span class="p">()</span><span class="o">.</span><span class="n">__getitem__</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+<span class="c">##</span>
+<span class="c">## EOF</span>
+<span class="c">##</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

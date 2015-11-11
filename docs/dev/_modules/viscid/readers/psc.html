@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.readers.psc &mdash; Viscid 0.95.0 dev documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.95.0 dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.0 dev documentation" href="../../../index.html" />
+    <link rel="up" title="viscid.readers" href="../readers.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.0 dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../changes.html">ChangeLog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for viscid.readers.psc</h1><div class="highlight"><pre>
+<span class="c">#! /usr/bin/env python</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">h5py</span>
+    <span class="n">_HAVE_H5PY</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">_HAVE_H5PY</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">grid</span>
+<span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">field</span>
+<span class="kn">from</span> <span class="nn">viscid.readers</span> <span class="kn">import</span> <span class="n">xdmf</span>
+<span class="kn">from</span> <span class="nn">viscid.calculator</span> <span class="kn">import</span> <span class="n">plasma</span>
+
+
+<div class="viewcode-block" id="PscGrid"><a class="viewcode-back" href="../../../api/viscid.readers.psc.html#viscid.readers.psc.PscGrid">[docs]</a><span class="k">class</span> <span class="nc">PscGrid</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">Grid</span><span class="p">):</span>
+    <span class="n">downscale</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">d_i</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c"># used to rescale from d_e (natural normalization) to d_i</span>
+
+    <span class="k">def</span> <span class="nf">_get_bx</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&quot;hx&quot;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_get_by</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&quot;hy&quot;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_get_bz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&quot;hz&quot;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_get_epar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">hx</span><span class="p">,</span> <span class="n">hy</span><span class="p">,</span> <span class="n">hz</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&quot;hx&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&quot;hy&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&quot;hz&quot;</span><span class="p">]</span>
+        <span class="n">ex</span><span class="p">,</span> <span class="n">ey</span><span class="p">,</span> <span class="n">ez</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s">&quot;ex&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&quot;ey&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="p">[</span><span class="s">&quot;ez&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">ex</span> <span class="o">*</span> <span class="n">hx</span> <span class="o">+</span> <span class="n">ey</span> <span class="o">*</span> <span class="n">hy</span> <span class="o">+</span> <span class="n">ez</span> <span class="o">*</span> <span class="n">hz</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">hx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">hy</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">hz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**-.</span><span class="mi">5</span>
+
+    <span class="k">def</span> <span class="nf">_assemble_vector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_name</span><span class="p">,</span> <span class="n">comp_names</span><span class="o">=</span><span class="s">&quot;xyz&quot;</span><span class="p">,</span> <span class="n">forget_source</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                         <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+        <span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">forget_source</span><span class="o">=</span><span class="n">forget_source</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">comp_names</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">vx</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="n">base_name</span> <span class="o">+</span> <span class="n">comp_names</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+            <span class="n">vy</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="n">base_name</span> <span class="o">+</span> <span class="n">comp_names</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+            <span class="n">vz</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="n">base_name</span> <span class="o">+</span> <span class="n">comp_names</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">scalar_fields_to_vector</span><span class="p">([</span><span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">vz</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="n">base_name</span><span class="p">,</span>
+                                              <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">comps</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="p">[</span><span class="n">base_name</span> <span class="o">+</span> <span class="n">c</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comp_names</span><span class="p">]</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">scalar_fields_to_vector</span><span class="p">(</span><span class="n">comps</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">base_name</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="n">comps</span><span class="p">:</span>
+                <span class="n">comp</span><span class="o">.</span><span class="n">unload</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">v</span>
+
+    <span class="k">def</span> <span class="nf">_get_b</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assemble_vector</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="n">_force_layout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">force_vector_layout</span><span class="p">,</span>
+                                     <span class="n">pretty_name</span><span class="o">=</span><span class="s">&quot;B&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_h</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assemble_vector</span><span class="p">(</span><span class="s">&quot;h&quot;</span><span class="p">,</span> <span class="n">_force_layout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">force_vector_layout</span><span class="p">,</span>
+                                     <span class="n">pretty_name</span><span class="o">=</span><span class="s">&quot;H&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_e</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assemble_vector</span><span class="p">(</span><span class="s">&quot;e&quot;</span><span class="p">,</span> <span class="n">_force_layout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">force_vector_layout</span><span class="p">,</span>
+                                     <span class="n">pretty_name</span><span class="o">=</span><span class="s">&quot;E&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_j</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assemble_vector</span><span class="p">(</span><span class="s">&quot;j&quot;</span><span class="p">,</span> <span class="n">_force_layout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">force_vector_layout</span><span class="p">,</span>
+                                     <span class="n">pretty_name</span><span class="o">=</span><span class="s">&quot;J&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_psi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">plasma</span><span class="o">.</span><span class="n">calc_psi</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="s">&#39;b&#39;</span><span class="p">])</span>
+
+</div>
+<div class="viewcode-block" id="PscFieldFile"><a class="viewcode-back" href="../../../api/viscid.readers.psc.html#viscid.readers.psc.PscFieldFile">[docs]</a><span class="k">class</span> <span class="nc">PscFieldFile</span><span class="p">(</span><span class="n">xdmf</span><span class="o">.</span><span class="n">FileXDMF</span><span class="p">):</span>  <span class="c"># pylint: disable=W0223</span>
+    <span class="n">_detector</span> <span class="o">=</span> <span class="s">r&quot;^\s*(.*/)?(.*)fd(?:\.([0-9]{6}))?\.xdmf&quot;</span>
+    <span class="n">_grid_type</span> <span class="o">=</span> <span class="n">PscGrid</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c"># print(&quot;Opening &#39;%s&#39;&quot; % (fname))</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">PscFieldFile</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="PscParticles"><a class="viewcode-back" href="../../../api/viscid.readers.psc.html#viscid.readers.psc.PscParticles">[docs]</a><span class="k">class</span> <span class="nc">PscParticles</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">/prt.</span><span class="si">%06d</span><span class="s">_p</span><span class="si">%06d</span><span class="s">.h5&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="c"># print(&quot;Opening &#39;%s&#39;&quot; % (filename))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">_HAVE_H5PY</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;Can&#39;t load psc particles w/o h5py&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_h5file</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+
+        <span class="c"># path = _find_path(self._h5file, &quot;psc&quot;)</span>
+        <span class="c"># self.time = self._h5file[path].attrs[&quot;time&quot;][0]</span>
+        <span class="c"># self.timestep = self._h5file[path].attrs[&quot;timestep&quot;][0]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h5file</span><span class="p">[</span><span class="s">&quot;particles/p0/1d&quot;</span><span class="p">]</span>
+
+</div>
+<div class="viewcode-block" id="open_psc_file"><a class="viewcode-back" href="../../../api/viscid.readers.psc.html#viscid.readers.psc.open_psc_file">[docs]</a><span class="k">def</span> <span class="nf">open_psc_file</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">pfx</span><span class="o">=</span><span class="s">&quot;p&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; WARNING: using this goes around the file bucket, be careful</span>
+<span class="sd">    not to call this twice on the same file. Nothing bad will happen,</span>
+<span class="sd">    you&#39;ll just have 2 versions in memory.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">PscFieldFile</span><span class="p">(</span><span class="n">make_fname</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">pfx</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="make_fname"><a class="viewcode-back" href="../../../api/viscid.readers.psc.html#viscid.readers.psc.make_fname">[docs]</a><span class="k">def</span> <span class="nf">make_fname</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">pfx</span><span class="o">=</span><span class="s">&quot;p&quot;</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">&quot;{0}/{1}fd.{2:.06d}.xdmf&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">pfx</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+
+<span class="c">##</span>
+<span class="c">## EOF</span>
+<span class="c">##</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
