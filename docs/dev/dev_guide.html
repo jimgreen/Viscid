@@ -193,32 +193,27 @@
 <h1>Developer&#8217;s Guide<a class="headerlink" href="#developer-s-guide" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="style">
 <h2>Style<a class="headerlink" href="#style" title="Permalink to this headline">¶</a></h2>
-<p>Please, if you edit the code, use [PEP 8](<a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a>) style. Poor style is more than just aesthetic; it tends to lead to bugs that are difficult to spot. This is sorely true when it comes to whitespace (4 spaces per indent please). Here are some aspects of PEP 8 that are ok to bend:</p>
-<blockquote>
-<div><ul class="simple">
+<p>Please, if you edit the code, use <a class="reference external" href="https://www.python.org/dev/peps/pep-0008">PEP 8</a> style. Poor style is more than just aesthetic; it tends to lead to bugs that are difficult to spot. This is sorely true when it comes to whitespace (4 spaces per indent please). Here are some aspects of PEP 8 that are ok to bend:</p>
+<ul class="simple">
 <li>Lines should be less than 92 characters long, but if you&#8217;re pushing over 80, then think about whether or not you&#8217;re doing too much on one line.</li>
 <li>Additional whitespace around parenthases and operators should be used to line up successive lines of math if that makes the math operation more clear. Note that this says additional, i.e., don&#8217;t start dropping spaces after commas. An example is doing cross products; the code should be written such that it&#8217;s visually clear that the lines calculating the components of the vector are cyclic permutations.</li>
 </ul>
-</div></blockquote>
-<p>Continuous integration will pass commits and pull requests through [Flake8](<a class="reference external" href="https://flake8.readthedocs.org/en/latest/">https://flake8.readthedocs.org/en/latest/</a>) with a generous amount of ignored rules. See <cite>Viscid/Makefile</cite> for the list of rules that are ignored.</p>
+<p>Continuous integration will pass commits and pull requests through <a class="reference external" href="https://flake8.readthedocs.org/en/latest">Flake8</a> with a generous amount of ignored rules. See <cite>Viscid/Makefile</cite> for the list of rules that are ignored.</p>
 </div>
 <div class="section" id="continuous-integration">
 <h2>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h2>
-<p>This project uses [Travis-CI](<a class="reference external" href="http://travis-ci.org">http://travis-ci.org</a>) for continuous integration. By default, tests run whenever commits are pushed or pull requests are made to the main git repository on GitHub. Test summary pages are automatically uploaded to GitHub Pages in the <cite>summary</cite> directory. In additon, commits to <cite>master</cite> and <cite>dev</cite> automatically update the html documentation and push the changes to GitHub Pages.</p>
-<blockquote>
-<div>Forks can use Travis-CI by enabling it for their own GitHub accounts. The caveat is that commits to <cite>master</cite> and <cite>dev</cite> from forked repositories will not update GitHub Pages.</div></blockquote>
+<p>This project uses <a class="reference external" href="http://travis-ci.org">Travis-CI</a> for continuous integration. By default, tests run whenever commits are pushed or pull requests are made to the main git repository on GitHub. Test summary pages are automatically uploaded to GitHub Pages in the <cite>summary</cite> directory. In additon, commits to <cite>master</cite> and <cite>dev</cite> automatically update the html documentation and push the changes to GitHub Pages.</p>
+<p>Forks can use Travis-CI by enabling it for their own GitHub accounts. The caveat is that commits to <cite>master</cite> and <cite>dev</cite> from forked repositories will not update GitHub Pages.</p>
 </div>
 <div class="section" id="git-structure">
 <h2>Git structure<a class="headerlink" href="#git-structure" title="Permalink to this headline">¶</a></h2>
 <p>This project uses the Git Flow merge strategy for development / release cycles. Basically, changes should be made on <cite>feature/*</cite> branches and merged into the <cite>dev</cite> branch when ready. Releases should begin on a branch of dev named <cite>release/version-number</cite> which is pushed upstream. The push is important because it triggers CI tests. When the release branch instills confidence, it can be merged into both <cite>master</cite> and <cite>dev</cite>.</p>
 <p>Here are some things to remember when doing releases and the like:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>The first commit to a <cite>release</cite> branch should remove the word &#8220;dev&#8221; from both <cite>viscid.__version__</cite> and <cite>Viscid/CHANGES.md</cite>. This is checked by Travis-CI.</li>
 <li>The first commit to the <cite>dev</cite> branch after merging a <cite>release</cite> should be to bump the version number in both <cite>viscid.__version__</cite> and <cite>Viscid/CHANGES.md</cite>. Remember to put the word &#8220;dev&#8221; at the end of the version number. This is checked by Travis-CI.</li>
-<li>There shouldn&#8217;t be a need to explicitly generate the html docs since they&#8217;re recreated and pushed to GitHub Pages on pushes to the dev and master branches on the mait GitHub repo.</li>
+<li>There shouldn&#8217;t be a need to explicitly generate the html docs since they&#8217;re recreated and pushed to GitHub Pages on pushes to the dev and master branches on the main GitHub repo.</li>
 </ul>
-</div></blockquote>
 </div>
 </div>
 
