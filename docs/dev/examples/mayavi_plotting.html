@@ -71,7 +71,7 @@
             <a class="reference internal", href="../installation.html">Installation</a>
           </li>
           <li class="toctree-l1">
-            <a class="reference internal", href="../custom_behavior.html">RC file</a>
+            <a class="reference internal", href="../philosophy.html">Philosophy</a>
           </li>
           <li class="toctree-l1">
             <a class="reference internal", href="../functions.html">Useful Functions</a>
@@ -80,7 +80,13 @@
             <a class="reference internal", href="../plot_options.html">Plot Options</a>
           </li>
           <li class="toctree-l1">
+            <a class="reference internal", href="../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
             <a class="reference internal", href="../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../dev_guide.html">Developer's Guide</a>
           </li>
           <li class="toctree-l1">
             <a class="reference internal", href="../extending_readers.html">Extending Readers</a>
@@ -128,10 +134,11 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../custom_behavior.html">Custom Behavior (rc file)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functions.html">Useful Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_behavior.html">Custom Behavior (rc file)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guide.html">Developer&#8217;s Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../extending_readers.html">Extending Readers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/viscid.html">viscid package</a></li>
@@ -213,6 +220,7 @@ made by <cite>test_mvi.py</cite> along with some code</p>
 
     <span class="n">b</span> <span class="o">=</span> <span class="n">f3d</span><span class="p">[</span><span class="s">&quot;b&quot;</span><span class="p">]</span>
     <span class="n">pp</span> <span class="o">=</span> <span class="n">f3d</span><span class="p">[</span><span class="s">&quot;pp&quot;</span><span class="p">]</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">f3d</span><span class="p">[</span><span class="s">&quot;e_cc&quot;</span><span class="p">]</span>
 
     <span class="c"># plot a scalar cut plane of pressure</span>
     <span class="n">pp_src</span> <span class="o">=</span> <span class="n">mvi</span><span class="o">.</span><span class="n">field2source</span><span class="p">(</span><span class="n">pp</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="s">&#39;node&#39;</span><span class="p">)</span>
@@ -222,10 +230,10 @@ made by <cite>test_mvi.py</cite> along with some code</p>
     <span class="n">scp</span><span class="o">.</span><span class="n">implicit_plane</span><span class="o">.</span><span class="n">normal</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">scp</span><span class="o">.</span><span class="n">implicit_plane</span><span class="o">.</span><span class="n">origin</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
     <span class="c"># i don&#39;t know why this log10 doesn&#39;t seem to work</span>
-    <span class="n">scp</span><span class="o">.</span><span class="n">module_manager</span><span class="o">.</span><span class="n">scalar_lut_manager</span><span class="o">.</span><span class="n">lut</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="s">&#39;log10&#39;</span>
-    <span class="n">scp</span><span class="o">.</span><span class="n">module_manager</span><span class="o">.</span><span class="n">scalar_lut_manager</span><span class="o">.</span><span class="n">lut_mode</span> <span class="o">=</span> <span class="s">&#39;Reds&#39;</span>
-    <span class="n">scp</span><span class="o">.</span><span class="n">module_manager</span><span class="o">.</span><span class="n">scalar_lut_manager</span><span class="o">.</span><span class="n">reverse_lut</span> <span class="o">=</span> <span class="bp">True</span>
-    <span class="n">scp</span><span class="o">.</span><span class="n">module_manager</span><span class="o">.</span><span class="n">scalar_lut_manager</span><span class="o">.</span><span class="n">show_scalar_bar</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">cbar</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">scp</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">pp</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s">&#39;vertical&#39;</span><span class="p">)</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">lut</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="s">&#39;log10&#39;</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">lut_mode</span> <span class="o">=</span> <span class="s">&#39;Reds&#39;</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">reverse_lut</span> <span class="o">=</span> <span class="bp">True</span>
 
     <span class="c"># calculate B field lines &amp;&amp; topology in viscid and plot them</span>
     <span class="n">seeds</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">SphericalPatch</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span>
@@ -236,10 +244,29 @@ made by <cite>test_mvi.py</cite> along with some code</p>
     <span class="n">mvi</span><span class="o">.</span><span class="n">plot_lines</span><span class="p">(</span><span class="n">b_lines</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="n">viscid</span><span class="o">.</span><span class="n">topology2color</span><span class="p">(</span><span class="n">topo</span><span class="p">))</span>
 
     <span class="c"># Use Mayavi (VTK) to calculate field lines using an interactive seed</span>
+    <span class="c"># These field lines are colored by E parallel, and while the syntax used</span>
+    <span class="c"># to add Epar to the B field is hacky looking, it works.</span>
     <span class="n">b_src</span> <span class="o">=</span> <span class="n">mvi</span><span class="o">.</span><span class="n">field2source</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="s">&#39;node&#39;</span><span class="p">)</span>
+
+    <span class="c"># add e parallel to the b_src so we can use it to color the lines</span>
+    <span class="n">epar</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="n">epar</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Epar&quot;</span>
+    <span class="n">epar0_src</span> <span class="o">=</span> <span class="n">mvi</span><span class="o">.</span><span class="n">add_field</span><span class="p">(</span><span class="n">epar</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="s">&#39;node&#39;</span><span class="p">)</span>
+    <span class="n">b_src</span><span class="o">.</span><span class="n">_point_scalars_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">epar0_src</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c"># pylint: disable=protected-access</span>
+    <span class="n">b_src</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">point_data</span><span class="o">.</span><span class="n">scalars</span> <span class="o">=</span> <span class="n">epar0_src</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">point_data</span><span class="o">.</span><span class="n">scalars</span>
+    <span class="n">b_src</span><span class="o">.</span><span class="n">point_scalars_name</span> <span class="o">=</span> <span class="n">epar0_src</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="c"># now add the streamlines</span>
     <span class="n">bsl2</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">streamline</span><span class="p">(</span><span class="n">b_src</span><span class="p">,</span> <span class="n">seedtype</span><span class="o">=</span><span class="s">&#39;sphere&#39;</span><span class="p">,</span>
                                     <span class="n">integration_direction</span><span class="o">=</span><span class="s">&#39;both&#39;</span><span class="p">,</span>
-                                    <span class="n">seed_resolution</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+                                    <span class="n">seed_resolution</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+    <span class="n">cbar</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">bsl2</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">epar</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s">&#39;horizontal&#39;</span><span class="p">)</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">scalar_bar_representation</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">scalar_bar_representation</span><span class="o">.</span><span class="n">position2</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.14</span><span class="p">)</span>
+    <span class="n">redhelix</span> <span class="o">=</span> <span class="p">(</span><span class="n">viscid</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">cubehelix</span><span class="o">.</span><span class="n">redhelix_rgba</span> <span class="o">*</span> <span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">&#39;i&#39;</span><span class="p">)</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">lut</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">redhelix</span><span class="p">[:,</span> <span class="p">::</span><span class="mi">1</span><span class="p">]</span>
+
     <span class="n">bsl2</span><span class="o">.</span><span class="n">stream_tracer</span><span class="o">.</span><span class="n">maximum_propagation</span> <span class="o">=</span> <span class="mf">20.</span>
     <span class="n">bsl2</span><span class="o">.</span><span class="n">seed</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
     <span class="n">bsl2</span><span class="o">.</span><span class="n">seed</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">1.0</span>
@@ -247,7 +274,7 @@ made by <cite>test_mvi.py</cite> along with some code</p>
     <span class="n">bsl2</span><span class="o">.</span><span class="n">tube_filter</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">0.03</span>
     <span class="n">bsl2</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>  <span class="c"># this stop/start was a hack to get something to work?</span>
     <span class="n">bsl2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-    <span class="n">bsl2</span><span class="o">.</span><span class="n">seed</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">bsl2</span><span class="o">.</span><span class="n">seed</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="c"># Plot the ionosphere too</span>
     <span class="n">fac_tot</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">*</span> <span class="n">f_iono</span><span class="p">[</span><span class="s">&#39;fac_tot&#39;</span><span class="p">]</span>
@@ -263,11 +290,12 @@ made by <cite>test_mvi.py</cite> along with some code</p>
     <span class="n">mvi</span><span class="o">.</span><span class="n">plot_earth_3d</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">1.01</span><span class="p">,</span> <span class="n">crd_system</span><span class="o">=</span><span class="s">&quot;gse&quot;</span><span class="p">,</span> <span class="n">night_only</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
                       <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 
-    <span class="n">mlab</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">pp_src</span><span class="p">,</span> <span class="n">nb_labels</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-    <span class="n">mlab</span><span class="o">.</span><span class="n">orientation_axes</span><span class="p">()</span>
+    <span class="c"># mlab.axes(pp_src, nb_labels=5)</span>
+    <span class="n">oa</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">orientation_axes</span><span class="p">()</span>
+    <span class="n">oa</span><span class="o">.</span><span class="n">marker</span><span class="o">.</span><span class="n">set_viewport</span><span class="p">(</span><span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 
     <span class="n">mvi</span><span class="o">.</span><span class="n">resize</span><span class="p">([</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">800</span><span class="p">])</span>
-    <span class="n">mlab</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">azimuth</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">elevation</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mf">35.0</span><span class="p">,</span> <span class="n">focalpoint</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">mlab</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">azimuth</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">elevation</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mf">35.0</span><span class="p">,</span> <span class="n">focalpoint</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 
     <span class="c"># # Save Figure</span>
     <span class="c"># print(&quot;saving png&quot;)</span>

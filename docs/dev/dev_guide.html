@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Search &mdash; Viscid 0.95.2 dev documentation</title>
+    <title>Developer’s Guide &mdash; Viscid 0.95.2 dev documentation</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,23 +25,17 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/searchtools.js"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
     <link rel="top" title="Viscid 0.95.2 dev documentation" href="index.html" />
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
-  
+    <link rel="next" title="Extending Readers" href="extending_readers.html" />
+    <link rel="prev" title="Command Line Utilities" href="command_line.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-
 
   </head>
   <body role="document">
@@ -91,7 +85,7 @@
             <a class="reference internal", href="command_line.html">Command Line Tools</a>
           </li>
           <li class="toctree-l1">
-            <a class="reference internal", href="dev_guide.html">Developer's Guide</a>
+            <a class="reference internal", href="#">Developer's Guide</a>
           </li>
           <li class="toctree-l1">
             <a class="reference internal", href="extending_readers.html">Extending Readers</a>
@@ -136,14 +130,14 @@
       aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="changes.html">ChangeLog</a></li>
 </ul>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="philosophy.html">Philosophy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Useful Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plot_options.html">Plot Options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_behavior.html">Custom Behavior (rc file)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="command_line.html">Command Line Utilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dev_guide.html">Developer&#8217;s Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Developer&#8217;s Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="extending_readers.html">Extending Readers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/index.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/viscid.html">viscid package</a></li>
@@ -159,7 +153,15 @@
      href="#">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"
       role="menu"
-      aria-labelledby="dLabelLocalToc"></ul>
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Developer&#8217;s Guide</a><ul>
+<li><a class="reference internal" href="#style">Style</a></li>
+<li><a class="reference internal" href="#continuous-integration">Continuous Integration</a></li>
+<li><a class="reference internal" href="#git-structure">Git structure</a></li>
+</ul>
+</li>
+</ul>
+</ul>
 </li>
               
             
@@ -171,6 +173,13 @@
 
           
             
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
           
         </div>
     </div>
@@ -180,35 +189,39 @@
   <div class="row">
     <div class="col-md-12">
       
-  <h1 id="search-documentation">Search</h1>
-  <div id="fallback" class="admonition warning">
-  <script type="text/javascript">$('#fallback').hide();</script>
-  <p>
-    Please activate JavaScript to enable the search
-    functionality.
-  </p>
-  </div>
-  <p>
-    From here you can search these documents. Enter your search
-    words into the box below and click "search". Note that the search
-    function will automatically search for all of the words. Pages
-    containing fewer words won't appear in the result list.
-  </p>
+  <div class="section" id="developer-s-guide">
+<h1>Developer&#8217;s Guide<a class="headerlink" href="#developer-s-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="style">
+<h2>Style<a class="headerlink" href="#style" title="Permalink to this headline">¶</a></h2>
+<p>Please, if you edit the code, use [PEP 8](<a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a>) style. Poor style is more than just aesthetic; it tends to lead to bugs that are difficult to spot. This is sorely true when it comes to whitespace (4 spaces per indent please). Here are some aspects of PEP 8 that are ok to bend:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Lines should be less than 92 characters long, but if you&#8217;re pushing over 80, then think about whether or not you&#8217;re doing too much on one line.</li>
+<li>Additional whitespace around parenthases and operators should be used to line up successive lines of math if that makes the math operation more clear. Note that this says additional, i.e., don&#8217;t start dropping spaces after commas. An example is doing cross products; the code should be written such that it&#8217;s visually clear that the lines calculating the components of the vector are cyclic permutations.</li>
+</ul>
+</div></blockquote>
+<p>Continuous integration will pass commits and pull requests through [Flake8](<a class="reference external" href="https://flake8.readthedocs.org/en/latest/">https://flake8.readthedocs.org/en/latest/</a>) with a generous amount of ignored rules. See <cite>Viscid/Makefile</cite> for the list of rules that are ignored.</p>
+</div>
+<div class="section" id="continuous-integration">
+<h2>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h2>
+<p>This project uses [Travis-CI](<a class="reference external" href="http://travis-ci.org">http://travis-ci.org</a>) for continuous integration. By default, tests run whenever commits are pushed or pull requests are made to the main git repository on GitHub. Test summary pages are automatically uploaded to GitHub Pages in the <cite>summary</cite> directory. In additon, commits to <cite>master</cite> and <cite>dev</cite> automatically update the html documentation and push the changes to GitHub Pages.</p>
+<blockquote>
+<div>Forks can use Travis-CI by enabling it for their own GitHub accounts. The caveat is that commits to <cite>master</cite> and <cite>dev</cite> from forked repositories will not update GitHub Pages.</div></blockquote>
+</div>
+<div class="section" id="git-structure">
+<h2>Git structure<a class="headerlink" href="#git-structure" title="Permalink to this headline">¶</a></h2>
+<p>This project uses the Git Flow merge strategy for development / release cycles. Basically, changes should be made on <cite>feature/*</cite> branches and merged into the <cite>dev</cite> branch when ready. Releases should begin on a branch of dev named <cite>release/version-number</cite> which is pushed upstream. The push is important because it triggers CI tests. When the release branch instills confidence, it can be merged into both <cite>master</cite> and <cite>dev</cite>.</p>
+<p>Here are some things to remember when doing releases and the like:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The first commit to a <cite>release</cite> branch should remove the word &#8220;dev&#8221; from both <cite>viscid.__version__</cite> and <cite>Viscid/CHANGES.md</cite>. This is checked by Travis-CI.</li>
+<li>The first commit to the <cite>dev</cite> branch after merging a <cite>release</cite> should be to bump the version number in both <cite>viscid.__version__</cite> and <cite>Viscid/CHANGES.md</cite>. Remember to put the word &#8220;dev&#8221; at the end of the version number. This is checked by Travis-CI.</li>
+<li>There shouldn&#8217;t be a need to explicitly generate the html docs since they&#8217;re recreated and pushed to GitHub Pages on pushes to the dev and master branches on the mait GitHub repo.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
 
-  
-  <form class="form-inline" action="" method="get">
-    <div class="form-group">
-      <input type="text" class="form-control" name="q" value="" />
-    </div>
-    <input type="submit" class="btn btn-default" value="search" />
-    <span id="search-progress" style="padding-left: 10px"></span>
-  </form>  
-  
-  
-  
-  <div id="search-results">
-  
-  </div>
 
     </div>
       
@@ -221,6 +234,10 @@
       
         <br/>
         
+<div id="sourcelink">
+  <a href="_sources/dev_guide.txt"
+     rel="nofollow">Source</a>
+</div>
       
     </p>
     <p>

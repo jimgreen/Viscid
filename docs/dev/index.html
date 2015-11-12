@@ -69,7 +69,7 @@
             <a class="reference internal", href="installation.html">Installation</a>
           </li>
           <li class="toctree-l1">
-            <a class="reference internal", href="custom_behavior.html">RC file</a>
+            <a class="reference internal", href="philosophy.html">Philosophy</a>
           </li>
           <li class="toctree-l1">
             <a class="reference internal", href="functions.html">Useful Functions</a>
@@ -78,7 +78,13 @@
             <a class="reference internal", href="plot_options.html">Plot Options</a>
           </li>
           <li class="toctree-l1">
+            <a class="reference internal", href="custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
             <a class="reference internal", href="command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="dev_guide.html">Developer's Guide</a>
           </li>
           <li class="toctree-l1">
             <a class="reference internal", href="extending_readers.html">Extending Readers</a>
@@ -126,10 +132,11 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="philosophy.html">Philosophy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="custom_behavior.html">Custom Behavior (rc file)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Useful Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_behavior.html">Custom Behavior (rc file)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guide.html">Developer&#8217;s Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="extending_readers.html">Extending Readers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/index.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/viscid.html">viscid package</a></li>
@@ -219,18 +226,7 @@ export PATH=$PATH:${viscid_dir}/scripts
 <li class="toctree-l2"><a class="reference internal" href="installation.html#standard-setup">Standard Setup</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="philosophy.html">Philosophy</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="philosophy.html#data-abstraction">Data Abstraction</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="custom_behavior.html">Custom Behavior (rc file)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="custom_behavior.html#common-customizations">Common Customizations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom_behavior.html#viscid-plot-mpl-extra">viscid.plot.mpl_extra</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom_behavior.html#viscid-grid-grid">viscid.grid.Grid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom_behavior.html#viscid-readers-openggcm-ggcmgrid">viscid.readers.openggcm.GGCMGrid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom_behavior.html#viscid-readers-openggcm-ggcmfile">viscid.readers.openggcm.GGCMFile</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="philosophy.html">Philosophy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Useful Functions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="functions.html#fields">Fields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions.html#calculations">Calculations</a><ul>
@@ -253,12 +249,26 @@ export PATH=$PATH:${viscid_dir}/scripts
 <li class="toctree-l2"><a class="reference internal" href="plot_options.html#d-color-plots">1-D Color Plots</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="custom_behavior.html">Custom Behavior (rc file)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="custom_behavior.html#common-customizations">Common Customizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_behavior.html#viscid-plot-mpl-extra">viscid.plot.mpl_extra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_behavior.html#viscid-grid-grid">viscid.grid.Grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_behavior.html#viscid-readers-openggcm-ggcmgrid">viscid.readers.openggcm.GGCMGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_behavior.html#viscid-readers-openggcm-ggcmfile">viscid.readers.openggcm.GGCMFile</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="command_line.html">Command Line Utilities</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#viscid-2d">viscid_2d</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#viscid-ts">viscid_ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#viscid-diff">viscid_diff</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#athena2xdmf">athena2xdmf</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command_line.html#bitmaskbits">bitmaskbits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guide.html">Developer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev_guide.html#style">Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev_guide.html#continuous-integration">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev_guide.html#git-structure">Git structure</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="extending_readers.html">Extending Readers</a></li>
