@@ -366,7 +366,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">_flip_vect_comp_names</span> <span class="o">=</span> <span class="s">&quot;bx, by, b1x, b1y, &quot;</span> \
                             <span class="s">&quot;vx, vy, rv1x, rv1y, &quot;</span> \
-                            <span class="s">&quot;jx, jy, ex, ey, ex_cc, ey_cc&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;, &#39;</span><span class="p">)</span>
+                            <span class="s">&quot;jx, jy, xjx, xjy, &quot;</span> \
+                            <span class="s">&quot;ex, ey, ex_cc, ey_cc&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;, &#39;</span><span class="p">)</span>
     <span class="n">_flip_vect_names</span> <span class="o">=</span> <span class="s">&quot;v, b, j, xj&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;, &#39;</span><span class="p">)</span>
     <span class="c"># _flip_vect_comp_names = []</span>
     <span class="c"># _flip_vect_names = []</span>
@@ -485,6 +486,15 @@
     <span class="k">def</span> <span class="nf">_get_vz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;v&#39;</span><span class="p">][</span><span class="s">&#39;z&#39;</span><span class="p">]</span>
 
+    <span class="k">def</span> <span class="nf">_get_jx</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;xjx&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_get_jy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;xjy&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_get_jz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;xjz&#39;</span><span class="p">]</span>
+
     <span class="k">def</span> <span class="nf">_assemble_vector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_name</span><span class="p">,</span> <span class="n">comp_names</span><span class="o">=</span><span class="s">&quot;xyz&quot;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span>
                          <span class="n">forget_source</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">forget_source</span><span class="o">=</span><span class="n">forget_source</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -510,6 +520,10 @@
                                      <span class="n">pretty_name</span><span class="o">=</span><span class="s">&quot;E&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_get_j</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assemble_vector</span><span class="p">(</span><span class="s">&quot;j&quot;</span><span class="p">,</span> <span class="n">_force_layout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">force_vector_layout</span><span class="p">,</span>
+                                     <span class="n">pretty_name</span><span class="o">=</span><span class="s">&quot;J&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_xj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assemble_vector</span><span class="p">(</span><span class="s">&quot;j&quot;</span><span class="p">,</span> <span class="n">_force_layout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">force_vector_layout</span><span class="p">,</span>
                                      <span class="n">pretty_name</span><span class="o">=</span><span class="s">&quot;J&quot;</span><span class="p">)</span>
 
@@ -755,6 +769,7 @@
             <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_collection</span><span class="p">:</span>
                 <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_child_file</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">index_handle</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
                                           <span class="n">file_type</span><span class="o">=</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span>
+                                          <span class="n">grid_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_grid_type</span><span class="p">,</span>
                                           <span class="n">crds</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_crds</span><span class="p">,</span>
                                           <span class="n">fld_templates</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_fld_templates</span><span class="p">)</span>
                 <span class="n">data_temporal</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>

@@ -650,7 +650,7 @@
         <span class="c"># array is probably of type numpy.int*</span>
         <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.01</span>
 
-    <span class="n">_step</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">step</span> <span class="ow">is</span> <span class="bp">None</span> <span class="k">else</span> <span class="n">step</span>
+    <span class="n">_step</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">step</span> <span class="ow">is</span> <span class="bp">None</span> <span class="k">else</span> <span class="nb">int</span><span class="p">(</span><span class="n">step</span><span class="p">)</span>
     <span class="n">epsilon_step</span> <span class="o">=</span> <span class="n">epsilon</span> <span class="k">if</span> <span class="n">_step</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="n">epsilon</span>
 
     <span class="n">start</span> <span class="o">=</span> <span class="n">convert_deprecated_floats</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="s">&quot;start&quot;</span><span class="p">)</span>
