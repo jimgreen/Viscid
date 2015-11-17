@@ -156,10 +156,11 @@
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Custom Behavior (rc file)</a><ul>
 <li><a class="reference internal" href="#common-customizations">Common Customizations</a></li>
-<li><a class="reference internal" href="#viscid-plot-mpl-extra">viscid.plot.mpl_extra</a></li>
-<li><a class="reference internal" href="#viscid-grid-grid">viscid.grid.Grid</a></li>
-<li><a class="reference internal" href="#viscid-readers-openggcm-ggcmgrid">viscid.readers.openggcm.GGCMGrid</a></li>
-<li><a class="reference internal" href="#viscid-readers-openggcm-ggcmfile">viscid.readers.openggcm.GGCMFile</a></li>
+<li><a class="reference internal" href="#viscid-plot-mpl-style"><code class="docutils literal"><span class="pre">viscid.plot.mpl_style</span></code></a></li>
+<li><a class="reference internal" href="#viscid-plot-mpl-extra"><code class="docutils literal"><span class="pre">viscid.plot.mpl_extra</span></code></a></li>
+<li><a class="reference internal" href="#viscid-grid-grid"><code class="docutils literal"><span class="pre">viscid.grid.Grid</span></code></a></li>
+<li><a class="reference internal" href="#viscid-readers-openggcm-ggcmgrid"><code class="docutils literal"><span class="pre">viscid.readers.openggcm.GGCMGrid</span></code></a></li>
+<li><a class="reference internal" href="#viscid-readers-openggcm-ggcmfile"><code class="docutils literal"><span class="pre">viscid.readers.openggcm.GGCMFile</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -200,6 +201,7 @@
 </div>
 <p>Here is an example rc file,</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span class="c1"># ~/.viscidrc</span>
+
 <span class="p-Indicator">{</span>
   <span class="c1">### For Everything</span>
   <span class="c1">## use shell copies so we don&#39;t have to call unload()</span>
@@ -216,19 +218,20 @@
   <span class="c1"># &quot;readers.athena_bin.AthenaBinFileWrapper.var_type&quot;: &quot;prim&quot;,</span>
 
   <span class="c1"># evaluator control for security</span>
-  <span class="s">&quot;calculator.evaluator.enabled&quot;</span><span class="p-Indicator">:</span> <span class="nv">false</span><span class="p-Indicator">,</span>
+  <span class="s">&quot;calculator.evaluator.enabled&quot;</span><span class="p-Indicator">:</span> <span class="nv">true</span><span class="p-Indicator">,</span>
 
-  <span class="c1"># note, the redhelix colormap is defined in viscid.plot.mpl_extra</span>
-  <span class="s">&quot;plot.mpl_extra.default_cmap&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;redhelix&quot;</span><span class="p-Indicator">,</span>
-  <span class="s">&quot;plot.mpl_extra.symmetric_cmap&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;seismic&quot;</span><span class="p-Indicator">,</span>
-  <span class="s">&quot;plot.mpl_extra.default_cbarfmt&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;steve&quot;</span><span class="p-Indicator">,</span>
-  <span class="s">&quot;plot.mpl_extra.default_majorfmt&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;steve&quot;</span><span class="p-Indicator">,</span>
+  <span class="c1"># matplotlib (&gt;= 1.5.0) styling</span>
+  <span class="s">&quot;mpl_style.use_styles&quot;</span><span class="p-Indicator">:</span> <span class="p-Indicator">[</span><span class="s">&quot;seaborn-talk&quot;</span><span class="p-Indicator">,</span> <span class="s">&quot;seaborn-ticks&quot;</span><span class="p-Indicator">,</span>
+                           <span class="s">&quot;viscid-colorblind&quot;</span><span class="p-Indicator">,</span> <span class="s">&quot;viscid-steve&quot;</span><span class="p-Indicator">],</span>
+  <span class="c1"># &quot;plot.mpl_style.rc_params&quot;: {&quot;lines.markeredgewidth&quot;: 0.01}</span>
+  <span class="c1"># &quot;plot.mpl_style.rc&quot;: {&quot;lines&quot;: {&quot;markeredgewidth&quot;: 0.01}}</span>
 
-  <span class="c1"># pretty plotting</span>
-  <span class="s">&quot;plot.vseaborn.enabled&quot;</span><span class="p-Indicator">:</span> <span class="nv">true</span><span class="p-Indicator">,</span>
-  <span class="s">&quot;plot.vseaborn.context&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;poster&quot;</span><span class="p-Indicator">,</span>
-  <span class="s">&quot;plot.vseaborn.style&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;ticks&quot;</span><span class="p-Indicator">,</span>
-  <span class="s">&quot;plot.vseaborn.palette&quot;</span><span class="p-Indicator">:</span> <span class="p-Indicator">[</span><span class="s">&quot;husl&quot;</span><span class="p-Indicator">,</span> <span class="nv">8</span><span class="p-Indicator">],</span>
+  <span class="c1"># # For matplotlib &lt; 1.5.0, you can use vseaborn as a shim to seaborn</span>
+  <span class="c1"># # for nice styles</span>
+  <span class="c1"># &quot;plot.vseaborn.enabled&quot;: true,</span>
+  <span class="c1"># &quot;plot.vseaborn.context&quot;: &quot;poster&quot;,</span>
+  <span class="c1"># &quot;plot.vseaborn.style&quot;: &quot;ticks&quot;,</span>
+  <span class="c1"># &quot;plot.vseaborn.palette&quot;: [&quot;husl&quot;, 8],</span>
   <span class="c1"># &quot;plot.vseaborn.palette&quot;: [[&quot;#9b59b6&quot;, &quot;#3498db&quot;, &quot;#95a5a6&quot;, &quot;#e74c3c&quot;, &quot;#34495e&quot;, &quot;#2ecc71&quot;]],</span>
   <span class="c1"># &quot;plot.vseaborn.rc&quot;: {&quot;lines.markeredgewidth&quot;: 0.01},</span>
 <span class="p-Indicator">}</span>
@@ -237,8 +240,23 @@
 <div class="section" id="common-customizations">
 <h2>Common Customizations<a class="headerlink" href="#common-customizations" title="Permalink to this headline">¶</a></h2>
 </div>
+<div class="section" id="viscid-plot-mpl-style">
+<h2><a class="reference internal" href="api/viscid.plot.mpl_style.html#module-viscid.plot.mpl_style" title="viscid.plot.mpl_style"><code class="xref py py-mod docutils literal"><span class="pre">viscid.plot.mpl_style</span></code></a><a class="headerlink" href="#viscid-plot-mpl-style" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>use_styles</strong>: a list of style sheet names to activate</li>
+<li><strong>rc_params</strong>: dictionary of parameters that get directly injected into
+matplotlib.rcParams</li>
+<li><strong>rc</strong>: specify rc parameters through matplotlib.rc(...). Keys are groups
+and the values should be dictionaries that will be unpacked into the rc
+function call.</li>
+</ul>
+</div>
 <div class="section" id="viscid-plot-mpl-extra">
-<h2>viscid.plot.mpl_extra<a class="headerlink" href="#viscid-plot-mpl-extra" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference internal" href="api/viscid.plot.mpl_extra.html#module-viscid.plot.mpl_extra" title="viscid.plot.mpl_extra"><code class="xref py py-mod docutils literal"><span class="pre">viscid.plot.mpl_extra</span></code></a><a class="headerlink" href="#viscid-plot-mpl-extra" title="Permalink to this headline">¶</a></h2>
+<p>These are deprecated and should be set using matplotlib rc parametrs
+with the leading group name viscid, i.e., &#8220;viscid.symmetric_cmap&#8221;. Note
+that there is no &#8220;viscid.default_cmap&#8221; since that is already a matplotlib
+rc parameter (&#8220;image.cmap&#8221;)</p>
 <ul class="simple">
 <li><strong>default_cmap</strong>: Changes the default color maps for plots made using
 <a class="reference internal" href="api/viscid.plot.mpl.html#module-viscid.plot.mpl" title="viscid.plot.mpl"><code class="xref py py-mod docutils literal"><span class="pre">viscid.plot.mpl</span></code></a></li>
@@ -252,7 +270,7 @@ symmetric about 0</li>
 </ul>
 </div>
 <div class="section" id="viscid-grid-grid">
-<h2>viscid.grid.Grid<a class="headerlink" href="#viscid-grid-grid" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference internal" href="api/viscid.grid.html#viscid.grid.Grid" title="viscid.grid.Grid"><code class="xref py py-class docutils literal"><span class="pre">viscid.grid.Grid</span></code></a><a class="headerlink" href="#viscid-grid-grid" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><strong>force_vecter_layout</strong> (<code class="docutils literal"><span class="pre">field.LAYOUT_*</span></code>): force all vectors to
 be of a certain layout when they&#8217;re created (Default: LAYOUT_DEFAULT)</li>
@@ -265,7 +283,7 @@ when the returned instance is garbage collected.
 </ul>
 </div>
 <div class="section" id="viscid-readers-openggcm-ggcmgrid">
-<h2>viscid.readers.openggcm.GGCMGrid<a class="headerlink" href="#viscid-readers-openggcm-ggcmgrid" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference internal" href="api/viscid.readers.openggcm.html#viscid.readers.openggcm.GGCMGrid" title="viscid.readers.openggcm.GGCMGrid"><code class="xref py py-class docutils literal"><span class="pre">viscid.readers.openggcm.GGCMGrid</span></code></a><a class="headerlink" href="#viscid-readers-openggcm-ggcmgrid" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><strong>mhd_to_gse_on_read</strong> (bool): flips arrays on load to be in
 GSE crds (Default: False)</li>
@@ -275,7 +293,7 @@ after transform (if one is done), but makes data load
 </ul>
 </div>
 <div class="section" id="viscid-readers-openggcm-ggcmfile">
-<h2>viscid.readers.openggcm.GGCMFile<a class="headerlink" href="#viscid-readers-openggcm-ggcmfile" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference internal" href="api/viscid.readers.openggcm.html#viscid.readers.openggcm.GGCMFile" title="viscid.readers.openggcm.GGCMFile"><code class="xref py py-class docutils literal"><span class="pre">viscid.readers.openggcm.GGCMFile</span></code></a><a class="headerlink" href="#viscid-readers-openggcm-ggcmfile" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><strong>read_log_file</strong> (bool): search for a log file to load some of the
 libmrc runtime parameters. This does not read parameters

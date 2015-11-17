@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Overview: module code &mdash; Viscid 0.95.2 dev documentation</title>
+    <title>viscid.plot.mpl_style module &mdash; Viscid 0.95.2 dev documentation</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -30,6 +30,9 @@
     <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="top" title="Viscid 0.95.2 dev documentation" href="../index.html" />
+    <link rel="up" title="viscid.plot package" href="viscid.plot.html" />
+    <link rel="next" title="viscid.plot.mpl module" href="viscid.plot.mpl.html" />
+    <link rel="prev" title="viscid.plot.mpl_extra module" href="viscid.plot.mpl_extra.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -128,7 +131,7 @@
       aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="../changes.html">ChangeLog</a></li>
 </ul>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functions.html">Useful Functions</a></li>
@@ -138,7 +141,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../dev_guide.html">Developer&#8217;s Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../extending_readers.html">Extending Readers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/viscid.html">viscid package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="viscid.html">viscid package</a></li>
 </ul>
 </ul>
 </li>
@@ -151,7 +154,10 @@
      href="#">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"
       role="menu"
-      aria-labelledby="dLabelLocalToc"></ul>
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">viscid.plot.mpl_style module</a></li>
+</ul>
+</ul>
 </li>
               
             
@@ -179,61 +185,84 @@
   <div class="row">
     <div class="col-md-12">
       
-  <h1>All modules for which code is available</h1>
-<ul><li><a href="logging.html">logging</a></li>
-<li><a href="viscid/amr_field.html">viscid.amr_field</a></li>
-<li><a href="viscid/amr_grid.html">viscid.amr_grid</a></li>
-<li><a href="viscid/bucket.html">viscid.bucket</a></li>
-<li><a href="viscid/calculator/calc.html">viscid.calculator.calc</a></li>
-<li><a href="viscid/calculator/evaluator.html">viscid.calculator.evaluator</a></li>
-<li><a href="viscid/calculator/necalc.html">viscid.calculator.necalc</a></li>
-<li><a href="viscid/calculator/plasma.html">viscid.calculator.plasma</a></li>
-<li><a href="viscid/calculator/topology.html">viscid.calculator.topology</a></li>
-<li><a href="viscid/compat/element_tree.html">viscid.compat.element_tree</a></li>
-<li><a href="viscid/compat/ordered_dict_backport.html">viscid.compat.ordered_dict_backport</a></li>
-<li><a href="viscid/coordinate.html">viscid.coordinate</a></li>
-<li><a href="viscid/cython/cyamr.html">viscid.cython.cyamr</a></li>
-<li><a href="viscid/cython/cycalc.html">viscid.cython.cycalc</a></li>
-<li><a href="viscid/cython/cyfield.html">viscid.cython.cyfield</a></li>
-<li><a href="viscid/cython/streamline.html">viscid.cython.streamline</a></li>
-<li><a href="viscid/dataset.html">viscid.dataset</a></li>
-<li><a href="viscid/field.html">viscid.field</a></li>
-<li><a href="viscid/grid.html">viscid.grid</a></li>
-<li><a href="viscid/parallel.html">viscid.parallel</a></li>
-<li><a href="viscid/plot/cmap_tools.html">viscid.plot.cmap_tools</a></li>
-<li><a href="viscid/plot/cubehelix.html">viscid.plot.cubehelix</a></li>
-<li><a href="viscid/plot/mpl.html">viscid.plot.mpl</a></li>
-<li><a href="viscid/plot/mpl_extra.html">viscid.plot.mpl_extra</a></li>
-<li><a href="viscid/plot/mpl_style.html">viscid.plot.mpl_style</a></li>
-<li><a href="viscid/plot/mvi.html">viscid.plot.mvi</a></li>
-<li><a href="viscid/plot/vseaborn.html">viscid.plot.vseaborn</a></li>
-<li><a href="viscid/pyeval.html">viscid.pyeval</a></li>
-<li><a href="viscid/readers.html">viscid.readers</a></li>
-<ul><li><a href="viscid/readers/ascii.html">viscid.readers.ascii</a></li>
-<li><a href="viscid/readers/athena.html">viscid.readers.athena</a></li>
-<li><a href="viscid/readers/athena_bin.html">viscid.readers.athena_bin</a></li>
-<li><a href="viscid/readers/athena_hst.html">viscid.readers.athena_hst</a></li>
-<li><a href="viscid/readers/athena_tab.html">viscid.readers.athena_tab</a></li>
-<li><a href="viscid/readers/athena_xdmf.html">viscid.readers.athena_xdmf</a></li>
-<li><a href="viscid/readers/ggcm_fortbin.html">viscid.readers.ggcm_fortbin</a></li>
-<li><a href="viscid/readers/ggcm_jrrle.html">viscid.readers.ggcm_jrrle</a></li>
-<li><a href="viscid/readers/ggcm_logfile.html">viscid.readers.ggcm_logfile</a></li>
-<li><a href="viscid/readers/ggcm_xdmf.html">viscid.readers.ggcm_xdmf</a></li>
-<li><a href="viscid/readers/gkeyll.html">viscid.readers.gkeyll</a></li>
-<li><a href="viscid/readers/hdf5.html">viscid.readers.hdf5</a></li>
-<li><a href="viscid/readers/numpy_binary.html">viscid.readers.numpy_binary</a></li>
-<li><a href="viscid/readers/openggcm.html">viscid.readers.openggcm</a></li>
-<li><a href="viscid/readers/psc.html">viscid.readers.psc</a></li>
-<li><a href="viscid/readers/vfile.html">viscid.readers.vfile</a></li>
-<li><a href="viscid/readers/vfile_bucket.html">viscid.readers.vfile_bucket</a></li>
-<li><a href="viscid/readers/xdmf.html">viscid.readers.xdmf</a></li>
-</ul><li><a href="viscid/seed.html">viscid.seed</a></li>
-<li><a href="viscid/tree.html">viscid.tree</a></li>
-<li><a href="viscid/verror.html">viscid.verror</a></li>
-<li><a href="viscid/vjson.html">viscid.vjson</a></li>
-<li><a href="viscid/vlab.html">viscid.vlab</a></li>
-<li><a href="viscid/vutil.html">viscid.vutil</a></li>
+  <div class="section" id="module-viscid.plot.mpl_style">
+<span id="viscid-plot-mpl-style-module"></span><h1>viscid.plot.mpl_style module<a class="headerlink" href="#module-viscid.plot.mpl_style" title="Permalink to this headline">¶</a></h1>
+<p>Apply some viscid-specific matplotlib styling</p>
+<p>This module provides some extra style sheets as well as a layer to
+set viscid-specific rc parameters and activate specific style sheets
+from your <cite>viscidrc</cite> file.</p>
+<dl class="attribute">
+<dt id="viscid.plot.mpl_style.use_styles">
+<code class="descclassname">viscid.plot.mpl_style.</code><code class="descname">use_styles</code><a class="headerlink" href="#viscid.plot.mpl_style.use_styles" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>sequence</em></p>
+<p>a list of style sheet names to activate</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.plot.mpl_style.rc_params">
+<code class="descclassname">viscid.plot.mpl_style.</code><code class="descname">rc_params</code><a class="headerlink" href="#viscid.plot.mpl_style.rc_params" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>dict</em></p>
+<p>dictionary of parameters that get directly
+injected into matplotlib.rcParams</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viscid.plot.mpl_style.rc">
+<code class="descclassname">viscid.plot.mpl_style.</code><code class="descname">rc</code><a class="headerlink" href="#viscid.plot.mpl_style.rc" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>dict</em></p>
+<p>specify rc parameters through matplotlib.rc(...). Keys
+are groups and the values should be dictionaries that will be
+unpacked into the rc function call.</p>
+</dd></dl>
+
+<dl class="docutils">
+<dt>Style Sheets:</dt>
+<dd><p class="first">The following style sheets are available to matplotlib. Style
+sheets require matplotlib version &gt;= 1.5.0</p>
+<ul class="last simple">
+<li><strong>viscid-default</strong>: use afmhot</li>
+<li><strong>viscid-colorblind</strong>: use colorsequences that are colorblind
+friendly</li>
+<li><strong>viscid-steve</strong>: use Steve&#8217;s label formatter for colorbars</li>
 </ul>
+</dd>
+<dt>Rc Parameters:</dt>
+<dd><p class="first">Here are some viscid-specific options that can be put into the
+matplotlib rcParams</p>
+<ul class="last">
+<li><p class="first"><strong>viscid.cbarfmt</strong>: Formatter for colorbars</p>
+</li>
+<li><p class="first"><strong>viscid.majorfmt</strong>: Major tick formatter</p>
+</li>
+<li><p class="first"><strong>viscid.minorfmt</strong>: Minor tick formatter</p>
+</li>
+<li><p class="first"><strong>viscid.majorloc</strong>: Major tick locator</p>
+</li>
+<li><p class="first"><strong>viscid.minorloc</strong>: Minor tick locator</p>
+</li>
+<li><p class="first"><strong>image.cmap</strong>: Default colormap</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>viscid.symmetric_cmap</strong>: Default colormap for plots with</dt>
+<dd><p class="first last">symmetric limits</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="function">
+<dt id="viscid.plot.mpl_style.inject_viscid_styles">
+<code class="descclassname">viscid.plot.mpl_style.</code><code class="descname">inject_viscid_styles</code><span class="sig-paren">(</span><em>show_warning=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/plot/mpl_style.html#inject_viscid_styles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.plot.mpl_style.inject_viscid_styles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl_style.post_rc_actions">
+<code class="descclassname">viscid.plot.mpl_style.</code><code class="descname">post_rc_actions</code><span class="sig-paren">(</span><em>show_warning=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/plot/mpl_style.html#post_rc_actions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.plot.mpl_style.post_rc_actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
 
     </div>
       
@@ -246,6 +275,10 @@
       
         <br/>
         
+<div id="sourcelink">
+  <a href="../_sources/api/viscid.plot.mpl_style.txt"
+     rel="nofollow">Source</a>
+</div>
       
     </p>
     <p>

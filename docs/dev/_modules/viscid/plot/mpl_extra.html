@@ -189,16 +189,6 @@
 <span class="sd">are good for the colorblind ;)</span>
 
 <span class="sd">Attributes:</span>
-<span class="sd">    default_cmap (str): set from viscidrc to set default cmap by name</span>
-<span class="sd">    symmetric_cmap (str): if given, use this colormap for plots</span>
-<span class="sd">        symmetric about 0</span>
-<span class="sd">    default_cbarfmt (str, ticker.Formatter): &#39;steve&#39; or something else</span>
-<span class="sd">    default_majorfmt (str, ticker.Formatter): &#39;steve&#39; or something else</span>
-<span class="sd">    default_minorfmt (str, ticker.Formatter): &#39;steve&#39; or something else</span>
-<span class="sd">    default_majorloc (ticker.Locator): default locator if given</span>
-<span class="sd">    default_minorloc (ticker.Locator): default locator if given</span>
-<span class="sd">    use_steve_cbarfmt (bool): set from viscidrc</span>
-<span class="sd">    use_steve_axfmt (bool): set from viscidrc</span>
 <span class="sd">    steve_cbarfmt: Steve&#39;s colorbar tick formatter</span>
 <span class="sd">    steve_axfmt: Steve&#39;s axis tick formatter</span>
 
@@ -206,9 +196,9 @@
 <span class="sd">    All of the above maps should have &#39;_r&#39; variants as well. In addition,</span>
 <span class="sd">    this module has an attribute cmapname_rgb with the rgba ndarray data.</span>
 
-<span class="sd">Note:</span>
-<span class="sd">    The **default_cmap**, **use_steve_cbarfmt** and **use_steve_axfmt**</span>
-<span class="sd">    attributes are intended to be set via the rc file.</span>
+<span class="sd">See Also:</span>
+<span class="sd">    :py:mod:`viscid.plot.mpl_style`: This is where rc file</span>
+<span class="sd">        customizations should now be placed</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
@@ -216,34 +206,20 @@
 
 <span class="kn">import</span> <span class="nn">matplotlib.ticker</span> <span class="kn">as</span> <span class="nn">ticker</span>
 
-<span class="kn">from</span> <span class="nn">viscid.plot.cmap_tools</span> <span class="kn">import</span> <span class="n">register_cmap</span>
-<span class="kn">from</span> <span class="nn">viscid.plot</span> <span class="kn">import</span> <span class="n">cubehelix</span>  <span class="c"># import clac_helix_rgba</span>
+<span class="kn">import</span> <span class="nn">viscid</span>
+<span class="c"># this import is needed so that Viscid can add matplotlib rc parametrs</span>
+<span class="kn">from</span> <span class="nn">viscid.plot</span> <span class="kn">import</span> <span class="n">mpl_style</span>  <span class="c"># pylint: disable=unused-import</span>
 
 
-<span class="c"># NOTE: this changes the default colormap as soon as viscid.plot.mpl is</span>
-<span class="c">#       imported... Use your rc file to set this to a specific map or None</span>
-<span class="c">#       if you want to use matplotlib&#39;s default</span>
-<span class="n">default_cmap</span> <span class="o">=</span> <span class="s">&quot;afmhot&quot;</span>
-<span class="n">symmetric_cmap</span> <span class="o">=</span> <span class="s">&quot;afmhot&quot;</span>  <span class="c"># was &quot;seismic&quot;</span>
-
+<span class="c"># NOTE: DEPRECATED, use viscid.plot.mpl_style instead</span>
+<span class="n">default_cmap</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">symmetric_cmap</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="n">default_cbarfmt</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="n">default_majorfmt</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="n">default_minorfmt</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="n">default_majorloc</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="n">default_minorloc</span> <span class="o">=</span> <span class="bp">None</span>
 
-<span class="c"># register the cubehelix color maps</span>
-<span class="n">register_cmap</span><span class="p">(</span><span class="s">&#39;cubeYF&#39;</span><span class="p">,</span> <span class="n">cubehelix</span><span class="o">.</span><span class="n">cubeYF_rgba</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<span class="n">register_cmap</span><span class="p">(</span><span class="s">&#39;cubeYF_r&#39;</span><span class="p">,</span> <span class="n">cubehelix</span><span class="o">.</span><span class="n">cubeYF_rgba</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-
-<span class="n">register_cmap</span><span class="p">(</span><span class="s">&#39;coolhelix&#39;</span><span class="p">,</span> <span class="n">cubehelix</span><span class="o">.</span><span class="n">coolhelix_rgba</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<span class="n">register_cmap</span><span class="p">(</span><span class="s">&#39;coolhelix_r&#39;</span><span class="p">,</span> <span class="n">cubehelix</span><span class="o">.</span><span class="n">coolhelix_rgba</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-
-<span class="n">register_cmap</span><span class="p">(</span><span class="s">&#39;redhelix&#39;</span><span class="p">,</span> <span class="n">cubehelix</span><span class="o">.</span><span class="n">redhelix_rgba</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<span class="n">register_cmap</span><span class="p">(</span><span class="s">&#39;redhelix_r&#39;</span><span class="p">,</span> <span class="n">cubehelix</span><span class="o">.</span><span class="n">redhelix_rgba</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-
-<span class="n">register_cmap</span><span class="p">(</span><span class="s">&#39;bloodhelix&#39;</span><span class="p">,</span> <span class="n">cubehelix</span><span class="o">.</span><span class="n">bloodhelix_rgba</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<span class="n">register_cmap</span><span class="p">(</span><span class="s">&#39;bloodhelix_r&#39;</span><span class="p">,</span> <span class="n">cubehelix</span><span class="o">.</span><span class="n">bloodhelix_rgba</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
 <div class="viewcode-block" id="OrigSteveScalarFormatter"><a class="viewcode-back" href="../../../api/viscid.plot.mpl_extra.html#viscid.plot.mpl_extra.OrigSteveScalarFormatter">[docs]</a><span class="k">class</span> <span class="nc">OrigSteveScalarFormatter</span><span class="p">(</span><span class="n">ticker</span><span class="o">.</span><span class="n">ScalarFormatter</span><span class="p">):</span>
 <div class="viewcode-block" id="OrigSteveScalarFormatter.pprint_val"><a class="viewcode-back" href="../../../api/viscid.plot.mpl_extra.html#viscid.plot.mpl_extra.OrigSteveScalarFormatter.pprint_val">[docs]</a>    <span class="k">def</span> <span class="nf">pprint_val</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
@@ -334,6 +310,32 @@
                 <span class="k">return</span> <span class="n">s</span>
         <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">s</span>
+
+</div>
+<div class="viewcode-block" id="post_rc_actions"><a class="viewcode-back" href="../../../api/viscid.plot.mpl_extra.html#viscid.plot.mpl_extra.post_rc_actions">[docs]</a><span class="k">def</span> <span class="nf">post_rc_actions</span><span class="p">(</span><span class="n">show_warning</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="c"># shim legacy rc file options into rcParams</span>
+    <span class="kn">from</span> <span class="nn">distutils.version</span> <span class="kn">import</span> <span class="n">LooseVersion</span>
+    <span class="kn">import</span> <span class="nn">matplotlib</span>
+
+    <span class="k">if</span> <span class="n">show_warning</span><span class="p">:</span>
+        <span class="n">viscid</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Setting rc options for mpl_extra is deprecated,</span><span class="se">\n</span><span class="s">&quot;</span>
+                           <span class="s">&quot;use viscid.plot.mpl_style interface instead.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">default_cmap</span><span class="p">:</span>
+        <span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">&quot;image.cmap&quot;</span><span class="p">:</span> <span class="n">default_cmap</span><span class="p">})</span>
+    <span class="k">if</span> <span class="n">symmetric_cmap</span><span class="p">:</span>
+        <span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">&quot;viscid.symmetric_cmap&quot;</span><span class="p">:</span> <span class="n">symmetric_cmap</span><span class="p">})</span>
+    <span class="k">if</span> <span class="n">default_cbarfmt</span><span class="p">:</span>
+        <span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">&quot;viscid.cbarfmt&quot;</span><span class="p">:</span> <span class="n">default_cbarfmt</span><span class="p">})</span>
+    <span class="k">if</span> <span class="n">default_majorfmt</span><span class="p">:</span>
+        <span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">&quot;viscid.majorfmt&quot;</span><span class="p">:</span> <span class="n">default_majorfmt</span><span class="p">})</span>
+    <span class="k">if</span> <span class="n">default_minorfmt</span><span class="p">:</span>
+        <span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">&quot;viscid.minorfmt&quot;</span><span class="p">:</span> <span class="n">default_minorfmt</span><span class="p">})</span>
+    <span class="k">if</span> <span class="n">default_majorloc</span><span class="p">:</span>
+        <span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">&quot;viscid.majorloc&quot;</span><span class="p">:</span> <span class="n">default_majorloc</span><span class="p">})</span>
+    <span class="k">if</span> <span class="n">default_minorloc</span><span class="p">:</span>
+        <span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">&quot;viscid.minorloc&quot;</span><span class="p">:</span> <span class="n">default_minorloc</span><span class="p">})</span>
+
 </div>
 <span class="n">steve_cbarfmt</span> <span class="o">=</span> <span class="n">SteveScalarFormatter</span><span class="p">(</span><span class="n">max_sigfigs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">useOffset</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">steve_axfmt</span> <span class="o">=</span> <span class="n">SteveScalarFormatter</span><span class="p">(</span><span class="n">max_sigfigs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">useOffset</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>

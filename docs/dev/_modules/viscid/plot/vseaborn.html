@@ -193,6 +193,7 @@
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">imp</span>
 
+<span class="kn">import</span> <span class="nn">viscid</span>
 <span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">logger</span>
 
 <span class="n">SEABORN_ACTIVATED</span> <span class="o">=</span> <span class="bp">False</span>
@@ -224,6 +225,15 @@
 <span class="sd">    importing viscid.plot.mpl. This can be done with the rc file.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">enabled</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">distutils.version</span> <span class="kn">import</span> <span class="n">LooseVersion</span>
+        <span class="kn">import</span> <span class="nn">matplotlib</span>
+
+        <span class="k">if</span> <span class="n">LooseVersion</span><span class="p">(</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">LooseVersion</span><span class="p">(</span><span class="s">&quot;1.5.0&quot;</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Using this shim to seaborn for pretty plots &quot;</span>
+                        <span class="s">&quot;is deprecated since you have matplotlib &gt;= 1.5.</span><span class="se">\n</span><span class="s">&quot;</span>
+                        <span class="s">&quot;Instead, use matplotlib&#39;s style sheets through &quot;</span>
+                        <span class="s">&quot;`viscid.mpl_style`.&quot;</span><span class="p">)</span>
+
         <span class="k">try</span><span class="p">:</span>
             <span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">real_seaborn</span>
             <span class="c"># just some fancyness so i can specify an arbitrary</span>
@@ -258,6 +268,8 @@
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">key</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;_&quot;</span><span class="p">):</span>
                     <span class="n">g</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
             <span class="n">g</span><span class="p">[</span><span class="s">&#39;SEABORN_ACTIVATED&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="n">viscid</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mpl_extra</span><span class="o">.</span><span class="n">post_rc_actions</span><span class="p">(</span><span class="n">show_warning</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+            <span class="n">viscid</span><span class="o">.</span><span class="n">mpl_style</span><span class="o">.</span><span class="n">post_rc_actions</span><span class="p">(</span><span class="n">show_warning</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;seaborn package not installed&quot;</span><span class="p">)</span>
 

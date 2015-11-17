@@ -31,7 +31,7 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="top" title="Viscid 0.95.2 dev documentation" href="../index.html" />
     <link rel="up" title="viscid.plot package" href="viscid.plot.html" />
-    <link rel="next" title="viscid.plot.mpl module" href="viscid.plot.mpl.html" />
+    <link rel="next" title="viscid.plot.mpl_style module" href="viscid.plot.mpl_style.html" />
     <link rel="prev" title="viscid.plot.cubehelix module" href="viscid.plot.cubehelix.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -192,70 +192,6 @@
 <p>Register some perceptual cubehelix colormaps with matplotlib. These
 are good for the colorblind ;)</p>
 <dl class="attribute">
-<dt id="viscid.plot.mpl_extra.default_cmap">
-<code class="descclassname">viscid.plot.mpl_extra.</code><code class="descname">default_cmap</code><a class="headerlink" href="#viscid.plot.mpl_extra.default_cmap" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em></p>
-<p>set from viscidrc to set default cmap by name</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="viscid.plot.mpl_extra.symmetric_cmap">
-<code class="descclassname">viscid.plot.mpl_extra.</code><code class="descname">symmetric_cmap</code><a class="headerlink" href="#viscid.plot.mpl_extra.symmetric_cmap" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str</em></p>
-<p>if given, use this colormap for plots
-symmetric about 0</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="viscid.plot.mpl_extra.default_cbarfmt">
-<code class="descclassname">viscid.plot.mpl_extra.</code><code class="descname">default_cbarfmt</code><a class="headerlink" href="#viscid.plot.mpl_extra.default_cbarfmt" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str, ticker.Formatter</em></p>
-<p>&#8216;steve&#8217; or something else</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="viscid.plot.mpl_extra.default_majorfmt">
-<code class="descclassname">viscid.plot.mpl_extra.</code><code class="descname">default_majorfmt</code><a class="headerlink" href="#viscid.plot.mpl_extra.default_majorfmt" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str, ticker.Formatter</em></p>
-<p>&#8216;steve&#8217; or something else</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="viscid.plot.mpl_extra.default_minorfmt">
-<code class="descclassname">viscid.plot.mpl_extra.</code><code class="descname">default_minorfmt</code><a class="headerlink" href="#viscid.plot.mpl_extra.default_minorfmt" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>str, ticker.Formatter</em></p>
-<p>&#8216;steve&#8217; or something else</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="viscid.plot.mpl_extra.default_majorloc">
-<code class="descclassname">viscid.plot.mpl_extra.</code><code class="descname">default_majorloc</code><a class="headerlink" href="#viscid.plot.mpl_extra.default_majorloc" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>ticker.Locator</em></p>
-<p>default locator if given</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="viscid.plot.mpl_extra.default_minorloc">
-<code class="descclassname">viscid.plot.mpl_extra.</code><code class="descname">default_minorloc</code><a class="headerlink" href="#viscid.plot.mpl_extra.default_minorloc" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>ticker.Locator</em></p>
-<p>default locator if given</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="viscid.plot.mpl_extra.use_steve_cbarfmt">
-<code class="descclassname">viscid.plot.mpl_extra.</code><code class="descname">use_steve_cbarfmt</code><a class="headerlink" href="#viscid.plot.mpl_extra.use_steve_cbarfmt" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em></p>
-<p>set from viscidrc</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="viscid.plot.mpl_extra.use_steve_axfmt">
-<code class="descclassname">viscid.plot.mpl_extra.</code><code class="descname">use_steve_axfmt</code><a class="headerlink" href="#viscid.plot.mpl_extra.use_steve_axfmt" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>bool</em></p>
-<p>set from viscidrc</p>
-</dd></dl>
-
-<dl class="attribute">
 <dt id="viscid.plot.mpl_extra.steve_cbarfmt">
 <code class="descclassname">viscid.plot.mpl_extra.</code><code class="descname">steve_cbarfmt</code><a class="headerlink" href="#viscid.plot.mpl_extra.steve_cbarfmt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Steve&#8217;s colorbar tick formatter</p>
@@ -272,10 +208,12 @@ symmetric about 0</p>
 <p class="last">All of the above maps should have &#8216;_r&#8217; variants as well. In addition,
 this module has an attribute cmapname_rgb with the rgba ndarray data.</p>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The <strong>default_cmap</strong>, <strong>use_steve_cbarfmt</strong> and <strong>use_steve_axfmt</strong>
-attributes are intended to be set via the rc file.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<dl class="last docutils">
+<dt><a class="reference internal" href="viscid.plot.mpl_style.html#module-viscid.plot.mpl_style" title="viscid.plot.mpl_style"><code class="xref py py-mod docutils literal"><span class="pre">viscid.plot.mpl_style</span></code></a>: This is where rc file</dt>
+<dd>customizations should now be placed</dd>
+</dl>
 </div>
 <dl class="class">
 <dt id="viscid.plot.mpl_extra.OrigSteveScalarFormatter">
@@ -298,6 +236,11 @@ attributes are intended to be set via the rc file.</p>
 <dd></dd></dl>
 
 </dd></dl>
+
+<dl class="function">
+<dt id="viscid.plot.mpl_extra.post_rc_actions">
+<code class="descclassname">viscid.plot.mpl_extra.</code><code class="descname">post_rc_actions</code><span class="sig-paren">(</span><em>show_warning=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/plot/mpl_extra.html#post_rc_actions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.plot.mpl_extra.post_rc_actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 

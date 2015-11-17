@@ -376,12 +376,12 @@
     <span class="k">def</span> <span class="nf">_load_child_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Add file to self.child_bucket and remember it for when I unload&quot;&quot;&quot;</span>
         <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">child_bucket</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">_add_ref</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_child_ref_count</span><span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">handle_name</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_child_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_child_ref_count</span><span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">handle_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-
+        <span class="k">if</span> <span class="n">f</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_child_ref_count</span><span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">handle_name</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_child_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_child_ref_count</span><span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">handle_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="k">return</span> <span class="n">f</span>
 
 <div class="viewcode-block" id="ContainerFile.reload"><a class="viewcode-back" href="../../../api/viscid.readers.vfile_bucket.html#viscid.readers.vfile_bucket.ContainerFile.reload">[docs]</a>    <span class="k">def</span> <span class="nf">reload</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
