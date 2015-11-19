@@ -198,13 +198,12 @@ made by <cite>test_mvi.py</cite> along with some code</p>
 <span class="kn">import</span> <span class="nn">argparse</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="kn">from</span> <span class="nn">viscid_test_common</span> <span class="kn">import</span> <span class="n">sample_dir</span><span class="p">,</span> <span class="n">next_plot_fname</span><span class="p">,</span> <span class="n">CODE_XFAIL</span>
+<span class="kn">from</span> <span class="nn">viscid_test_common</span> <span class="kn">import</span> <span class="n">sample_dir</span><span class="p">,</span> <span class="n">next_plot_fname</span><span class="p">,</span> <span class="n">xfail</span>
 
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">mayavi</span> <span class="kn">import</span> <span class="n">mlab</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;XFAIL: Mayavi not installed&quot;</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">CODE_XFAIL</span><span class="p">)</span>
+    <span class="n">xfail</span><span class="p">(</span><span class="s">&quot;Mayavi not installed&quot;</span><span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">viscid</span>
 <span class="kn">from</span> <span class="nn">viscid</span> <span class="kn">import</span> <span class="n">vutil</span>
@@ -240,7 +239,7 @@ made by <cite>test_mvi.py</cite> along with some code</p>
                                   <span class="n">nalpha</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">nbeta</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
     <span class="n">b_lines</span><span class="p">,</span> <span class="n">topo</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">calc_streamlines</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">seeds</span><span class="p">,</span> <span class="n">ibound</span><span class="o">=</span><span class="mf">3.5</span><span class="p">,</span>
                                             <span class="n">obound0</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">],</span>
-                                            <span class="n">obound1</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+                                            <span class="n">obound1</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">wrap</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="n">mvi</span><span class="o">.</span><span class="n">plot_lines</span><span class="p">(</span><span class="n">b_lines</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="n">viscid</span><span class="o">.</span><span class="n">topology2color</span><span class="p">(</span><span class="n">topo</span><span class="p">))</span>
 
     <span class="c"># Use Mayavi (VTK) to calculate field lines using an interactive seed</span>
