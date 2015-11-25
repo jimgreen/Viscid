@@ -200,6 +200,9 @@
 
 <span class="n">TOPOLOGY_G_NONE</span> <span class="o">=</span> <span class="mi">0</span>
 
+<span class="n">SEP_VAL</span> <span class="o">=</span> <span class="p">(</span><span class="n">TOPOLOGY_MS_CLOSED</span> <span class="o">|</span> <span class="n">TOPOLOGY_MS_SW</span> <span class="o">|</span>
+           <span class="n">TOPOLOGY_MS_OPEN_NORTH</span> <span class="o">|</span> <span class="n">TOPOLOGY_MS_OPEN_SOUTH</span><span class="p">)</span>
+
 <span class="n">color_map_msphere</span> <span class="o">=</span> <span class="p">{</span><span class="n">TOPOLOGY_MS_CLOSED</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
                      <span class="n">TOPOLOGY_MS_OPEN_NORTH</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">),</span>
                      <span class="n">TOPOLOGY_MS_OPEN_SOUTH</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
@@ -218,6 +221,7 @@
 <span class="n">TOPOLOGY_INVALID</span> <span class="o">=</span> <span class="n">TOPOLOGY_MS_INVALID</span>
 <span class="c"># TOPOLOGY_OTHER = TOPOLOGY_MS_OTHER</span>
 <span class="n">color_map</span> <span class="o">=</span> <span class="n">color_map_msphere</span>
+
 
 <div class="viewcode-block" id="topology2color"><a class="viewcode-back" href="../../../api/viscid.calculator.topology.html#viscid.topology2color">[docs]</a><span class="k">def</span> <span class="nf">topology2color</span><span class="p">(</span><span class="n">topology</span><span class="p">,</span> <span class="n">topo_style</span><span class="o">=</span><span class="s">&quot;msphere&quot;</span><span class="p">,</span> <span class="n">bad_color</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Determine RGB from topology value</span>
@@ -258,7 +262,112 @@
             <span class="n">ret</span> <span class="o">=</span> <span class="n">mapping</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">topology</span><span class="p">)]</span>
         <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
             <span class="n">ret</span> <span class="o">=</span> <span class="n">bad_color</span>
-    <span class="k">return</span> <span class="n">ret</span></div>
+    <span class="k">return</span> <span class="n">ret</span>
+</div>
+<div class="viewcode-block" id="cluster"><a class="viewcode-back" href="../../../api/viscid.calculator.topology.html#viscid.cluster">[docs]</a><span class="k">def</span> <span class="nf">cluster</span><span class="p">(</span><span class="n">indx</span><span class="p">,</span> <span class="n">indy</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Cluster and average groups of neighboring points</span>
+
+<span class="sd">    TODO: If absolutely necessary, could do some K-means clustering</span>
+<span class="sd">        here by calling into scikit-learn.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        indx (list): list of x indices</span>
+<span class="sd">        indy (list): list of y indices</span>
+<span class="sd">        x (list): list of x locations (same size as indx)</span>
+<span class="sd">        y (list): list of y locations (same size as indy)</span>
+<span class="sd">        multiple (bool): If False, average all points as a single</span>
+<span class="sd">            cluster</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        ndarray: 3xN for N clusters</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># find clusters of points</span>
+    <span class="n">clusters</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">multiple</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">indx</span><span class="p">,</span> <span class="n">indy</span><span class="p">):</span>
+            <span class="n">clustered</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="k">for</span> <span class="n">cl</span> <span class="ow">in</span> <span class="n">clusters</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">clix</span><span class="p">,</span> <span class="n">cliy</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cl</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cl</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+                    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ix</span> <span class="o">-</span> <span class="n">clix</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">iy</span> <span class="o">-</span> <span class="n">cliy</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+                        <span class="n">clustered</span> <span class="o">=</span> <span class="bp">True</span>
+                        <span class="n">cl</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ix</span><span class="p">)</span>
+                        <span class="n">cl</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">iy</span><span class="p">)</span>
+                        <span class="k">break</span>
+                <span class="k">if</span> <span class="n">clustered</span><span class="p">:</span>
+                    <span class="k">break</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">clustered</span><span class="p">:</span>
+                <span class="n">clusters</span><span class="o">.</span><span class="n">append</span><span class="p">([[</span><span class="n">ix</span><span class="p">],</span> <span class="p">[</span><span class="n">iy</span><span class="p">]])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">indy</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">clusters</span> <span class="o">=</span> <span class="p">[[</span><span class="n">indx</span><span class="p">,</span> <span class="n">indy</span><span class="p">]]</span>
+
+    <span class="n">pts_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">cl</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span> <span class="k">for</span> <span class="n">cl</span> <span class="ow">in</span> <span class="n">clusters</span><span class="p">])</span>
+    <span class="n">pts_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">cl</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span> <span class="k">for</span> <span class="n">cl</span> <span class="ow">in</span> <span class="n">clusters</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">pts_x</span><span class="p">,</span> <span class="n">pts_y</span><span class="p">])</span>
+</div>
+<div class="viewcode-block" id="find_sep_points_cartesian"><a class="viewcode-back" href="../../../api/viscid.calculator.topology.html#viscid.find_sep_points_cartesian">[docs]</a><span class="k">def</span> <span class="nf">find_sep_points_cartesian</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">min_iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_iterations</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                              <span class="n">multiple</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">sep_val</span><span class="o">=</span><span class="n">SEP_VAL</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                              <span class="n">mask_limit</span><span class="o">=</span><span class="mb">0b1111</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Find separator as intersection of all global topologies</span>
+
+<span class="sd">    Neighbors are bitwise ORed until at least one value matches</span>
+<span class="sd">    `sep_val` which is presumably (Close | Open N | Open S | SW).</span>
+<span class="sd">    This happens between min_iterations and max_iterations times,</span>
+<span class="sd">    where the resolution of each iteration is reduced by a factor</span>
+<span class="sd">    of two, ie, worst case 2**(max_iterations).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        fld (Field): Topology (bitmask) as a field</span>
+<span class="sd">        min_iterations (int): Iterate at least this many times</span>
+<span class="sd">        max_iterations (int): Iterate at most this many times</span>
+<span class="sd">        multiple (bool): passed to :py:func:`cluster`</span>
+<span class="sd">        sep_val (int): Value of bitmask that indicates a separator</span>
+<span class="sd">        plot (bool): Make a 2D plot of Fld and the sep candidates</span>
+<span class="sd">        mask_limit (int): if &gt; 0, then bitmask fld with mask_limit,</span>
+<span class="sd">            i.e., fld = fld &amp; mask_limit (bitwise and)</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        ndarray: 3xN for N clusters of separator points in the same</span>
+<span class="sd">        coordinates as `fld`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fld</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">slice_reduce</span><span class="p">(</span><span class="s">&quot;:&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">mask_limit</span><span class="p">:</span>
+        <span class="n">fld</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bitwise_and</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">mask_limit</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">get_crds</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iterations</span><span class="p">):</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">|</span> <span class="n">a</span><span class="p">[</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span>  <span class="p">]</span> <span class="o">|</span>  <span class="c"># pylint: disable=bad-whitespace</span>
+             <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span>  <span class="p">,</span>  <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">|</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span>  <span class="p">,</span> <span class="mi">1</span><span class="p">:</span>  <span class="p">])</span>   <span class="c"># pylint: disable=bad-whitespace</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="n">y</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="n">indx</span><span class="p">,</span> <span class="n">indy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">sep_val</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="n">min_iterations</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">indx</span><span class="p">):</span>
+            <span class="k">break</span>
+
+    <span class="n">pts</span> <span class="o">=</span> <span class="n">cluster</span><span class="p">(</span><span class="n">indx</span><span class="p">,</span> <span class="n">indy</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="n">multiple</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">viscid.plot</span> <span class="kn">import</span> <span class="n">mpl</span>
+
+        <span class="n">mpl</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+        <span class="n">mpl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+        <span class="n">mpl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+        <span class="n">mpl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+        <span class="n">or_fld</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">arrays2field</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;OR&quot;</span><span class="p">)</span>
+        <span class="n">mpl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">or_fld</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+        <span class="n">_x</span><span class="p">,</span> <span class="n">_y</span> <span class="o">=</span> <span class="n">or_fld</span><span class="o">.</span><span class="n">get_crds</span><span class="p">()</span>
+        <span class="n">mpl</span><span class="o">.</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">_x</span><span class="p">[</span><span class="n">indx</span><span class="p">],</span> <span class="n">_y</span><span class="p">[</span><span class="n">indy</span><span class="p">],</span> <span class="s">&#39;ko&#39;</span><span class="p">)</span>
+        <span class="c"># mpl.plt.show()</span>
+
+        <span class="n">mpl</span><span class="o">.</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">&#39;y^&#39;</span><span class="p">)</span>
+        <span class="n">mpl</span><span class="o">.</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">pts</span></div>
 </pre></div>
 
     </div>
