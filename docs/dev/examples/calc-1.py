@@ -24,6 +24,7 @@ log_bmag = np.log(viscid.magnitude(B))
 
 mpl.plot(topo, cmap='afmhot')
 mpl.plot2d_lines(lines[::79], scalars=log_bmag, symdir='y')
-mpl.plt.plot(xpts_night[0], xpts_night[1], 'b^')
+mpl.plt.plot(xpts_night[0], xpts_night[1], 'y*', ms=20,
+             markeredgecolor='k', markeredgewidth=1.0)
 mpl.plt.xlim(topo.xl[0], topo.xh[0])
 mpl.plt.ylim(topo.xl[2], topo.xh[2])

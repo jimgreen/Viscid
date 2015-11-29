@@ -207,7 +207,7 @@
 </div>
 <div class="section" id="git-structure">
 <h2>Git structure<a class="headerlink" href="#git-structure" title="Permalink to this headline">¶</a></h2>
-<p>This project uses the Git Flow merge strategy for development / release cycles. Basically, changes should be made on <cite>feature/*</cite> branches and merged into the <cite>dev</cite> branch when ready. Releases should begin on a branch of dev named <cite>release/version-number</cite> which is pushed upstream. The push is important because it triggers CI tests. When the release branch instills confidence, it can be merged into both <cite>master</cite> and <cite>dev</cite>.</p>
+<p>This project uses the <a class="reference external" href="https://github.com/nvie/gitflow">Git Flow</a> merge strategy for development / release cycles. Basically, changes should be made on <cite>feature/*</cite> branches and merged into the <cite>dev</cite> branch when ready. Releases should begin on a branch of dev named <cite>release/version-number</cite> which is pushed upstream. The push is important because it triggers CI tests. When the release branch instills confidence, it can be merged into both <cite>master</cite> and <cite>dev</cite>.</p>
 <p>Here are some things to remember when doing releases and the like:</p>
 <ul class="simple">
 <li>The first commit to a <cite>release</cite> branch should remove the word &#8220;dev&#8221; from both <cite>viscid.__version__</cite> and <cite>Viscid/CHANGES.md</cite>. This is checked by Travis-CI.</li>
