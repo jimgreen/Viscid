@@ -1039,7 +1039,7 @@
             <span class="k">return</span> <span class="bp">self</span>
         <span class="k">return</span> <span class="n">wrap_crds</span><span class="p">(</span><span class="n">crds_type</span><span class="p">,</span> <span class="n">crdlst</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 </div>
-<div class="viewcode-block" id="StructuredCrds.slice_reduce"><a class="viewcode-back" href="../../api/viscid.coordinate.html#viscid.StructuredCrds.slice_reduce">[docs]</a>    <span class="k">def</span> <span class="nf">slice_reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selection</span><span class="p">,</span> <span class="n">cc</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="StructuredCrds.slice_and_reduce"><a class="viewcode-back" href="../../api/viscid.coordinate.html#viscid.StructuredCrds.slice_and_reduce">[docs]</a>    <span class="k">def</span> <span class="nf">slice_and_reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selection</span><span class="p">,</span> <span class="n">cc</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get crds that describe a slice (subset) of this grid. Go</span>
 <span class="sd">        through, and if the slice didn&#39;t touch a dim with only one crd,</span>
 <span class="sd">        reduce it</span>
@@ -1051,7 +1051,7 @@
             <span class="k">return</span> <span class="bp">self</span>
         <span class="k">return</span> <span class="n">wrap_crds</span><span class="p">(</span><span class="n">crds_type</span><span class="p">,</span> <span class="n">crdlst</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 </div>
-<div class="viewcode-block" id="StructuredCrds.slice_keep"><a class="viewcode-back" href="../../api/viscid.coordinate.html#viscid.StructuredCrds.slice_keep">[docs]</a>    <span class="k">def</span> <span class="nf">slice_keep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selection</span><span class="p">,</span> <span class="n">cc</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="StructuredCrds.slice_and_keep"><a class="viewcode-back" href="../../api/viscid.coordinate.html#viscid.StructuredCrds.slice_and_keep">[docs]</a>    <span class="k">def</span> <span class="nf">slice_and_keep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selection</span><span class="p">,</span> <span class="n">cc</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="n">slices</span><span class="p">,</span> <span class="n">crdlst</span><span class="p">,</span> <span class="n">reduced</span><span class="p">,</span> <span class="n">crds_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_slice_keep</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span>
                                                                   <span class="n">cc</span><span class="o">=</span><span class="n">cc</span><span class="p">)</span>
         <span class="c"># pass through if nothing happened</span>
@@ -1059,6 +1059,9 @@
             <span class="k">return</span> <span class="bp">self</span>
         <span class="k">return</span> <span class="n">wrap_crds</span><span class="p">(</span><span class="n">crds_type</span><span class="p">,</span> <span class="n">crdlst</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 </div>
+    <span class="n">slice_reduce</span> <span class="o">=</span> <span class="n">slice_and_reduce</span>
+    <span class="n">slice_keep</span> <span class="o">=</span> <span class="n">slice_and_keep</span>
+
 <div class="viewcode-block" id="StructuredCrds.slice_interp"><a class="viewcode-back" href="../../api/viscid.coordinate.html#viscid.StructuredCrds.slice_interp">[docs]</a>    <span class="k">def</span> <span class="nf">slice_interp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selection</span><span class="p">,</span> <span class="n">cc</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="n">_</span><span class="p">,</span> <span class="n">crdlst</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">crds_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_slice_keep</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">cc</span><span class="o">=</span><span class="n">cc</span><span class="p">)</span>
 

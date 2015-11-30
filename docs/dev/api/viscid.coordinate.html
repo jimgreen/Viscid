@@ -720,18 +720,31 @@ you want either slice_reduce or slice_keep</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.slice_and_keep">
+<code class="descname">slice_and_keep</code><span class="sig-paren">(</span><em>selection</em>, <em>cc=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.slice_and_keep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.slice_and_keep" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="viscid.coordinate.StructuredCrds.slice_and_reduce">
+<code class="descname">slice_and_reduce</code><span class="sig-paren">(</span><em>selection</em>, <em>cc=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.slice_and_reduce"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.slice_and_reduce" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get crds that describe a slice (subset) of this grid. Go
+through, and if the slice didn&#8217;t touch a dim with only one crd,
+reduce it</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="viscid.coordinate.StructuredCrds.slice_interp">
 <code class="descname">slice_interp</code><span class="sig-paren">(</span><em>selection</em>, <em>cc=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.slice_interp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.slice_interp" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="viscid.coordinate.StructuredCrds.slice_keep">
-<code class="descname">slice_keep</code><span class="sig-paren">(</span><em>selection</em>, <em>cc=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.slice_keep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.slice_keep" title="Permalink to this definition">¶</a></dt>
+<code class="descname">slice_keep</code><span class="sig-paren">(</span><em>selection</em>, <em>cc=False</em><span class="sig-paren">)</span><a class="headerlink" href="#viscid.coordinate.StructuredCrds.slice_keep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="viscid.coordinate.StructuredCrds.slice_reduce">
-<code class="descname">slice_reduce</code><span class="sig-paren">(</span><em>selection</em>, <em>cc=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/coordinate.html#StructuredCrds.slice_reduce"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.coordinate.StructuredCrds.slice_reduce" title="Permalink to this definition">¶</a></dt>
+<code class="descname">slice_reduce</code><span class="sig-paren">(</span><em>selection</em>, <em>cc=False</em><span class="sig-paren">)</span><a class="headerlink" href="#viscid.coordinate.StructuredCrds.slice_reduce" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get crds that describe a slice (subset) of this grid. Go
 through, and if the slice didn&#8217;t touch a dim with only one crd,
 reduce it</p>

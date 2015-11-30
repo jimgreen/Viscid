@@ -693,8 +693,24 @@ in the new field</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="viscid.field.Field.slice_and_reduce">
+<code class="descname">slice_and_reduce</code><span class="sig-paren">(</span><em>selection</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/field.html#Field.slice_and_reduce"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.field.Field.slice_and_reduce" title="Permalink to this definition">¶</a></dt>
+<dd><p>Slice the field, then go through all dims and look for dimensions
+with only one coordinate. Reduce those dimensions out of the new
+field</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viscid.field.Field.slice_keep">
+<code class="descname">slice_keep</code><span class="sig-paren">(</span><em>selection</em><span class="sig-paren">)</span><a class="headerlink" href="#viscid.field.Field.slice_keep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Slice the field, then go through dimensions that would be reduced
+by a normal numpy slice (like saying &#8216;z=0&#8217;) and keep those dimensions
+in the new field</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="viscid.field.Field.slice_reduce">
-<code class="descname">slice_reduce</code><span class="sig-paren">(</span><em>selection</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/field.html#Field.slice_reduce"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.field.Field.slice_reduce" title="Permalink to this definition">¶</a></dt>
+<code class="descname">slice_reduce</code><span class="sig-paren">(</span><em>selection</em><span class="sig-paren">)</span><a class="headerlink" href="#viscid.field.Field.slice_reduce" title="Permalink to this definition">¶</a></dt>
 <dd><p>Slice the field, then go through all dims and look for dimensions
 with only one coordinate. Reduce those dimensions out of the new
 field</p>
