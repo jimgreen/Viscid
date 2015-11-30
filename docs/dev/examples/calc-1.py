@@ -11,7 +11,7 @@ B = f3d['b']['x=-40f:15f, y=-20f:20f, z=-20f:20f']
 # Fields can be used as seeds to get one seed per grid point
 seeds = B.slice_keep('y=0f')
 lines, topo = viscid.calc_streamlines(B, seeds, ibound=2.5,
-                                            output=viscid.OUTPUT_BOTH)
+                                      output=viscid.OUTPUT_BOTH)
 xpts_night = viscid.find_sep_points_cartesian(topo['x=:0f, y=0f'])
 
 # The dayside is done separately here because the sample data is at such

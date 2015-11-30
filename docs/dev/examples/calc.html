@@ -208,7 +208,7 @@
 <span class="c"># Fields can be used as seeds to get one seed per grid point</span>
 <span class="n">seeds</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">slice_keep</span><span class="p">(</span><span class="s">&#39;y=0f&#39;</span><span class="p">)</span>
 <span class="n">lines</span><span class="p">,</span> <span class="n">topo</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">calc_streamlines</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">seeds</span><span class="p">,</span> <span class="n">ibound</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span>
-                                            <span class="n">output</span><span class="o">=</span><span class="n">viscid</span><span class="o">.</span><span class="n">OUTPUT_BOTH</span><span class="p">)</span>
+                                      <span class="n">output</span><span class="o">=</span><span class="n">viscid</span><span class="o">.</span><span class="n">OUTPUT_BOTH</span><span class="p">)</span>
 <span class="n">xpts_night</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">find_sep_points_cartesian</span><span class="p">(</span><span class="n">topo</span><span class="p">[</span><span class="s">&#39;x=:0f, y=0f&#39;</span><span class="p">])</span>
 
 <span class="c"># The dayside is done separately here because the sample data is at such</span>
