@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>viscid.calculator.evaluator module &mdash; Viscid 0.95.2 dev documentation</title>
+    <title>viscid.calculator.separator module &mdash; Viscid 0.95.2 dev documentation</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -31,8 +31,8 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="top" title="Viscid 0.95.2 dev documentation" href="../index.html" />
     <link rel="up" title="viscid.calculator package" href="viscid.calculator.html" />
-    <link rel="next" title="viscid.calculator.necalc module" href="viscid.calculator.necalc.html" />
-    <link rel="prev" title="viscid.calculator.cluster module" href="viscid.calculator.cluster.html" />
+    <link rel="next" title="viscid.calculator.topology module" href="viscid.calculator.topology.html" />
+    <link rel="prev" title="viscid.calculator.plasma module" href="viscid.calculator.plasma.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -155,7 +155,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">viscid.calculator.evaluator module</a></li>
+<li><a class="reference internal" href="#">viscid.calculator.separator module</a></li>
 </ul>
 </ul>
 </li>
@@ -185,54 +185,64 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="module-viscid.calculator.evaluator">
-<span id="viscid-calculator-evaluator-module"></span><h1>viscid.calculator.evaluator module<a class="headerlink" href="#module-viscid.calculator.evaluator" title="Permalink to this headline">¶</a></h1>
-<p>Used for evaluating equations given to a script from the user</p>
-<p>This tries very feebly to limit the namespace available to
-the equation which is done using eval. As a result, this
-functionality should NOT be used on untrusted input. To make
-this super clear, the user MUST enable this functionality on
-a per-script basis, or by setting calculator.evaluator.enabled: true
-in their viscidrc.</p>
+  <div class="section" id="module-viscid.calculator.separator">
+<span id="viscid-calculator-separator-module"></span><h1>viscid.calculator.separator module<a class="headerlink" href="#module-viscid.calculator.separator" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="viscid.calculator.evaluator.evaluate">
-<code class="descclassname">viscid.calculator.evaluator.</code><code class="descname">evaluate</code><span class="sig-paren">(</span><em>grid</em>, <em>result_name</em>, <em>eqn</em>, <em>try_numexpr=True</em>, <em>slc=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/evaluator.html#evaluate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.calculator.evaluator.evaluate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Evaluate an equation on a grid</p>
-<p class="rubric">Examples</p>
-<p>To use this function directly</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">evaluator</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="s">&quot;...&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">evaluator</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">get_grid</span><span class="p">(),</span>
-<span class="go">                       &quot;sqrt(vx**2+vy**2+vz**2)&quot;,</span>
-<span class="go">                       &quot;speed&quot;)</span>
-<span class="go">&lt;viscid.field.ScalarField object at ...&gt;</span>
-</pre></div>
-</div>
-<p>Or, for short, you can as a grid to evaluate implicitly,</p>
-<blockquote>
-<div>&gt;&gt; evaluator.enabled = True
-&gt;&gt; f = viscid.load_file(&#8221;...&#8221;)
-&gt;&gt; speed = f[&#8220;speed=sqrt(vx**2+vy**2+vz**2)&#8221;]
-&lt;viscid.field.ScalarField object at ...&gt;</div></blockquote>
+<dt id="viscid.calculator.separator.get_sep_pts_bisect">
+<code class="descclassname">viscid.calculator.separator.</code><code class="descname">get_sep_pts_bisect</code><span class="sig-paren">(</span><em>fld</em>, <em>seed</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/separator.html#get_sep_pts_bisect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.calculator.separator.get_sep_pts_bisect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="viscid.calculator.separator.get_sep_pts_bitor">
+<code class="descclassname">viscid.calculator.separator.</code><code class="descname">get_sep_pts_bitor</code><span class="sig-paren">(</span><em>fld</em>, <em>min_iterations=1</em>, <em>max_iterations=10</em>, <em>multiple=True</em>, <em>sep_val=15</em>, <em>plot=False</em>, <em>mask_limit=15</em>, <em>periodic='00'</em>, <em>pt_bnds=()</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/separator.html#get_sep_pts_bitor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.calculator.separator.get_sep_pts_bitor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find separator as intersection of all global topologies</p>
+<p>Neighbors are bitwise ORed until at least one value matches
+<cite>sep_val</cite> which is presumably (Close | Open N | Open S | SW).
+This happens between min_iterations and max_iterations times,
+where the resolution of each iteration is reduced by a factor
+of two, ie, worst case 2**(max_iterations).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>grid</strong> &#8211; a grid instance where the fields live</li>
-<li><strong>result_name</strong> (<em>str</em>) &#8211; Used for the name and pretty_name of the
-resulting field</li>
-<li><strong>eqn</strong> (<em>str</em>) &#8211; the equation, if a symbol exists in the numpy
-namespace, then that&#8217;s how it is interpreted, otherwise,
-the symbol will be looked up in the grid</li>
+<li><strong>fld</strong> (<a class="reference internal" href="viscid.field.html#viscid.field.Field" title="viscid.field.Field"><em>Field</em></a>) &#8211; Topology (bitmask) as a field</li>
+<li><strong>min_iterations</strong> (<em>int</em>) &#8211; Iterate at least this many times</li>
+<li><strong>max_iterations</strong> (<em>int</em>) &#8211; Iterate at most this many times</li>
+<li><strong>multiple</strong> (<em>bool</em>) &#8211; passed to <a class="reference internal" href="viscid.html#viscid.cluster" title="viscid.cluster"><code class="xref py py-func docutils literal"><span class="pre">viscid.cluster()</span></code></a></li>
+<li><strong>sep_val</strong> (<em>int</em>) &#8211; Value of bitmask that indicates a separator</li>
+<li><strong>plot</strong> (<em>bool</em>) &#8211; Make a 2D plot of Fld and the sep candidates</li>
+<li><strong>mask_limit</strong> (<em>int</em>) &#8211; if &gt; 0, then bitmask fld with mask_limit,
+i.e., fld = fld &amp; mask_limit (bitwise and)</li>
+<li><strong>periodic</strong> (<em>sequence</em>) &#8211; indicate whether that direction is
+periodic, and if so, whether the coordinate arrays are
+overlapped or not. Values can be True, False, or &#8216;+&#8217;. &#8216;+&#8217;
+indicates that x[0] and x[-1] are not colocated, so assume
+they&#8217;re dx apart where dx = x[-1] - x[-2].</li>
+<li><strong>pt_bnd</strong> (<em>sequence</em>) &#8211; Boundaries that come to a point, i.e., all
+values along that boundary are neighbors such as the poles
+of a sphere. Specified like &#8220;0-&#8221; for lower boundary of
+dimension 0 or &#8220;1+&#8221; for the upper boundary of dimension 1.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Field instance</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">2xN for N clusters of separator points in the same
+coordinates as <cite>fld</cite></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
 </td>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.calculator.separator.get_sep_pts_bitor_spherical">
+<code class="descclassname">viscid.calculator.separator.</code><code class="descname">get_sep_pts_bitor_spherical</code><span class="sig-paren">(</span><em>fld</em>, <em>theta_phi=False</em>, <em>overlap=False</em>, <em>cap=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/separator.html#get_sep_pts_bitor_spherical"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.calculator.separator.get_sep_pts_bitor_spherical" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrap <code class="xref py py-func docutils literal"><span class="pre">find_sep_points_cartesian()</span></code> for spheres and caps</p>
+<p>This is kind of a janky interface since data about
+theta_phi / overlap / cap could exist in the field</p>
 </dd></dl>
 
 </div>
@@ -250,7 +260,7 @@ the symbol will be looked up in the grid</li>
         <br/>
         
 <div id="sourcelink">
-  <a href="../_sources/api/viscid.calculator.evaluator.txt"
+  <a href="../_sources/api/viscid.calculator.separator.txt"
      rel="nofollow">Source</a>
 </div>
       

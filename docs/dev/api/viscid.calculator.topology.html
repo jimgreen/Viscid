@@ -32,7 +32,7 @@
     <link rel="top" title="Viscid 0.95.2 dev documentation" href="../index.html" />
     <link rel="up" title="viscid.calculator package" href="viscid.calculator.html" />
     <link rel="next" title="viscid.compat package" href="viscid.compat.html" />
-    <link rel="prev" title="viscid.calculator.plasma module" href="viscid.calculator.plasma.html" />
+    <link rel="prev" title="viscid.calculator.separator module" href="viscid.calculator.separator.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -190,74 +190,6 @@
 <p>I don&#8217;t know if this is worth keeping as its own module,
 TOPOLOGY_* is copied here so that one can import this module
 without needing to have built the cython module streamline.pyx</p>
-<dl class="function">
-<dt id="viscid.calculator.topology.cluster">
-<code class="descclassname">viscid.calculator.topology.</code><code class="descname">cluster</code><span class="sig-paren">(</span><em>indx</em>, <em>indy</em>, <em>x</em>, <em>y</em>, <em>multiple=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/topology.html#cluster"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.calculator.topology.cluster" title="Permalink to this definition">¶</a></dt>
-<dd><p>Cluster and average groups of neighboring points</p>
-<dl class="docutils">
-<dt>TODO: If absolutely necessary, could do some K-means clustering</dt>
-<dd>here by calling into scikit-learn.</dd>
-</dl>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>indx</strong> (<em>list</em>) &#8211; list of x indices</li>
-<li><strong>indy</strong> (<em>list</em>) &#8211; list of y indices</li>
-<li><strong>x</strong> (<em>list</em>) &#8211; list of x locations (same size as indx)</li>
-<li><strong>y</strong> (<em>list</em>) &#8211; list of y locations (same size as indy)</li>
-<li><strong>multiple</strong> (<em>bool</em>) &#8211; If False, average all points as a single
-cluster</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">3xN for N clusters</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="viscid.calculator.topology.find_sep_points_cartesian">
-<code class="descclassname">viscid.calculator.topology.</code><code class="descname">find_sep_points_cartesian</code><span class="sig-paren">(</span><em>fld</em>, <em>min_iterations=1</em>, <em>max_iterations=10</em>, <em>multiple=True</em>, <em>sep_val=15</em>, <em>plot=False</em>, <em>mask_limit=15</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/topology.html#find_sep_points_cartesian"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.calculator.topology.find_sep_points_cartesian" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find separator as intersection of all global topologies</p>
-<p>Neighbors are bitwise ORed until at least one value matches
-<cite>sep_val</cite> which is presumably (Close | Open N | Open S | SW).
-This happens between min_iterations and max_iterations times,
-where the resolution of each iteration is reduced by a factor
-of two, ie, worst case 2**(max_iterations).</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>fld</strong> (<a class="reference internal" href="viscid.field.html#viscid.field.Field" title="viscid.field.Field"><em>Field</em></a>) &#8211; Topology (bitmask) as a field</li>
-<li><strong>min_iterations</strong> (<em>int</em>) &#8211; Iterate at least this many times</li>
-<li><strong>max_iterations</strong> (<em>int</em>) &#8211; Iterate at most this many times</li>
-<li><strong>multiple</strong> (<em>bool</em>) &#8211; passed to <a class="reference internal" href="#viscid.calculator.topology.cluster" title="viscid.calculator.topology.cluster"><code class="xref py py-func docutils literal"><span class="pre">cluster()</span></code></a></li>
-<li><strong>sep_val</strong> (<em>int</em>) &#8211; Value of bitmask that indicates a separator</li>
-<li><strong>plot</strong> (<em>bool</em>) &#8211; Make a 2D plot of Fld and the sep candidates</li>
-<li><strong>mask_limit</strong> (<em>int</em>) &#8211; if &gt; 0, then bitmask fld with mask_limit,
-i.e., fld = fld &amp; mask_limit (bitwise and)</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">3xN for N clusters of separator points in the same
-coordinates as <cite>fld</cite></p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
 <dl class="function">
 <dt id="viscid.calculator.topology.topology2color">
 <code class="descclassname">viscid.calculator.topology.</code><code class="descname">topology2color</code><span class="sig-paren">(</span><em>topology</em>, <em>topo_style='msphere'</em>, <em>bad_color=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/topology.html#topology2color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.calculator.topology.topology2color" title="Permalink to this definition">¶</a></dt>

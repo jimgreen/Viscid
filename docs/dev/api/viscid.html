@@ -198,9 +198,11 @@
 <li class="toctree-l1"><a class="reference internal" href="viscid.calculator.html">viscid.calculator package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="viscid.calculator.html#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="viscid.calculator.calc.html">viscid.calculator.calc module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="viscid.calculator.cluster.html">viscid.calculator.cluster module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="viscid.calculator.evaluator.html">viscid.calculator.evaluator module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="viscid.calculator.necalc.html">viscid.calculator.necalc module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="viscid.calculator.plasma.html">viscid.calculator.plasma module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="viscid.calculator.separator.html">viscid.calculator.separator module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="viscid.calculator.topology.html">viscid.calculator.topology module</a></li>
 </ul>
 </li>
@@ -1480,6 +1482,45 @@ cone, and the half angle of the cone.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="viscid.cluster">
+<code class="descclassname">viscid.</code><code class="descname">cluster</code><span class="sig-paren">(</span><em>indx</em>, <em>indy</em>, <em>x</em>, <em>y</em>, <em>multiple=True</em>, <em>periodic=(False</em>, <em>False)</em>, <em>diagonals=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/cluster.html#cluster"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cluster and average groups of neighboring points</p>
+<dl class="docutils">
+<dt>TODO: If absolutely necessary, could do some K-means clustering</dt>
+<dd>here by calling into scikit-learn.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>indx</strong> (<em>sequence</em>) &#8211; list of x indices</li>
+<li><strong>indy</strong> (<em>sequence</em>) &#8211; list of y indices</li>
+<li><strong>x</strong> (<em>sequence</em>) &#8211; x coordinate array</li>
+<li><strong>y</strong> (<em>sequence</em>) &#8211; y coordinate array</li>
+<li><strong>multiple</strong> (<em>bool</em>) &#8211; If False, average all points as a single
+cluster</li>
+<li><strong>periodic</strong> (<em>sequence</em>) &#8211; indicate whether that direction is
+periodic, and if so, whether the coordinate arrays are
+overlapped or not. Values can be True, False, or &#8216;+&#8217;. &#8216;+&#8217;
+indicates that x[0] and x[-1] are not colocated, so assume
+they&#8217;re dx apart where dx = x[-1] - x[-2].</li>
+<li><strong>diagonals</strong> (<em>bool</em>) &#8211; if true, then diagonal points are considered
+neighbors</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">2xN for N clusters</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
 <dt id="viscid.topology2color">
 <code class="descclassname">viscid.</code><code class="descname">topology2color</code><span class="sig-paren">(</span><em>topology</em>, <em>topo_style='msphere'</em>, <em>bad_color=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/topology.html#topology2color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.topology2color" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine RGB from topology value</p>
@@ -1505,40 +1546,8 @@ single value</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="viscid.cluster">
-<code class="descclassname">viscid.</code><code class="descname">cluster</code><span class="sig-paren">(</span><em>indx</em>, <em>indy</em>, <em>x</em>, <em>y</em>, <em>multiple=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/topology.html#cluster"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.cluster" title="Permalink to this definition">¶</a></dt>
-<dd><p>Cluster and average groups of neighboring points</p>
-<dl class="docutils">
-<dt>TODO: If absolutely necessary, could do some K-means clustering</dt>
-<dd>here by calling into scikit-learn.</dd>
-</dl>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>indx</strong> (<em>list</em>) &#8211; list of x indices</li>
-<li><strong>indy</strong> (<em>list</em>) &#8211; list of y indices</li>
-<li><strong>x</strong> (<em>list</em>) &#8211; list of x locations (same size as indx)</li>
-<li><strong>y</strong> (<em>list</em>) &#8211; list of y locations (same size as indy)</li>
-<li><strong>multiple</strong> (<em>bool</em>) &#8211; If False, average all points as a single
-cluster</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">3xN for N clusters</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="viscid.find_sep_points_cartesian">
-<code class="descclassname">viscid.</code><code class="descname">find_sep_points_cartesian</code><span class="sig-paren">(</span><em>fld</em>, <em>min_iterations=1</em>, <em>max_iterations=10</em>, <em>multiple=True</em>, <em>sep_val=15</em>, <em>plot=False</em>, <em>mask_limit=15</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/topology.html#find_sep_points_cartesian"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.find_sep_points_cartesian" title="Permalink to this definition">¶</a></dt>
+<dt id="viscid.get_sep_pts_bitor">
+<code class="descclassname">viscid.</code><code class="descname">get_sep_pts_bitor</code><span class="sig-paren">(</span><em>fld</em>, <em>min_iterations=1</em>, <em>max_iterations=10</em>, <em>multiple=True</em>, <em>sep_val=15</em>, <em>plot=False</em>, <em>mask_limit=15</em>, <em>periodic='00'</em>, <em>pt_bnds=()</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/separator.html#get_sep_pts_bitor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.get_sep_pts_bitor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find separator as intersection of all global topologies</p>
 <p>Neighbors are bitwise ORed until at least one value matches
 <cite>sep_val</cite> which is presumably (Close | Open N | Open S | SW).
@@ -1553,15 +1562,24 @@ of two, ie, worst case 2**(max_iterations).</p>
 <li><strong>fld</strong> (<a class="reference internal" href="viscid.field.html#viscid.field.Field" title="viscid.field.Field"><em>Field</em></a>) &#8211; Topology (bitmask) as a field</li>
 <li><strong>min_iterations</strong> (<em>int</em>) &#8211; Iterate at least this many times</li>
 <li><strong>max_iterations</strong> (<em>int</em>) &#8211; Iterate at most this many times</li>
-<li><strong>multiple</strong> (<em>bool</em>) &#8211; passed to <a class="reference internal" href="#viscid.cluster" title="viscid.cluster"><code class="xref py py-func docutils literal"><span class="pre">cluster()</span></code></a></li>
+<li><strong>multiple</strong> (<em>bool</em>) &#8211; passed to <a class="reference internal" href="#viscid.cluster" title="viscid.cluster"><code class="xref py py-func docutils literal"><span class="pre">viscid.cluster()</span></code></a></li>
 <li><strong>sep_val</strong> (<em>int</em>) &#8211; Value of bitmask that indicates a separator</li>
 <li><strong>plot</strong> (<em>bool</em>) &#8211; Make a 2D plot of Fld and the sep candidates</li>
 <li><strong>mask_limit</strong> (<em>int</em>) &#8211; if &gt; 0, then bitmask fld with mask_limit,
 i.e., fld = fld &amp; mask_limit (bitwise and)</li>
+<li><strong>periodic</strong> (<em>sequence</em>) &#8211; indicate whether that direction is
+periodic, and if so, whether the coordinate arrays are
+overlapped or not. Values can be True, False, or &#8216;+&#8217;. &#8216;+&#8217;
+indicates that x[0] and x[-1] are not colocated, so assume
+they&#8217;re dx apart where dx = x[-1] - x[-2].</li>
+<li><strong>pt_bnd</strong> (<em>sequence</em>) &#8211; Boundaries that come to a point, i.e., all
+values along that boundary are neighbors such as the poles
+of a sphere. Specified like &#8220;0-&#8221; for lower boundary of
+dimension 0 or &#8220;1+&#8221; for the upper boundary of dimension 1.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">3xN for N clusters of separator points in the same
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">2xN for N clusters of separator points in the same
 coordinates as <cite>fld</cite></p>
 </td>
 </tr>
@@ -1571,6 +1589,19 @@ coordinates as <cite>fld</cite></p>
 </tbody>
 </table>
 </dd></dl>
+
+<dl class="function">
+<dt id="viscid.get_sep_pts_bitor_spherical">
+<code class="descclassname">viscid.</code><code class="descname">get_sep_pts_bitor_spherical</code><span class="sig-paren">(</span><em>fld</em>, <em>theta_phi=False</em>, <em>overlap=False</em>, <em>cap=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/separator.html#get_sep_pts_bitor_spherical"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.get_sep_pts_bitor_spherical" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrap <code class="xref py py-func docutils literal"><span class="pre">find_sep_points_cartesian()</span></code> for spheres and caps</p>
+<p>This is kind of a janky interface since data about
+theta_phi / overlap / cap could exist in the field</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="viscid.get_sep_pts_bisect">
+<code class="descclassname">viscid.</code><code class="descname">get_sep_pts_bisect</code><span class="sig-paren">(</span><em>fld</em>, <em>seed</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/separator.html#get_sep_pts_bisect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.get_sep_pts_bisect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="viscid.calc_psi">

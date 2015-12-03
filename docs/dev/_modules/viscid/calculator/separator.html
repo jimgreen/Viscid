@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viscid.calculator.separator &mdash; Viscid 0.95.2 dev documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.2.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.95.2 dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Viscid 0.95.2 dev documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          Viscid</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.95.2 dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Tutorial <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../installation.html">Installation</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../philosophy.html">Philosophy</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../functions.html">Useful Functions</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../plot_options.html">Plot Options</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../custom_behavior.html">RC file</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../command_line.html">Command Line Tools</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../dev_guide.html">Developer's Guide</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../extending_readers.html">Extending Readers</a>
+          </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a role="button"
+         id="dLabelNavLinxToc"
+         data-toggle="dropdown"
+         data-target="#"
+         href="#">Examples <b class="caret"></b></a>
+      <ul class="dropdown-menu navlinktoc"
+          role="menu">
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/plotting.html">Plotting</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/slicing.html">Slicing</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/calc.html">Calculator</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/openggcm.html">OpenGGCM</a>
+          </li>
+          <li class="toctree-l1">
+            <a class="reference internal", href="../../../examples/mayavi_plotting.html">3D Plots</a>
+          </li>
+      </ul>
+    </li>
+
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../changes.html">ChangeLog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plot_options.html">Plot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../custom_behavior.html">Custom Behavior (rc file)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../command_line.html">Command Line Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev_guide.html">Developer&#8217;s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../extending_readers.html">Extending Readers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/viscid.html">viscid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for viscid.calculator.separator</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">viscid</span>
+<span class="kn">from</span> <span class="nn">viscid.cython</span> <span class="kn">import</span> <span class="n">streamline</span>
+
+
+<div class="viewcode-block" id="get_sep_pts_bitor"><a class="viewcode-back" href="../../../api/viscid.calculator.separator.html#viscid.get_sep_pts_bitor">[docs]</a><span class="k">def</span> <span class="nf">get_sep_pts_bitor</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">min_iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_iterations</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                      <span class="n">multiple</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">sep_val</span><span class="o">=</span><span class="n">streamline</span><span class="o">.</span><span class="n">TOPOLOGY_MS_SEPARATOR</span><span class="p">,</span>
+                      <span class="n">plot</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">mask_limit</span><span class="o">=</span><span class="mb">0b1111</span><span class="p">,</span> <span class="n">periodic</span><span class="o">=</span><span class="s">&quot;00&quot;</span><span class="p">,</span> <span class="n">pt_bnds</span><span class="o">=</span><span class="p">()):</span>
+    <span class="sd">&quot;&quot;&quot;Find separator as intersection of all global topologies</span>
+
+<span class="sd">    Neighbors are bitwise ORed until at least one value matches</span>
+<span class="sd">    `sep_val` which is presumably (Close | Open N | Open S | SW).</span>
+<span class="sd">    This happens between min_iterations and max_iterations times,</span>
+<span class="sd">    where the resolution of each iteration is reduced by a factor</span>
+<span class="sd">    of two, ie, worst case 2**(max_iterations).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        fld (Field): Topology (bitmask) as a field</span>
+<span class="sd">        min_iterations (int): Iterate at least this many times</span>
+<span class="sd">        max_iterations (int): Iterate at most this many times</span>
+<span class="sd">        multiple (bool): passed to :py:func:`viscid.cluster`</span>
+<span class="sd">        sep_val (int): Value of bitmask that indicates a separator</span>
+<span class="sd">        plot (bool): Make a 2D plot of Fld and the sep candidates</span>
+<span class="sd">        mask_limit (int): if &gt; 0, then bitmask fld with mask_limit,</span>
+<span class="sd">            i.e., fld = fld &amp; mask_limit (bitwise and)</span>
+<span class="sd">        periodic (sequence): indicate whether that direction is</span>
+<span class="sd">            periodic, and if so, whether the coordinate arrays are</span>
+<span class="sd">            overlapped or not. Values can be True, False, or &#39;+&#39;. &#39;+&#39;</span>
+<span class="sd">            indicates that x[0] and x[-1] are not colocated, so assume</span>
+<span class="sd">            they&#39;re dx apart where dx = x[-1] - x[-2].</span>
+<span class="sd">        pt_bnd (sequence): Boundaries that come to a point, i.e., all</span>
+<span class="sd">            values along that boundary are neighbors such as the poles</span>
+<span class="sd">            of a sphere. Specified like &quot;0-&quot; for lower boundary of</span>
+<span class="sd">            dimension 0 or &quot;1+&quot; for the upper boundary of dimension 1.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        ndarray: 2xN for N clusters of separator points in the same</span>
+<span class="sd">        coordinates as `fld`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pd</span> <span class="o">=</span> <span class="p">[</span><span class="bp">False</span> <span class="k">if</span> <span class="n">pi</span> <span class="o">==</span> <span class="s">&quot;0&quot;</span> <span class="k">else</span> <span class="nb">bool</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span> <span class="k">for</span> <span class="n">pi</span> <span class="ow">in</span> <span class="n">periodic</span><span class="p">]</span>
+    <span class="n">fld</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">slice_reduce</span><span class="p">(</span><span class="s">&quot;:&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">mask_limit</span><span class="p">:</span>
+        <span class="n">fld</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bitwise_and</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">mask_limit</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">get_crds</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iterations</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">pd</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">a</span><span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">:]</span> <span class="o">|=</span> <span class="n">a</span><span class="p">[(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">:]</span>
+        <span class="k">if</span> <span class="n">pd</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">a</span><span class="p">[:,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)]</span> <span class="o">|=</span> <span class="n">a</span><span class="p">[:,</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
+
+        <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">|</span> <span class="n">a</span><span class="p">[</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span>  <span class="p">]</span> <span class="o">|</span>  <span class="c"># pylint: disable=bad-whitespace</span>
+             <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span>  <span class="p">,</span>  <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">|</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span>  <span class="p">,</span> <span class="mi">1</span><span class="p">:</span>  <span class="p">])</span>   <span class="c"># pylint: disable=bad-whitespace</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="n">y</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="c"># bitwise_or an entire bounary if all points are neighbors, like</span>
+        <span class="c"># at the poles of a sphere</span>
+        <span class="k">for</span> <span class="n">bnd</span> <span class="ow">in</span> <span class="n">pt_bnds</span><span class="p">:</span>
+            <span class="n">slc</span> <span class="o">=</span> <span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="bp">None</span><span class="p">),</span> <span class="nb">slice</span><span class="p">(</span><span class="bp">None</span><span class="p">)]</span>
+            <span class="n">slc</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">bnd</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">bnd</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;+&quot;</span> <span class="k">else</span> <span class="mi">0</span>
+            <span class="n">a</span><span class="p">[</span><span class="n">slc</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bitwise_or</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">slc</span><span class="p">])</span>
+
+        <span class="n">indx</span><span class="p">,</span> <span class="n">indy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">sep_val</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="n">min_iterations</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">indx</span><span class="p">):</span>
+            <span class="k">break</span>
+
+    <span class="n">pts</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">cluster</span><span class="p">(</span><span class="n">indx</span><span class="p">,</span> <span class="n">indy</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="n">multiple</span><span class="p">,</span>
+                         <span class="n">periodic</span><span class="o">=</span><span class="n">periodic</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">viscid.plot</span> <span class="kn">import</span> <span class="n">mpl</span>
+
+        <span class="n">mpl</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+        <span class="n">mpl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+        <span class="n">mpl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+        <span class="n">mpl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+        <span class="n">or_fld</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">arrays2field</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;OR&quot;</span><span class="p">)</span>
+        <span class="n">mpl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">or_fld</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+        <span class="n">_x</span><span class="p">,</span> <span class="n">_y</span> <span class="o">=</span> <span class="n">or_fld</span><span class="o">.</span><span class="n">get_crds</span><span class="p">()</span>
+        <span class="n">mpl</span><span class="o">.</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">_x</span><span class="p">[</span><span class="n">indx</span><span class="p">],</span> <span class="n">_y</span><span class="p">[</span><span class="n">indy</span><span class="p">],</span> <span class="s">&#39;ko&#39;</span><span class="p">)</span>
+        <span class="c"># mpl.plt.show()</span>
+
+        <span class="n">mpl</span><span class="o">.</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">&#39;y^&#39;</span><span class="p">)</span>
+        <span class="n">mpl</span><span class="o">.</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">pts</span>
+</div>
+<div class="viewcode-block" id="get_sep_pts_bitor_spherical"><a class="viewcode-back" href="../../../api/viscid.calculator.separator.html#viscid.get_sep_pts_bitor_spherical">[docs]</a><span class="k">def</span> <span class="nf">get_sep_pts_bitor_spherical</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">theta_phi</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">cap</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                                <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Wrap :py:func:`find_sep_points_cartesian` for spheres and caps</span>
+
+<span class="sd">    This is kind of a janky interface since data about</span>
+<span class="sd">    theta_phi / overlap / cap could exist in the field</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pd</span> <span class="o">=</span> <span class="s">&quot;1&quot;</span> <span class="k">if</span> <span class="n">overlap</span> <span class="k">else</span> <span class="s">&quot;+&quot;</span>
+    <span class="k">if</span> <span class="n">theta_phi</span><span class="p">:</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;periodic&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="bp">False</span><span class="p">,</span> <span class="n">pd</span><span class="p">)</span>
+        <span class="c"># kwargs[&#39;pt_bnds&#39;] = (&quot;0-&quot;,) if cap else (&quot;0-&quot;, &quot;0+&quot;)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;periodic&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+        <span class="c"># kwargs[&#39;pt_bnds&#39;] = (&quot;1-&quot;,) if cap else (&quot;1-&quot;, &quot;1+&quot;)</span>
+    <span class="k">return</span> <span class="n">get_sep_pts_bitor</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="get_sep_pts_bisect"><a class="viewcode-back" href="../../../api/viscid.calculator.separator.html#viscid.get_sep_pts_bisect">[docs]</a><span class="k">def</span> <span class="nf">get_sep_pts_bisect</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">seed</span><span class="p">):</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+<span class="c">##</span>
+<span class="c">## EOF</span>
+<span class="c">##</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kristofor Maynard.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
