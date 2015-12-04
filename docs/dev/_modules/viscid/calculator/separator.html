@@ -190,21 +190,21 @@
 <span class="kn">from</span> <span class="nn">viscid.cython</span> <span class="kn">import</span> <span class="n">streamline</span>
 
 
-<div class="viewcode-block" id="get_sep_pts_bitor"><a class="viewcode-back" href="../../../api/viscid.calculator.separator.html#viscid.get_sep_pts_bitor">[docs]</a><span class="k">def</span> <span class="nf">get_sep_pts_bitor</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">min_iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_iterations</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-                      <span class="n">multiple</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">sep_val</span><span class="o">=</span><span class="n">streamline</span><span class="o">.</span><span class="n">TOPOLOGY_MS_SEPARATOR</span><span class="p">,</span>
-                      <span class="n">plot</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">mask_limit</span><span class="o">=</span><span class="mb">0b1111</span><span class="p">,</span> <span class="n">periodic</span><span class="o">=</span><span class="s">&quot;00&quot;</span><span class="p">,</span> <span class="n">pt_bnds</span><span class="o">=</span><span class="p">()):</span>
+<div class="viewcode-block" id="get_sep_pts_bitor"><a class="viewcode-back" href="../../../api/viscid.calculator.separator.html#viscid.get_sep_pts_bitor">[docs]</a><span class="k">def</span> <span class="nf">get_sep_pts_bitor</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">min_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                      <span class="n">plot</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">sep_val</span><span class="o">=</span><span class="n">streamline</span><span class="o">.</span><span class="n">TOPOLOGY_MS_SEPARATOR</span><span class="p">,</span>
+                      <span class="n">mask_limit</span><span class="o">=</span><span class="mb">0b1111</span><span class="p">,</span> <span class="n">periodic</span><span class="o">=</span><span class="s">&quot;00&quot;</span><span class="p">,</span> <span class="n">pt_bnds</span><span class="o">=</span><span class="p">()):</span>
     <span class="sd">&quot;&quot;&quot;Find separator as intersection of all global topologies</span>
 
 <span class="sd">    Neighbors are bitwise ORed until at least one value matches</span>
 <span class="sd">    `sep_val` which is presumably (Close | Open N | Open S | SW).</span>
-<span class="sd">    This happens between min_iterations and max_iterations times,</span>
+<span class="sd">    This happens between min_depth and max_depth times,</span>
 <span class="sd">    where the resolution of each iteration is reduced by a factor</span>
-<span class="sd">    of two, ie, worst case 2**(max_iterations).</span>
+<span class="sd">    of two, ie, worst case 2**(max_depth).</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        fld (Field): Topology (bitmask) as a field</span>
-<span class="sd">        min_iterations (int): Iterate at least this many times</span>
-<span class="sd">        max_iterations (int): Iterate at most this many times</span>
+<span class="sd">        min_depth (int): Iterate at least this many times</span>
+<span class="sd">        max_depth (int): Iterate at most this many times</span>
 <span class="sd">        multiple (bool): passed to :py:func:`viscid.cluster`</span>
 <span class="sd">        sep_val (int): Value of bitmask that indicates a separator</span>
 <span class="sd">        plot (bool): Make a 2D plot of Fld and the sep candidates</span>
@@ -231,7 +231,7 @@
     <span class="n">a</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">data</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">fld</span><span class="o">.</span><span class="n">get_crds</span><span class="p">()</span>
 
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iterations</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_depth</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">pd</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
             <span class="n">a</span><span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">:]</span> <span class="o">|=</span> <span class="n">a</span><span class="p">[(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">:]</span>
         <span class="k">if</span> <span class="n">pd</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
@@ -250,7 +250,7 @@
             <span class="n">a</span><span class="p">[</span><span class="n">slc</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bitwise_or</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">slc</span><span class="p">])</span>
 
         <span class="n">indx</span><span class="p">,</span> <span class="n">indy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">sep_val</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="n">min_iterations</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">indx</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="n">min_depth</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">indx</span><span class="p">):</span>
             <span class="k">break</span>
 
     <span class="n">pts</span> <span class="o">=</span> <span class="n">viscid</span><span class="o">.</span><span class="n">cluster</span><span class="p">(</span><span class="n">indx</span><span class="p">,</span> <span class="n">indy</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="n">multiple</span><span class="p">,</span>

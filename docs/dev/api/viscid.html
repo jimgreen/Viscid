@@ -1547,21 +1547,21 @@ single value</p>
 
 <dl class="function">
 <dt id="viscid.get_sep_pts_bitor">
-<code class="descclassname">viscid.</code><code class="descname">get_sep_pts_bitor</code><span class="sig-paren">(</span><em>fld</em>, <em>min_iterations=1</em>, <em>max_iterations=10</em>, <em>multiple=True</em>, <em>sep_val=15</em>, <em>plot=False</em>, <em>mask_limit=15</em>, <em>periodic='00'</em>, <em>pt_bnds=()</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/separator.html#get_sep_pts_bitor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.get_sep_pts_bitor" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">viscid.</code><code class="descname">get_sep_pts_bitor</code><span class="sig-paren">(</span><em>fld</em>, <em>min_depth=1</em>, <em>max_depth=10</em>, <em>multiple=True</em>, <em>plot=False</em>, <em>sep_val=15</em>, <em>mask_limit=15</em>, <em>periodic='00'</em>, <em>pt_bnds=()</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/viscid/calculator/separator.html#get_sep_pts_bitor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viscid.get_sep_pts_bitor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find separator as intersection of all global topologies</p>
 <p>Neighbors are bitwise ORed until at least one value matches
 <cite>sep_val</cite> which is presumably (Close | Open N | Open S | SW).
-This happens between min_iterations and max_iterations times,
+This happens between min_depth and max_depth times,
 where the resolution of each iteration is reduced by a factor
-of two, ie, worst case 2**(max_iterations).</p>
+of two, ie, worst case 2**(max_depth).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>fld</strong> (<a class="reference internal" href="viscid.field.html#viscid.field.Field" title="viscid.field.Field"><em>Field</em></a>) &#8211; Topology (bitmask) as a field</li>
-<li><strong>min_iterations</strong> (<em>int</em>) &#8211; Iterate at least this many times</li>
-<li><strong>max_iterations</strong> (<em>int</em>) &#8211; Iterate at most this many times</li>
+<li><strong>min_depth</strong> (<em>int</em>) &#8211; Iterate at least this many times</li>
+<li><strong>max_depth</strong> (<em>int</em>) &#8211; Iterate at most this many times</li>
 <li><strong>multiple</strong> (<em>bool</em>) &#8211; passed to <a class="reference internal" href="#viscid.cluster" title="viscid.cluster"><code class="xref py py-func docutils literal"><span class="pre">viscid.cluster()</span></code></a></li>
 <li><strong>sep_val</strong> (<em>int</em>) &#8211; Value of bitmask that indicates a separator</li>
 <li><strong>plot</strong> (<em>bool</em>) &#8211; Make a 2D plot of Fld and the sep candidates</li>
