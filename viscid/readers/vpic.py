@@ -451,7 +451,7 @@ class VPIC_File(vfile.VFile):  # pylint: disable=abstract-method
                     xh = [_gfile.xl[d] + _gfile.ldims[d] * (idx[d] + 1) * _gfile.dx[d]
                           for d in range(3)]
                     arrs = [np.linspace(_xl, _xh, _n)
-                            for _xl, _xh, _n in zip(xl, xh, _gfile.ldims)]
+                            for _xl, _xh, _n in zip(xl, xh, _gfile.ldims+1)]
                     block_crds += [coordinate.arrays2crds(arrs)]
 
         file_wrapper_cls = VPIC_BinFileWrapper
@@ -498,9 +498,13 @@ class VPIC_File(vfile.VFile):  # pylint: disable=abstract-method
                                                     _gfile.ldims,
                                                     icomp + descr.off,
                                                     np.dtype(np.float32))
+                            # FIXME: center actually varies depending on the variable
+                            # here cc is used for every field for convenience; perhaps
+                            # this can be done properly, i.e., setting center
+                            # differently for different variables.
                             _fld = self._make_field(_grid, "Scalar", _fld_name,
                                                     crds, data, time=time,
-                                                    center='node')
+                                                    center='cell')
                             _grid.add_field(_fld)
 
                 data_spatial.add(_grid)
