@@ -104,13 +104,13 @@ class GkeyllGrid(grid.Grid):
         return Pxx_e
 
     def _get_Pyy_e(self):
-        Pyy_e = self['pyy_e'] - self['rhoux_e']*self['rhoux_e'] / self['rho_e']
+        Pyy_e = self['pyy_e'] - self['rhouy_e']*self['rhouy_e'] / self['rho_e']
         Pyy_e.name = 'Pyy_e'
         Pyy_e.pretty_name = r'$P_{yy,e}$'
         return Pyy_e
 
     def _get_Pzz_e(self):
-        Pzz_e = self['pzz_e'] - self['rhoux_e']*self['rhoux_e'] / self['rho_e']
+        Pzz_e = self['pzz_e'] - self['rhouz_e']*self['rhouz_e'] / self['rho_e']
         Pzz_e.name = 'Pzz_e'
         Pzz_e.pretty_name = r'$P_{zz,e}$'
         return Pzz_e
@@ -132,6 +132,14 @@ class GkeyllGrid(grid.Grid):
         Pyz_e.name = 'Pyz_e'
         Pyz_e.pretty_name = r'$P_{yz,e}$'
         return Pyz_e
+
+    def _get_P_e(self):
+        field_type = self.get_info("field_type")
+        if field_type == "ten-moment":
+            P_e = (1.0/3.0) * (self["Pxx_e"] + self["Pyy_e"] + self["Pzz_e"])
+        P_e.name = "P_e"
+        P_e.pretty_name = r'$P_e$'
+        return P_e
 
     def _get_ux_i(self):
         ux_i = self['rhoux_i'] / self['rho_i']
@@ -158,13 +166,13 @@ class GkeyllGrid(grid.Grid):
         return Pxx_i
 
     def _get_Pyy_i(self):
-        Pyy_i = self['pyy_i'] - self['rhoux_i']*self['rhoux_i'] / self['rho_i']
+        Pyy_i = self['pyy_i'] - self['rhouy_i']*self['rhouy_i'] / self['rho_i']
         Pyy_i.name = 'Pyy_i'
         Pyy_i.pretty_name = r'$P_{yy,i}$'
         return Pyy_i
 
     def _get_Pzz_i(self):
-        Pzz_i = self['pzz_i'] - self['rhoux_i']*self['rhoux_i'] / self['rho_i']
+        Pzz_i = self['pzz_i'] - self['rhouz_i']*self['rhouz_i'] / self['rho_i']
         Pzz_i.name = 'Pzz_i'
         Pzz_i.pretty_name = r'$P_{zz,i}$'
         return Pzz_i
@@ -187,6 +195,26 @@ class GkeyllGrid(grid.Grid):
         Pyz_i.pretty_name = r'$P_{yz,i}$'
         return Pyz_i
 
+    def _get_P_i(self):
+        field_type = self.get_info("field_type")
+        if field_type == "ten-moment":
+            P_i = (1.0/3.0) * (self["Pxx_i"] + self["Pyy_i"] + self["Pzz_i"])
+        P_i.name = "P_i"
+        P_i.pretty_name = r'$P_i$'
+        return P_i
+
+    def _get_rhou_e(self):
+        # get from [ux_e, uy_e, uz_e]
+        return self._assemble_vector("rhou", suffix='_e',
+                                        _force_layout=self.force_vector_layout,
+                                         pretty_name='rhou_e')
+
+    def _get_rhou_i(self):
+        # get from [ux_i, uy_i, uz_i]
+        return self._assemble_vector("rhou", suffix='_i',
+                                        _force_layout=self.force_vector_layout,
+                                         pretty_name='rhou_i')
+
     def _get_u_e(self):
         # get from [ux_e, uy_e, uz_e]
         return self._assemble_vector("u", suffix='_e',
@@ -203,6 +231,11 @@ class GkeyllGrid(grid.Grid):
         # get from [Bx, By, Bz]
         return self._assemble_vector("B", _force_layout=self.force_vector_layout,
                                          pretty_name="b")
+
+    def _get_e(self):
+        # get from [Ex, Ey, Ez]
+        return self._assemble_vector("E", _force_layout=self.force_vector_layout,
+                                         pretty_name="e")
 
 class GkeyllFile(FileHDF5, ContainerFile):  # pylint: disable=abstract-method
     """"""
