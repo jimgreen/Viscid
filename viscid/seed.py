@@ -574,6 +574,7 @@ class Spline(SeedGen):
             n = -n * self.knots.shape[1]
         self.n = n
         self.splprep_opts = kwargs
+        self.splprep_opts.setdefault("k", self.knots.shape[1] - 1)
 
     def get_nr_points(self, **kwargs):
         return self.n
@@ -589,8 +590,7 @@ class Spline(SeedGen):
 
     def to_3d(self, pts_local, **kwargs):
         import scipy.interpolate as interpolate
-        k = self.splprep_opts.pop("k", self.knots.shape[1] - 1)
-        tck, u = interpolate.splprep(self.knots, k=k, **self.splprep_opts)
+        tck, u = interpolate.splprep(self.knots, **self.splprep_opts)
         u = np.linspace(0, 1, self.n + 1, endpoint=True)
         coords = np.vstack(interpolate.splev(u, tck))
         coords = coords[:, (pts_local * self.n).astype(int)].astype(self.dtype)
